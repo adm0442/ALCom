@@ -27,3 +27,5 @@ include TEMPLATEPATH . '/inc/advanced-search.php';
 # include TEMPLATEPATH . '/inc/relevanssi.php';
 # include TEMPLATEPATH . '/inc/ip-to-country.php';
 # include TEMPLATEPATH . '/inc/user.php';
+
+include TEMPLATEPATH . '/inc/import.php';
