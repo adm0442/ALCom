@@ -26,4 +26,6 @@ include TEMPLATEPATH . '/inc/relevanssi.php';
 include TEMPLATEPATH . '/inc/ip-to-country.php';
 include TEMPLATEPATH . '/inc/user.php';
 
-# include TEMPLATEPATH . '/inc/advanced-search.php'; # not in use anymore
+include TEMPLATEPATH . '/inc/import.php';
+
+# include TEMPLATEPATH . '/inc/advanced-search.php'; # not in use with relevanssi
