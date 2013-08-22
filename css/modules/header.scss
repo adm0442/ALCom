@@ -13,3 +13,7 @@
 	#header p {
 	//	@include a11y-hide;
 	}
+
+#header ul {
+	@include separated-inline-list;
+}

@@ -30,9 +30,8 @@
 	@include linear-gradient(#6b5a76, #2d143d);
 
 	display: inline-block;
-	padding: 12px 30px;
+	padding: 5px 10px;
 
-	@include font-size($h3-size);
 	line-height: 1.4;
 	color: $white-color;
 
