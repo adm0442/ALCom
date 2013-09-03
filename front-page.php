@@ -1,15 +1,8 @@
 <?php get_header() ?>
 
-<div id="primary-content">
-
-	<?php include TEMPLATEPATH . '/modules/posts.php' ?>
-
-</div>
-
-<div id="secondary-content">
-
-	<?php dynamic_sidebar('aside') ?>
-
-</div>
+<?php include TEMPLATEPATH . '/modules/featured.php' ?>
+<?php include TEMPLATEPATH . '/modules/post-content.php' ?>
+<?php include TEMPLATEPATH . '/modules/about.php' ?>
+<?php include TEMPLATEPATH . '/modules/contact.php' ?>
 
 <?php get_footer() ?>
