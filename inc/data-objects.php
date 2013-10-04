@@ -2,43 +2,29 @@
 add_action('init', 'h5b_register_post_types');
 
 function h5b_register_post_types () {
-	$h5b_all_post_types = array('projects', 'jquery_plugins', 'post', 'page');
+	$postTypes		= array('projects', 'jquery_plugins');
+	$allPostTypes	= array_merge($postTypes, array('post', 'page'));
 
-	register_post_type('projects', array(
-		'labels'			=> array(
-			'name'			=> __('Projects', 'h5b'),
-			'singular_label'=> __('Project', 'h5b')
-		), 
-		'rewrite'			=> array(
-			'with_front' => false, 
-			'slug' => __('url_projects', 'h5b')
-		), 
-		'has_archive'		=> true, 
-		'public'			=> true,
-		'supports'			=> array(
-			'title', 'editor', 'author', 'thumbnail', 'excerpt', 
-			'trackbacks', 'custom-fields', 'revisions', 'page-attributes'
-		)
-	));
+	foreach ($postTypes as $postType) {
+		register_post_type($postType, array(
+			'labels'			=> array(
+				'name'			=> __(ucfirst($postType), 'h5b'),
+				'singular_label'=> __(ucfirst($postType), 'h5b')
+			), 
+			'rewrite'			=> array(
+				'with_front' => false, 
+				'slug' => __('url_' . $postType, 'h5b')
+			), 
+			'has_archive'		=> true, 
+			'public'			=> true,
+			'supports'			=> array(
+				'title', 'editor', 'author', 'thumbnail', 'excerpt', 
+				'trackbacks', 'custom-fields', 'revisions', 'page-attributes'
+			)
+		));
+	}
 
-	register_post_type('jquery_plugins', array(
-		'labels'			=> array(
-			'name'			=> __('jQuery Plugins', 'h5b'),
-			'singular_label'=> __('jQuery Plugin', 'h5b')
-		), 
-		'rewrite'			=> array(
-			'with_front' => false, 
-			'slug' => __('url_jquery_plugins', 'h5b')
-		), 
-		'has_archive'		=> true, 
-		'public'			=> true,
-		'supports'			=> array(
-			'title', 'editor', 'author', 'thumbnail', 'excerpt', 
-			'trackbacks', 'custom-fields', 'revisions', 'page-attributes'
-		)
-	));
-
-	register_taxonomy('misc', $h5b_all_post_types, array(
+	register_taxonomy('misc', $allPostTypes, array(
 		'labels'			=> array(
 			'name'			=> __('Misc', 'h5b'), 
 			'singular_label'=> __('Misc', 'h5b')
