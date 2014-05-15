@@ -1,0 +1,140 @@
+@mixin body-text ($font-size: $default-size) {
+	font-family: OpenSans, sans-serif;
+	font-weight: normal;
+	font-size: $font-size;
+	line-height: $default-line-height;
+}
+
+@mixin heading ($font-size: $h1-size) {
+	margin: 0 0 ($margin / 2);
+
+	font-family: OpenSans, sans-serif;
+	font-weight: lighter;
+	font-size: $font-size;
+	line-height: $heading-line-height;
+	letter-spacing: -.05em;
+}
+
+// Base styling
+html {
+	background: $white-color;
+	font-size: 100%;
+}
+
+body {
+	@include body-text;
+	color: $default-color;
+}
+
+// Headings
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+	@include heading($h1-size);
+
+	a {
+		color: inherit;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+h2 {
+	font-size: $h2-size;
+}
+
+h3 {
+	font-size: $h3-size;
+}
+
+h4 {
+	font-size: $h4-size;
+}
+
+h5 {
+	font-size: $h5-size;
+}
+
+h6 {
+	font-size: $h6-size;
+}
+
+// Paragraphs, lists and other block elements
+p {
+	margin: 0 0 $margin;
+}
+
+ul, 
+ol {
+	margin: 0 0 $margin ($margin * 2);
+}
+
+dl {
+	margin: 0 0 $margin;
+}
+
+	dt {
+		font-weight: bold;
+	}
+
+	dd {
+		margin: 0 0 0 $margin;
+	}
+
+blockquote {
+	margin: 0 0 $margin $margin;
+
+	font-size: 120%;
+	font-style: italic;
+	font-weight: lighter;
+}
+
+hr {
+	margin: ($margin * 2) 0;
+	border-top: 1px solid $border-color;
+}
+
+// Tables
+table {
+	margin: 0 0 $margin;
+}
+
+	th, 
+	td {
+		padding: ($margin / 2) $margin;
+		border: 1px solid $border-color;
+		text-align: left;
+		vertical-align: top;
+	}
+
+// Inline elements
+a {
+	color: $link-color;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: $link-color-hover;
+	text-decoration: none;
+}
+
+a:visited {
+	color: $link-color-visited;
+}
+
+small {
+	display: inline-block;
+	line-height: $default-line-height * .9;
+	font-size: 80%;
+	color: $gray-color;
+
+	a {
+		color: inherit;
+	}
+}

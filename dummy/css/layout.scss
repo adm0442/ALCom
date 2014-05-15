@@ -1,0 +1,26 @@
+body {
+	width: 90%;
+	max-width: $site-width;
+	margin: 3rem auto;
+}
+
+#primary-content, 
+#secondary-content {
+	margin-bottom: $margin;
+}
+
+@media #{$bp-3} {
+	#primary-content {
+		width: 70% - ($gutter / 2);
+		float: left;
+	}
+
+	#secondary-content {
+		width: 30% - ($gutter / 2);
+		float: right;
+	}
+
+	#secondary-content + * {
+		clear: both;
+	}
+}
