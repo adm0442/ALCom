@@ -80,8 +80,8 @@ p {
 	margin: 0 0 $margin;
 }
 
-main h1:first-child + p, 
-main h2:first-child + p {
+main > :first-child > h1:first-child + p, 
+main > :first-child > h2:first-child + p {
 	font-size: 120%;
 	font-style: italic;
 }
@@ -105,11 +105,33 @@ dl {
 	}
 
 blockquote {
-	margin: 0 0 $margin $margin;
+	margin: 0 0 $margin ($margin * 2);
 
 	font-size: 120%;
 	font-style: italic;
 	font-weight: lighter;
+
+	& > :first-child, 
+	& > :last-child {
+		position: relative;
+	}
+
+	& > :first-child:before, 
+	& > :last-child:after {
+		position: absolute;
+		font-family: serif;
+		content: open-quote; // "\201C";
+		font-size: 300%;
+		line-height: 1;
+	}
+
+	& > :first-child:before {
+		left: -($margin * 1.5);
+	}
+
+	& > :last-child:after {
+		content: close-quote; // "\201D";
+	}
 }
 
 hr {
@@ -180,7 +202,7 @@ abbr {
 img {
 	max-width: 100%;
 	height: auto;
-	box-sizing: border-box; // TODO: Write SASS plugin(?) that automatically adds browser prefixes for a list of properties (like box-sizing)
+	box-sizing: border-box; // TODO: Use autoprefixer
 }
 
 // Forms

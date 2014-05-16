@@ -15,6 +15,7 @@ body {
 		float: right;
 	}
 
+	body > main + *:not(aside), 
 	body > aside + * {
 		clear: both;
 	}
