@@ -11,6 +11,16 @@ $bp-3-max: '(max-width: 800px)';
 $bp-4-max: '(max-width: 1000px)';
 $bp-5-max: '(max-width: 1200px)';
 
+// Margins, widths etc
+$site-width: 1100px;
+$margin: 1.5rem;
+$gutter: 5%;
+$border-radius: .2rem;
+
+// Fonts
+$default-font: OpenSans, sans-serif;
+$heading-font: OpenSans, sans-serif;
+
 // Font-sizes
 $h1-size: 3.6rem;
 $h2-size: 2.8rem;
@@ -24,10 +34,10 @@ $default-size: 1.2rem;
 $default-line-height: 1.8;
 $heading-line-height: 1.05;
 
-// Margins, widths etc
-$site-width: 1100px;
-$margin: 1rem;
-$gutter: 2.5%;
+$default-font-weight: normal;
+$heading-font-weight: lighter;
+
+$heading-letter-spacing: -.05em;
 
 // Colors
 $default-color: #333;
@@ -39,3 +49,5 @@ $link-color-visited: #609;
 $border-color: #ccc;
 
 $white-color: #fefefe;
+
+$gray-bg: #f6f6f6;

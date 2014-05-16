@@ -1,0 +1,22 @@
+/**
+ * Separated Inline List
+ * @arg $separator String
+ * @arg $margin Int
+ */
+@mixin separated-inline-list ($separator: ' | ', $margin: 0) {
+	margin-left: 0;
+	list-style: none;
+
+	> li {
+		display: inline-block;
+	}
+
+	> li:after {
+		content: $separator;
+		margin: 0 $margin;
+	}
+
+	> li:last-child:after {
+		display: none;
+	}
+}

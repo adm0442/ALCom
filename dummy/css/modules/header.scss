@@ -1,0 +1,27 @@
+body > header {
+	// ...?
+
+	// Logo
+	h1 {
+		
+	}
+
+	// Tagline
+	p {
+		
+	}
+
+	// Navigation
+	nav {
+		// ...?
+
+		ul {
+			@include separated-inline-list(' - ', $margin / 2);
+		}
+	}
+
+	// Search
+	form {
+		
+	}
+}

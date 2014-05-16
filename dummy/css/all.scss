@@ -1,9 +1,9 @@
 @import "config";
 
 // Utils
-// @import "utils/css3";
+@import "utils/misc";
 // @import "utils/cols";
-// @import "utils/button";
+@import "utils/button";
 // @import "utils/m.m.";
 
 // Plugins
@@ -17,9 +17,9 @@
 
 // Base styling
 @import "normalize";
-@import "typography";
+@import "general";
 @import "layout";
 
 // Modules
-// @import "modules/header";
+@import "modules/header";
 // @import "modules/footer";

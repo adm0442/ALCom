@@ -1,6 +1,6 @@
 @mixin body-text ($font-size: $default-size) {
-	font-family: OpenSans, sans-serif;
-	font-weight: normal;
+	font-family: $default-font;
+	font-weight: $default-font-weight;
 	font-size: $font-size;
 	line-height: $default-line-height;
 }
@@ -8,11 +8,11 @@
 @mixin heading ($font-size: $h1-size) {
 	margin: 0 0 ($margin / 2);
 
-	font-family: OpenSans, sans-serif;
-	font-weight: lighter;
+	font-family: $heading-font;
+	font-weight: $heading-font-weight;
 	font-size: $font-size;
 	line-height: $heading-line-height;
-	letter-spacing: -.05em;
+	letter-spacing: $heading-letter-spacing;
 }
 
 // Base styling
@@ -24,6 +24,16 @@ html {
 body {
 	@include body-text;
 	color: $default-color;
+	word-wrap: break-word;
+}
+
+main, 
+aside, 
+section, 
+article, 
+header, 
+footer {
+	margin: 0 0 ($margin * 2);
 }
 
 // Headings
@@ -70,9 +80,16 @@ p {
 	margin: 0 0 $margin;
 }
 
+main h1:first-child + p, 
+main h2:first-child + p {
+	font-size: 120%;
+	font-style: italic;
+}
+
 ul, 
 ol {
 	margin: 0 0 $margin ($margin * 2);
+	padding: 0;
 }
 
 dl {
@@ -96,8 +113,20 @@ blockquote {
 }
 
 hr {
-	margin: ($margin * 2) 0;
+	margin: ($margin * 1.5) 0;
 	border-top: 1px solid $border-color;
+}
+
+pre {
+	background: $gray-bg;
+
+	margin: 0 0 $margin;
+	padding: $margin;
+
+	max-height: 20rem;
+	overflow: auto;
+
+	border: 1px solid $border-color;
 }
 
 // Tables
@@ -111,6 +140,11 @@ table {
 		border: 1px solid $border-color;
 		text-align: left;
 		vertical-align: top;
+	}
+
+	th, 
+	tr:hover td {
+		background: $gray-bg;
 	}
 
 // Inline elements
@@ -138,3 +172,57 @@ small {
 		color: inherit;
 	}
 }
+
+abbr {
+	cursor: help;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	box-sizing: border-box; // TODO: Write SASS plugin(?) that automatically adds browser prefixes for a list of properties (like box-sizing)
+}
+
+// Forms
+@mixin form-field {
+	// ...
+
+	&:hover, 
+	&:focus {
+		
+	}
+}
+
+form {
+	margin: 0 0 $margin;
+}
+
+	// Labels
+	label {
+		
+	}
+
+	// Fields
+	input[type=text], 
+	textarea {
+		@include form-field;
+	}
+
+	textarea {
+
+	}
+
+	select {
+		
+	}
+
+	// Buttons
+	input[type=submit], 
+	button {
+		@include button;
+	}
+
+	// Error messages
+	form strong {
+		
+	}

@@ -1,15 +1,15 @@
 <?php include 'header.php' ?>
 
-<div id="primary-content">
+<main>
 
 	<?php include 'modules/typography.php' ?>
 
-</div>
+</main>
 
-<div id="secondary-content">
+<aside>
 
 	<?php include 'modules/random-testimonial.php' ?>
 
-</div>
+</aside>
 
 <?php include 'footer.php' ?>
