@@ -53,7 +53,7 @@
 				&.tablet {
 					@include device("gfx/ipad.png", 240, 1734, 2566, 263, 102, 260, 97);
 
-					@media #{$bp-2} {
+					@media #{$bp-1} {
 						margin-right: -60px;
 					}
 				}
@@ -61,7 +61,7 @@
 				&.mobile {
 					@include device("gfx/iphone.svg", 120, 2182, 4578, 670, 140, 620, 160);
 
-					@media #{$bp-2-max} {
+					@media #{$bp-1-max} {
 						display: none;
 					}
 				}
