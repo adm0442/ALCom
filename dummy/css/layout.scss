@@ -4,7 +4,7 @@ body {
 	margin: 3rem auto;
 }
 
-@media #{$bp-3} {
+/* @media #{$bp-3} {
 	body > main {
 		width: 70% - ($gutter / 2);
 		float: left;
@@ -19,4 +19,4 @@ body {
 	body > aside + * {
 		clear: both;
 	}
-}
+} */

@@ -3,7 +3,7 @@
 	<article>
 
 		<ul>
-			<li class="desktop"><img src="tmp.jpg"></li>
+			<li class="desktop"><img src="tmp-horix.jpg"></li>
 			<li class="tablet"><img src="tmp.jpg"></li>
 			<li class="mobile"><img src="tmp.jpg"></li>
 		</ul>

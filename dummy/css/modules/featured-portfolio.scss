@@ -11,7 +11,7 @@
 }
 
 #featured-portfolio {
-	// ...?
+	// Nothing here atm...
 
 	// Each item
 	> article {
@@ -19,8 +19,7 @@
 
 		// Images
 		> ul:first-child {
-			float: left;
-			margin: 0;
+			margin-left: 0;
 			list-style: none;
 
 			// To remove spacing between inline-block elements
@@ -33,6 +32,10 @@
 			> li {
 				display: inline-block;
 
+				&:last-child {
+					margin: 0;
+				}
+
 				img {
 					display: block;
 				}
@@ -40,16 +43,27 @@
 				// Different screen sizes
 				&.desktop {
 					@include device("gfx/imac.svg", 600, 1881, 1555, 50, 50, 470, 50);
-					margin-right: -200px;
+					margin-right: -120px;
+
+					@media #{$bp-4-max} {
+						display: none;
+					}
 				}
 
 				&.tablet {
 					@include device("gfx/ipad.png", 240, 1734, 2566, 263, 102, 260, 97);
-					margin-right: -60px;
+
+					@media #{$bp-2} {
+						margin-right: -60px;
+					}
 				}
 
 				&.mobile {
 					@include device("gfx/iphone.svg", 120, 2182, 4578, 670, 140, 620, 160);
+
+					@media #{$bp-2-max} {
+						display: none;
+					}
 				}
 			}
 		}
