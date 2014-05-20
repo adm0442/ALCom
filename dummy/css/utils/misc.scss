@@ -1,4 +1,18 @@
 /**
+ * Clearfix
+ */
+@mixin clearfix {
+	zoom: 1;
+
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+
+/**
  * Separated Inline List
  * @arg $separator String
  * @arg $margin Int

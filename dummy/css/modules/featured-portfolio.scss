@@ -1,0 +1,57 @@
+@mixin device ($src, $render-width, $width, $height, $offset-top, $offset-right, $offset-bottom, $offset-left) {
+	$ratio: $render-width / $width;
+
+	border-image: url($src) $offset-top $offset-right $offset-bottom $offset-left;
+	border-width: #{$offset-top * $ratio}px #{$offset-right * $ratio}px #{$offset-bottom * $ratio}px #{$offset-left * $ratio}px;
+
+	width: #{$render-width}px;
+	height: #{$ratio * ($height - $offset-top - $offset-bottom)}px;
+
+	overflow: hidden;
+}
+
+#featured-portfolio {
+	// ...?
+
+	// Each item
+	> article {
+		@include clearfix;
+
+		// Images
+		> ul:first-child {
+			float: left;
+			margin: 0;
+			list-style: none;
+
+			// To remove spacing between inline-block elements
+			font-size: 0;
+
+			// Reflect this whole element
+			-webkit-box-reflect: below 0 -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 85%, white 150%);
+
+			// Each image
+			> li {
+				display: inline-block;
+
+				img {
+					display: block;
+				}
+
+				// Different screen sizes
+				&.desktop {
+					@include device("gfx/imac.svg", 600, 1881, 1555, 50, 50, 470, 50);
+					margin-right: -200px;
+				}
+
+				&.tablet {
+					@include device("gfx/ipad.png", 240, 1734, 2566, 263, 102, 260, 97);
+					margin-right: -60px;
+				}
+
+				&.mobile {
+					@include device("gfx/iphone.svg", 120, 2182, 4578, 670, 140, 620, 160);
+				}
+			}
+		}
+	}
+}

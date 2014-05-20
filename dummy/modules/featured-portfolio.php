@@ -3,9 +3,9 @@
 	<article>
 
 		<ul>
-			<li class="desktop"><img src="img/portfolio/conversionista/desktop.png"></li>
-			<li class="tablet"><img src="img/portfolio/conversionista/tablet.png"></li>
-			<li class="mobile"><img src="img/portfolio/conversionista/mobile.png"></li>
+			<li class="desktop"><img src="tmp.jpg"></li>
+			<li class="tablet"><img src="tmp.jpg"></li>
+			<li class="mobile"><img src="tmp.jpg"></li>
 		</ul>
 
 		<h2><a href="#">Conversionista.com</a></h2>
