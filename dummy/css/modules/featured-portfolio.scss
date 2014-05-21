@@ -1,11 +1,19 @@
+@function strip-units ($number) {
+	@return $number / ($number * 0 + 1);
+}
+
 @mixin device ($src, $render-width, $width, $height, $offset-top, $offset-right, $offset-bottom, $offset-left) {
 	$ratio: $render-width / $width;
+	$border-top-width: strip-units($offset-top / 100) * $height * $ratio;
+	$border-right-width: strip-units($offset-right / 100) * $width * $ratio;
+	$border-bottom-width: strip-units($offset-bottom / 100) * $height * $ratio;
+	$border-left-width: strip-units($offset-left / 100) * $width * $ratio;
 
 	border-image: url($src) $offset-top $offset-right $offset-bottom $offset-left;
-	border-width: #{$offset-top * $ratio}px #{$offset-right * $ratio}px #{$offset-bottom * $ratio}px #{$offset-left * $ratio}px;
+	border-width: #{$border-top-width}px #{$border-right-width}px #{$border-bottom-width}px #{$border-left-width}px;
 
-	width: #{$render-width}px;
-	height: #{$ratio * ($height - $offset-top - $offset-bottom)}px;
+	width: #{$render-width - $border-left-width - $border-right-width}px;
+	height: #{$height * $ratio - $border-top-width - $border-bottom-width}px;
 
 	overflow: hidden;
 }
@@ -25,24 +33,30 @@
 			// To remove spacing between inline-block elements
 			font-size: 0;
 
-			// Reflect this whole element
+			// Reflect this whole element (nope: too slow together with animated images)
 			-webkit-box-reflect: below 0 -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 85%, white 150%);
 
 			// Each image
 			> li {
 				display: inline-block;
 
-				&:last-child {
-					margin: 0;
-				}
+				// Some nice hover effects (nope: too slow together with reflection)
+			/*	position: relative;
+				bottom: 0;
+				transition: bottom .2s ease-in-out;
 
+				&:hover {
+					bottom: $margin / 2;
+				} */
+
+				// Ignore line-height etc
 				img {
 					display: block;
 				}
 
 				// Different screen sizes
 				&.desktop {
-					@include device("gfx/imac.svg", 600, 1881, 1555, 50, 50, 470, 50);
+					@include device("gfx/imac-800x661.svg", 600, 800, 661, 3.21%, 2.65%, 30.22%, 2.65%);
 					margin-right: -120px;
 
 					@media #{$bp-4-max} {
@@ -51,7 +65,7 @@
 				}
 
 				&.tablet {
-					@include device("gfx/ipad.png", 240, 1734, 2566, 263, 102, 260, 97);
+					@include device("gfx/ipad-600x888.svg", 240, 600, 888, 10.28%, 5.94%, 10.13%, 5.59%);
 
 					@media #{$bp-1} {
 						margin-right: -60px;
@@ -59,7 +73,7 @@
 				}
 
 				&.mobile {
-					@include device("gfx/iphone.svg", 120, 2182, 4578, 670, 140, 620, 160);
+					@include device("gfx/iphone-400x839.svg", 120, 400, 839, 14.30%, 6.41%, 13.54%, 7.56%);
 
 					@media #{$bp-1-max} {
 						display: none;
