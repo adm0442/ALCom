@@ -56,7 +56,7 @@
 
 				// Different screen sizes
 				&.desktop {
-					@include device("gfx/imac-800x661.svg", 600, 800, 661, 3.21%, 2.65%, 30.22%, 2.65%);
+					@include device("gfx/imac.svg", 600, 100, 82.65, 3.21%, 2.65%, 30.22%, 2.65%);
 					margin-right: -120px;
 
 					@media #{$bp-4-max} {
@@ -65,7 +65,7 @@
 				}
 
 				&.tablet {
-					@include device("gfx/ipad-600x888.svg", 240, 600, 888, 10.28%, 5.94%, 10.13%, 5.59%);
+					@include device("gfx/ipad.png", 240, 100, 148, 10.28%, 5.94%, 10.13%, 5.59%);
 
 					@media #{$bp-1} {
 						margin-right: -60px;
@@ -73,7 +73,7 @@
 				}
 
 				&.mobile {
-					@include device("gfx/iphone-400x839.svg", 120, 400, 839, 14.30%, 6.41%, 13.54%, 7.56%);
+					@include device("gfx/iphone.svg", 120, 100, 209.75, 14.30%, 6.41%, 13.54%, 7.56%);
 
 					@media #{$bp-1-max} {
 						display: none;
