@@ -3,9 +3,9 @@
 	<article>
 
 		<ul>
-			<li class="desktop"><img src="tmp.jpg"></li>
-			<li class="tablet"><img src="tmp.jpg"></li>
-			<li class="mobile"><img src="tmp.jpg"></li>
+			<li class="desktop"><img src="img/conversionista/desktop.png"></li>
+			<li class="tablet"><img src="img/conversionista/tablet.png"></li>
+			<li class="mobile"><img src="img/conversionista/mobile.png"></li>
 		</ul>
 
 		<h2><a href="#">Conversionista.com</a></h2>
@@ -24,9 +24,9 @@
 	<article>
 
 		<ul>
-			<li class="desktop"><img src="img/portfolio/hitta/desktop.png"></li>
-			<li class="tablet"><img src="img/portfolio/hitta/tablet.png"></li>
-			<li class="mobile"><img src="img/portfolio/hitta/mobile.png"></li>
+			<li class="desktop"><img src="img/conversionista/desktop.png"></li>
+			<li class="tablet"><img src="img/conversionista/tablet.png"></li>
+			<li class="mobile"><img src="img/conversionista/mobile.png"></li>
 		</ul>
 
 		<h2><a href="#">Hitta.se</a></h2>
@@ -45,10 +45,30 @@
 	<article>
 
 		<ul>
-			<li class="desktop"><img src="img/portfolio/sga/desktop.png"></li>
+			<li class="desktop"><img src="img/conversionista/desktop.png"></li>
 		</ul>
 
 		<h2><a href="#">SafariGuideAfrica.com</a></h2>
+
+		<p>Turning WordPress into a booking site for a travel agent was a fun experience :)</p>
+
+		<ul>
+			<li><a href="#">WordPress</a></li>
+			<li><a href="#">Multilingual</a></li>
+		</ul>
+
+		<p><a href="http://safariguideafrica.com">Visit the site</a></p>
+
+	</article>
+
+	<article>
+
+		<ul>
+			<li class="tablet"><img src="img/conversionista/tablet.png"></li>
+			<li class="mobile"><img src="img/conversionista/mobile.png"></li>
+		</ul>
+
+		<h2><a href="#">SecMaker.com</a></h2>
 
 		<p>Turning WordPress into a booking site for a travel agent was a fun experience :)</p>
 
