@@ -169,8 +169,5 @@ Check the SASS-file for all of them.
 // Box sizing
 @mixin box-sizing ($sizing) {
 	-moz-box-sizing: $sizing;
-	-webkit-box-sizing: $sizing;
-	-o-box-sizing: $sizing;
-	-ms-box-sizing: $sizing;
 	box-sizing: $sizing;
 }
