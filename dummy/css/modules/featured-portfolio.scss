@@ -30,8 +30,8 @@
 			margin-left: 0;
 			list-style: none;
 
-			// To remove spacing between inline-block elements
-			font-size: 0;
+			font-size: 2px; // To remove any spacing (0 or 1px doesn't work together with letter-spacing in Chrome...?)
+			letter-spacing: -3rem; // Render devices on top of eachother
 
 			// Reflect this whole element (nope: too slow together with animated images)
 			-webkit-box-reflect: below 0 -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 85%, white 150%);
@@ -57,27 +57,14 @@
 				// Different screen sizes
 				&.desktop {
 					@include device("gfx/imac.svg", 600, 100, 82.65, 3.21%, 2.65%, 30.22%, 2.65%);
-					margin-right: -120px;
-
-					@media #{$bp-4-max} {
-						display: none;
-					}
 				}
 
 				&.tablet {
 					@include device("gfx/ipad.png", 240, 100, 148, 10.28%, 5.94%, 10.13%, 5.59%);
-
-					@media #{$bp-1} {
-						margin-right: -60px;
-					}
 				}
 
 				&.mobile {
 					@include device("gfx/iphone.svg", 120, 100, 209.75, 14.30%, 6.41%, 13.54%, 7.56%);
-
-					@media #{$bp-1-max} {
-						display: none;
-					}
 				}
 			}
 		}
