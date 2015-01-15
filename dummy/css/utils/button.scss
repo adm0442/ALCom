@@ -4,7 +4,7 @@
 	display: inline-block;
 
 	margin: 0;
-	padding: .6rem 1.2rem;
+	padding: .6rem 1.8rem;
 
 	color: $white-color;
 	font-weight: bold;
@@ -14,6 +14,15 @@
 	border-radius: $border-radius * 2;
 
 	@include box-shadow(1px 1px 1px $shadow-color);
+
+	&:not(:only-child) {
+		margin-right: 1rem;
+		margin-left: 1rem;
+	}
+
+	&:not(:only-child):first-child {
+		margin-left: 0;
+	}
 
 	&:hover {
 		@include box-shadow(2px 2px 2px darken($shadow-color, 20%));

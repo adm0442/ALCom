@@ -1,22 +1,37 @@
 body > header {
 	@include section();
+//	@include linear-gradient($white-color, darken($white-color, 30%));
+
+	padding-bottom: $margin * 3;
 
 	// Logo
 	h1 {
+		float: left;
+		margin: 0;
 
+		a {
+			color: inherit !important;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
 	}
 
 	// Tagline
 	p {
-		margin: -($margin * .8) 0 0;
+		position: absolute;
+		top: 6.5rem;
 	}
 
 	// Navigation
 	nav {
-		margin: 0;
+		float: right;
+		margin: 1.8rem 0 0;
 
 		ul {
 			@include separated-inline-list(' - ', $margin / 2);
+			margin: 0;
 		}
 	}
 

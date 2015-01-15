@@ -17,3 +17,16 @@
 		padding-right: calc(50% - #{$max-site-width / 2});
 	}
 }
+
+// Version where gutter is made with borders instead
+/* @mixin section ($bg: transparent) {
+	padding: ($margin * 2) 0;
+
+	border-left: #{strip-units((100% - $site-width) / 2)}vw solid transparent;
+	border-right: #{strip-units((100% - $site-width) / 2)}vw solid transparent;
+
+	@media (min-width: $max-site-width + 100) {
+		border-left-width: calc(50vw - #{$max-site-width / 2});
+		border-right-width: calc(50vw - #{$max-site-width / 2});
+	}
+} */

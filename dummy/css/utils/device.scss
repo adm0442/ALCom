@@ -1,7 +1,3 @@
-@function strip-units ($number) {
-	@return $number / ($number * 0 + 1);
-}
-
 @mixin device ($src, $render-width, $width, $height, $offset-top, $offset-right, $offset-bottom, $offset-left) {
 	$ratio: $render-width / $width;
 	$border-top-width: strip-units($offset-top / 100) * $height * $ratio;
