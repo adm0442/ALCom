@@ -1,3 +1,25 @@
-@mixin button ($bg-color: #06c) {
-	
+@mixin button ($bg-color: $link-color) {
+	@include linear-gradient($bg-color, darken($bg-color, 10%));
+
+	display: inline-block;
+
+	margin: 0;
+	padding: .6rem 1.2rem;
+
+	color: $white-color;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: 1px 1px 1px $shadow-color;
+
+	border-radius: $border-radius * 2;
+
+	@include box-shadow(1px 1px 1px $shadow-color);
+
+	&:hover {
+		@include box-shadow(2px 2px 2px darken($shadow-color, 20%));
+	}
+
+	&:active {
+		@include linear-gradient(darken($bg-color, 10%), $bg-color);
+	}
 }

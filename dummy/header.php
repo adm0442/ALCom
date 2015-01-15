@@ -9,6 +9,7 @@
 
 		<title>I Build Websites - AndreasLagerkvist.com</title>
 
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600">
 		<link rel="stylesheet" href="css/all.css">
 
 		<script>

@@ -11,7 +11,6 @@
 	}
 }
 
-
 /**
  * Separated Inline List
  *
@@ -34,4 +33,15 @@
 	> li:last-child:after {
 		display: none;
 	}
+}
+
+/**
+ * Grayscale
+ */
+@mixin grayscale {
+	-webkit-filter: grayscale(1);
+	-webkit-filter: grayscale(100%);
+	filter: gray;
+	filter: grayscale(100%);
+	filter: url(desaturate.svg#greyscale);
 }

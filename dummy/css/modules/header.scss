@@ -1,19 +1,19 @@
 body > header {
-	// ...?
+	@include section();
 
 	// Logo
 	h1 {
-		
+
 	}
 
 	// Tagline
 	p {
-		
+		margin: -($margin * .8) 0 0;
 	}
 
 	// Navigation
 	nav {
-		// ...?
+		margin: 0;
 
 		ul {
 			@include separated-inline-list(' - ', $margin / 2);

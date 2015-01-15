@@ -25,6 +25,8 @@
 
 	small {
 		display: block;
+		font-size: 60%;
+		letter-spacing: 0;
 	}
 }
 
@@ -210,47 +212,3 @@ img {
 	height: auto;
 	box-sizing: border-box; // TODO: Use autoprefixer
 }
-
-// Forms
-@mixin form-field {
-	// ...
-
-	&:hover, 
-	&:focus {
-		
-	}
-}
-
-form {
-	margin: 0 0 $margin;
-}
-
-	// Labels
-	label {
-		
-	}
-
-	// Fields
-	input[type=text], 
-	textarea {
-		@include form-field;
-	}
-
-	textarea {
-
-	}
-
-	select {
-		
-	}
-
-	// Buttons
-	input[type=submit], 
-	button {
-		@include button;
-	}
-
-	// Error messages
-	form strong {
-		
-	}

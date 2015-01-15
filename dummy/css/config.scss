@@ -12,14 +12,15 @@ $bp-4-max: '(max-width: 999px)';
 $bp-5-max: '(max-width: 1199px)';
 
 // Margins, widths etc
-$site-width: 90%;		// Max site width
+$site-width: 90%;
+$max-site-width: 980px;	// Max site width
 $margin: 1.5rem;		// Standard margin for paragraphs, headings etc
 $gutter: 5%;			// Space between columns
 $border-radius: .2rem;
 
 // Fonts
-$default-font: OpenSans, sans-serif;
-$heading-font: OpenSans, sans-serif;
+$default-font: "Open Sans", sans-serif;
+$heading-font: "Open Sans", sans-serif;
 
 // Font-sizes
 $h1-size: 3.8rem;
@@ -49,5 +50,8 @@ $link-color-visited: #609;
 $border-color: #ccc;
 
 $white-color: #fefefe;
+$shadow-color: rgba(40, 40, 40, .4);
 
+$dark-bg: #111;
+$dark-gray-bg: #666;
 $gray-bg: #f6f6f6;
