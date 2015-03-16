@@ -1,7 +1,9 @@
-App.plugins.DetectScrollClass = {
+App.plugins.AddScrollClass = {
 	init: function () {
 		window.addEventListener('scroll', function (e) {
-			if (document.body.scrollTop) {
+			var st = document.documentElement.scrollTop || document.body.parentNode.scrollTop || document.body.scrollTop;
+
+			if (st) {
 				document.body.classList.add('has-scrolled');
 			}
 			else {

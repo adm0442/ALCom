@@ -16,4 +16,13 @@
 		</ul>
 	</nav>
 
+	<form method="get" action="" id="search">
+
+		<p>
+			<input type="search" name="s" placeholder="Search" required> 
+			<input type="submit" value="Find">
+		</p>
+
+	</form>
+
 </header>

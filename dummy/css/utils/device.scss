@@ -24,18 +24,24 @@
 	box-shadow: 0 0 0 ($bl / 4) lighten($color, 10%);
 	border-radius: #{$bt}/#{round($bt / 2)};
 
+	// Oh fuck, these won't work with overflow hidden...
 	&:before {
-		background: red;
+		background: darken($color, 5%);
 
 		display: block;
 		content: "";
 
 		position: absolute;
 		left: 50%;
-		top: -#{round($bt / 2)};
+		top: -#{round($bt / 2) + round($bt / 6 / 2)};
 
 		width: 25%;
 		height: round($bt / 6);
+
+		margin-left: -12.5%;
+
+		border: 1px solid darken($color, 10%);
+		border-radius: round($bt / 6 / 2);
 	}
 }
 

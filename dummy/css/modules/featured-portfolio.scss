@@ -33,11 +33,15 @@
 		position: relative;
 		overflow: hidden;
 
-		padding-top: 20rem;
+		padding-top: 25rem;
 		padding-bottom: $margin * 3;
 
 		// Images
 		// First (Desktop) image as background
+		figure {
+			margin: 0;
+		}
+
 		figure:first-child {
 			position: absolute;
 			left: 0;
@@ -50,8 +54,9 @@
 				display: block;
 				max-width: none;
 
-				position: relative;
+				position: absolute;
 				left: 50%;
+			//	bottom: 0;
 				top: 0;
 
 				margin-left: -960px; // Images are 1920x1080
@@ -60,7 +65,8 @@
 				filter: blur(30px);
 				-webkit-filter: blur(30px);
 
-			//	transition: top 40s linear;
+				transition: transform 15s linear, bottom 15s linear, filter 30s linear;
+				transition: transform 15s linear, bottom 15s linear, -webkit-filter 30s linear;
 			}
 		}
 
@@ -68,20 +74,36 @@
 		figure + figure {
 			@include device(320px); // ("gfx/iphone.svg", 320, 100, 209.75, 14.30%, 6.41%, 13.54%, 7.56%);
 
-		/*	position: absolute;
-			bottom: -700px;
-			right: 5%;
+		//	overflow: visible; // We're hiding the bottom half anyway - and I want the speaker to show
 
-			transition: bottom .3s ease-in-out; */
+			position: absolute;
+			bottom: -800px;
+			right: 5%; // TODO...
+
+			transition: bottom .3s ease-in-out;
+
+			img {
+				transition: transform 12s linear, top 12s linear;
+				position: relative;
+				top: 0;
+			}
+
+			&:hover img {
+				top: 100%;
+				transform: translateY(-100%);
+			}
 		}
 
 		// Transition images when slide is active
-	/*	figure:first-child img {
-			top: -1000px;
-		} */
+		&:hover figure:first-child img {
+		//	bottom: 100%;
+		//	transform: translateY(100%);
+		//	filter: blur(0);
+		//	-webkit-filter: blur(0);
+		}
 
 		&:hover figure + figure {
-		//	bottom: -250px;
+			bottom: -250px;
 		}
 
 		// Position text etc on top of image
@@ -100,7 +122,7 @@
 		}
 
 		// Tags/technologies used
-		p + ul {
+		ul {
 			
 		}
 	}
