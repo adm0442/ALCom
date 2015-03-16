@@ -1,6 +1,10 @@
 #header {
 	@include section();
 
+	&:after {
+		display: none; // Remove clearfix
+	}
+
 	// Little gradient
 	$header-bg-color: #0099ff;
 
@@ -20,20 +24,13 @@
 	box-sizing: border-box; // Otherwise section()'s padding will fuck the size up
 
 	// Flexbox!!
-/*	display: -webkit-box;
-	-webkit-box-align: center;
-	-webkit-box-pack: justify;
+	@include flexbox;
+	@include justify-content(space-between);
+	@include align-items(center);
 
-	h1, 
-	nav {
+	> * {
 		margin: 0;
-		-webkit-flex: 1;
-	//	width: 50%;
 	}
-
-	nav {
-		text-align: right;
-	} */
 
 	// Shrink header on scroll
 	transition: padding-top .1s ease-in-out, padding-bottom .1s ease-in-out;
@@ -113,6 +110,24 @@
 
 	// Search
 	form {
-		
+		display: none;
+
+		p {
+			margin: 0;
+
+			input[type=search] {
+				@include button(transparent, 0, 1px solid $white-color);
+				padding: .2rem 1.2rem;
+				box-shadow: none;
+				font-weight: normal;
+
+				&:hover, 
+				&:active {
+					box-shadow: none;
+					background: $white-color;
+					color: $header-bg-color;
+				}
+			}
+		}
 	}
 }

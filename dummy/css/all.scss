@@ -3,12 +3,12 @@
 @import "config";
 
 // Utils
-// @import "utils/css3";
 @import "utils/misc";
 @import "utils/button";
 @import "utils/section";
 @import "utils/device";
-// @import "utils/col";
+@import "utils/device";
+@import "utils/flex";
 // @import "utils/m.m.";
 
 // Plugins
