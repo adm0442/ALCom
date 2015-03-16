@@ -215,7 +215,7 @@ img {
 
 // Buttons
 .button {
-	@include button;
+	@include button($button-color);
 
 	&.primary {
 		@include button-background($button-primary-color);

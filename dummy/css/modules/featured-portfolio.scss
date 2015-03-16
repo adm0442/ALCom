@@ -5,13 +5,18 @@
 
 	// Shadow
 	&:after {
+		background: linear-gradient(0, rgba($shadow-color, .8), rgba($shadow-color, 0));
+
+		display: block;
+		content: "";
+
 		position: absolute;
 		left: 0;
 		bottom: 0;
-		width: 100%;
-		height: 10px;
-		background: red;
 		z-index: 1;
+
+		width: 100%;
+		height: .2rem;
 	}
 
 	// Neutral links
@@ -61,13 +66,13 @@
 
 		// Potential low-res images (tablet/phone)
 		figure + figure {
-			@include device("gfx/iphone.svg", 320, 100, 209.75, 14.30%, 6.41%, 13.54%, 7.56%);
+			@include device(320px); // ("gfx/iphone.svg", 320, 100, 209.75, 14.30%, 6.41%, 13.54%, 7.56%);
 
-			position: absolute;
+		/*	position: absolute;
 			bottom: -700px;
 			right: 5%;
 
-			transition: bottom .3s ease-in-out;
+			transition: bottom .3s ease-in-out; */
 		}
 
 		// Transition images when slide is active
@@ -76,7 +81,7 @@
 		} */
 
 		&:hover figure + figure {
-			bottom: -250px;
+		//	bottom: -250px;
 		}
 
 		// Position text etc on top of image

@@ -7,7 +7,7 @@
 
 <!DOCTYPE html>
 
-<html id="index-page" class="no-js">
+<html id="home-page" class="no-js">
 
 	<head>
 

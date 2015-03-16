@@ -2,7 +2,7 @@
 	@include section();
 
 	// Little gradient
-	$header-bg-color: #0066cc;
+	$header-bg-color: #0099ff;
 
 //	background: linear-gradient(180deg, rgba($header-bg-color, .9), rgba($header-bg-color, .85) 50%, rgba($header-bg-color, .8) 50%);
 	background: rgba($header-bg-color, .75);
@@ -20,7 +20,7 @@
 	box-sizing: border-box; // Otherwise section()'s padding will fuck the size up
 
 	// Flexbox!!
-	display: -webkit-box;
+/*	display: -webkit-box;
 	-webkit-box-align: center;
 	-webkit-box-pack: justify;
 
@@ -33,7 +33,7 @@
 
 	nav {
 		text-align: right;
-	}
+	} */
 
 	// Shrink header on scroll
 	transition: padding-top .1s ease-in-out, padding-bottom .1s ease-in-out;

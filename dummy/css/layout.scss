@@ -2,7 +2,11 @@ body {
 
 }
 
-main {
+html:not(#home-page) main {
+	@include section;
+}
+
+#home-page main > * {
 	@include section;
 }
 
