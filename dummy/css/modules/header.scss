@@ -2,8 +2,13 @@
 	@include section();
 
 	// Little gradient
-	background: linear-gradient(180deg, rgba(255, 255, 255, .9), rgba(255, 255, 255, .85) 50%, rgba(255, 255, 255, .8) 50%);
-	box-shadow: 0 .2rem .1rem $shadow-color;
+	$header-bg-color: #0066cc;
+
+//	background: linear-gradient(180deg, rgba($header-bg-color, .9), rgba($header-bg-color, .85) 50%, rgba($header-bg-color, .8) 50%);
+	background: rgba($header-bg-color, .75);
+	box-shadow: 0 .1rem .1rem $shadow-color;
+
+	color: $white-color;
 
 	// Fixed header
 	position: fixed;
@@ -17,11 +22,13 @@
 	// Flexbox!!
 	display: -webkit-box;
 	-webkit-box-align: center;
+	-webkit-box-pack: justify;
 
 	h1, 
 	nav {
 		margin: 0;
-		width: 50%;
+		-webkit-flex: 1;
+	//	width: 50%;
 	}
 
 	nav {
@@ -32,18 +39,16 @@
 	transition: padding-top .1s ease-in-out, padding-bottom .1s ease-in-out;
 
 	body.has-scrolled & {
-		padding-top: 1.5rem;
-		padding-bottom: 1.5rem;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
 	}
 
 	// Logo
 	h1 {
-		text-shadow: -1px -1px 1px #f0f0f0;
+	//	text-shadow: -1px -1px 1px #f0f0f0;
 
 		// Shrink header on scroll
 		transition: font-size .1s ease-in-out;
-
-		font-size: 3.8rem;
 
 		body.has-scrolled & {
 			font-size: 2.2rem;
@@ -90,7 +95,18 @@
 				margin: 0 0 0 1rem;
 
 				a {
+					@include button(transparent, 0, 1px solid $white-color);
+					padding: .2rem 1.2rem;
+					border-radius: 2rem;
+					box-shadow: none;
+					font-weight: normal;
 
+					&:hover, 
+					&:active {
+						box-shadow: none;
+						background: $white-color;
+						color: $header-bg-color;
+					}
 				}
 			}
 		}

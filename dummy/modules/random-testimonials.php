@@ -3,7 +3,7 @@
 	<?php for ($i = 0; $i < 2; $i++) : ?>
 		<article>
 
-			<img src="//placekitten.com/180/180">
+			<img src="//placehold.it/180x180">
 
 			<h2><cite>Some Client</cite>,<br><b>Profession</b></h2>
 

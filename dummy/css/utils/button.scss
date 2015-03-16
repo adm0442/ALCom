@@ -9,10 +9,13 @@
 	color: $white-color;
 	font-weight: bold;
 	text-decoration: none;
-	text-shadow: 1px 1px 1px $shadow-color;
+//	text-shadow: 1px 1px 1px $shadow-color;
 
 	@if ($border) {
 		border: $border;
+	}
+	@else {
+		border: 0;
 	}
 
 	border-radius: $border-radius * 2;
@@ -36,9 +39,14 @@
 }
 
 @mixin button-background ($bg, $fade: $button-fade) {
-	background: linear-gradient(180deg, $bg, darken($bg, $fade));
-
-	&:active {
-		background: linear-gradient(180deg, darken($bg, $fade), $bg);
+	@if ($fade > 0) {
+		background: linear-gradient(180deg, $bg, darken($bg, $fade));
+	
+		&:active {
+			background: linear-gradient(180deg, darken($bg, $fade), $bg);
+		}
+	}
+	@else {
+		background: $bg;
 	}
 }

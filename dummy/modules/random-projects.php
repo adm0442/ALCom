@@ -9,7 +9,7 @@
 
 		<p>Aboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
 
-		<p><a href="#">View more</a></p>
+		<p><a href="#" class="button primary">View more</a></p>
 
 	</article>
 
@@ -22,7 +22,7 @@
 
 		<p>Aboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
 
-		<p><a href="#">View more</a></p>
+		<p><a href="#" class="button primary">View more</a></p>
 
 	</article>
 

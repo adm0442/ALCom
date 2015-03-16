@@ -2,14 +2,15 @@
 
 	<article>
 
-		<figure><img src="img/dubicars-1920.png"></figure>
-		<figure><img src="img/dubicars-400.png"></figure>
+		<figure><img src="img/exoticcars-1920.png"></figure>
+		<figure><img src="img/exoticcars-400.png"></figure>
 
-		<h2><a href="#">DubiCars.com</a></h2>
+		<h2><a href="#">ExoticCarsDubai.com</a></h2>
 
 		<p>A responsive, simple and fresh new version of exoticcarsdubai.com.</p>
 
 		<ul>
+			<li><a href="#">WordPress</a></li>
 			<li><a href="#">Responsive</a></li>
 		</ul>
 
@@ -22,15 +23,14 @@
 
 	<article>
 
-		<figure><img src="img/exoticcars-1920.png"></figure>
-		<figure><img src="img/exoticcars-400.png"></figure>
+		<figure><img src="img/dubicars-1920.png"></figure>
+		<figure><img src="img/dubicars-400.png"></figure>
 
-		<h2><a href="#">ExoticCarsDubai.com</a></h2>
+		<h2><a href="#">DubiCars.com</a></h2>
 
 		<p>A responsive, simple and fresh new version of exoticcarsdubai.com.</p>
 
 		<ul>
-			<li><a href="#">WordPress</a></li>
 			<li><a href="#">Responsive</a></li>
 		</ul>
 
