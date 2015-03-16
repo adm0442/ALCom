@@ -1,11 +1,25 @@
 #featured-portfolio {
+	position: relative;
 	margin: 0;
 	color: $white-color;
 
+	// Shadow
+	&:after {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 10px;
+		background: red;
+		z-index: 1;
+	}
+
+	// Neutral links
 	a {
 		color: inherit;
 	}
 
+	// Each portfolio item
 	article {
 		@include section();
 
@@ -35,7 +49,7 @@
 				left: 50%;
 				top: 0;
 
-				margin-left: -960px;
+				margin-left: -960px; // Images are 1920x1080
 
 				opacity: 1;
 				filter: blur(30px);

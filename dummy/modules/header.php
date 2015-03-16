@@ -1,8 +1,11 @@
 <header id="header">
 
-	<h1><a href="/">Hi! I'm Andreas</a></h1>
-
-	<p>...and I <em>love</em> building websites.</p>
+	<h1>
+		<a href="/">
+			Hi! <strong>I'm Andreas</strong> 
+			<small>...and I <em>love</em> building websites.</small>
+		</a>
+	</h1>
 
 	<nav>
 		<ul>

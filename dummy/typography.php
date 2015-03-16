@@ -8,7 +8,7 @@
 
 <aside>
 
-	<?php include 'modules/random-testimonial.php' ?>
+	<?php include 'modules/random-testimonials.php' ?>
 
 </aside>
 

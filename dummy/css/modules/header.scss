@@ -1,47 +1,98 @@
 #header {
-	background: linear-gradient(180deg, rgba(255, 255, 255, .8), rgba(255, 255, 255, .7) 50%, rgba(255, 255, 255, .6) 50%);
-	box-shadow: 0 .2rem .1rem $shadow-color;
-
 	@include section();
 
-	padding-bottom: $margin * 3;
+	// Little gradient
+	background: linear-gradient(180deg, rgba(255, 255, 255, .9), rgba(255, 255, 255, .85) 50%, rgba(255, 255, 255, .8) 50%);
+	box-shadow: 0 .2rem .1rem $shadow-color;
 
+	// Fixed header
 	position: fixed;
 	left: 0;
 	top: 0;
 	z-index: 99;
 
 	width: 100%;
-	box-sizing: border-box;
+	box-sizing: border-box; // Otherwise section()'s padding will fuck the size up
+
+	// Flexbox!!
+	display: -webkit-box;
+	-webkit-box-align: center;
+
+	h1, 
+	nav {
+		margin: 0;
+		width: 50%;
+	}
+
+	nav {
+		text-align: right;
+	}
+
+	// Shrink header on scroll
+	transition: padding-top .1s ease-in-out, padding-bottom .1s ease-in-out;
+
+	body.has-scrolled & {
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
 
 	// Logo
 	h1 {
-		float: left;
-		margin: 0;
+		text-shadow: -1px -1px 1px #f0f0f0;
 
+		// Shrink header on scroll
+		transition: font-size .1s ease-in-out;
+
+		font-size: 3.8rem;
+
+		body.has-scrolled & {
+			font-size: 2.2rem;
+		}
+
+		// Neutral link
 		a {
-			color: inherit !important;
+			color: inherit;
 
 			&:hover {
 				text-decoration: none;
 			}
-		}
-	}
 
-	// Tagline
-	p {
-		position: absolute;
-		top: 6.5rem;
+			// I'm Andreas
+			strong {
+				font-weight: lighter;
+			}
+
+			// Tagline
+			small {
+				font-size: $default-size;
+				color: inherit;
+				overflow: hidden;
+
+				// Hide tagline on scroll
+				max-height: 2rem;
+				transition: max-height .2s ease-in-out;
+
+				body.has-scrolled & {
+					max-height: 0;
+				}
+			}
+		}
 	}
 
 	// Navigation
 	nav {
-		float: right;
-		margin: 1.8rem 0 0;
-
 		ul {
-			@include separated-inline-list(' - ', $margin / 2);
 			margin: 0;
+			list-style: none;
+
+			li {
+				display: inline-block;
+				margin: 0 0 0 1rem;
+
+				a {
+
+				}
+			}
 		}
 	}
 

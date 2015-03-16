@@ -5,3 +5,7 @@ body {
 main {
 	@include section;
 }
+
+header + main {
+	padding-top: 16rem;
+}
