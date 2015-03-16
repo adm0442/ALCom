@@ -1,3 +1,10 @@
+<?php
+	error_reporting(E_ALL);
+	ini_set('display_errors', true);
+
+	include 'plugins/html5form/html5form.php';
+?>
+
 <!DOCTYPE html>
 
 <html id="index-page" class="no-js">

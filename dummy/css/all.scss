@@ -3,7 +3,7 @@
 @import "config";
 
 // Utils
-@import "utils/css3";
+// @import "utils/css3";
 @import "utils/misc";
 @import "utils/button";
 @import "utils/section";
@@ -24,6 +24,11 @@
 
 // Modules
 @import "modules/header";
-// @import "modules/footer";
+@import "modules/footer";
+@import "modules/contact";
 
 @import "modules/featured-portfolio";
+@import "modules/random-testimonials";
+@import "modules/random-projects";
+@import "modules/about";
+@import "modules/latest-blog";

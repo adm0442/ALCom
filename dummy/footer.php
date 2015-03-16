@@ -1,8 +1,8 @@
 		<?php include 'modules/contact.php' ?>
 		<?php include 'modules/footer.php' ?>
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		<script src="js/all.php"></script>
+		<script src="js/foot.php"></script>
+		<script>App.init()</script>
 
 	</body>
 

@@ -19,7 +19,7 @@
 		text-decoration: none;
 
 		&:hover {
-			text-decoration: underline;
+		//	text-decoration: underline;
 		}
 	}
 
@@ -211,4 +211,17 @@ img {
 	max-width: 100%;
 	height: auto;
 	box-sizing: border-box; // TODO: Use autoprefixer
+}
+
+// Buttons
+.button {
+	@include button;
+
+	&.primary {
+		@include button-background($button-primary-color);
+	}
+
+	&.secondary {
+		@include button-background($button-secondary-color);
+	}
 }

@@ -3,7 +3,7 @@
 	<article>
 
 		<h2>
-			<a href="#"><img src="http://placehold.it/200x200"> HTMLContent</a> 
+			<a href="#"><img src="//placehold.it/200x200"> HTMLContent</a> 
 			<small><a href="#">WordPress</a></small>
 		</h2>
 

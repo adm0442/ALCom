@@ -1,4 +1,4 @@
-<footer>
+<footer id="footer">
 
 	<p>You've reached the footer. Scroll up :)</p>
 

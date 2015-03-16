@@ -1,4 +1,4 @@
-<header>
+<header id="header">
 
 	<h1><a href="/">Hi! I'm Andreas</a></h1>
 

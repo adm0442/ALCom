@@ -1,8 +1,18 @@
-body > header {
+#header {
+	background: linear-gradient(180deg, rgba(255, 255, 255, .8), rgba(255, 255, 255, .7) 50%, rgba(255, 255, 255, .6) 50%);
+	box-shadow: 0 .2rem .1rem $shadow-color;
+
 	@include section();
-//	@include linear-gradient($white-color, darken($white-color, 30%));
 
 	padding-bottom: $margin * 3;
+
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 99;
+
+	width: 100%;
+	box-sizing: border-box;
 
 	// Logo
 	h1 {

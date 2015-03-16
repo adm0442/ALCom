@@ -1,5 +1,5 @@
-@mixin button ($bg-color: $link-color) {
-	@include linear-gradient($bg-color, darken($bg-color, 10%));
+@mixin button ($bg-color: $button-color, $fade: $button-fade, $border: false) {
+	@include button-background($bg-color, $fade);
 
 	display: inline-block;
 
@@ -11,10 +11,15 @@
 	text-decoration: none;
 	text-shadow: 1px 1px 1px $shadow-color;
 
+	@if ($border) {
+		border: $border;
+	}
+
 	border-radius: $border-radius * 2;
 
-	@include box-shadow(1px 1px 1px $shadow-color);
+	box-shadow: 1px 1px 1px $shadow-color;
 
+	// Separate grouped buttons
 	&:not(:only-child) {
 		margin-right: 1rem;
 		margin-left: 1rem;
@@ -24,11 +29,16 @@
 		margin-left: 0;
 	}
 
+	// Hover (:active set byt button-background())
 	&:hover {
-		@include box-shadow(2px 2px 2px darken($shadow-color, 20%));
+		box-shadow: 2px 2px 2px darken($shadow-color, 20%);
 	}
+}
+
+@mixin button-background ($bg, $fade: $button-fade) {
+	background: linear-gradient(180deg, $bg, darken($bg, $fade));
 
 	&:active {
-		@include linear-gradient(darken($bg-color, 10%), $bg-color);
+		background: linear-gradient(180deg, darken($bg, $fade), $bg);
 	}
 }

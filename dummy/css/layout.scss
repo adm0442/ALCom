@@ -2,19 +2,6 @@ body {
 
 }
 
-/* @media #{$bp-3} {
-	body > main {
-		width: 70% - ($gutter / 2);
-		float: left;
-	}
-
-	body > aside {
-		width: 30% - ($gutter / 2);
-		float: right;
-	}
-
-	body > main + *:not(aside), 
-	body > aside + * {
-		clear: both;
-	}
-} */
+main {
+	@include section;
+}
