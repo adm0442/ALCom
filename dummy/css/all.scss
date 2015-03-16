@@ -1,4 +1,4 @@
-// http://css-tricks.com/snippets/css/a-guide-to-flexbox/
+@import url("//fonts.googleapis.com/css?family=Open+Sans:300,400,600");
 
 @import "config";
 
@@ -7,11 +7,11 @@
 @import "utils/button";
 @import "utils/section";
 @import "utils/device";
-@import "utils/device";
 @import "utils/flex";
+// @import "utils/cols";
 // @import "utils/m.m.";
 
-// Plugins
+// Plugins (all plugins are pure CSS/JS + if ($) $.fn.pluginName = function () {runPlugin()};
 // @import "plugins/popup";
 // @import "plugins/slideshow";
 // @import "plugins/m.m.";
@@ -26,6 +26,7 @@
 @import "modules/header";
 @import "modules/footer";
 @import "modules/contact";
+@import "modules/warnings";
 
 @import "modules/featured-portfolio";
 @import "modules/random-testimonials";

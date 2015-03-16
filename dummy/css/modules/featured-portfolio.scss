@@ -78,7 +78,13 @@
 
 			position: absolute;
 			bottom: -800px;
-			right: 5%; // TODO...
+			right: 5%;
+
+			@media (min-width: $max-site-width + 100) {
+				right: 5%;
+
+				right: calc(50% - #{$max-site-width / 2});
+			}
 
 			transition: bottom .3s ease-in-out;
 

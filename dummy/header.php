@@ -16,7 +16,6 @@
 
 		<title>I Build Websites - AndreasLagerkvist.com</title>
 
-		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600">
 		<link rel="stylesheet" href="css/all.css">
 
 		<script>
@@ -27,12 +26,12 @@
 
 	<body>
 
-		<!--[if lt IE 10]>
-			<p>You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<!--[if lt IE 11]>
+			<p class="ie">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
 
 		<noscript>
-			<p>You seem to have JavaScript disabled. The site will still function but you're missing out on some features.</p>
+			<p class="js">You seem to have JavaScript disabled. The site will still function but you're missing out on some features.</p>
 		</noscript>
 
 		<?php include 'modules/header.php' ?>

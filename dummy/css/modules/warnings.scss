@@ -1,0 +1,20 @@
+p.old-browser, 
+noscript p {
+	background: #fed;
+
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 100;
+
+	box-sizing: border-box;
+	width: 100%;
+
+	padding: .2rem 2rem;
+
+	box-shadow: 0 2px 1px $shadow-color;
+}
+
+p.old-browser {
+	z-index: 101;
+}

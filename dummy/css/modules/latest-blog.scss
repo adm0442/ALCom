@@ -1,0 +1,9 @@
+#latest-blog {
+	@include clearfix;
+
+	img {
+		width: calc(50% - #{$margin / 2});
+		margin-right: $margin;
+		float: left;
+	}
+}
