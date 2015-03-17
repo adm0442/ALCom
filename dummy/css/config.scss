@@ -14,9 +14,9 @@ $bp-5-max: '(max-width: 1199px)';
 // Margins, widths etc
 $site-width: 90%;
 $max-site-width: 1080px;// Max site width
-$margin: 1.5rem;		// Standard margin for paragraphs, headings etc
+$margin: 25px;			// Standard margin for paragraphs, headings etc
 $gutter: 5%;			// Space between columns
-$border-radius: .2rem;
+$border-radius: 4px;
 
 // Fonts
 $default-font: "Open Sans", sans-serif;
@@ -38,7 +38,7 @@ $heading-line-height: 1.05;
 $default-font-weight: normal;
 $heading-font-weight: lighter;
 
-$heading-letter-spacing: -.06em;
+$heading-letter-spacing: -3px;
 
 // Colors
 $default-color: #333;

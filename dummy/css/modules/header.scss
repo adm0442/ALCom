@@ -12,7 +12,7 @@
 //	background: rgba($header-bg-color, .75);
 //	background: linear-gradient(140deg, rgba($header-bg-color, .75) 30%, lighten(rgba($header-bg-color, .75), 25%) 40%, lighten(rgba($header-bg-color, .75), 25%) 60%, rgba($header-bg-color, .75) 70%);
 
-	box-shadow: 0 .1rem .1rem $shadow-color;
+	box-shadow: 0 2px 2px $shadow-color;
 
 	// Some nice text
 	color: $white-color;
@@ -33,14 +33,14 @@
 	@include align-items(center);
 
 	// Shrink header on scroll
-	padding-top: 2.2rem;
-	padding-bottom: 2.2rem;
+	padding-top: 35px;
+	padding-bottom: 35px;
 
 	transition: padding-top .1s ease-in-out, padding-bottom .1s ease-in-out;
 
 	body.has-scrolled & {
-		padding-top: 1rem;
-		padding-bottom: 1rem;
+		padding-top: 15px;
+		padding-bottom: 15px;
 	}
 
 	// Logo
@@ -51,7 +51,7 @@
 		transition: font-size .1s ease-in-out;
 
 		body.has-scrolled & {
-			font-size: 2.2rem;
+			font-size: $h3-size;
 		}
 
 		// Neutral link
@@ -75,7 +75,7 @@
 				overflow: hidden;
 
 				// Hide tagline on scroll
-				max-height: 2rem;
+				max-height: 30px;
 				transition: max-height .2s ease-in-out;
 
 				body.has-scrolled & {
@@ -95,18 +95,9 @@
 
 			li {
 				display: inline-block;
-				margin: 0 0 0 1rem;
+				margin: 0 0 0 10px;
 
 				a {
-					// Ugly inset button
-				/*	background: linear-gradient(180deg, lighten(rgba($header-bg-color, .4), 10%), lighten(rgba($header-bg-color, .6), 20%));
-
-					display: inline-block;
-					padding: .4rem 1.4rem;
-
-					border-radius: 2rem;
-					box-shadow: inset 1px 1px 1px $shadow-color; */
-
 					color: inherit;
 					text-decoration: none;
 					text-shadow: none;
@@ -128,17 +119,6 @@
 			margin: 0;
 
 			input[type=search] {
-				@include button(transparent, 0, 1px solid $white-color);
-				padding: .2rem 1.2rem;
-				box-shadow: none;
-				font-weight: normal;
-
-				&:hover, 
-				&:active {
-					box-shadow: none;
-					background: $white-color;
-					color: $header-bg-color;
-				}
 			}
 		}
 	}

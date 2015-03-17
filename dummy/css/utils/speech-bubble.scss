@@ -1,13 +1,13 @@
 @mixin speech-bubble {
-	@include arrow(left, 15px, $white-color, 1px, $border-color);
+	@include arrow(left, 20px, $white-color, 1px, $border-color);
 
 	background: $white-color;
 
 	display: block;
 
-	margin-left: 15px;
-	padding: 1.5rem 2rem;
+	margin-left: 20px;
+	padding: $margin ($margin * 1.5);
 
 	border: 1px solid $border-color;
-	border-radius: 1rem;
+	border-radius: 30px;
 }
