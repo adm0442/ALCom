@@ -10,20 +10,17 @@
 			array(
 				'name' => 'name', 
 				'label' => 'Your name', 
-				'placeholder' => 'e.g. Bill Gates', 
 				'required' => true
 			), 
 			array(
 				'name' => 'email', 
 				'type' => 'email', 
 				'label' => 'Email', 
-				'placeholder' => 'e.g. name@example.com', 
 				'required' => true
 			), 
 			array(
 				'name' => 'company', 
-				'label' => 'Company', 
-				'placeholder' => 'e.g. Apple, Inc.'
+				'label' => 'Company'
 			), 
 			array(
 				'name' => 'deadline', 
@@ -34,8 +31,8 @@
 				'name' => 'budget', 
 				'label' => 'Approximate budget', 
 				'type' => 'range', 
-				'min' => '0', 
-				'max' => '100000', 
+				'min' => '1000', 
+				'max' => '10000', 
 				'attributes' => array(
 					'data-value-type' => '€'
 				)
@@ -44,7 +41,7 @@
 				'name' => 'message', 
 				'type' => 'textarea', 
 				'label' => 'Details about the project', 
-				'placeholder' => 'e.g. Do you have a website currently? Are you familiar with WordPress? Or anything else you might think is useful.', 
+				'placeholder' => 'e.g. Do you have a website currently? Are you familiar with WordPress? Anything else you might think is useful.', 
 				'required' => true
 			), 
 			array(

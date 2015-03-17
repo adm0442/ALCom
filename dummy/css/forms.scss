@@ -26,6 +26,11 @@ form {
 	// Labels
 	label {
 		display: block;
+
+		// Range value
+		span.value {
+			float: right;
+		}
 	}
 
 	// Error messages
