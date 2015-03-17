@@ -1,20 +1,33 @@
 #random-testimonials {
 	article {
-		figure {
-			text-align: center;
+		@include flexbox;
+		@include justify-content(space-between);
+		@include align-items(center);
 
-			float: left;
-			margin: 0 $margin $margin 0;
+		margin: 0;
+
+		figure {
+			@include flex-shrink(0);
+
+			margin: 0 $margin 0 0;
+			text-align: center;
 
 			img {
 				@include bordered(true);
 			}
 
 			figcaption {
+				display: none;
+
 				cite {
 					font-style: normal;
 				}
 			}
+		}
+
+		blockquote {
+			margin: 0;
+			@include speech-bubble;
 		}
 	}
 

@@ -27,6 +27,7 @@
 		display: block;
 		font-size: 60%;
 		letter-spacing: 0;
+		line-height: 1.2;
 	}
 }
 
@@ -119,11 +120,15 @@ dl {
 blockquote {
 	margin: 0 0 $margin ($margin * 2);
 
-	font-size: 120%;
+	font-size: 140%;
 	font-family: Georgia, serif;
 	font-style: italic;
 	font-weight: lighter;
 	color: $gray-color;
+
+	& > :last-child {
+		margin-bottom: 0;
+	}
 
 	& > :first-child:before, 
 	& > :last-child:after {
