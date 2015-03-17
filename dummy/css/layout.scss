@@ -2,14 +2,27 @@ body {
 
 }
 
-main {
+main, 
+aside {
 	margin: 0;
 
 	> * {
 		@include section;
+
+		&:nth-child(even) {
+			background: $gray-bg;
+		}
 	}
 }
 
+#home-page main > *:nth-child(even) {
+	background: transparent;
+}
+
+#home-page main > *:nth-child(odd) {
+	background: $gray-bg;
+}
+
 header + main {
-	padding-top: 16rem;
+	padding-top: 12rem;
 }

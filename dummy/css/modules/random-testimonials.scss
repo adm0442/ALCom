@@ -31,7 +31,7 @@
 		}
 	}
 
-	article:not(:first-child) {
+	article + article {
 		display: none;
 	}
 }

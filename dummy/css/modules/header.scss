@@ -33,6 +33,9 @@
 	@include align-items(center);
 
 	// Shrink header on scroll
+	padding-top: 2.2rem;
+	padding-bottom: 2.2rem;
+
 	transition: padding-top .1s ease-in-out, padding-bottom .1s ease-in-out;
 
 	body.has-scrolled & {

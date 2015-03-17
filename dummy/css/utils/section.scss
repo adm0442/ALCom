@@ -7,7 +7,7 @@
 	position: relative;
 
 	margin: 0;
-	padding: ($margin * 2) ((100% - $site-width) / 2);
+	padding: ($margin * 3) ((100% - $site-width) / 2);
 
 	@media (min-width: $max-site-width + 100) {
 		padding-left: 5%; // For non-calc-support

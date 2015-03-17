@@ -1,6 +1,4 @@
 #random-projects {
-	background: $gray-bg;
-
 	article {
 		margin: 0;
 
@@ -12,6 +10,14 @@
 
 		h2 {
 			margin-bottom: 0;
+
+			small {
+				display: inline-block;
+
+				&:before {
+					content: " - ";
+				}
+			}
 		}
 
 		ul {
@@ -19,7 +25,7 @@
 		}
 	}
 
-	article:not(:first-child) {
+	article + article {
 		display: none;
 	}
 }
