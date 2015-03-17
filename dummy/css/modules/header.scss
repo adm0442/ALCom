@@ -33,14 +33,14 @@
 	box-sizing: border-box; // Otherwise section()'s padding will fuck the size up
 
 	// Flexbox!!
-	@media #{$bp-2} {
+	@media #{$bp-3} {
 		@include flexbox;
 		@include justify-content(space-between);
 		@include align-items(center);
 	}
 
 	// We'll adjust its size later
-	transition: padding-top .1s ease-in-out, padding-bottom .1s ease-in-out, transform .1s ease-in-out;
+	transition: padding-top .1s ease-in-out, padding-bottom .1s ease-in-out, transform .2s ease-in-out;
 
 	// Logo
 	h1 {
