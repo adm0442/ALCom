@@ -88,6 +88,7 @@
 
 		// Project title
 		h2 {
+			font-size: $h1-size;
 			margin-top: 100px;
 			margin-bottom: 0;
 			text-shadow: 1px 1px 1px $shadow-color;
@@ -106,6 +107,17 @@
 			line-height: 1.2;
 			font-style: italic;
 			font-weight: lighter;
+		}
+
+		// CTA
+		p:last-child {
+			a {
+				margin: 0 10px;
+
+				&:first-child {
+					margin-left: 0;
+				}
+			}
 		}
 	}
 }
@@ -158,6 +170,7 @@
 
 		margin-left: -25px;
 
+		text-decoration: none;
 		text-indent: -1000000px;
 		outline: 0;
 
