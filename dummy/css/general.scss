@@ -29,6 +29,11 @@
 		letter-spacing: 0;
 		line-height: 1.2;
 	}
+
+	// Smaller headings on mobile
+	@media #{$bp-2-max} {
+		font-size: $font-size * .6;
+	}
 }
 
 // Base styling
