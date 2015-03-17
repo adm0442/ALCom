@@ -132,6 +132,7 @@
 		// Description
 		h2 + p {
 			margin-bottom: $margin / 2;
+			text-shadow: 1px 1px 1px $shadow-color;
 			font-size: 120%;
 			line-height: 1.2;
 			font-style: italic;
