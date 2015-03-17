@@ -5,14 +5,18 @@
 		display: none; // Remove clearfix
 	}
 
-	// Little gradient
-	$header-bg-color: #0099ff;
+	// Little gradient and shadows
+	$header-bg-color: #000;
 
-//	background: linear-gradient(180deg, rgba($header-bg-color, .9), rgba($header-bg-color, .85) 50%, rgba($header-bg-color, .8) 50%);
-	background: rgba($header-bg-color, .75);
+	background: linear-gradient(180deg, rgba($header-bg-color, .9), rgba($header-bg-color, .85) 50%, rgba($header-bg-color, .8) 50%);
+//	background: rgba($header-bg-color, .75);
+//	background: linear-gradient(140deg, rgba($header-bg-color, .75) 30%, lighten(rgba($header-bg-color, .75), 25%) 40%, lighten(rgba($header-bg-color, .75), 25%) 60%, rgba($header-bg-color, .75) 70%);
+
 	box-shadow: 0 .1rem .1rem $shadow-color;
 
+	// Some nice text
 	color: $white-color;
+	text-shadow: -1px -1px 1px rgba(60, 60, 60, .4);
 
 	// Fixed header
 	position: fixed;
@@ -28,10 +32,6 @@
 	@include justify-content(space-between);
 	@include align-items(center);
 
-	> * {
-		margin: 0;
-	}
-
 	// Shrink header on scroll
 	transition: padding-top .1s ease-in-out, padding-bottom .1s ease-in-out;
 
@@ -42,7 +42,7 @@
 
 	// Logo
 	h1 {
-	//	text-shadow: -1px -1px 1px #f0f0f0;
+		margin: 0;
 
 		// Shrink header on scroll
 		transition: font-size .1s ease-in-out;
@@ -83,6 +83,8 @@
 
 	// Navigation
 	nav {
+		margin: 0;
+
 		ul {
 			margin: 0;
 			list-style: none;
@@ -92,16 +94,22 @@
 				margin: 0 0 0 1rem;
 
 				a {
-					@include button(transparent, 0, 1px solid $white-color);
-					padding: .2rem 1.2rem;
-					box-shadow: none;
-					font-weight: normal;
+					// Ugly inset button
+				/*	background: linear-gradient(180deg, lighten(rgba($header-bg-color, .4), 10%), lighten(rgba($header-bg-color, .6), 20%));
+
+					display: inline-block;
+					padding: .4rem 1.4rem;
+
+					border-radius: 2rem;
+					box-shadow: inset 1px 1px 1px $shadow-color; */
+
+					color: inherit;
+					text-decoration: none;
+					text-shadow: none;
 
 					&:hover, 
 					&:active {
-						box-shadow: none;
-						background: $white-color;
-						color: $header-bg-color;
+						
 					}
 				}
 			}

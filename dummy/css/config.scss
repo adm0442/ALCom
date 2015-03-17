@@ -13,14 +13,14 @@ $bp-5-max: '(max-width: 1199px)';
 
 // Margins, widths etc
 $site-width: 90%;
-$max-site-width: 980px;	// Max site width
+$max-site-width: 1080px;// Max site width
 $margin: 1.5rem;		// Standard margin for paragraphs, headings etc
 $gutter: 5%;			// Space between columns
 $border-radius: .2rem;
 
 // Fonts
 $default-font: "Open Sans", sans-serif;
-$heading-font: "Open Sans", sans-serif;
+$heading-font: Ubuntu, Raleway, sans-serif;
 
 // Font-sizes
 $h1-size: 3.8rem;
@@ -38,7 +38,7 @@ $heading-line-height: 1.05;
 $default-font-weight: normal;
 $heading-font-weight: lighter;
 
-$heading-letter-spacing: -.05em;
+$heading-letter-spacing: -.06em;
 
 // Colors
 $default-color: #333;

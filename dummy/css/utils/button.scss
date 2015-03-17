@@ -34,6 +34,7 @@
 
 	// Hover (:active set byt button-background())
 	&:hover {
+		color: $white-color;
 		box-shadow: 2px 2px 2px darken($shadow-color, 20%);
 	}
 }

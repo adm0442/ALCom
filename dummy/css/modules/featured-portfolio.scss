@@ -33,7 +33,7 @@
 		position: relative;
 		overflow: hidden;
 
-		padding-top: 20rem;
+		padding-top: 15rem;
 		padding-bottom: $margin * 3;
 
 		// Images
@@ -61,7 +61,7 @@
 
 				margin-left: -960px; // Images are 1920x1080
 
-				opacity: 1;
+				opacity: .8;
 				filter: blur(30px);
 				-webkit-filter: blur(30px);
 
@@ -74,20 +74,26 @@
 		figure + figure {
 			@include device(320px); // ("gfx/iphone.svg", 320, 100, 209.75, 14.30%, 6.41%, 13.54%, 7.56%);
 
-		//	overflow: visible; // We're hiding the bottom half anyway - and I want the speaker to show
+			float: right;
+			margin-bottom: -300px;
+			margin-left: $margin * 2;
 
-			position: absolute;
+			// Put it down on the right side
+		/*	position: absolute;
 			bottom: -800px;
 			right: 5%;
 
+			// Pain in the ass way to position it flush to the right with the new @section styling (but worth it)
 			@media (min-width: $max-site-width + 100) {
 				right: 5%;
 
 				right: calc(50% - #{$max-site-width / 2});
-			}
+			} */
 
-			transition: bottom .3s ease-in-out;
+			// Slide it up from the bottom (below)
+		//	transition: bottom .3s ease-in-out;
 
+			// Scroll the img (website screenshot) on hover
 			img {
 				transition: transform 12s linear, top 12s linear;
 				position: relative;
@@ -109,7 +115,7 @@
 		}
 
 		&:hover figure + figure {
-			bottom: -250px;
+		//	bottom: -250px;
 		}
 
 		// Position text etc on top of image
@@ -119,17 +125,33 @@
 
 		// Project title
 		h2 {
+			margin-top: 100px;
 			text-shadow: 1px 1px 1px $shadow-color;
 		}
 
 		// Description
-		p {
-			
+		h2 + p {
+			margin-bottom: $margin / 2;
+			font-size: 120%;
+			line-height: 1.2;
+			font-style: italic;
+			font-weight: lighter;
 		}
 
 		// Tags/technologies used
 		ul {
-			
+			margin-left: 0;
+			margin-bottom: $margin * 2;
+			list-style: none;
+
+			li {
+				display: inline-block;
+				margin: 0 .5rem 0 0;
+
+				a {
+					@include tag;
+				}
+			}
 		}
 	}
 
