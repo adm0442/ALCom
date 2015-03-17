@@ -1,4 +1,7 @@
 #contact {
-	@include section();
-//	color: $white-color;
+	@include section($gray-bg);
+
+	h2 {
+		margin-bottom: $margin;
+	}
 }

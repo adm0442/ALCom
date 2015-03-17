@@ -10,16 +10,19 @@
 			array(
 				'name' => 'name', 
 				'label' => 'Your name', 
+				'placeholder' => 'e.g. Bill Gates', 
 				'required' => true
 			), 
 			array(
 				'name' => 'company', 
-				'label' => 'Company'
+				'label' => 'Company', 
+				'placeholder' => 'e.g. Apple, Inc.'
 			), 
 			array(
 				'name' => 'email', 
 				'type' => 'email', 
 				'label' => 'Email', 
+				'placeholder' => 'e.g. name@example.com', 
 				'required' => true
 			), 
 			array(
@@ -37,7 +40,8 @@
 			array(
 				'name' => 'message', 
 				'type' => 'textarea', 
-				'label' => 'Message', 
+				'label' => 'Details about the project', 
+				'placeholder' => 'e.g. Do you have a website currently? Are you familiar with WordPress? Or anything else you might think is useful.', 
 				'required' => true
 			), 
 			array(
@@ -81,9 +85,7 @@
 
 <section id="contact">
 
-	<h2>Hire me!</h2>
-
-	<p>...or just send me an e-mail</p>
+	<h2>Hire me! <small>...or just send me an e-mail</small></h2>
 
 	<?php if ($done) : ?>
 		<p><strong>[MESSAGE RECEIVED]</strong></p>

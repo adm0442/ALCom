@@ -2,6 +2,8 @@
 	error_reporting(E_ALL);
 	ini_set('display_errors', true);
 
+	define('XHR', isset($_SERVER['HTTP_X_REQUESTED_WITH']) and strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest');
+
 	include 'plugins/html5form/html5form.php';
 ?>
 
