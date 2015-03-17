@@ -15,8 +15,8 @@
 		<p>A responsive, simple and fresh new version of exoticcarsdubai.com.</p>
 
 		<p>
-			<a href="http://www.exoticcarsdubai.com" class="button primary">Visit the site</a> or 
-			<a href="#" class="button">Read more about the project</a>
+			<a href="http://www.exoticcarsdubai.com" class="button">Visit the site</a> or 
+			<a href="#" class="button secondary">Read more about the project</a>
 		</p>
 
 	</article>
@@ -36,8 +36,8 @@
 		<p>Fully responsive and fully awesome, building from mobile up is the way to go!</p>
 
 		<p>
-			<a href="http://www.exoticcarsdubai.com" class="button primary">Visit the site</a> or 
-			<a href="#" class="button">Read more about the project</a>
+			<a href="http://www.exoticcarsdubai.com" class="button">Visit the site</a> or 
+			<a href="#" class="button secondary">Read more about the project</a>
 		</p>
 
 	</article>
@@ -57,8 +57,8 @@
 		<p>Fully responsive and fully awesome, building from mobile up is the way to go!</p>
 
 		<p>
-			<a href="http://www.exoticcarsdubai.com" class="button primary">Visit the site</a> or 
-			<a href="#" class="button">Read more about the project</a>
+			<a href="http://www.exoticcarsdubai.com" class="button">Visit the site</a> or 
+			<a href="#" class="button secondary">Read more about the project</a>
 		</p>
 
 	</article>
@@ -77,8 +77,8 @@
 		<p>Fully responsive and fully awesome, building from mobile up is the way to go!</p>
 
 		<p>
-			<a href="http://www.exoticcarsdubai.com" class="button primary">Visit the site</a> or 
-			<a href="#" class="button">Read more about the project</a>
+			<a href="http://www.exoticcarsdubai.com" class="button">Visit the site</a> or 
+			<a href="#" class="button secondary">Read more about the project</a>
 		</p>
 
 	</article>
@@ -98,8 +98,8 @@
 		<p>Fully responsive and fully awesome, building from mobile up is the way to go!</p>
 
 		<p>
-			<a href="http://www.exoticcarsdubai.com" class="button primary">Visit the site</a> or 
-			<a href="#" class="button">Read more about the project</a>
+			<a href="http://www.exoticcarsdubai.com" class="button">Visit the site</a> or 
+			<a href="#" class="button secondary">Read more about the project</a>
 		</p>
 
 	</article>
@@ -118,8 +118,8 @@
 		<p>A responsive, simple and fresh new version of exoticcarsdubai.com.</p>
 
 		<p>
-			<a href="http://www.exoticcarsdubai.com" class="button primary">Visit the site</a> or 
-			<a href="#" class="button">Read more about the project</a>
+			<a href="http://www.exoticcarsdubai.com" class="button">Visit the site</a> or 
+			<a href="#" class="button secondary">Read more about the project</a>
 		</p>
 
 	</article>
@@ -138,8 +138,8 @@
 		<p>Turning WordPress into a booking site for a travel agent was a fun experience :)</p>
 
 		<p>
-			<a href="http://www.exoticcarsdubai.com" class="button primary">Visit the site</a> or 
-			<a href="#" class="button">Read more about the project</a>
+			<a href="http://www.exoticcarsdubai.com" class="button">Visit the site</a> or 
+			<a href="#" class="button secondary">Read more about the project</a>
 		</p>
 
 	</article>
@@ -159,8 +159,8 @@
 		<p>Fully responsive and fully awesome, building from mobile up is the way to go!</p>
 
 		<p>
-			<a href="http://www.exoticcarsdubai.com" class="button primary">Visit the site</a> or 
-			<a href="#" class="button">Read more about the project</a>
+			<a href="http://www.exoticcarsdubai.com" class="button">Visit the site</a> or 
+			<a href="#" class="button secondary">Read more about the project</a>
 		</p>
 
 	</article>

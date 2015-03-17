@@ -56,7 +56,7 @@ form {
 	// Buttons
 	input[type=submit], 
 	button {
-		@include button;
+		@include button($button-color, $button-fade, $button-border);
 		box-sizing: border-box;
 	}
 }

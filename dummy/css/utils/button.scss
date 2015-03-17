@@ -1,5 +1,5 @@
 @mixin button ($bg-color: $button-color, $fade: $button-fade, $border: false) {
-	@include button-background($bg-color, $fade);
+	@include button-background($bg-color, $fade, $border);
 
 	display: inline-block;
 
@@ -8,30 +8,13 @@
 
 	font-size: $default-size;
 	color: $white-color;
-	font-weight: normal;
+	font-weight: bold;
 	text-decoration: none;
 	line-height: $default-line-height;
-
-	@if ($border) {
-		border: $border;
-	}
-	@else {
-		border: 0;
-	}
 
 	border-radius: 30px;
 
 //	box-shadow: 1px 1px 1px $shadow-color;
-
-	// Separate grouped buttons
-/*	&:not(:only-child) {
-		margin-right: 10px;
-		margin-left: 10px;
-	}
-
-	&:not(:only-child):first-child {
-		margin-left: 0;
-	} */
 
 	// Hover and visited (:active set byt button-background())
 	&:visited {
@@ -43,7 +26,8 @@
 	}
 }
 
-@mixin button-background ($bg, $fade: $button-fade) {
+@mixin button-background ($bg, $fade: $button-fade, $border: false) {
+	// Gradient(?) background
 	@if ($fade > 0) {
 		background: linear-gradient(180deg, $bg, darken($bg, $fade));
 	
@@ -55,6 +39,18 @@
 		background: $bg;
 	}
 
+	// Border
+	@if ($border == true) {
+		border: 2px solid lighten($bg, 10%);
+	}
+	@elseif ($border) {
+		border: $border;
+	}
+	@else {
+		border: 0;
+	}
+
+	// Text shadow
 	$btn-shadow-color: $shadow-color;
 
 	@if ($bg != transparent) {

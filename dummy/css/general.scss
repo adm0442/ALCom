@@ -214,13 +214,13 @@ img {
 
 // Buttons
 .button {
-	@include button($button-color);
-
-	&.primary {
-		@include button-background($button-primary-color);
-	}
+	@include button($button-color, $button-fade, $button-border);
 
 	&.secondary {
-		@include button-background($button-secondary-color);
+		@include button-background($button-secondary-color, $button-fade, $button-border);
+	}
+
+	&.disabled {
+		@include button-background($button-disabled-color, $button-fade, $button-border);
 	}
 }
