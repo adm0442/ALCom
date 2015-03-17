@@ -33,9 +33,11 @@
 	box-sizing: border-box; // Otherwise section()'s padding will fuck the size up
 
 	// Flexbox!!
-	@include flexbox;
-	@include justify-content(space-between);
-	@include align-items(center);
+	@media #{$bp-2} {
+		@include flexbox;
+		@include justify-content(space-between);
+		@include align-items(center);
+	}
 
 	// We'll adjust its size later
 	transition: padding-top .1s ease-in-out, padding-bottom .1s ease-in-out;
@@ -83,7 +85,11 @@
 
 			li {
 				display: inline-block;
-				margin: 0 0 0 10px;
+				margin: 0 5px 0 0;
+
+				@media #{$bp-3} {
+					margin: 0 0 0 10px;
+				}
 
 				a {
 					color: inherit;
@@ -126,6 +132,15 @@
 					max-height: 30px;
 				}
 			}
+		}
+	}
+}
+
+// Menu de la hamburguesa
+@media #{$bp-3-max} {
+	#header {
+		nav {
+			
 		}
 	}
 }
