@@ -8,7 +8,7 @@
 	// Little gradient and shadows
 	$header-bg-color: #012;
 
-	background: linear-gradient(180deg, rgba($header-bg-color, .9), rgba($header-bg-color, .85) 50%, rgba($header-bg-color, .8) 50%);
+	background: linear-gradient(0, rgba($header-bg-color, .9), rgba($header-bg-color, .85) 50%, rgba($header-bg-color, .8) 50%);
 //	background: rgba($header-bg-color, .75);
 //	background: linear-gradient(140deg, rgba($header-bg-color, .75) 30%, lighten(rgba($header-bg-color, .75), 25%) 40%, lighten(rgba($header-bg-color, .75), 25%) 60%, rgba($header-bg-color, .75) 70%);
 
