@@ -9,9 +9,23 @@
 	text-decoration: none;
 	color: $gray-color;
 
+	border: 1px solid #e3e3e3;
+	border-radius: .4rem;
+
 	&:hover {
 		color: $default-color;
 	}
+}
 
-	border-radius: .4rem;
+@mixin tags {
+	margin-left: 0;
+	list-style: none;
+
+	li {
+		display: inline-block;
+
+		a {
+			@include tag;
+		}
+	}
 }

@@ -1,7 +1,10 @@
 #latest-blog {
+	background: #f0f0f0;
+
 	@include clearfix;
 
 	img {
+		@include bordered;
 		width: calc(50% - #{$margin / 2});
 		margin-right: $margin;
 		float: left;

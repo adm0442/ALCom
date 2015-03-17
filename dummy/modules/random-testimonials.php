@@ -1,11 +1,11 @@
-<section id="random-testimonial">
+<section id="random-testimonials">
 
 	<?php for ($i = 0; $i < 2; $i++) : ?>
 		<article>
 
-			<img src="//placehold.it/180x180">
+			<img src="//lorempixel.com/180/180/people">
 
-			<h2><cite>Some Client</cite>,<br><b>Profession</b></h2>
+			<h2><cite>Björn Micheals</cite>,<br><small>Co-founder of SafariGuideAfrica.com</small></h2>
 
 			<blockquote>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>

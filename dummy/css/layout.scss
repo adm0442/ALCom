@@ -2,12 +2,12 @@ body {
 
 }
 
-html:not(#home-page) main {
-	@include section;
-}
+main {
+	margin: 0;
 
-#home-page main > * {
-	@include section;
+	> * {
+		@include section;
+	}
 }
 
 header + main {

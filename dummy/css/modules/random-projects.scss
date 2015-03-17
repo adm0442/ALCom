@@ -1,0 +1,23 @@
+#random-projects {
+	background: #f0f0f0;
+
+	article {
+		img {
+			float: left;
+			margin: 0 $margin $margin 0;
+			@include bordered();
+		}
+
+		h2 {
+			margin-bottom: 0;
+		}
+
+		ul {
+
+		}
+	}
+
+	article:not(:first-child) {
+		display: none;
+	}
+}

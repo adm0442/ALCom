@@ -19,11 +19,6 @@
 		height: .2rem;
 	}
 
-	// Neutral links
-	a {
-		color: inherit;
-	}
-
 	// Each portfolio item
 	article {
 		@include section();
@@ -141,18 +136,7 @@
 
 		// Tags/technologies used
 		ul {
-			margin-left: 0;
 			margin-bottom: $margin * 2;
-			list-style: none;
-
-			li {
-				display: inline-block;
-				margin: 0 .5rem 0 0;
-
-				a {
-					@include tag;
-				}
-			}
 		}
 	}
 

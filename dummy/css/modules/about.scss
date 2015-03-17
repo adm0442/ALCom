@@ -1,0 +1,8 @@
+#about {
+	img {
+		@include bordered;
+
+		float: right;
+		margin: 0 0 $margin $margin;
+	}
+}

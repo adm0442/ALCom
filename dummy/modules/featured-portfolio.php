@@ -9,9 +9,9 @@
 
 		<p>A responsive, simple and fresh new version of exoticcarsdubai.com.</p>
 
-		<ul>
-			<li><a href="#">WordPress</a></li>
-			<li><a href="#">Responsive</a></li>
+		<ul class="tags">
+			<li><a href="#">wordpress</a></li>
+			<li><a href="#">responsive</a></li>
 		</ul>
 
 		<p>
@@ -30,9 +30,9 @@
 
 		<p>Fully responsive and fully awesome, building from mobile up is the way to go!</p>
 
-		<ul>
-			<li><a href="#">WordPress</a></li>
-			<li><a href="#">Responsive</a></li>
+		<ul class="tags">
+			<li><a href="#">wordpress</a></li>
+			<li><a href="#">responsive</a></li>
 		</ul>
 
 		<p>
@@ -51,9 +51,9 @@
 
 		<p>Fully responsive and fully awesome, building from mobile up is the way to go!</p>
 
-		<ul>
-			<li><a href="#">WordPress</a></li>
-			<li><a href="#">Responsive</a></li>
+		<ul class="tags">
+			<li><a href="#">wordpress</a></li>
+			<li><a href="#">responsive</a></li>
 		</ul>
 
 		<p>
@@ -71,9 +71,9 @@
 
 		<p>Fully responsive and fully awesome, building from mobile up is the way to go!</p>
 
-		<ul>
-			<li><a href="#">WordPress</a></li>
-			<li><a href="#">Responsive</a></li>
+		<ul class="tags">
+			<li><a href="#">wordpress</a></li>
+			<li><a href="#">responsive</a></li>
 		</ul>
 
 		<p>
@@ -92,9 +92,9 @@
 
 		<p>Fully responsive and fully awesome, building from mobile up is the way to go!</p>
 
-		<ul>
-			<li><a href="#">WordPress</a></li>
-			<li><a href="#">Responsive</a></li>
+		<ul class="tags">
+			<li><a href="#">wordpress</a></li>
+			<li><a href="#">responsive</a></li>
 		</ul>
 
 		<p>
@@ -113,8 +113,8 @@
 
 		<p>A responsive, simple and fresh new version of exoticcarsdubai.com.</p>
 
-		<ul>
-			<li><a href="#">Responsive</a></li>
+		<ul class="tags">
+			<li><a href="#">responsive</a></li>
 		</ul>
 
 		<p>
@@ -132,8 +132,8 @@
 
 		<p>Turning WordPress into a booking site for a travel agent was a fun experience :)</p>
 
-		<ul>
-			<li><a href="#">WordPress</a></li>
+		<ul class="tags">
+			<li><a href="#">wordpress</a></li>
 			<li><a href="#">Multilingual</a></li>
 		</ul>
 
@@ -153,9 +153,9 @@
 
 		<p>Fully responsive and fully awesome, building from mobile up is the way to go!</p>
 
-		<ul>
-			<li><a href="#">WordPress</a></li>
-			<li><a href="#">Responsive</a></li>
+		<ul class="tags">
+			<li><a href="#">wordpress</a></li>
+			<li><a href="#">responsive</a></li>
 		</ul>
 
 		<p>

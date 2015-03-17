@@ -7,7 +7,7 @@
 	padding: .3rem 1.8rem;
 
 	color: $white-color;
-	font-weight: bold;
+	font-weight: normal;
 	text-decoration: none;
 //	text-shadow: 1px 1px 1px $shadow-color;
 
@@ -33,6 +33,10 @@
 	}
 
 	// Hover (:active set byt button-background())
+	&:visited {
+		color: $white-color;
+	}
+
 	&:hover {
 		color: $white-color;
 		box-shadow: 2px 2px 2px darken($shadow-color, 20%);
