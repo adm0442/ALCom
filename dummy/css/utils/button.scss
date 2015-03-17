@@ -31,14 +31,13 @@
 		margin-left: 0;
 	}
 
-	// Hover (:active set byt button-background())
 	&:visited {
 		color: $white-color;
 	}
 
+	// Hover (:active set byt button-background())
 	&:hover {
 		color: $white-color;
-		box-shadow: 0 0 5px darken($shadow-color, 20%);
 	}
 }
 
@@ -57,7 +56,7 @@
 	$btn-shadow-color: $shadow-color;
 
 	@if ($bg != transparent) {
-		$btn-shadow-color: darken($bg, 30%);
+		$btn-shadow-color: darken($bg, 20%);
 	}
 
 	text-shadow: -1px -1px 0 $btn-shadow-color;

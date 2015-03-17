@@ -2,18 +2,21 @@
 	background: #f3f3f3;
 
 	display: inline-block;
-	padding: .1rem .6rem;
+	padding: 0 .4rem;
 
 	text-transform: uppercase;
-	font-size: 66%;
+	font-size: 60%;
 	text-decoration: none;
-	color: $gray-color;
+	color: $default-color;
 
 	border: 1px solid #e3e3e3;
 	border-radius: .4rem;
 
+	transition: opacity .1s ease-in-out;
+	opacity: .6;
+
 	&:hover {
-		color: $default-color;
+		opacity: 1;
 	}
 }
 
