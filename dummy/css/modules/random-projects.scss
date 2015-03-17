@@ -3,9 +3,15 @@
 		margin: 0;
 
 		img {
-			float: left;
-			margin: 0 $margin $margin 0;
 			@include bordered();
+
+			display: block;
+			margin: 0 0 $margin;
+
+			@media #{$bp-3} {
+				float: left;
+				margin: 0 $margin $margin 0;
+			}
 		}
 
 		h2 {

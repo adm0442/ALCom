@@ -31,7 +31,7 @@
 	}
 
 	// Smaller headings on mobile
-	@media #{$bp-2-max} {
+	@media #{$bp-3-max} {
 		font-size: $font-size * .6;
 	}
 }

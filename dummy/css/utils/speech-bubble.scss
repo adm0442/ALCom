@@ -1,11 +1,11 @@
-@mixin speech-bubble {
-	@include arrow(left, 20px, $white-color, 1px, $border-color);
+@mixin speech-bubble ($where: left) {
+	@include arrow($where, 20px, $white-color, 1px, $border-color);
 
 	background: $white-color;
 
 	display: block;
 
-	margin-left: 20px;
+	margin-#{$where}: 20px + $margin;
 	padding: $margin ($margin * 1.5);
 
 	border: 1px solid $border-color;

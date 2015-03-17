@@ -2,7 +2,12 @@
 	img {
 		@include bordered;
 
-		float: right;
-		margin: 0 0 $margin $margin;
+		display: block;
+		margin: 0 0 $margin;
+
+		@media #{$bp-3} {
+			float: right;
+			margin: 0 0 $margin $margin;
+		}
 	}
 }

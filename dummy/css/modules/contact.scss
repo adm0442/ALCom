@@ -9,63 +9,67 @@
 		@include clearfix;
 
 		p {
-			float: left;
-
 			input {
 				width: 100%;
 			}
 		}
 
-		// Name
-		p:first-child {
-			width: 32%;
-			margin-right: 2%;
-		}
+		@media #{$bp-2} {
+			p {
+				float: left;
+			}
 
-		// Email
-		p:first-child + p {
-			width: 32%;
-			margin-right: 2%;
-		}
+			// Name
+			p:first-child {
+				width: 32%;
+				margin-right: 2%;
+			}
 
-		// Company
-		p:first-child + p + p {
-			width: 32%;
-		}
+			// Email
+			p:first-child + p {
+				width: 32%;
+				margin-right: 2%;
+			}
 
-		// Deadline
-		p:first-child + p + p + p {
-			clear: left;
+			// Company
+			p:first-child + p + p {
+				width: 32%;
+			}
 
-			width: 48%;
-			margin-right: 4%;
-		}
+			// Deadline
+			p:first-child + p + p + p {
+				clear: left;
 
-		// Budget
-		p:first-child + p + p + p + p {
-			width: 48%;
-		}
+				width: 48%;
+				margin-right: 4%;
+			}
 
-		// Message
-		p:first-child + p + p + p + p + p {
-			float: none;
-			clear: left;
-		}
+			// Budget
+			p:first-child + p + p + p + p {
+				width: 48%;
+			}
 
-		textarea {
-			width: 100%;
-			height: 160px;
-		}
+			// Message
+			p:first-child + p + p + p + p + p {
+				float: none;
+				clear: left;
+			}
 
-		// Submit
-		p:first-child + p + p + p + p + p + p {
-			float: none;
-			clear: left;
-			text-align: right;
-		}
+			textarea {
+				width: 100%;
+				height: 160px;
+			}
 
-		input[type=submit] {
-			width: auto;
+			// Submit
+			p:first-child + p + p + p + p + p + p {
+				float: none;
+				clear: left;
+				text-align: right;
+			}
+
+			input[type=submit] {
+				width: auto;
+			}
 		}
 	}
 }

@@ -97,10 +97,13 @@
 
 		// Project title
 		h2 {
-		//	font-size: $h1-size;
 			margin-top: 100px;
 			margin-bottom: 0;
 			text-shadow: 1px 1px 1px $shadow-color;
+
+			@media #{$bp-3} {
+				font-size: $h1-size;
+			}
 		}
 
 		// Tags/technologies used
@@ -133,7 +136,16 @@
 #featured-portfolio {
 	position: relative;
 	overflow: hidden;
-	min-height: 700px;
+
+	min-height: 800px;
+
+	@media #{$bp-2} {
+		min-height: 700px;
+	}
+
+	@media #{$bp-3} {
+		min-height: 700px;
+	}
 
 	// Every item starts above
 	article {
