@@ -40,7 +40,7 @@
 	}
 
 	// We'll adjust its size later
-	transition: padding-top .1s ease-in-out, padding-bottom .1s ease-in-out;
+	transition: padding-top .1s ease-in-out, padding-bottom .1s ease-in-out, transform .1s ease-in-out;
 
 	// Logo
 	h1 {
@@ -138,9 +138,7 @@
 
 // Menu de la hamburguesa
 @media #{$bp-3-max} {
-	#header {
-		nav {
-			
-		}
+	body.has-scrolled.scrolling-down #header {
+		transform: translateY(-100%);
 	}
 }

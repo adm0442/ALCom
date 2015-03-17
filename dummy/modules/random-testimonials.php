@@ -7,7 +7,7 @@
 				<img src="//lorempixel.com/180/180/people">
 
 				<figcaption>
-					<cite>Björn Michaels</cite>,<br>
+					<cite>Björn Michaels</cite> 
 					<small>Co-founder of SafariGuideAfrica.com</small>
 				</figcaption>
 			</figure>

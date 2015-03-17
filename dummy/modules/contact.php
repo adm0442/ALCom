@@ -33,8 +33,9 @@
 				'type' => 'range', 
 				'min' => '1000', 
 				'max' => '10000', 
+				'step' => '500', 
 				'attributes' => array(
-					'data-value-type' => '€'
+					'data-value-type-before' => '€'
 				)
 			), 
 			array(

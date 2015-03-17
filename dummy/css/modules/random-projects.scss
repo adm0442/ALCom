@@ -18,10 +18,12 @@
 			margin-bottom: 0;
 
 			small {
-				display: inline-block;
+				@media #{$bp-3} {
+					display: inline-block;
 
-				&:before {
-					content: " - ";
+					&:before {
+						content: " - ";
+					}
 				}
 			}
 		}

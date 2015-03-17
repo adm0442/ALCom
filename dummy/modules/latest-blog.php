@@ -1,8 +1,12 @@
 <section id="latest-blog">
 
-	<img src="//lorempixel.com/400/250/abstract">
-
-	<h2><a href="#"><small>From the Blog</small> New design :)</a></h2>
+	<h2>
+		<a href="#">
+			<img src="//lorempixel.com/400/250/abstract">
+			<small>From the Blog</small> 
+			New design :)
+		</a>
+	</h2>
 
 	<ul class="tags">
 		<li><a href="#">design</a></li>

@@ -32,11 +32,13 @@
 
 			figcaption {
 				@include bordered(true);
-				background: $white-color;
+
+				background: $gray-bg;
 
 				padding-top: 50px;
 
 				cite {
+					display: block;
 					font-style: normal;
 				}
 			}

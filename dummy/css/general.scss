@@ -125,11 +125,15 @@ dl {
 blockquote {
 	margin: 0 0 $margin ($margin * 2);
 
-	font-size: 140%;
 	font-family: Georgia, serif;
 	font-style: italic;
 	font-weight: lighter;
 	color: $gray-color;
+	font-size: 120%;
+
+	@media #{$bp-3} {
+		font-size: 140%;
+	}
 
 	& > :last-child {
 		margin-bottom: 0;

@@ -11,14 +11,15 @@ App.plugins.InputRangeUtils = {
 			(function () {
 				var input	= inputs[i];
 				var label	= document.querySelector('label[for="' + input.id + '"]');
-				var type	= input.getAttribute('data-value-type') ? ' ' + input.getAttribute('data-value-type') : '';
+				var type	= input.getAttribute('data-value-type') ? input.getAttribute('data-value-type') : '';
+				var typeB	= input.getAttribute('data-value-type-before') ? input.getAttribute('data-value-type-before') : '';
 				var value	= document.createElement('span');
 
 				value.classList.add('value');
 				label.appendChild(value);
 
 				var updateValue = function () {
-					value.innerHTML = number_format(input.value, 0, ',', ' ') + type;
+					value.innerHTML = typeB + number_format(input.value, 0, ',', ' ') + type;
 				};
 
 				updateValue();
