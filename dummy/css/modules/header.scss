@@ -1,11 +1,16 @@
 #header {
 	@include section();
 
+	// Remove @secion clearfix (no good with flexbox)
 	&:after {
-		display: none; // Remove clearfix
+		display: none;
 	}
 
-	// Little gradient and shadows
+	// Custom paddings from other @sections
+	padding-top: 15px;
+	padding-bottom: 15px;
+
+	// Background color, shadow
 	$header-bg-color: #012;
 
 	background: linear-gradient(0, rgba($header-bg-color, .9), rgba($header-bg-color, .85) 50%, rgba($header-bg-color, .8) 50%);
@@ -32,27 +37,14 @@
 	@include justify-content(space-between);
 	@include align-items(center);
 
-	// Shrink header on scroll
-	padding-top: 35px;
-	padding-bottom: 35px;
-
+	// We'll adjust its size later
 	transition: padding-top .1s ease-in-out, padding-bottom .1s ease-in-out;
-
-	body.has-scrolled & {
-		padding-top: 15px;
-		padding-bottom: 15px;
-	}
 
 	// Logo
 	h1 {
 		margin: 0;
-
-		// Shrink header on scroll
+		font-size: $h3-size;
 		transition: font-size .1s ease-in-out;
-
-		body.has-scrolled & {
-			font-size: $h3-size;
-		}
 
 		// Neutral link
 		a {
@@ -74,13 +66,9 @@
 				color: inherit;
 				overflow: hidden;
 
-				// Hide tagline on scroll
-				max-height: 30px;
+				// Hide tagline for now
+				max-height: 0;
 				transition: max-height .2s ease-in-out;
-
-				body.has-scrolled & {
-					max-height: 0;
-				}
 			}
 		}
 	}
@@ -119,6 +107,24 @@
 			margin: 0;
 
 			input[type=search] {
+			}
+		}
+	}
+}
+
+// In hi res - when user hasn't scrolled down - display a larger header with tagline
+@media #{$bp-3} {
+	body:not(.has-scrolled) #header {
+		padding-top: 35px;
+		padding-bottom: 35px;
+
+		h1 {
+			font-size: $h1-size;
+
+			a {
+				small {
+					max-height: 30px;
+				}
 			}
 		}
 	}
