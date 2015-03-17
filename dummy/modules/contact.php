@@ -23,6 +23,18 @@
 				'required' => true
 			), 
 			array(
+				'name' => 'budget', 
+				'label' => 'Approximate budget', 
+				'type' => 'range', 
+				'min' => '0', 
+				'max' => '100000'
+			), 
+			array(
+				'name' => 'deadline', 
+				'type' => 'date', 
+				'label' => 'Approximate deadline'
+			), 
+			array(
 				'name' => 'message', 
 				'type' => 'textarea', 
 				'label' => 'Message', 
