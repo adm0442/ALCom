@@ -16,7 +16,7 @@
 
 		<p>
 			<a href="http://www.exoticcarsdubai.com" class="button">Visit the site</a> or 
-			<a href="#" class="button secondary">Read more about the project</a>
+			<a href="#" class="button secondary next">Read more about the project</a>
 		</p>
 
 	</article>
@@ -37,7 +37,7 @@
 
 		<p>
 			<a href="http://www.exoticcarsdubai.com" class="button">Visit the site</a> or 
-			<a href="#" class="button secondary">Read more about the project</a>
+			<a href="#" class="button secondary next">Read more about the project</a>
 		</p>
 
 	</article>
@@ -58,7 +58,7 @@
 
 		<p>
 			<a href="http://www.exoticcarsdubai.com" class="button">Visit the site</a> or 
-			<a href="#" class="button secondary">Read more about the project</a>
+			<a href="#" class="button secondary next">Read more about the project</a>
 		</p>
 
 	</article>
@@ -78,7 +78,7 @@
 
 		<p>
 			<a href="http://www.exoticcarsdubai.com" class="button">Visit the site</a> or 
-			<a href="#" class="button secondary">Read more about the project</a>
+			<a href="#" class="button secondary next">Read more about the project</a>
 		</p>
 
 	</article>
@@ -99,7 +99,7 @@
 
 		<p>
 			<a href="http://www.exoticcarsdubai.com" class="button">Visit the site</a> or 
-			<a href="#" class="button secondary">Read more about the project</a>
+			<a href="#" class="button secondary next">Read more about the project</a>
 		</p>
 
 	</article>
@@ -119,7 +119,7 @@
 
 		<p>
 			<a href="http://www.exoticcarsdubai.com" class="button">Visit the site</a> or 
-			<a href="#" class="button secondary">Read more about the project</a>
+			<a href="#" class="button secondary next">Read more about the project</a>
 		</p>
 
 	</article>
@@ -139,7 +139,7 @@
 
 		<p>
 			<a href="http://www.exoticcarsdubai.com" class="button">Visit the site</a> or 
-			<a href="#" class="button secondary">Read more about the project</a>
+			<a href="#" class="button secondary next">Read more about the project</a>
 		</p>
 
 	</article>
@@ -160,7 +160,7 @@
 
 		<p>
 			<a href="http://www.exoticcarsdubai.com" class="button">Visit the site</a> or 
-			<a href="#" class="button secondary">Read more about the project</a>
+			<a href="#" class="button secondary next">Read more about the project</a>
 		</p>
 
 	</article>

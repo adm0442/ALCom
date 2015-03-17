@@ -223,4 +223,24 @@ img {
 	&.disabled {
 		@include button-background($button-disabled-color, $button-fade, $button-border);
 	}
+
+	&.up:after {
+		content: "▲";
+		margin-left: 15px;
+	}
+
+	&.next:after {
+		content: "▶";
+		margin-left: 15px;
+	}
+
+	&.down:after {
+		content: "▼";
+		margin-left: 15px;
+	}
+
+	&.prev:before {
+		content: "◀";
+		margin-right: 15px;
+	}
 }
