@@ -14,11 +14,6 @@
 				'required' => true
 			), 
 			array(
-				'name' => 'company', 
-				'label' => 'Company', 
-				'placeholder' => 'e.g. Apple, Inc.'
-			), 
-			array(
 				'name' => 'email', 
 				'type' => 'email', 
 				'label' => 'Email', 
@@ -26,16 +21,24 @@
 				'required' => true
 			), 
 			array(
-				'name' => 'budget', 
-				'label' => 'Approximate budget', 
-				'type' => 'range', 
-				'min' => '0', 
-				'max' => '100000'
+				'name' => 'company', 
+				'label' => 'Company', 
+				'placeholder' => 'e.g. Apple, Inc.'
 			), 
 			array(
 				'name' => 'deadline', 
 				'type' => 'date', 
-				'label' => 'Approximate deadline'
+				'label' => 'Deadline'
+			), 
+			array(
+				'name' => 'budget', 
+				'label' => 'Approximate budget', 
+				'type' => 'range', 
+				'min' => '0', 
+				'max' => '100000', 
+				'attributes' => array(
+					'data-value-type' => '€'
+				)
 			), 
 			array(
 				'name' => 'message', 

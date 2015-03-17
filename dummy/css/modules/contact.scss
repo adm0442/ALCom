@@ -4,4 +4,68 @@
 	h2 {
 		margin-bottom: $margin;
 	}
+
+	form {
+		@include clearfix;
+
+		p {
+			float: left;
+
+			input {
+				width: 100%;
+			}
+		}
+
+		// Name
+		p:first-child {
+			width: 32%;
+			margin-right: 2%;
+		}
+
+		// Email
+		p:first-child + p {
+			width: 32%;
+			margin-right: 2%;
+		}
+
+		// Company
+		p:first-child + p + p {
+			width: 32%;
+		}
+
+		// Deadline
+		p:first-child + p + p + p {
+			clear: left;
+
+			width: 48%;
+			margin-right: 4%;
+		}
+
+		// Budget
+		p:first-child + p + p + p + p {
+			width: 48%;
+		}
+
+		// Message
+		p:first-child + p + p + p + p + p {
+			float: none;
+			clear: left;
+		}
+
+		textarea {
+			width: 100%;
+			height: 160px;
+		}
+
+		// Submit
+		p:first-child + p + p + p + p + p + p {
+			float: none;
+			clear: left;
+			text-align: right;
+		}
+
+		input[type=submit] {
+			width: auto;
+		}
+	}
 }
