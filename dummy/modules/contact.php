@@ -31,9 +31,10 @@
 				'name' => 'budget', 
 				'label' => 'Approximate budget', 
 				'type' => 'range', 
-				'min' => '1000', 
+				'min' => '0', 
 				'max' => '10000', 
 				'step' => '500', 
+				'value' => '0', 
 				'attributes' => array(
 					'data-value-type-before' => '€'
 				)
@@ -42,7 +43,7 @@
 				'name' => 'message', 
 				'type' => 'textarea', 
 				'label' => 'Details about the project', 
-				'placeholder' => 'e.g. Do you have a website currently? Are you familiar with WordPress? Anything else you might think is useful.', 
+				'placeholder' => 'e.g. Do you have a website currently? Are you familiar with WordPress? Anything else you think might be useful.', 
 				'required' => true
 			), 
 			array(
