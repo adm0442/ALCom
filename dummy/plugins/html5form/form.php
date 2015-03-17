@@ -17,19 +17,23 @@ class Form {
 
 	private $submitTxt;
 	private $errorTxt;
+	private $requiredTxt;
+	private $requiredSymbol;
 
 	public function __construct ($name) {
-		$this->name			= $name;
-		$this->id			= str_replace('_', '-', $name) . '-form';
-		$this->hasFiles		= false;
-		$this->hasSubmit	= false;
-		$this->wrapEl		= 'p';
-		$this->fieldsetEl	= 'fieldset';
-		$this->legendEl		= 'legend';
-		$this->submitTxt	= 'Send';
-		$this->method		= 'post';
-		$this->action		= '';
-		$this->errorTxt		= 'Please fill out this field.';
+		$this->name				= $name;
+		$this->id				= str_replace('_', '-', $name) . '-form';
+		$this->hasFiles			= false;
+		$this->hasSubmit		= false;
+		$this->wrapEl			= 'p';
+		$this->fieldsetEl		= 'fieldset';
+		$this->legendEl			= 'legend';
+		$this->method			= 'post';
+		$this->action			= '';
+		$this->submitTxt		= 'Send';
+		$this->errorTxt			= 'Please fill out this field.';
+		$this->requiredTxt		= 'Required field';
+		$this->requiredSymbol	= '*';
 
 		return $this;
 	}
@@ -166,8 +170,10 @@ class Form {
 		}
 
 		# Label
+		$requiredTxt = ($field['required'] and $this->requiredTxt !== false) ? ' <abbr title="' . $this->requiredTxt . '">' . $this->requiredSymbol . '</abbr>' : '';
+
 		if ($field['label']) {
-			$label = '<label for="' . $field['id'] . '">' . $field['label'] . '</label>';
+			$label = '<label for="' . $field['id'] . '">' . $field['label'] . $requiredTxt . '</label>';
 		}
 		else {
 			$label = '';
@@ -459,5 +465,25 @@ class Form {
 		}
 
 		return $this->errorTxt;
+	}
+
+	public function requiredTxt ($v = false) {
+		if ($v !== false) {
+			$this->requiredTxt = $v;
+
+			return $this;
+		}
+
+		return $this->requiredTxt;
+	}
+
+	public function requiredSymbol ($v = false) {
+		if ($v !== false) {
+			$this->requiredSymbol = $v;
+
+			return $this;
+		}
+
+		return $this->requiredSymbol;
 	}
 }

@@ -12,27 +12,7 @@ form {
 
 	// Labels
 	label {
-		
-	}
-
-	// Fields
-	input[type=text], 
-	textarea {
-		@include form-field;
-	}
-
-	textarea {
-
-	}
-
-	select {
-		
-	}
-
-	// Buttons
-	input[type=submit], 
-	button {
-		@include button;
+		display: block;
 	}
 
 	// Error messages
@@ -43,5 +23,40 @@ form {
 	// "Mandatory"-*
 	abbr {
 		border-bottom: 0 !important;
+	}
+
+	// Fields
+	input[type=text], 
+	input[type=search], 
+	input[type=email], 
+	input[type=url], 
+	input[type=tel], 
+	input[type=number], 
+	input[type=date], 
+	input[type=month], 
+	input[type=week], 
+	input[type=time], 
+	input[type=datetime], 
+	input[type=datetime-local], 
+	input[type=color], 
+	textarea {
+		@include form-field;
+		box-sizing: border-box;
+	}
+
+	textarea {
+		resize: y;
+		max-width: 100%;
+	}
+
+	select {
+		box-sizing: border-box;
+	}
+
+	// Buttons
+	input[type=submit], 
+	button {
+		@include button;
+		box-sizing: border-box;
 	}
 }

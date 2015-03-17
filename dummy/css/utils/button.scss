@@ -24,20 +24,20 @@
 //	box-shadow: 1px 1px 1px $shadow-color;
 
 	// Separate grouped buttons
-	&:not(:only-child) {
+/*	&:not(:only-child) {
 		margin-right: 10px;
 		margin-left: 10px;
 	}
 
 	&:not(:only-child):first-child {
 		margin-left: 0;
-	}
+	} */
 
+	// Hover and visited (:active set byt button-background())
 	&:visited {
 		color: $white-color;
 	}
 
-	// Hover (:active set byt button-background())
 	&:hover {
 		color: $white-color;
 	}
