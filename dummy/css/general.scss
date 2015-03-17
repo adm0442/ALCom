@@ -120,8 +120,10 @@ blockquote {
 	margin: 0 0 $margin ($margin * 2);
 
 	font-size: 120%;
+	font-family: Georgia, serif;
 	font-style: italic;
 	font-weight: lighter;
+	color: $gray-color;
 
 	& > :first-child:before, 
 	& > :last-child:after {

@@ -44,19 +44,19 @@ $heading-letter-spacing: -.06em;
 $default-color: #333;
 $heading-color: #555;
 $gray-color: #999;
-$link-color: #09f;
-$link-color-hover: #09f;
+$link-color: #fc3; // #09f;
+$link-color-hover: #fc3; // #09f;
 $link-color-visited: #609;
 $border-color: #ccc;
 
 $white-color: #fefefe;
-$shadow-color: rgba(40, 40, 40, .4);
+$shadow-color: rgba(40, 40, 40, .6);
 
 $dark-bg: #111;
 $dark-gray-bg: #666;
 $gray-bg: #f6f6f6;
 
-$button-color: #09f;
-$button-primary-color: #c20;
+$button-color: #234; // #09f;
+$button-primary-color: #fc3; // #c20;
 $button-secondary-color: #666;
 $button-fade: 2%;

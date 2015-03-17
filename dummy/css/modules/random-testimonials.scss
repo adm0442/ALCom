@@ -1,13 +1,20 @@
 #random-testimonials {
 	article {
-		img {
-			float: right;
-			margin: 0 0 $margin $margin;
-			@include bordered(true);
-		}
+		figure {
+			text-align: center;
 
-		cite {
-			font-style: normal;
+			float: left;
+			margin: 0 $margin $margin 0;
+
+			img {
+				@include bordered(true);
+			}
+
+			figcaption {
+				cite {
+					font-style: normal;
+				}
+			}
 		}
 	}
 

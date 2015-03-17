@@ -4,12 +4,11 @@
 	display: inline-block;
 
 	margin: 0;
-	padding: .3rem 1.8rem;
+	padding: .4rem 1.8rem;
 
 	color: $white-color;
 	font-weight: normal;
 	text-decoration: none;
-//	text-shadow: 1px 1px 1px $shadow-color;
 
 	@if ($border) {
 		border: $border;
@@ -20,7 +19,7 @@
 
 	border-radius: 2rem;
 
-	box-shadow: 1px 1px 1px $shadow-color;
+//	box-shadow: 1px 1px 1px $shadow-color;
 
 	// Separate grouped buttons
 	&:not(:only-child) {
@@ -39,7 +38,7 @@
 
 	&:hover {
 		color: $white-color;
-		box-shadow: 2px 2px 2px darken($shadow-color, 20%);
+		box-shadow: 0 0 5px darken($shadow-color, 20%);
 	}
 }
 
@@ -54,4 +53,12 @@
 	@else {
 		background: $bg;
 	}
+
+	$btn-shadow-color: $shadow-color;
+
+	@if ($bg != transparent) {
+		$btn-shadow-color: darken($bg, 30%);
+	}
+
+	text-shadow: -1px -1px 0 $btn-shadow-color;
 }
