@@ -16,7 +16,7 @@
 		</ul>
 	</nav>
 
-	<form method="get" action="" id="search">
+	<form method="get" action="" id="search-form">
 
 		<p>
 			<input type="search" name="s" placeholder="Search" required> 
