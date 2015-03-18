@@ -1,0 +1,39 @@
+#random-projects {
+	article {
+		margin: 0;
+
+		img {
+			@include bordered();
+
+			display: block;
+			margin: 0 0 $margin;
+
+			@media #{$bp-3} {
+				float: left;
+				margin: 0 $margin $margin 0;
+			}
+		}
+
+		h2 {
+			margin-bottom: 0;
+
+			small {
+				@media #{$bp-3} {
+					display: inline-block;
+
+					&:before {
+						content: " - ";
+					}
+				}
+			}
+		}
+
+		ul {
+
+		}
+	}
+
+	article + article {
+		display: none;
+	}
+}

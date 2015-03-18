@@ -1,0 +1,63 @@
+#random-testimonials {
+	article {
+		@media #{$bp-3} {
+			@include flexbox;
+			@include justify-content(space-between);
+			@include align-items(center);
+		}
+
+		margin: 0;
+
+		perspective: 800px;
+
+		figure {
+			@include card-flip;
+
+			width: 200px;
+			margin: 0 auto $margin;
+
+			text-align: center;
+
+			@media #{$bp-3} {
+				@include flex-shrink(0);
+
+				margin: 0 $margin 0 0;
+			}
+
+			img {
+				@include bordered(true);
+				display: block;
+				width: 200px;
+			}
+
+			figcaption {
+				@include bordered(true);
+
+				background: $gray-bg;
+
+				padding-top: 50px;
+
+				cite {
+					display: block;
+					font-style: normal;
+				}
+			}
+		}
+
+		blockquote {
+			margin: 0;
+
+			@media #{$bp-3-max} {
+				@include speech-bubble(top);
+			}
+
+			@media #{$bp-3} {
+				@include speech-bubble(left);
+			}
+		}
+	}
+
+	article + article {
+		display: none;
+	}
+}
