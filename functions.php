@@ -11,7 +11,11 @@ function h5b_child_register_css_js () {
 #	wp_register_script('google_maps', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false');
 #	wp_enqueue_script('google_maps');
 
+	# Theme JS
+	wp_register_script('alcom_foot', get_stylesheet_directory_uri() . '/js/foot.php', array(), filemtime(get_stylesheet_directory() . '/js/foot.js'), true);
+	wp_enqueue_script('alcom_foot');
+
 	# Theme CSS
-	wp_register_style('h5b_child', get_stylesheet_directory_uri() . '/css/all.css', array(), filemtime(TEMPLATEPATH . '/css/all.css'));
+	wp_register_style('h5b_child', get_stylesheet_directory_uri() . '/css/all.css', array(), filemtime(get_stylesheet_directory() . '/css/all.css'));
 	wp_enqueue_style('h5b_child');
 }
