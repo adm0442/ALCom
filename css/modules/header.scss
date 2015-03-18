@@ -46,6 +46,7 @@
 	h1, 
 	p.logo {
 		@include heading($h3-size);
+		font-size: $h3-size !important; // Because @heading adjusts the size based on resolution - we don't want that in this case
 		margin: 0;
 		transition: font-size .1s ease-in-out;
 
@@ -131,7 +132,7 @@
 
 		h1, 
 		p.logo {
-			font-size: $h1-size;
+			font-size: $h1-size !important;
 
 			a {
 				small {
