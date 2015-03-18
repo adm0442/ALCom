@@ -16,6 +16,6 @@ function h5b_child_register_css_js () {
 	wp_enqueue_script('alcom_foot');
 
 	# Theme CSS
-	wp_register_style('h5b_child', get_stylesheet_directory_uri() . '/css/all.css', array(), filemtime(get_stylesheet_directory() . '/css/all.css'));
-	wp_enqueue_style('h5b_child');
+	wp_register_style('alcom', get_stylesheet_directory_uri() . '/css/all.css', array(), filemtime(get_stylesheet_directory() . '/css/all.css'));
+	wp_enqueue_style('alcom');
 }
