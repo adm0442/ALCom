@@ -43,9 +43,10 @@
 	transition: padding-top .1s ease-in-out, padding-bottom .1s ease-in-out, transform .2s ease-in-out;
 
 	// Logo
-	h1 {
+	h1, 
+	p.logo {
+		@include heading($h3-size);
 		margin: 0;
-		font-size: $h3-size;
 		transition: font-size .1s ease-in-out;
 
 		// Neutral link
@@ -78,7 +79,7 @@
 	}
 
 	// Navigation
-	nav {
+	div.widget_nav_menu {
 		margin: 0;
 
 		ul {
@@ -108,13 +109,15 @@
 	}
 
 	// Search
-	form {
+	div.widget_search {
 		display: none;
 
-		p {
-			margin: 0;
+		form {
+			p {
+				margin: 0;
 
-			input[type=search] {
+				input[type=search] {
+				}
 			}
 		}
 	}
@@ -126,7 +129,8 @@
 		padding-top: 35px;
 		padding-bottom: 35px;
 
-		h1 {
+		h1, 
+		p.logo {
 			font-size: $h1-size;
 
 			a {
