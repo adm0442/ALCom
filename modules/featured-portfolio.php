@@ -2,8 +2,8 @@
 
 	<article>
 
-		<figure><img src="img/exoticcars-1920.png"></figure>
-		<figure><img src="img/exoticcars-400.png"></figure>
+		<figure><img src="http://tmp.dev/alcomimg/exoticcars-1920.png"></figure>
+		<figure><img src="http://tmp.dev/alcomimg/exoticcars-400.png"></figure>
 
 		<h2><a href="#">ExoticCarsDubai.com</a></h2>
 
@@ -23,8 +23,8 @@
 
 	<article>
 
-		<figure><img src="img/aquadental-1920.png"></figure>
-		<figure><img src="img/aquadental-400.png"></figure>
+		<figure><img src="http://tmp.dev/alcomimg/aquadental-1920.png"></figure>
+		<figure><img src="http://tmp.dev/alcomimg/aquadental-400.png"></figure>
 
 		<h2><a href="#">AquaDental.se</a></h2>
 
@@ -44,8 +44,8 @@
 
 	<article>
 
-		<figure><img src="img/immensa-1920.png"></figure>
-		<figure><img src="img/immensa-400.png"></figure>
+		<figure><img src="http://tmp.dev/alcomimg/immensa-1920.png"></figure>
+		<figure><img src="http://tmp.dev/alcomimg/immensa-400.png"></figure>
 
 		<h2><a href="#">Immensa.se</a></h2>
 
@@ -65,7 +65,7 @@
 
 	<article>
 
-		<figure><img src="img/towejewels-1920.png"></figure>
+		<figure><img src="http://tmp.dev/alcomimg/towejewels-1920.png"></figure>
 
 		<h2><a href="#">TOWEJewels.com</a></h2>
 
@@ -85,8 +85,8 @@
 
 	<article>
 
-		<figure><img src="img/bmwfinancialservices-1920.png"></figure>
-		<figure><img src="img/bmwfinancialservices-400.png"></figure>
+		<figure><img src="http://tmp.dev/alcomimg/bmwfinancialservices-1920.png"></figure>
+		<figure><img src="http://tmp.dev/alcomimg/bmwfinancialservices-400.png"></figure>
 
 		<h2><a href="#">BMW Financial Services</a></h2>
 
@@ -106,8 +106,8 @@
 
 	<article>
 
-		<figure><img src="img/dubicars-1920.png"></figure>
-		<figure><img src="img/dubicars-400.png"></figure>
+		<figure><img src="http://tmp.dev/alcomimg/dubicars-1920.png"></figure>
+		<figure><img src="http://tmp.dev/alcomimg/dubicars-400.png"></figure>
 
 		<h2><a href="#">DubiCars.com</a></h2>
 
@@ -126,7 +126,7 @@
 
 	<article>
 
-		<figure><img src="img/secmaker-1920.png"></figure>
+		<figure><img src="http://tmp.dev/alcomimg/secmaker-1920.png"></figure>
 
 		<h2><a href="#">SecMaker.com</a></h2>
 
@@ -146,8 +146,8 @@
 
 	<article>
 
-		<figure><img src="img/conversionista-1920.png"></figure>
-		<figure><img src="img/conversionista-400.png"></figure>
+		<figure><img src="http://tmp.dev/alcomimg/conversionista-1920.png"></figure>
+		<figure><img src="http://tmp.dev/alcomimg/conversionista-400.png"></figure>
 
 		<h2><a href="#">Conversionista.com</a></h2>
 
