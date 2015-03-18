@@ -11,6 +11,10 @@
 
 </main>
 
-<?php include get_stylesheet_directory() . '/modules/contact.php' ?>
+<aside id="aside">
+
+	<?php include get_stylesheet_directory() . '/modules/contact.php' ?>
+
+</aside>
 
 <?php get_footer() ?>

@@ -86,7 +86,7 @@
 			}
 
 			// Don't show the phone on phones :P
-			@media #{$bp-4-max} {
+			@media #{$bp-5-max} {
 				display: none;
 			}
 		}

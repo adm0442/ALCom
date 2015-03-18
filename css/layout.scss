@@ -3,13 +3,25 @@ body {
 }
 
 main, 
-aside {
+#aside {
 	margin: 0;
 
 	> * {
 		@include section;
 
 		&:nth-child(even) {
+			background: $gray-bg;
+		}
+	}
+}
+
+#aside {
+	> * {
+		&:nth-child(even) {
+			background: transparent;
+		}
+
+		&:nth-child(odd) {
 			background: $gray-bg;
 		}
 	}
@@ -24,5 +36,9 @@ aside {
 }
 
 header + main {
-	padding-top: 150px;
+	padding-top: 100px;
+
+	@media #{$bp-3} {
+		padding-top: 150px;
+	}
 }
