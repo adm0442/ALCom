@@ -8,7 +8,7 @@ require_once 'JavaScriptPacker.php';
 
 $code = '';
 
-foreach (glob('../../html5base/js/foot-*.js') as $file) {
+foreach (glob('../../sleek/js/foot-*.js') as $file) {
 	$code .= file_get_contents($file);
 }
 
