@@ -1,13 +1,6 @@
 #about {
 	img {
 		@include bordered;
-
-		display: block;
-		margin: 0 0 $margin;
-
-		@media #{$bp-3} {
-			float: right;
-			margin: 0 0 $margin $margin;
-		}
+		@include img-right($bp-3);
 	}
 }

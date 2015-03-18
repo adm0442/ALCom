@@ -3,14 +3,11 @@
 
 	img {
 		@include bordered;
+		@include img-left($bp-3);
 
-		display: block;
-		margin: 0 0 $margin;
-
+		// Make it half width
 		@media #{$bp-3} {
 			width: calc(50% - #{$margin / 2});
-			margin: 0 $margin $margin 0;
-			float: left;
 		}
 	}
 }

@@ -7,7 +7,7 @@
 	<?php include get_stylesheet_directory() . '/modules/random-testimonials.php' ?>
 	<?php include get_stylesheet_directory() . '/modules/latest-blog.php' ?>
 	<?php include get_stylesheet_directory() . '/modules/random-projects.php' ?>
-	<?php include get_stylesheet_directory() . '/modules/about.php' ?>
+	<?php dynamic_sidebar('aside') ?>
 
 </main>
 

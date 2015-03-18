@@ -4,14 +4,7 @@
 
 		img {
 			@include bordered();
-
-			display: block;
-			margin: 0 0 $margin;
-
-			@media #{$bp-3} {
-				float: left;
-				margin: 0 $margin $margin 0;
-			}
+			@include img-left($bp-3);
 		}
 
 		h2 {
