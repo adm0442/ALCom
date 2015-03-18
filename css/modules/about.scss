@@ -1,6 +1,6 @@
 #about {
 	img {
-		@include bordered;
+		@include framed;
 		@include img-right($bp-3);
 	}
 }

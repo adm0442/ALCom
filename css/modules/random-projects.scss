@@ -3,7 +3,7 @@
 		margin: 0;
 
 		img {
-			@include bordered();
+			@include framed;
 			@include img-left($bp-3);
 		}
 

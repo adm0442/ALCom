@@ -25,13 +25,13 @@
 			}
 
 			img {
-				@include bordered(true);
+				@include framed(true);
 				display: block;
 				width: 200px;
 			}
 
 			figcaption {
-				@include bordered(true);
+				@include framed(true);
 
 				background: $gray-bg;
 

@@ -2,7 +2,7 @@
 	@include clearfix;
 
 	img {
-		@include bordered;
+		@include framed;
 		@include img-left($bp-3);
 
 		// Make it half width
