@@ -10,7 +10,7 @@ main,
 		@include section;
 
 		&:nth-child(even) {
-			background: $gray-bg;
+			background: $alt-bg;
 		}
 	}
 }
@@ -22,7 +22,7 @@ main,
 		}
 
 		&:nth-child(odd) {
-			background: $gray-bg;
+			background: $alt-bg;
 		}
 	}
 }
@@ -32,7 +32,7 @@ main,
 }
 
 #home-page main > *:nth-child(odd) {
-	background: $gray-bg;
+	background: $alt-bg;
 }
 
 header + main {

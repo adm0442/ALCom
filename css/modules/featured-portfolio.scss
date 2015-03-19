@@ -41,6 +41,10 @@
 		}
 
 		figure:first-child {
+			@media #{$bp-3-max} {
+				display: none;
+			}
+
 			position: absolute;
 			left: 0;
 			top: 0;
@@ -193,10 +197,11 @@
 		border: 5px solid $white-color;
 		border-radius: 100%;
 
-		transition: opacity .2s ease-out;
+		transition: opacity .2s ease-out, transform .2s ease-out;
 		opacity: .2;
 
 		&:hover {
+			transform: scale(1.1);
 			opacity: .8;
 		}
 
