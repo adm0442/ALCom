@@ -18,7 +18,7 @@
 
 		<p>
 			<a href="http://www.exoticcarsdubai.com" class="button">Visit the site</a> or 
-			<a href="#" class="button secondary icon-arrow-circle-right">Read more about the project</a>
+			<a href="#" class="button secondary">Read more about the project</a>
 		</p>
 
 	</article>

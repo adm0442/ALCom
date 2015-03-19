@@ -109,6 +109,14 @@
 			@media #{$bp-3} {
 				font-size: $h1-size;
 			}
+
+			a {
+				color: $white-color;
+
+				&:hover {
+					color: $link-color-hover;
+				}
+			}
 		}
 
 		// Tags/technologies used
