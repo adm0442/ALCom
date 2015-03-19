@@ -13,7 +13,7 @@
 		figure {
 			@include card-flip;
 
-			width: 200px;
+			width: 180px;
 			margin: 0 auto $margin;
 
 			text-align: center;
@@ -27,7 +27,7 @@
 			img {
 				@include framed(true);
 				display: block;
-				width: 200px;
+				width: 100%;
 			}
 
 			figcaption {
