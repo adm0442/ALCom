@@ -2,9 +2,6 @@
 	@include clearfix;
 
 	img {
-		@include framed;
-		@include img-left($bp-3);
-
 		// Make it half width
 		@media #{$bp-3} {
 			width: calc(50% - #{$margin / 2});

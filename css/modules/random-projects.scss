@@ -2,11 +2,6 @@
 	article {
 		margin: 0;
 
-		img {
-			@include framed;
-			@include img-left($bp-3);
-		}
-
 		h2 {
 			small {
 				@media #{$bp-3} {
@@ -17,10 +12,6 @@
 					}
 				}
 			}
-		}
-
-		ul {
-
 		}
 	}
 

@@ -2,7 +2,7 @@
 
 	<h2>
 		<a href="#">
-			<img src="//lorempixel.com/400/250/abstract">
+			<img src="//lorempixel.com/400/250/abstract" class="framed alignleft">
 			<small>From the Blog</small> 
 			New design :)
 		</a>

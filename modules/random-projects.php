@@ -3,7 +3,7 @@
 	<article>
 
 		<h2>
-			<a href="#"><img src="//lorempixel.com/180/180/abstract"> HTMLContent</a> 
+			<a href="#"><img src="//lorempixel.com/180/180/abstract" class="framed alignleft"> HTMLContent</a> 
 			<small><a href="#">WordPress</a></small>
 		</h2>
 
@@ -21,7 +21,7 @@
 	<article>
 
 		<h2>
-			<a href="#"><img src="//lorempixel.com/180/180/abstract"> HTML5Forms</a> 
+			<a href="#"><img src="//lorempixel.com/180/180/abstract" class="framed alignleft"> HTML5Forms</a> 
 			<small><a href="#">WordPress</a></small>
 		</h2>
 
