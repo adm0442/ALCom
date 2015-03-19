@@ -3,13 +3,13 @@
 	<article>
 
 		<h2>
-			<a href="#"><img src="//lorempixel.com/180/180/abstract" class="framed alignleft"> HTMLContent</a> 
+			<a href="#"><img src="//lorempixel.com/180/180/abstract" class="framed alignleft"> HTMLWidget</a> 
 			<small><a href="#">WordPress</a></small>
 		</h2>
 
 		<ul class="tags">
-			<li><a href="#">wordpress-plugin</a></li>
-			<li><a href="#">php</a></li>
+			<li><a href="#" class="icon-wordpress">wordpress-plugin</a></li>
+			<li><a href="#" class="icon-file-code-o">php</a></li>
 		</ul>
 
 		<p>Aboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
