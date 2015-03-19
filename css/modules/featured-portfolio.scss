@@ -28,7 +28,11 @@
 		position: relative;
 		overflow: hidden;
 
-		padding-top: 120px;
+		padding-top: 80px;
+
+		@media #{$bp-3} {
+			padding-top: 120px;
+		}
 
 		// Images
 		// First (Desktop) image as background
