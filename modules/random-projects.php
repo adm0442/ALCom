@@ -14,7 +14,7 @@
 
 		<p>Aboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
 
-		<p><a href="#" class="button down">Download</a></p>
+		<p><a href="#" class="button">Download</a></p>
 
 	</article>
 
@@ -33,7 +33,7 @@
 
 		<p>Aboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
 
-		<p><a href="#" class="button down">Download</a></p>
+		<p><a href="#" class="button">Download</a></p>
 
 	</article>
 
@@ -51,7 +51,7 @@
 
 		<p>Aboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
 
-		<p><a href="#" class="button down">Download</a></p>
+		<p><a href="#" class="button">Download</a></p>
 
 	</article>
 
