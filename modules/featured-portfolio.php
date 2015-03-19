@@ -8,7 +8,7 @@
 		<h2><a href="#">ExoticCarsDubai.com</a></h2>
 
 		<ul class="tags">
-			<li><a href="#" class="icon-wordpress">wordpress-theme</a></li>
+			<li><a href="#" class="icon-wordpress">wordpress</a></li>
 			<li><a href="#" class="icon-mobile">responsive</a></li>
 			<li><a href="#" class="icon-css3">css3</a></li>
 			<li><a href="#">jquery</a></li>
@@ -75,7 +75,7 @@
 		<h2><a href="#">Conversionista.com</a></h2>
 
 		<ul class="tags">
-			<li><a href="#" class="icon-wordpress">wordpress-theme</a></li>
+			<li><a href="#" class="icon-wordpress">wordpress</a></li>
 			<li><a href="#" class="icon-mobile">responsive</a></li>
 			<li><a href="#" class="icon-css3">css3</a></li>
 		</ul>

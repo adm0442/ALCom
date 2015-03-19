@@ -4,7 +4,8 @@
 	img {
 		// Make it half width
 		@media #{$bp-3} {
-			width: calc(50% - #{$margin / 2});
+			width: 50% - $gutter / 2;
+			margin-right: $gutter;
 		}
 	}
 }

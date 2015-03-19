@@ -5,7 +5,7 @@
 
 	// Shadow
 	&:after {
-		background: linear-gradient(0, rgba($shadow-color, .8), rgba($shadow-color, 0));
+		background: linear-gradient(0, rgba($shadow-color, .6), rgba($shadow-color, 0));
 
 		display: block;
 		content: "";
