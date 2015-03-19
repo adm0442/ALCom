@@ -36,7 +36,7 @@
 				'step' => '500', 
 				'value' => '0', 
 				'attributes' => array(
-					'data-value-type-before' => '€'
+					'data-value-prefix' => '€'
 				)
 			), 
 			array(
