@@ -71,7 +71,7 @@
 
 		// Potential low-res images (tablet/phone)
 		figure + figure {
-			@include device(320px); // ("gfx/iphone.svg", 320, 100, 209.75, 14.30%, 6.41%, 13.54%, 7.56%);
+			@include device(320px);
 
 			float: right;
 			margin-bottom: -300px;
