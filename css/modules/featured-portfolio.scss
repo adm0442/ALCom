@@ -28,11 +28,7 @@
 		position: relative;
 		overflow: hidden;
 
-		padding-top: 100px;
-
-		@media #{$bp-3} {
-			padding-top: 200px;
-		}
+		padding-top: 120px;
 
 		// Images
 		// First (Desktop) image as background
@@ -74,7 +70,7 @@
 			@include device(320px);
 
 			float: right;
-			margin-bottom: -300px;
+			margin-bottom: -300px; // This is used if slideshow isnt
 			margin-left: $margin * 2;
 
 			// Scroll the img (website screenshot) on hover
@@ -102,7 +98,7 @@
 
 		// Project title
 		h2 {
-			margin-top: 100px;
+			margin-top: 70px;
 			margin-bottom: 0;
 			text-shadow: 1px 1px 1px $shadow-color;
 
@@ -126,7 +122,6 @@
 
 		// Description
 		ul + p {
-			margin-bottom: $margin * 2;
 			text-shadow: 1px 1px 1px $shadow-color;
 			font-size: 120%;
 			line-height: 1.2;
@@ -150,15 +145,15 @@
 	position: relative;
 	overflow: hidden;
 
-	min-height: 800px;
+	min-height: 550px;
 
-	@media #{$bp-2} {
+/*	@media #{$bp-2} {
 		min-height: 700px;
 	}
 
 	@media #{$bp-3} {
 		min-height: 700px;
-	}
+	} */
 
 	// Every item starts above
 	article {

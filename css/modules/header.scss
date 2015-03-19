@@ -125,7 +125,7 @@
 }
 
 // In hi res - when user hasn't scrolled down - display a larger header with tagline
-@media #{$bp-3} {
+/* @media #{$bp-3} {
 	body:not(.has-scrolled) #header {
 		padding-top: 35px;
 		padding-bottom: 35px;
@@ -141,7 +141,7 @@
 			}
 		}
 	}
-}
+} */
 
 // Menu de la hamburguesa
 @media #{$bp-3-max} {
