@@ -2,8 +2,6 @@
 	@include clearfix;
 
 	article {
-		margin: 0;
-
 		h2 a:before {
 			@include img-right(false);
 			font-size: 80px;
