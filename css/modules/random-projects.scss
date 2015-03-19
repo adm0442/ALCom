@@ -1,21 +1,32 @@
 #random-projects {
+	@include clearfix;
+
 	article {
 		margin: 0;
 
-		h2 {
-			small {
-				@media #{$bp-3} {
-					display: inline-block;
+		h2 a:before {
+			@include img-right;
+			font-size: 80px;
+			margin-right: $margin;
+		}
 
-					&:before {
-						content: " - ";
-					}
-				}
-			}
+		@media #{$bp-3} {
+			width: 50% - $gutter;
+			float: left;
+		}
+
+		img {
+			border-width: 5px;
+		}
+
+		a.button + a.button {
+			margin-left: $margin;
 		}
 	}
 
 	article + article {
-		display: none;
+		@media #{$bp-3} {
+			float: right;
+		}
 	}
 }
