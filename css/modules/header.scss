@@ -40,7 +40,7 @@
 	}
 
 	// We'll adjust its size later
-	transition: padding-top .1s ease-in-out, padding-bottom .1s ease-in-out, transform .2s ease-in-out;
+	transition: padding-top .1s ease-out, padding-bottom .1s ease-out, transform .2s ease-out;
 
 	// Logo
 	h1, 
@@ -48,7 +48,7 @@
 		@include heading($h3-size);
 		font-size: $h3-size !important; // Because @heading adjusts the size based on resolution - we don't want that in this case
 		margin: 0;
-		transition: font-size .1s ease-in-out;
+		transition: font-size .1s ease-out;
 
 		// Neutral link
 		a {
@@ -74,7 +74,7 @@
 
 				// Hide tagline for now
 				max-height: 0;
-				transition: max-height .2s ease-in-out;
+				transition: max-height .2s ease-out;
 			}
 		}
 	}
