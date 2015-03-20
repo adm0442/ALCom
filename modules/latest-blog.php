@@ -18,7 +18,7 @@
 			</a>
 		</h2>
 
-		<?php sleek_get_module('partials/tags') ?>
+		<?php sleek_get_module('partials/tags', array('taxonomy' => 'post_tag')) ?>
 
 		<?php the_excerpt() ?>
 

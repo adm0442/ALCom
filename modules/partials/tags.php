@@ -10,9 +10,8 @@
 
 	global $post;
 
-	$taxType = 'post_tag';
+	$taxType = $taxonomy;
 
-	# TODO: This file should handle all types of taxonomies not just post-tags
 	$theTags = wp_get_post_terms($post->ID, $taxType, array(
 		
 	));
@@ -24,7 +23,7 @@
 			<a href="<?php echo get_term_link($theTag) ?>" class="icon-<?php echo isset($tag2ico[$theTag->slug]) ? $tag2ico[$theTag->slug] : 'tag' ?>">
 				<?php echo $theTag->name ?>
 			</a>
-		<li>
+		</li>
 	<?php endforeach ?>
 </ul>
 
