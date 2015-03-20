@@ -5,6 +5,7 @@ App.modules.FeaturedPortfolio = {
 		var items = mod.getElementsByTagName('article');
 		var i = 0;
 		var num = items.length;
+		var zIndex = 1;
 
 		// Set the first one to active now
 		items[i].classList.add('active');
@@ -16,6 +17,7 @@ App.modules.FeaturedPortfolio = {
 
 			i = (i + 1 == num ? 0 : i + 1);
 
+			items[i].style.zIndex = ++zIndex;
 			items[i].classList.add('active');
 
 			setTimeout(function () {
