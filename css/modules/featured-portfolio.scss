@@ -42,7 +42,7 @@
 
 		figure:first-child {
 			@media #{$bp-3-max} {
-				display: none;
+			//	display: none;
 			}
 
 			position: absolute;
