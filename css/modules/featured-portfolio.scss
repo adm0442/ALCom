@@ -5,7 +5,7 @@
 
 	// Shadow
 	&:after {
-		background: linear-gradient(0, rgba($shadow-color, .6), rgba($shadow-color, 0));
+		background: linear-gradient(0, rgba($shadow-color, .4), rgba($shadow-color, 0));
 
 		display: block;
 		content: "";
@@ -62,7 +62,6 @@
 
 				margin-left: -960px; // Images are 1920x1080
 
-			//	opacity: .2;
 				opacity: .8;
 				filter: blur(30px);
 				-webkit-filter: blur(30px);
@@ -71,7 +70,7 @@
 
 		// Potential low-res images (tablet/phone)
 		figure + figure {
-			@include device(320px);
+			@include device(280px);
 
 			float: right;
 			margin-bottom: -300px; // This is used if slideshow isnt
@@ -90,7 +89,7 @@
 			}
 
 			// Don't show the phone on phones :P
-			@media #{$bp-5-max} {
+			@media #{$bp-4-max} {
 				display: none;
 			}
 		}
@@ -144,20 +143,36 @@
 	}
 }
 
+// Bounce animation
+@mixin fp-ease-out-bounce {
+	0% { transform: translateY(-100%); animation-timing-function: ease-in; }
+	37% { transform: translateY(0%); animation-timing-function: ease-out; }
+	55% { transform: translateY(-16%); animation-timing-function: ease-in; }
+	73% { transform: translateY(0%); animation-timing-function: ease-out; }
+	84% { transform: translateY(-4%); animation-timing-function: ease-in; }
+	91% { transform: translateY(0%); animation-timing-function: ease-out; }
+	96% { transform: translateY(-1%); animation-timing-function: ease-in; }
+	100% { transform: translateY(0%); }
+}
+
+@-webkit-keyframes fp-ease-out-bounce {
+	@include fp-ease-out-bounce;
+}
+
+@-moz-keyframes fp-ease-out-bounce {
+	@include fp-ease-out-bounce;
+}
+
+@keyframes fp-ease-out-bounce {
+	@include fp-ease-out-bounce;
+}
+
 // "Slideshow" code
 #featured-portfolio {
 	position: relative;
 	overflow: hidden;
 
 	min-height: 550px;
-
-/*	@media #{$bp-2} {
-		min-height: 700px;
-	}
-
-	@media #{$bp-3} {
-		min-height: 700px;
-	} */
 
 	// Every item starts above
 	article {
@@ -167,18 +182,26 @@
 
 		width: 100%;
 		height: 100%;
-
-		transform: translateY(-100%);
-
 		box-sizing: border-box;
 
-		transition: transform .4s ease-out;
+		transform: translateY(-100%);
+	//	transition: transform .4s ease-out;
+		transition: transform 0 .6s;
 	}
 
-	// The active item gets pushed down
+	// The active item gets pushed down (TODO: Prevent first item from animating onload + fix last item/first item animation (z-index))
 	article.active, 
 	article:first-child, 
 	&.loaded article.active:first-child {
+	//	transform: translateY(0);
+		-webkit-animation-name: fp-ease-out-bounce;
+		-moz-animation-name: fp-ease-out-bounce;
+		animation-name: fp-ease-out-bounce;
+
+		-webkit-animation-duration: .6s;
+		-moz-animation-duration: .6s;
+		animation-duration: .6s;
+
 		transform: translateY(0);
 	}
 
