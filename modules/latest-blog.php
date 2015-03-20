@@ -1,22 +1,28 @@
+<?php
+	global $post;
+
+	$rows = get_posts(array(
+		'post_type' => 'post', 
+		'numberposts' => 1
+	));
+?>
+
 <section id="latest-blog">
 
-	<h2>
-		<a href="#">
-			<img src="//lorempixel.com/400/250/abstract" class="framed alignleft">
-			<small>From the Blog</small> 
-			New design :)
-		</a>
-	</h2>
+	<?php foreach ($rows as $post) : setup_postdata($post) ?>
+		<h2>
+			<a href="<?php the_permalink() ?>">
+				<?php the_post_thumbnail('alcom-medium', array('class' => 'framed alignleft')) ?>
+				<small>From the Blog</small> 
+				<?php the_title() ?>
+			</a>
+		</h2>
 
-	<ul class="tags">
-		<li><a href="#" class="icon-apple">design</a></li>
-		<li><a href="#" class="icon-terminal">development</a></li>
-		<li><a href="#" class="icon-css3">css</a></li>
-		<li><a href="#" class="icon-wordpress">wordpress</a></li>
-	</ul>
+		<?php sleek_get_module('partials/tags') ?>
 
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+		<?php the_excerpt() ?>
 
-	<p><a href="#" class="button">Keep reading</a></p>
+		<p><a href="<?php the_permalink() ?>" class="button">Keep reading</a></p>
+	<?php endforeach; wp_reset_postdata() ?>
 
 </section>
