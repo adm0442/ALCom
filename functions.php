@@ -21,17 +21,17 @@ function alcom_register_css_js () {
 }
 
 # Thumbnails sizes
-# add_action('init', 'sleek_child_post_thumbnails');
+add_action('init', 'alcom_post_thumbnails');
 
-function sleek_child_post_thumbnails () {
-	add_image_size('sleek-child-small', 120, 120, true);
-	add_image_size('sleek-child-hd', 1920, 1080, true);
+function alcom_post_thumbnails () {
+	add_image_size('alcom-small', 200, 200, true);
+#	add_image_size('alcom-hd', 1920, 1080, true);
 }
 
 # Sidebars
-add_action('init', 'sleek_child_register_sidebars');
+add_action('init', 'alcom_register_sidebars');
 
-function sleek_child_register_sidebars () {
+function alcom_register_sidebars () {
 	sleek_register_sidebars(array(
 		'aside'		=> __('Aside', 'sleek'), 
 		'header'	=> __('Header', 'sleek'), 
@@ -40,17 +40,24 @@ function sleek_child_register_sidebars () {
 }
 
 # Custom post types and taxonomies
-# add_action('init', 'sleek_child_register_post_types');
+add_action('init', 'alcom_register_post_types');
 
-function sleek_child_register_post_types () {
+function alcom_register_post_types () {
+	$customPostTypes = array('portfolio', 'projects', 'testimonials');
+	$allPostTypes = array_merge(array('post', 'page'), $customPostTypes);
+
 	sleek_register_post_types(
 		# Post types
-		array('movies', 'directors'), 
+		$customPostTypes, 
 
 		# Taxonomies and which post types they belong to
 		array(
-			'genres' => array('movies'), 
-			'countries' => array('directors', 'movies')
+			# Misc category - used for things like "featured"
+			'misc' => $allPostTypes, 
+
+			# Post type specific tags
+			'portfolio_tags' => array('portfolio'), 
+			'project_tags' => array('projects')
 		)
 	);
 }
