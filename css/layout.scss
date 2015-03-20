@@ -1,5 +1,5 @@
-body {
-
+a {
+	transition: color .1s ease-out;
 }
 
 main, 
@@ -27,14 +27,12 @@ main,
 	}
 }
 
-#home-page main > *:nth-child(even) {
-	background: transparent;
-}
-
-#home-page main > *:nth-child(odd) {
-	background: $alt-bg;
-}
-
+// Make room for header
 header + main {
 	padding-top: 100px;
+}
+
+// Except on pages which start with the featured-portfolio
+#home-page header + main {
+	padding-top: 0;
 }

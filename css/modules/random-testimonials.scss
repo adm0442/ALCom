@@ -10,8 +10,12 @@
 
 		perspective: 800px;
 
+		&:hover figure {
+			transform: rotateY(180deg);
+		}
+
 		figure {
-			@include card-flip;
+			@include card-flip(false);
 
 			width: 180px;
 			margin: 0 auto $margin;

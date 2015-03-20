@@ -1,7 +1,12 @@
 #featured-portfolio {
+	background: #050a12;
+
 	position: relative;
 	margin: 0;
 	color: $white-color;
+
+	// General layout makes this a section - undo
+	padding: 0;
 
 	// Shadow
 	&:after {
@@ -21,9 +26,7 @@
 
 	// Each portfolio item
 	article {
-		@include section();
-
-		background: #050a12;
+		@include section(#050a12);
 
 		position: relative;
 		overflow: hidden;
