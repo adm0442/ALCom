@@ -66,9 +66,9 @@
 
 				margin-left: -960px; // Images are 1920x1080
 
-				opacity: .05;
-			//	filter: blur(30px); // Too slow...
-			//	-webkit-filter: blur(30px);
+				opacity: .8;
+				filter: blur(30px); // Too slow...
+				-webkit-filter: blur(30px);
 			}
 
 			canvas {

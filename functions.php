@@ -33,7 +33,6 @@ add_action('init', 'alcom_register_sidebars');
 
 function alcom_register_sidebars () {
 	sleek_register_sidebars(array(
-		'aside'		=> __('Aside', 'sleek'), 
 		'header'	=> __('Header', 'sleek'), 
 		'footer'	=> __('Footer', 'sleek')
 	));
@@ -88,13 +87,15 @@ add_action('init', 'sleek_cleanup_head');
 # add_action('init', 'sleek_add_excerpts_to_pages');
 
 # Add some fields to users
-# add_filter('user_contactmethods', 'sleek_add_user_fields');
+add_filter('user_contactmethods', 'alcom_add_user_fields');
 
-# Allow HTML in Widget Titles (with [tags])
-add_filter('widget_title', 'sleek_html_in_widget_titles');
+function alcom_add_user_fields () {
+	$fields['googleplus'] = __('Google+', 'sleek');
+	$fields['stackoverflow'] = __('StackOverflow', 'sleek');
+	$fields['github'] = __('GitHub', 'sleek');
 
-# Allow shortcodes in Widgets
-add_action('init', 'sleek_allow_shortcodes_in_widgets');
+	return $fields;
+}
 
 # Short codes
 add_action('init', 'alcom_register_shortcodes');

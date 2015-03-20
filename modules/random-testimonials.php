@@ -3,7 +3,15 @@
 
 	$rows = get_posts(array(
 		'post_type' => 'testimonials', 
-		'numberposts' => 4
+		'numberposts' => 1, 
+		'orderby' => 'rand', 
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'misc', 
+				'field' => 'slug', 
+				'terms' => 'featured'
+			)
+		)
 	));
 ?>
 
@@ -25,7 +33,7 @@
 							$output = ob_get_contents();
 							ob_end_clean();
 
-							echo strip_tags($output);
+							echo strip_tags($output, '<br><br/>');
 						?>
 					</small>
 				</figcaption>

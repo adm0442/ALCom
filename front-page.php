@@ -11,7 +11,8 @@
 
 <aside id="aside">
 
-	<?php dynamic_sidebar('aside') ?>
+	<?php sleek_include_module('about') ?>
+	<?php sleek_include_module('contact') ?>
 
 </aside>
 
