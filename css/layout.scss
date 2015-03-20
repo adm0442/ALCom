@@ -15,18 +15,6 @@ main,
 	}
 }
 
-#aside {
-	> * {
-		&:nth-child(even) {
-			background: transparent;
-		}
-
-		&:nth-child(odd) {
-			background: $alt-bg;
-		}
-	}
-}
-
 // Make room for header
 header + main {
 	padding-top: 100px;
