@@ -101,14 +101,13 @@ $header-bg-color: #012;
 				display: inline-block;
 				margin: 0 10px 0 0;
 				cursor: pointer; // Pretend it's a link (we make it clickable with JS)
+				position: relative;
 
 				@media #{$bp-3} {
 					margin: 0 0 0 20px;
 				}
 
 				a {
-					position: relative;
-
 					font-size: $default-size * .8;
 					text-transform: uppercase;
 					color: rgba($white-color, .8);
@@ -219,9 +218,9 @@ $header-bg-color: #012;
 			float: left;
 			height: 100%;
 
-		  -webkit-transform-style: preserve-3d; // Fix potential bluriness
-		  -moz-transform-style: preserve-3d;
-		  transform-style: preserve-3d;
+			-webkit-transform-style: preserve-3d; // Fix potential bluriness
+			-moz-transform-style: preserve-3d;
+			transform-style: preserve-3d;
 
 			a {
 				display: block;
