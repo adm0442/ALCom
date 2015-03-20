@@ -37,8 +37,4 @@ main,
 
 header + main {
 	padding-top: 100px;
-
-	@media #{$bp-3} {
-		padding-top: 150px;
-	}
 }

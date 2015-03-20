@@ -26,8 +26,8 @@
 		</h2>
 
 		<ul class="tags">
-			<li><a href="#" class="icon-wordpress">wordpress-plugin</a></li>
-			<li><a href="#" class="icon-file-code-o">php</a></li>
+			<li><a href="#" class="icon-jquery">jquery-plugin</a></li>
+			<li><a href="#" class="icon-image">images</a></li>
 		</ul>
 
 		<p>Adipisicing elit, sed do eiusmod tempor incididunt ut labore et  voluptate velit.</p>

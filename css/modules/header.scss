@@ -1,3 +1,5 @@
+$header-bg-color: #012;
+
 #header {
 	@include section();
 
@@ -11,8 +13,6 @@
 	padding-bottom: 10px;
 
 	// Background color, shadow
-	$header-bg-color: #012;
-
 //	background: linear-gradient(180deg, rgba($header-bg-color, .8) 50%, rgba($header-bg-color, .85) 50%, rgba($header-bg-color, .9));
 	background: rgba($header-bg-color, .8);
 //	background: linear-gradient(140deg, rgba($header-bg-color, .75) 30%, lighten(rgba($header-bg-color, .75), 25%) 40%, lighten(rgba($header-bg-color, .75), 25%) 60%, rgba($header-bg-color, .75) 70%);
@@ -69,7 +69,7 @@
 				@include body-text;
 				line-height: 1.4;
 				letter-spacing: 0;
-				color: inherit;
+				color: $white-color;
 				overflow: hidden;
 
 				// Hide tagline for now
@@ -98,20 +98,62 @@
 
 			li {
 				display: inline-block;
-				margin: 0 5px 0 0;
+				margin: 0 10px 0 0;
+				cursor: pointer; // Pretend it's a link (we make it clickable with JS)
 
 				@media #{$bp-3} {
-					margin: 0 0 0 10px;
+					margin: 0 0 0 20px;
 				}
 
 				a {
-					color: inherit;
+					position: relative;
+
+					color: rgba($white-color, .8);
 					text-decoration: none;
 					text-shadow: none;
 
 					&:hover, 
 					&:active {
-						
+						color: $white-color;
+					}
+
+					// Underline
+					&:before, 
+					&:after {
+						background: rgba($white-color, .8);
+
+						display: block;
+						content: "";
+
+						position: absolute;
+						left: 50%;
+						bottom: -10px;
+
+						width: 0;
+						height: 5px;
+
+						transition: width .1s ease-out, left .1s ease-out;
+					}
+
+					&:before {
+					//	border-radius: 2px 0 0 2px;
+					}
+
+					&:after {
+					//	border-radius: 0 2px 2px 0;
+					}
+				}
+
+				// Hover border
+				&.active a, 
+				&:hover a {
+					&:before {
+						left: 0;
+						width: 50%;
+					}
+
+					&:after {
+						width: 50%;
 					}
 				}
 			}
@@ -156,5 +198,119 @@
 @media #{$bp-3-max} {
 	body.has-scrolled.scrolling-down #header {
 		transform: translateY(-100%);
+	}
+}
+
+// New styling for menu (can be commented to get the old version)
+@media #{$bp-3} {
+	#header {
+		display: block;
+		height: 55px;
+
+		padding-top: 0;
+		padding-bottom: 0;
+
+		h1, 
+		p.logo {
+			float: left;
+			height: 100%;
+
+		  -webkit-transform-style: preserve-3d; // Fix potential bluriness
+		  -moz-transform-style: preserve-3d;
+		  transform-style: preserve-3d;
+
+			a {
+				display: block;
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+
+		div.widget_nav_menu {
+			float: right;
+			height: 100%;
+
+			ul {
+				display: table;
+				height: 100%;
+
+				li {
+					display: table-cell;
+					vertical-align: middle;
+					position: relative;
+					margin: 0;
+					border-left: 25px solid transparent;
+
+					a {
+						position: static;
+
+						&:before, 
+						&:after {
+							bottom: 0;
+						}
+					}
+				}
+			}
+		}
+
+		&:after {
+			display: block; // Clearfix
+		}
+	}
+}
+
+@media #{$bp-3} {
+	body:not(.has-scrolled) #header {
+		height: 100px;
+		padding-top: 0;
+		padding-bottom: 0;
+
+		h1, 
+		p.logo {
+			a {
+				small {
+					max-height: 30px;
+				}
+			}
+		}
+	}
+}
+
+// Another new version
+@media #{$bp-3} {
+	#header {
+		div.widget_nav_menu {
+			ul {
+				margin-right: -12.5px;
+
+				li {
+					border: 0;
+
+					a {
+						padding: 0 12.5px;
+
+						&:before, 
+						&:after {
+						//	display: none;
+						}
+					}
+
+					background: rgba(0, 20, 40, 0);
+					transition: background .1s ease-out;
+
+					// Hover
+					&:hover, 
+					&.active {
+						background: rgba(0, 20, 40, .4);
+						box-shadow: inset 1px 1px 1px $shadow-color;
+
+						a {
+							color: $white-color;
+						}
+					}
+				}
+			}
+		}
 	}
 }
