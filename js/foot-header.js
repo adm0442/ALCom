@@ -4,7 +4,7 @@ App.modules.Header = {
 
 		for (var i = 0; i < lis.length; i++) {
 			lis[i].addEventListener('click', function () {
-				this.getElementsByTagName('a')[0];
+				this.getElementsByTagName('a')[0].click();
 			});
 		}
 	}
