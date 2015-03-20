@@ -74,7 +74,7 @@ $header-bg-color: #012;
 
 				// Hide tagline for now
 				max-height: 0;
-				transition: max-height .2s ease-out;
+				transition: max-height .1s ease-out;
 			}
 
 			// Hover
@@ -206,6 +206,7 @@ $header-bg-color: #012;
 	#header {
 		display: block;
 		height: 55px;
+		transition: height .1s ease-out;
 
 		padding-top: 0;
 		padding-bottom: 0;
