@@ -2,7 +2,7 @@
 
 	<article>
 
-		<figure><img src="/wp-content/uploads/2015/03/exoticcars-1920.jpg" class="blur"></figure>
+		<figure><img src="http://31.192.226.6/alcomimg/exoticcars-1920.jpg"></figure>
 		<figure><img src="http://31.192.226.6/alcomimg/exoticcars-400.jpg"></figure>
 
 		<h2><a href="#">ExoticCarsDubai.com</a></h2>
@@ -25,7 +25,7 @@
 
 	<article>
 
-		<figure><img src="/wp-content/uploads/2015/03/exoticcars-1920.jpg" class="blur"></figure>
+		<figure><img src="http://31.192.226.6/alcomimg/bmwfinancialservices-1920.jpg"></figure>
 		<figure><img src="http://31.192.226.6/alcomimg/bmwfinancialservices-400.jpg"></figure>
 
 		<h2><a href="#">BMW Financial Services</a></h2>
@@ -47,7 +47,7 @@
 
 	<article>
 
-		<figure><img src="/wp-content/uploads/2015/03/exoticcars-1920.jpg" class="blur"></figure>
+		<figure><img src="http://31.192.226.6/alcomimg/dubicars-1920.jpg"></figure>
 		<figure><img src="http://31.192.226.6/alcomimg/dubicars-400.jpg"></figure>
 
 		<h2><a href="#">DubiCars.com</a></h2>
@@ -69,7 +69,7 @@
 
 	<article>
 
-		<figure><img src="/wp-content/uploads/2015/03/exoticcars-1920.jpg" class="blur"></figure>
+		<figure><img src="http://31.192.226.6/alcomimg/conversionista-1920.jpg"></figure>
 		<figure><img src="http://31.192.226.6/alcomimg/conversionista-400.jpg"></figure>
 
 		<h2><a href="#">Conversionista.com</a></h2>
