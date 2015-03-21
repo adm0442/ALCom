@@ -9,8 +9,8 @@ $header-bg-color: #012;
 	}
 
 	// Custom paddings from other @sections
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 
 	// Background color, shadow
 //	background: linear-gradient(180deg, rgba($header-bg-color, .8) 50%, rgba($header-bg-color, .85) 50%, rgba($header-bg-color, .9));
@@ -47,8 +47,12 @@ $header-bg-color: #012;
 	p.logo {
 		@include heading($h3-size);
 		font-size: $h3-size !important; // Because @heading adjusts the size based on resolution - we don't want that in this case
-		margin: 0;
+		margin: 0 0 5px;
 		transition: font-size .1s ease-out;
+
+		@media #{$bp-3} {
+			margin: 0;
+		}
 
 		// Neutral link
 		a {
@@ -129,7 +133,7 @@ $header-bg-color: #012;
 
 						position: absolute;
 						left: 50%;
-						bottom: -10px;
+						bottom: -15px;
 
 						width: 0;
 						height: 5px;
