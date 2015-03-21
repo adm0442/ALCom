@@ -1,5 +1,3 @@
-$header-bg-color: #012;
-
 #header {
 	@include section();
 
@@ -13,9 +11,9 @@ $header-bg-color: #012;
 	padding-bottom: 15px;
 
 	// Background color, shadow
-//	background: linear-gradient(180deg, rgba($header-bg-color, .8) 50%, rgba($header-bg-color, .85) 50%, rgba($header-bg-color, .9));
-	background: rgba($header-bg-color, .8);
-//	background: linear-gradient(140deg, rgba($header-bg-color, .75) 30%, lighten(rgba($header-bg-color, .75), 25%) 40%, lighten(rgba($header-bg-color, .75), 25%) 60%, rgba($header-bg-color, .75) 70%);
+//	background: linear-gradient(180deg, rgba($header-bg, .8) 50%, rgba($header-bg, .85) 50%, rgba($header-bg, .9));
+	background: rgba($header-bg, .8);
+//	background: linear-gradient(140deg, rgba($header-bg, .75) 30%, lighten(rgba($header-bg, .75), 25%) 40%, lighten(rgba($header-bg, .75), 25%) 60%, rgba($header-bg, .75) 70%);
 
 	box-shadow: 0 2px 2px $shadow-color;
 
@@ -124,7 +122,9 @@ $header-bg-color: #012;
 					text-shadow: none;
 
 					&:hover, 
-					&:active {
+					&:active, 
+					&.active-parent, 
+					&.active-ancestor {
 						color: $white-color;
 					}
 
@@ -158,6 +158,7 @@ $header-bg-color: #012;
 				// Hover border
 				&.active a, 
 				&.active-parent a, 
+				&.active-ancestor a, 
 				&:hover a {
 					&:before {
 						left: 0;
@@ -314,7 +315,9 @@ $header-bg-color: #012;
 
 					// Hover
 					&:hover, 
-					&.active {
+					&.active, 
+					&.active-parent, 
+					&.active-ancestor {
 						background: rgba(0, 20, 40, .4);
 						box-shadow: inset 1px 1px 1px $shadow-color;
 

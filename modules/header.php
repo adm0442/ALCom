@@ -13,7 +13,7 @@
 <header id="header">
 
 	<?php if (is_front_page()) : ?><h1><?php else : ?><p class="logo"><?php endif ?>
-		<a href="/">
+		<a href="<?php echo home_url('/') ?>">
 			Hi! <strong>I'm Andreas</strong> 
 			<small>...and I <em><?php echo $verbs[array_rand($verbs, 1)] ?></em> web development</small>
 		</a>

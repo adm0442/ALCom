@@ -1,4 +1,4 @@
 #footer {
-	@include section(#012);
+	@include section($header-bg);
 	color: $white-color;
 }
