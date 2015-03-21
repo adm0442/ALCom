@@ -1,0 +1,44 @@
+#post {
+	padding: 0; // Remove padding set by layout to all main > *
+
+	> * {
+		@include section;
+	}
+
+	header {
+		background: $dark-blue-bg;
+
+		overflow: hidden;
+		padding-top: 220px;
+		padding-bottom: 100px;
+
+		color: $white-color;
+
+		@include hero-shadow;
+
+		img {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+
+			@include blurred-img;
+		}
+
+		* {
+			position: relative;
+		}
+
+		ul.tags {
+			margin: 0 0 10px 0;
+		}
+
+		time {
+			@include icon($fa-var-clock-o, before);
+		}
+
+		h1 {
+			@include hero-heading;
+		}
+	}
+}

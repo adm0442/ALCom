@@ -1,5 +1,5 @@
 #featured-portfolio {
-	background: #050a12;
+	background: $dark-blue-bg;
 
 	position: relative;
 	margin: 0;
@@ -8,25 +8,11 @@
 	// General layout makes this a section - undo
 	padding: 0;
 
-	// Shadow
-	&:after {
-		background: linear-gradient(0, rgba($shadow-color, .4), rgba($shadow-color, 0));
-
-		display: block;
-		content: "";
-
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		z-index: 99;
-
-		width: 100%;
-		height: 4px;
-	}
+	@include hero-shadow;
 
 	// Each portfolio item
 	article {
-		@include section(#050a12);
+		@include section($dark-blue-bg);
 
 		position: relative;
 		overflow: hidden;
@@ -66,9 +52,7 @@
 
 				margin-left: -960px; // Images are 1920x1080
 
-				opacity: .8;
-				filter: blur(30px); // Too slow...
-				-webkit-filter: blur(30px);
+				@include blurred-img;
 			}
 
 			canvas {
@@ -109,20 +93,13 @@
 
 		// Project title
 		h2 {
+			@include hero-heading;
+
 			margin-top: 90px;
 			margin-bottom: 0;
-			text-shadow: 1px 1px 1px $shadow-color;
 
 			@media #{$bp-3} {
 				font-size: $h1-size;
-			}
-
-			a {
-				color: $white-color;
-
-				&:hover {
-					color: $link-color-hover;
-				}
 			}
 		}
 

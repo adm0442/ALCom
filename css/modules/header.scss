@@ -80,6 +80,11 @@ $header-bg-color: #012;
 				// Hide tagline for now
 				max-height: 0;
 				transition: max-height .1s ease-out;
+
+				em {
+					font-style: normal;
+					color: $link-color;
+				}
 			}
 
 			// Hover
