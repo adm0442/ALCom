@@ -3,7 +3,7 @@
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<header>
 
-			<?php the_post_thumbnail('sleek-hdw') ?>
+			<?php the_post_thumbnail('sleek-hdw', array('class' => 'blur')) ?>
 
 			<h1><?php the_title() ?></h1>
 

@@ -31,7 +31,7 @@
 
 		figure:first-child {
 			@media #{$bp-3-max} {
-			//	display: none;
+				display: none;
 			}
 
 			position: absolute;
@@ -51,6 +51,8 @@
 				top: 0;
 
 				margin-left: -960px; // Images are 1920x1080
+
+				opacity: .8;
 			}
 		}
 

@@ -20,7 +20,16 @@
 	<?php foreach ($rows as $post) : setup_postdata($post) ?>
 		<article>
 
-			<figure><img src="<?php $img = get_field('desktop_screenshot'); echo get_template_directory_uri() . '/inc/simpleimage/si.php?src=' . $img['sizes']['alcom-hdw'] . '&amp;blur=150' ?>"></figure>
+			<figure>
+				<?php /* <img src="<?php 
+					$img = get_field('desktop_screenshot');
+					echo get_template_directory_uri() . 
+							'/inc/simpleimage/si.php?src=' . 
+							$img['sizes']['alcom-hdw'] . 
+							'&amp;blur=150' 
+				?>"> */ ?>
+				<img src="<?php $img = get_field('desktop_screenshot'); echo $img['sizes']['alcom-hdw'] ?>" class="blur">
+			</figure>
 
 			<?php if ($mobileScreenshot = get_field('mobile_screenshot')) : ?>
 				<figure><img src="<?php $img = get_field('mobile_screenshot'); echo $img['url'] ?>"></figure>
