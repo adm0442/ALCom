@@ -2,6 +2,13 @@
 	@include clearfix;
 
 	article {
+		// TODO: Switch to @cols
+		@media #{$bp-3} {
+			margin: 0;
+			width: 50% - $gutter / 2;
+			float: left;
+		}
+
 		h2 {
 			position: relative;
 
@@ -26,13 +33,11 @@
 
 		&:hover h2:before {
 			color: $heading-color;
-			transform: scale(1.1) rotate(-5deg);
+			transform: scale(1.05) rotate(-10deg);
 		}
 
-		@media #{$bp-3} {
-			margin: 0;
-			width: 50% - $gutter / 2;
-			float: left;
+		ul.tags {
+			position: relative; // On top of icon
 		}
 
 		img {
