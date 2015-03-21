@@ -59,6 +59,7 @@ function alcom_register_post_types () {
 
 			# Post type specific tags
 			'portfolio_tags' => array('portfolio'), 
+			'project_categories' => array('projects'), 
 			'project_tags' => array('projects')
 		)
 	);

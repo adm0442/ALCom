@@ -1,5 +1,6 @@
 #post {
-	padding: 0; // Remove padding set by layout to all main > *
+	background: transparent; // Remove bg & padding set by layout to all main > *
+	padding: 0;
 
 	> * {
 		@include section;
