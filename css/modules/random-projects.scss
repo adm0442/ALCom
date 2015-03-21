@@ -2,19 +2,31 @@
 	@include clearfix;
 
 	article {
-		h2 a {
+		h2 {
+			position: relative;
+
 			&:before {
-				@include img-right(false);
-				font-size: 70px;
-				margin: -10px 20% 0 0;
+				font-size: 150px;
+
+				position: absolute;
+				left: -70px;
+				top: -15px;
+
+				opacity: .05;
 				text-shadow: 0 0 0 $shadow-color;
-				transition: transform .1s ease-out, text-shadow .1s ease-out;
+				transform: rotate(-10deg);
+
+				transition: transform .1s ease-out;
 			}
 
-			&:hover:before {
-				transform: scale(1.1);
-				text-shadow: 2px 2px 8px rgba($shadow-color, .15);
+			* {
+				position: relative; // Render on top of icon
 			}
+		}
+
+		&:hover h2:before {
+			color: $heading-color;
+			transform: scale(1.1) rotate(-5deg);
 		}
 
 		@media #{$bp-3} {

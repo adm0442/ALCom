@@ -1,39 +1,41 @@
+<?php
+	global $post;
+
+	$rows = get_posts(array(
+		'post_type' => 'projects', 
+		'numberposts' => 2, 
+		'orderby' => 'rand', 
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'misc', 
+				'field' => 'slug', 
+				'terms' => 'featured'
+			)
+		)
+	));
+?>
+
 <section id="random-projects">
 
-	<article>
+	<?php foreach ($rows as $post) : setup_postdata($post) ?>
+		<?php $category = wp_get_post_terms($post->ID, 'project_categories') ?>
+		<article>
 
-		<h2>
-			<small><a href="#">WordPress</a></small> 
-			<a href="#" class="icon-html5">HTMLWidget</a>
-		</h2>
+			<h2 class="icon-<?php the_field('icon') ?>">
+				<small><a href="<?php echo get_term_link($category[0]) ?>"><?php echo $category[0]->name ?></a></small> 
+				<a href="<?php the_permalink() ?>"><?php the_title() ?></a>
+			</h2>
 
-		<ul class="tags">
-			<li><a href="#" class="icon-wordpress">wordpress-plugin</a></li>
-			<li><a href="#" class="icon-file-code-o">php</a></li>
-		</ul>
+			<?php sleek_get_module('partials/tags', array('taxonomy' => 'project_tags')) ?>
 
-		<p>Aboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+			<?php the_excerpt() ?>
 
-		<p><a href="#" class="button">Read more</a> <a href="#" class="button secondary icon-github">GitHub</a></p>
+			<p>
+				<a href="<?php the_permalink() ?>" class="button">Read more</a> 
+				<a href="<?php the_field('github_url') ?>" class="button secondary icon-github" target="_blank">GitHub</a>
+			</p>
 
-	</article>
-
-	<article>
-
-		<h2>
-			<small><a href="#">jQuery</a></small> 
-			<a href="#" class="icon-search-plus">Image Zoom</a>
-		</h2>
-
-		<ul class="tags">
-			<li><a href="#" class="icon-jquery">jquery-plugin</a></li>
-			<li><a href="#" class="icon-image">images</a></li>
-		</ul>
-
-		<p>Adipisicing elit, sed do eiusmod tempor incididunt ut labore et  voluptate velit.</p>
-
-		<p><a href="#" class="button">Read more</a> <a href="#" class="button secondary icon-github">GitHub</a></p>
-
-	</article>
+		</article>
+	<?php endforeach; wp_reset_postdata() ?>
 
 </section>
