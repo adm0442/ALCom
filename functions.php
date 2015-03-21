@@ -65,7 +65,7 @@ function alcom_register_post_types () {
 add_filter('excerpt_length', 'alcom_excerpt_length');
 
 function alcom_excerpt_length ($length) {
-	return 38;
+	return 30;
 }
 
 # You can use these if you want
