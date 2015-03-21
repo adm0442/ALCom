@@ -92,11 +92,9 @@
 
 		// Description
 		ul + p {
-			text-shadow: 1px 1px 1px $shadow-color;
-			font-size: 120%;
-			line-height: 1.2;
-			font-style: italic;
+			@include first-p;
 			font-weight: lighter;
+			text-shadow: 1px 1px 1px $shadow-color;
 		}
 
 		// CTA

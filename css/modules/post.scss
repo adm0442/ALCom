@@ -36,4 +36,10 @@
 			@include hero-heading;
 		}
 	}
+
+	> div {
+		p:first-child {
+			@include first-p;
+		}
+	}
 }
