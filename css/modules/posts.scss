@@ -1,0 +1,12 @@
+#posts-intro {
+	@include hero;
+
+	h1 {
+		@include hero-title;
+	}
+
+	p {
+		@include first-p;
+		@include first-p-hero;
+	}
+}

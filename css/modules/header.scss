@@ -157,6 +157,7 @@ $header-bg-color: #012;
 
 				// Hover border
 				&.active a, 
+				&.active-parent a, 
 				&:hover a {
 					&:before {
 						left: 0;

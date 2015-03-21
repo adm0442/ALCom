@@ -9,6 +9,7 @@
 @import "../../sleek/css/all-general";
 @import "../../sleek/css/font-awesome/all";
 
+@import "mixins";
 @import "layout";
 
 // Modules
@@ -22,3 +23,4 @@
 @import "modules/random-projects";
 @import "modules/latest-blog";
 @import "modules/post";
+@import "modules/posts";

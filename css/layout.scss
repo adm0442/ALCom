@@ -1,77 +1,3 @@
-@mixin first-p {
-	font-size: 120%;
-	font-style: italic;
-}
-
-@mixin hero-img {
-	&, 
-	& + canvas {
-		display: block;
-		max-width: none;
-
-		position: absolute;
-		left: 50%;
-		top: 0;
-
-		margin-left: -960px; // Images are 1920xXX
-
-		@media #{$bp-3} {
-			&.blur {
-				left: -1000000px;
-				top: -1000000px;
-			}
-
-			&:not(.blur) {
-				opacity: .8;
-				-webkit-filter: blur(30px);
-				filter: blur(30px);
-			}
-		}
-
-		@media #{$bp-3-max} {
-			opacity: .08;
-		}
-	}
-
-	& + canvas {
-		opacity: .8;
-
-		@media #{$bp-3-max} {
-			display: none;
-		}
-	}
-}
-
-@mixin hero-heading {
-	color: $white-color;
-	text-shadow: 1px 1px 1px $shadow-color;
-
-	a {
-		color: $white-color;
-
-		&:hover {
-			color: $link-color-hover;
-		}
-	}
-}
-
-@mixin hero-shadow {
-	&:after {
-		background: linear-gradient(0, rgba($shadow-color, .4), rgba($shadow-color, 0));
-
-		display: block;
-		content: "";
-
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		z-index: 99;
-
-		width: 100%;
-		height: 4px;
-	}
-}
-
 a {
 	transition: color .1s ease-out;
 }
@@ -83,9 +9,20 @@ main,
 	> * {
 		@include section;
 
-		&:nth-child(even) {
+		&:nth-child(odd) {
 			background: $alt-bg;
 		}
+	}
+}
+
+#home-page main, 
+#home-page #aside {
+	> *:nth-child(even) {
+		background: $alt-bg;
+	}
+
+	> *:nth-child(odd) {
+		background: transparent;
 	}
 }
 

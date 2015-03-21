@@ -75,7 +75,7 @@
 
 		// Project title
 		h2 {
-			@include hero-heading;
+			@include hero-title;
 
 			margin-top: 90px;
 			margin-bottom: 0;
@@ -93,9 +93,7 @@
 		// Description
 		ul + p {
 			@include first-p;
-			font-weight: lighter;
-			line-height: 1.4;
-			text-shadow: 1px 1px 1px $shadow-color;
+			@include first-p-hero;
 		}
 
 		// CTA
