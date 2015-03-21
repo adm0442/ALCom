@@ -26,6 +26,7 @@ add_action('init', 'alcom_post_thumbnails');
 function alcom_post_thumbnails () {
 	add_image_size('alcom-small', 200, 200, true);
 	add_image_size('alcom-medium', 460, 300, true);
+	add_image_size('alcom-hdw', 1920, 800, array('left', 'top'));
 #	add_image_size('alcom-hd', 1920, 1080, true);
 }
 
