@@ -1,6 +1,7 @@
 <?php
 include get_stylesheet_directory() . '/inc/html5form/html5form.php';
 
+# Register our CSS / JS
 add_action('wp_enqueue_scripts', 'alcom_register_css_js');
 
 function alcom_register_css_js () {

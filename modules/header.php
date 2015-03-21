@@ -1,4 +1,14 @@
-<?php $verbs = array('love', 'live for', 'obsess over', 'lose sleep over', 'dream about') ?>
+<?php
+	# Make certain verbs more likely to appear
+	$verbs = array(
+		'love', 'love', 'love', 'love', 
+		'live for', 'live for', 'live for', 'live for', 
+		'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 
+		'lose sleep over', 'lose sleep over', 'lose sleep over', 'lose sleep over', 'lose sleep over', 'lose sleep over', 'lose sleep over', 
+		'dream about', 'dream about', 'dream about', 'dream about', 'dream about', 'dream about', 'dream about', 
+		'sometimes feel like cuddling with'
+	);
+?>
 
 <header id="header">
 
