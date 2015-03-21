@@ -1,14 +1,9 @@
 #random-projects {
-	@include clearfix;
+	@media #{$bp-3} {
+		@include cols(2);
+	}
 
 	article {
-		// TODO: Switch to @cols
-		@media #{$bp-3} {
-			margin: 0;
-			width: 50% - $gutter / 2;
-			float: left;
-		}
-
 		h2 {
 			position: relative;
 
