@@ -1,3 +1,50 @@
 #post-comment {
-	
+	h3 {
+		@include heading-size($h2-size);
+	}
+
+	form {
+		@include clearfix;
+
+		span.required {
+			color: $error-color;
+		}
+
+		p {
+			input {
+				width: 100%;
+			}
+
+			textarea {
+				width: 100%;
+				height: 150px;
+			}
+		}
+
+		@media #{$bp-3} {
+			p.comment-form-author, 
+			p.comment-form-email, 
+			p.comment-form-url {
+				width: 31%;
+				margin-right: 2%;
+				float: left;
+			}
+
+			p.comment-form-comment {
+			
+			}
+
+			p.form-allowed-tags {
+				font-size: 80%;
+			}
+
+			p.form-submit {
+				text-align: right;
+			}
+
+			input[type=submit] {
+				width: auto;
+			}
+		}
+	}
 }

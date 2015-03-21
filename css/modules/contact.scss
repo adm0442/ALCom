@@ -24,21 +24,16 @@
 				float: left;
 			}
 
-			// Name
-			p:first-child {
-				width: 32%;
-				margin-right: 2%;
-			}
-
-			// Email
-			p:first-child + p {
-				width: 32%;
-				margin-right: 2%;
-			}
-
-			// Company
+			// Name, Email and Company
+			p:first-child, 
+			p:first-child + p, , 
 			p:first-child + p + p {
 				width: 32%;
+				margin-right: 2%;
+			}
+
+			p:first-child + p + p {
+				margin-right: 0;
 			}
 
 			// Deadline
