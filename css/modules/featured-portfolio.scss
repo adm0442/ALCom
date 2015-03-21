@@ -3,6 +3,7 @@
 
 	position: relative;
 	margin: 0;
+	margin-top: -120px; // Because main has 120px padding-top
 	color: $white-color;
 
 	// General layout makes this a section - undo

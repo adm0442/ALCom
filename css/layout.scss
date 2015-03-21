@@ -1,29 +1,39 @@
+// HTML covers everything so should be same color as footer
+html {
+	background: $header-bg;
+}
+
+// Body stops with content so should be default bg
+body {
+	background: $default-bg;
+}
+
+// A little magic
 a {
 	transition: color .1s ease-out;
 }
 
+// Automatically make sections
 main, 
 #aside {
 	margin: 0;
 
 	> * {
 		@include section;
-
-		&:nth-child(odd) {
-			background: $alt-bg;
-		}
 	}
 }
 
+// Striped sections on home page
 #home-page main, 
 #home-page #aside {
 	> *:nth-child(even) {
 		background: $alt-bg;
 	}
+}
 
-	> *:nth-child(odd) {
-		background: transparent;
-	}
+// Make room for header
+header + main {
+	padding-top: 120px;
 }
 
 // Bigger opening paragraphs (TODO: could be annoying?)
@@ -31,13 +41,3 @@ main > :first-child > h1:first-child + p,
 main > :first-child > h2:first-child + p {
 	@include first-p;
 }
-
-// Make room for header
-/* header + main {
-	padding-top: 100px;
-}
-
-// Except on pages which start with the featured-portfolio
-#home-page header + main {
-	padding-top: 0;
-} */
