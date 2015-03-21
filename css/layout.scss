@@ -6,6 +6,13 @@ html {
 // Body stops with content so should be default bg
 body {
 	background: $default-bg;
+
+	// Weird edge case - a post with "icon" in its name will 
+	// give body a class that contains icon and fontawesome 
+	// will thusly give body an icon :P Hide it.
+	&:before {
+		display: none !important;
+	}
 }
 
 // A little magic
