@@ -40,10 +40,14 @@ main,
 
 // Make room for header
 header + main {
-	padding-top: 120px;
+	padding-top: $h1-pos-bp1 - $margin * 3; // ($margin * 3 = padding for sections)
+
+	@media #{$bp-3} {
+		padding-top: $h1-pos-bp3 - $margin * 3;
+	}
 }
 
-// Bigger opening paragraphs (TODO: could be annoying?)
+// Bigger opening paragraphs
 main > :first-child > h1:first-child + p, 
 main > :first-child > h2:first-child + p {
 	@include first-p;

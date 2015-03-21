@@ -1,13 +1,15 @@
 #featured-portfolio {
 	background: $dark-blue-bg;
-
 	position: relative;
-	margin: 0;
-	margin-top: -120px; // Because main has 120px padding-top
 	color: $white-color;
 
-	// General layout makes this a section - undo
-	padding: 0;
+	padding: 0; // General layout makes this a section - undo
+	margin: 0;
+	margin-top: -($h1-pos-bp1 - $margin * 3);
+
+	@media #{$bp-3} {
+		margin-top: -($h1-pos-bp3 - $margin * 3);
+	}
 
 	@include hero-shadow;
 
@@ -18,10 +20,10 @@
 		position: relative;
 		overflow: hidden;
 
-		padding-top: 80px;
+		padding-top: $h1-pos-bp1 - 100px; // 100px margin-top of h2 (project title)
 
 		@media #{$bp-3} {
-			padding-top: 150px;
+			padding-top: $h1-pos-bp3 - 100px;
 		}
 
 		// Images
@@ -48,7 +50,7 @@
 			@include device(280px);
 
 			float: right;
-			margin-bottom: -300px; // This is used if slideshow isnt
+			margin-bottom: -300px;
 			margin-left: $margin * 2;
 
 			// Scroll the img (website screenshot) on hover
@@ -77,13 +79,11 @@
 		// Project title
 		h2 {
 			@include hero-title;
+			@include heading-size($h1-size);
+			@include ellipsis;
 
-			margin-top: 90px;
+			margin-top: 100px;
 			margin-bottom: 0;
-
-			@media #{$bp-3} {
-				font-size: $h1-size;
-			}
 		}
 
 		// Tags/technologies used
@@ -93,7 +93,6 @@
 
 		// Description
 		ul + p {
-			@include first-p;
 			@include first-p-hero;
 		}
 

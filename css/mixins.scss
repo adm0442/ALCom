@@ -3,18 +3,19 @@
 	font-weight: bolder;
 }
 
-// Hero
+// Hero (use with @section)
 @mixin hero {
 	background: $dark-blue-bg;
 
 	overflow: hidden;
-	margin-top: -120px; // Because main has 120px padding-top
-	padding-top: 170px;
-	padding-top: 60px;
+	margin-top: -($h1-pos-bp1 - $margin * 3);
+	padding-top: $h1-pos-bp1;
+	padding-bottom: 60px;
 
 	@media #{$bp-3} {
-		padding-top: 240px;
-		padding-bottom: 100px;
+		margin-top: -($h1-pos-bp3 - $margin * 3);
+		padding-top: $h1-pos-bp3;
+		padding-bottom: 120px;
 	}
 
 	color: $white-color;
