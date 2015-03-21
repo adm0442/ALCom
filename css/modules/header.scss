@@ -330,3 +330,13 @@
 		}
 	}
 }
+
+// On second thought, show the tagline on mobile
+@media #{$bp-3-max} {
+	#header h1, 
+	#header p.logo {
+		a small {
+			max-height: none;
+		}
+	}
+}
