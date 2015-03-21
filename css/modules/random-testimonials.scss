@@ -39,11 +39,14 @@
 
 				background: $alt-bg;
 
-				padding-top: 50px;
+				padding: 50px 5px 0;
 
 				cite {
 					display: block;
 					font-style: normal;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
 				}
 			}
 		}

@@ -94,6 +94,7 @@
 		ul + p {
 			@include first-p;
 			font-weight: lighter;
+			line-height: 1.4;
 			text-shadow: 1px 1px 1px $shadow-color;
 		}
 
