@@ -28,7 +28,7 @@
 							$img['sizes']['alcom-hdw'] . 
 							'&amp;blur=150' 
 				?>"> */ ?>
-				<img src="<?php $img = get_field('desktop_screenshot'); echo $img['sizes']['alcom-hdw'] ?>" class="blur">
+				<img src="<?php $img = get_field('desktop_screenshot'); echo $img['sizes']['alcom-hdw'] ?>">
 			</figure>
 
 			<?php if ($mobileScreenshot = get_field('mobile_screenshot')) : ?>
@@ -42,7 +42,7 @@
 			<?php the_excerpt() ?>
 
 			<p>
-				<a href="<?php the_field('site_url') ?>" class="button">Visit the site</a> or 
+				<a href="<?php the_field('site_url') ?>" class="button" target="_blank">Visit the site</a> or 
 				<a href="<?php the_permalink() ?>" class="button secondary">Read more about the project</a>
 			</p>
 

@@ -14,17 +14,17 @@
 		<ul class="tags">
 			<?php $gh = get_user_meta($usr->ID, 'github', true) ?>
 			<?php if ($gh) : ?>
-				<li><a href="<?php echo $gh ?>" class="icon-github">GitHub</a></li>
+				<li><a href="<?php echo $gh ?>" class="icon-github" target="_blank">GitHub</a></li>
 			<?php endif ?>
 
 			<?php $so = get_user_meta($usr->ID, 'stackoverflow', true) ?>
 			<?php if ($so) : ?>
-				<li><a href="<?php echo $so ?>" class="icon-stack-overflow">StackOverflow</a></li>
+				<li><a href="<?php echo $so ?>" class="icon-stack-overflow" target="_blank">StackOverflow</a></li>
 			<?php endif ?>
 
 			<?php $gp = get_user_meta($usr->ID, 'googleplus', true) ?>
 			<?php if ($gp) : ?>
-				<li><a href="<?php echo $gp ?>" class="icon-google-plus">Google+</a></li>
+				<li><a href="<?php echo $gp ?>" class="icon-google-plus" rel="me" target="_blank">Google+</a></li>
 			<?php endif ?>
 		</ul>
 	<?php endforeach ?>

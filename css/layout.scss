@@ -1,7 +1,40 @@
-@mixin blurred-img {
-	opacity: .8;
-	filter: blur(30px); // Too slow...
-	-webkit-filter: blur(30px);
+@mixin hero-img {
+	&, 
+	& + canvas {
+		display: block;
+		max-width: none;
+
+		position: absolute;
+		left: 50%;
+		top: 0;
+
+		margin-left: -960px; // Images are 1920xXX
+
+		@media #{$bp-3} {
+			&.blur {
+				left: -1000000px;
+				top: -1000000px;
+			}
+
+			&:not(.blur) {
+				opacity: .8;
+				-webkit-filter: blur(30px);
+				filter: blur(30px);
+			}
+		}
+
+		@media #{$bp-3-max} {
+			opacity: .08;
+		}
+	}
+
+	& + canvas {
+		opacity: .8;
+
+		@media #{$bp-3-max} {
+			display: none;
+		}
+	}
 }
 
 @mixin hero-heading {

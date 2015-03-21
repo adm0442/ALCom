@@ -30,10 +30,6 @@
 		}
 
 		figure:first-child {
-			@media #{$bp-3-max} {
-				display: none;
-			}
-
 			position: absolute;
 			left: 0;
 			top: 0;
@@ -41,18 +37,8 @@
 			width: 100%;
 			height: 100%;
 
-			img, 
-			canvas {
-				display: block;
-				max-width: none;
-
-				position: absolute;
-				left: 50%;
-				top: 0;
-
-				margin-left: -960px; // Images are 1920x1080
-
-				opacity: .8;
+			img {
+				@include hero-img;
 			}
 		}
 

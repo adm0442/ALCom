@@ -7,7 +7,7 @@ App.plugins.BlurImages = {
 				var image = images[i];
 				var canvas = document.createElement('canvas');
 
-				image.parentNode.appendChild(canvas);
+				image.parentNode.insertBefore(canvas, image.nextSibling);
 
 				stackBlurImage(image, canvas, 40);
 			})();
