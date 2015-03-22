@@ -65,10 +65,24 @@ function alcom_register_post_types () {
 	);
 }
 
+# Show different numbers of posts on different post types (http://wordpress.stackexchange.com/questions/30757/change-posts-per-page-count)
+add_action('pre_get_posts', 'alcom_set_posts_per_page');
+
+function alcom_set_posts_per_page ($query) {
+	global $wp_the_query;
+
+	if (!is_admin() and $query === $wp_the_query and (is_post_type_archive('portfolio') or is_post_type_archive('projects'))) {
+		$query->set('posts_per_page', -1);
+	}
+
+	return $query;
+}
+
+# Excerpt length
 add_filter('excerpt_length', 'alcom_excerpt_length');
 
 function alcom_excerpt_length ($length) {
-	return 30;
+	return 25;
 }
 
 # You can use these if you want

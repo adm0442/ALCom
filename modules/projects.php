@@ -28,8 +28,3 @@
 	<?php endif ?>
 
 </section>
-
-<nav id="pagination">
-	<?php previous_posts_link(__('Previous page', 'sleek')) ?>
-	<?php next_posts_link(__('Next page', 'sleek')) ?>
-</nav>

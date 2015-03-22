@@ -43,6 +43,7 @@
 	@include icon($fa-var-clock-o, before);
 	font-size: 80%;
 	text-transform: uppercase;
+	color: $gray-color;
 }
 
 @mixin posts-post {

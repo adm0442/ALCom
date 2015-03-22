@@ -103,7 +103,7 @@
 			li {
 				display: inline-block;
 				margin: 0 10px 0 0;
-				cursor: pointer; // Pretend it's a link (we make it clickable with JS)
+			//	cursor: pointer; // Pretend it's a link (we make it clickable with JS)
 				position: relative;
 
 				@media #{$bp-2} {
