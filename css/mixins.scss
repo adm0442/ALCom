@@ -1,7 +1,43 @@
+// Post related
 @mixin pubdate {
 	@include icon($fa-var-clock-o, before);
 	font-size: 80%;
 	text-transform: uppercase;
+}
+
+@mixin posts-post {
+	@include clearfix;
+	margin-bottom: $margin * 3;
+
+	h2 {
+		a {
+			img {
+				@include framed(false);
+				@include img-left($bp-3);
+
+				// Make it half width
+				@media #{$bp-3} {
+					width: 50% - $gutter / 2;
+					margin-right: $gutter;
+				}
+			}
+
+			&:hover img {
+				@include framed-hover;
+			}
+		}
+	}
+
+	ul.tags {
+		display: inline-block;
+		margin-bottom: $margin / 2;
+		margin-right: $margin / 2;
+	}
+
+	p.pubdate {
+		display: inline-block;
+		@include pubdate;
+	}
 }
 
 @mixin first-p {
@@ -107,4 +143,61 @@
 		width: 100%;
 		height: 4px;
 	}
+}
+
+// Tags
+@mixin tag {
+	background: #f3f3f3;
+
+	display: inline-block;
+	padding: 0 6px;
+
+	text-transform: uppercase;
+	font-size: $default-size * .7;
+	text-decoration: none;
+	color: $default-color;
+
+	border: 1px solid #e3e3e3;
+	border-radius: 4px;
+
+	transition: opacity .1s ease-out;
+	opacity: .6;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+@mixin tags {
+	margin-left: 0;
+	list-style: none;
+
+	li {
+		display: inline-block;
+
+		a {
+			@include tag;
+		}
+	}
+}
+
+// Framed
+@mixin framed ($round: false) {
+	@if ($round) {
+		border-radius: 100%;
+	}
+
+	transition: transform .2s ease-out, box-shadow .2s ease-out;
+
+	border: 10px solid $white-color;
+	box-shadow: 2px 2px 8px $shadow-color;
+
+	a:hover & {
+		@include framed-hover;
+	}
+}
+
+@mixin framed-hover {
+	transform: rotate(-.4deg) scale(1.01);
+	box-shadow: 4px 4px 12px $shadow-color;
 }

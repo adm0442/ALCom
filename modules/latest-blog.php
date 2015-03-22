@@ -12,13 +12,14 @@
 	<?php foreach ($rows as $post) : setup_postdata($post) ?>
 		<h2>
 			<a href="<?php the_permalink() ?>">
-				<?php the_post_thumbnail('alcom-medium', array('class' => 'framed alignleft')) ?>
+				<?php the_post_thumbnail('alcom-medium') ?>
 				<small>From the Blog</small> 
 				<?php the_title() ?>
 			</a>
 		</h2>
 
 		<?php sleek_get_module('partials/tags', array('taxonomy' => 'post_tag')) ?>
+		<?php sleek_get_module('partials/post-pubdate') ?>
 
 		<?php the_excerpt() ?>
 

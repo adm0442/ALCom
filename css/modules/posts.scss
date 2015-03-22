@@ -19,36 +19,7 @@
 }
 
 #posts {
-	padding: 0; // Remove @section set by main
-	background: none;
-
 	article {
-		margin: 0 0 $margin * 3;
-
-		figure {
-			margin: 0 0 $margin * 2;
-			max-height: 320px;
-			overflow: hidden;
-		}
-
-		header {
-			@include section-centering;
-
-			h2 {
-				margin-bottom: 0;
-			}
-
-			time {
-				@include pubdate;
-			}
-		}
-
-		&:first-child header:first-child {
-			padding-top: $margin * 3;
-		}
-
-		> p {
-			@include section-centering;
-		}
+		@include posts-post;
 	}
 }

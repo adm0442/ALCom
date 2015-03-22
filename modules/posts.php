@@ -4,24 +4,15 @@
 		<?php while (have_posts()) : the_post() ?>
 			<article id="post-<?php the_ID() ?>">
 
-				<?php if (has_post_thumbnail()) : ?>
-					<figure>
-						<a href="<?php the_permalink() ?>"><?php the_post_thumbnail('alcom-hdw') ?></a>
-					</figure>
-				<?php endif ?>
+				<h2>
+					<a href="<?php the_permalink() ?>">
+						<?php the_post_thumbnail('alcom-medium') ?>
+						<?php the_title() ?>
+					</a>
+				</h2>
 
-				<header>
-
-					<h2>
-						<a href="<?php the_permalink() ?>">
-							<?php the_title() ?>
-						</a>
-					</h2>
-
-					<?php sleek_get_module('partials/tags', array('taxonomy' => 'post_tag')) ?>
-					<?php sleek_get_module('partials/post-pubdate') ?>
-
-				</header>
+				<?php sleek_get_module('partials/tags', array('taxonomy' => 'post_tag')) ?>
+				<?php sleek_get_module('partials/post-pubdate') ?>
 
 				<?php the_excerpt() ?>
 

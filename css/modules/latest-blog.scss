@@ -1,11 +1,4 @@
 #latest-blog {
-	@include clearfix;
-
-	img {
-		// Make it half width
-		@media #{$bp-3} {
-			width: 50% - $gutter / 2;
-			margin-right: $gutter;
-		}
-	}
+	@include posts-post;
+	margin-bottom: 0;
 }
