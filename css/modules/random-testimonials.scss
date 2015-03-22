@@ -41,6 +41,7 @@
 				background: $alt-bg;
 
 				box-sizing: border-box;
+				height: 100%;
 				padding: 60px 5px 0;
 
 				cite {
@@ -54,10 +55,6 @@
 					display: block;
 					line-height: 1.4;
 				}
-			}
-
-			&.no-img figcaption {
-				height: 100%;
 			}
 		}
 
