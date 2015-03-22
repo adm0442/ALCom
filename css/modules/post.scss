@@ -17,22 +17,17 @@
 			position: relative; // On top of image
 		}
 
-		time {
-			@include icon($fa-var-clock-o, before);
-			font-size: 80%;
-			text-transform: uppercase;
-		}
-
 		h1 {
 			@include hero-title;
-			max-width: $max-site-width / 2;
 			margin-bottom: 0;
+		}
+
+		time {
+			@include pubdate;
 		}
 	}
 
 	> div {
-		max-width: 600px;
-
 		p:first-child {
 			@include first-p;
 		}

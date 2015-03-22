@@ -1,3 +1,9 @@
+@mixin pubdate {
+	@include icon($fa-var-clock-o, before);
+	font-size: 80%;
+	text-transform: uppercase;
+}
+
 @mixin first-p {
 	font-size: 120%;
 	font-weight: bolder;
@@ -15,7 +21,7 @@
 	@media #{$bp-3} {
 		margin-top: -($h1-pos-bp3 - $margin * 3);
 		padding-top: $h1-pos-bp3;
-		padding-bottom: 120px;
+		padding-bottom: 80px;
 	}
 
 	color: $white-color;
@@ -31,7 +37,7 @@
 	text-shadow: 1px 1px 1px $shadow-color;
 }
 
-@mixin hero-img {
+@mixin hero-img ($blur: false) {
 	&, 
 	& + canvas {
 		display: block;
@@ -51,8 +57,11 @@
 
 			&:not(.blur) {
 				opacity: .8;
-				-webkit-filter: blur(30px);
-				filter: blur(30px);
+
+				@if ($blur) {
+					-webkit-filter: blur(30px);
+					filter: blur(30px);
+				}
 			}
 		}
 

@@ -3,20 +3,20 @@
 	$verbs = array(
 		'love', 'love', 'love', 'love', 
 		'live for', 'live for', 'live for', 'live for', 
-		'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 
+		'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 
 		'dream about', 'dream about', 'dream about', 'dream about', 
-		'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 
-		'sometimes feel like cuddling with', 
-		'get excited thinking about', 'get excited thinking about', 'get excited thinking about', 
+		'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 
+		'sometimes feel like cuddling with', 'sometimes feel like cuddling with', 
+		'get excited thinking about', 'get excited thinking about', 'get excited thinking about', 'get excited thinking about', 
 		'start frothing at the mouth at the very thought of', 
-		'completely mess up my circadian rhythm because of', 
+		'completely mess up my circadian rhythm because of', 'completely mess up my circadian rhythm because of', 
 	);
 
 	$things = array(
 		'web development', 'web development', 'web development', 
 		'video games', 'video games', 
 		'gadgets', 
-		'open source', 'open source', 'open source', 
+		'open source', 'open source', 
 		'ubuntu', 'ubuntu', 'ubuntu'
 	);
 

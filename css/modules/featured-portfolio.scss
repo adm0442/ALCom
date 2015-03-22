@@ -41,7 +41,7 @@
 			height: 100%;
 
 			img {
-				@include hero-img;
+				@include hero-img(true);
 			}
 		}
 
