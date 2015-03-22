@@ -50,6 +50,7 @@
 	background: $dark-blue-bg;
 
 	overflow: hidden;
+	min-height: 90px;
 	margin-top: -($h1-pos-bp1 - $margin * 3);
 	padding-top: $h1-pos-bp1;
 	padding-bottom: 60px;

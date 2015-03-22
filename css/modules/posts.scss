@@ -21,5 +21,10 @@
 #posts {
 	article {
 		@include posts-post;
+
+		h2 a:first-child:hover + a, 
+		h2 a:first-child:hover + small + a {
+			color: $link-color-hover;
+		}
 	}
 }

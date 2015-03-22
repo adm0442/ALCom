@@ -1,12 +1,29 @@
+<?php global $post ?>
+
 <section id="posts">
 
 	<?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post() ?>
+			<?php
+				$theCat = wp_get_post_terms($post->ID, 'category');
+				$theCat = $theCat ? $theCat[0] : false;
+			?>
 			<article id="post-<?php the_ID() ?>">
 
 				<h2>
 					<a href="<?php the_permalink() ?>">
 						<?php the_post_thumbnail('alcom-medium') ?>
+					</a>
+
+					<?php if ($theCat) : ?>
+						<small>
+							<a href="<?php echo get_term_link($theCat) ?>">
+								<?php echo $theCat->name ?>
+							</a>
+						</small>
+					<?php endif ?>
+
+					<a href="<?php the_permalink() ?>">
 						<?php the_title() ?>
 					</a>
 				</h2>
