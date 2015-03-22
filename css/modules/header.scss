@@ -7,12 +7,12 @@
 	}
 
 	// Custom paddings from other @sections
-	padding-top: 15px;
-	padding-bottom: 15px;
+	padding-top: 12px;
+	padding-bottom: 12px;
 
 	// Background color, shadow
-//	background: linear-gradient(180deg, rgba($header-bg, .8) 50%, rgba($header-bg, .85) 50%, rgba($header-bg, .9));
-	background: rgba($header-bg, .8);
+	background: linear-gradient(180deg, rgba($header-bg, .8) 50%, rgba($header-bg, .85) 50%, rgba($header-bg, .9));
+//	background: rgba($header-bg, .8);
 //	background: linear-gradient(140deg, rgba($header-bg, .75) 30%, lighten(rgba($header-bg, .75), 25%) 40%, lighten(rgba($header-bg, .75), 25%) 60%, rgba($header-bg, .75) 70%);
 
 	box-shadow: 0 2px 2px $shadow-color;
@@ -37,19 +37,15 @@
 	}
 
 	// We'll adjust its size later
-	transition: padding-top .1s ease-out, padding-bottom .1s ease-out, transform .2s ease-out;
+	transition: padding-top .1s ease-out, padding-bottom .1s ease-out, transform .2s ease-out, height .1s ease-out;
 
 	// Logo
 	h1, 
 	p.logo {
 		@include heading($h3-size);
 		font-size: $h3-size !important; // Because @heading adjusts the size based on resolution - we don't want that in this case
-		margin: 0 0 5px;
+		margin: 0;
 		transition: font-size .1s ease-out;
-
-		@media #{$bp-2} {
-			margin: 0;
-		}
 
 		// Neutral link
 		a {
@@ -69,6 +65,7 @@
 			// Tagline
 			small {
 				@include body-text;
+				@include ellipsis;
 				line-height: 1.4;
 				letter-spacing: 0;
 				color: $header-color;
@@ -120,13 +117,6 @@
 					text-decoration: none;
 					text-shadow: none;
 
-					&:hover, 
-					&:active, 
-					&.active-parent, 
-					&.active-ancestor {
-						color: $white-color;
-					}
-
 					// Underline
 					&:before, 
 					&:after {
@@ -144,21 +134,16 @@
 
 						transition: width .1s ease-out, left .1s ease-out;
 					}
-
-					&:before {
-					//	border-radius: 2px 0 0 2px;
-					}
-
-					&:after {
-					//	border-radius: 0 2px 2px 0;
-					}
 				}
 
-				// Hover border
+				// Hover
+				&:hover a, 
 				&.active a, 
 				&.active-parent a, 
-				&.active-ancestor a, 
-				&:hover a {
+				&.active-ancestor a {
+					color: $white-color;
+
+					// The border
 					&:before {
 						left: 0;
 						width: 50%;
@@ -207,7 +192,7 @@
 }
 
 // Menu de la hamburguesa - no, hide the header on scroll in lo res
-@media #{$bp-2-max} {
+@media #{$bp-3-max} {
 	body.has-scrolled.scrolling-down #header {
 		transform: translateY(-100%);
 	}
@@ -218,7 +203,6 @@
 	#header {
 		display: block; // Instead of flexbox - we're floating now
 		height: 55px;
-		transition: height .1s ease-out;
 
 		padding-top: 0;
 		padding-bottom: 0;
@@ -275,7 +259,7 @@
 	}
 }
 
-@media #{$bp-2} {
+@media #{$bp-3} {
 	body:not(.has-scrolled) #header {
 		height: 100px;
 		padding-top: 0;
@@ -333,11 +317,21 @@
 }
 
 // On second thought, show the tagline on mobile
-@media #{$bp-2-max} {
+/* @media #{$bp-2-max} {
 	#header h1, 
 	#header p.logo {
 		a small {
 			max-height: none;
+		}
+	}
+} */
+
+// Actually no - display: none it
+@media #{$bp-3-max} {
+	#header h1, 
+	#header p.logo {
+		a small {
+			display: none;
 		}
 	}
 }

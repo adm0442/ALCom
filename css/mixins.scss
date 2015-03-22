@@ -7,7 +7,7 @@
 
 @mixin posts-post {
 	@include clearfix;
-	margin-bottom: $margin * 3;
+	margin-bottom: $margin * 4;
 
 	h2 {
 		a {
@@ -54,10 +54,15 @@
 	padding-top: $h1-pos-bp1;
 	padding-bottom: 60px;
 
-	@media #{$bp-3} {
+	@media #{$bp-2} {
 		margin-top: -($h1-pos-bp3 - $margin * 3);
 		padding-top: $h1-pos-bp3;
 		padding-bottom: 80px;
+
+		// Give the next element some extra padding-top
+		& + * {
+			padding-top: 100px;
+		}
 	}
 
 	color: $white-color;
@@ -83,7 +88,7 @@
 		left: 50%;
 		top: 0;
 
-		margin-left: -960px; // Images are 1920xXX
+		transform: translateX(-50%);
 
 		@media #{$bp-3} {
 			&.blur {
@@ -102,7 +107,9 @@
 		}
 
 		@media #{$bp-3-max} {
-			opacity: .08;
+			@if ($blur) {
+				opacity: .08;
+			}
 		}
 	}
 
