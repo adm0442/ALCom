@@ -6,28 +6,24 @@
 		@include section;
 	}
 
-	header {
+	figure {
 		@include hero;
+		overflow: hidden;
 
 		img {
 			@include hero-img;
 		}
+	}
 
-		* {
-			position: relative; // On top of image
-		}
-
-		h1 {
-			@include hero-title;
-			margin-bottom: 0;
-		}
-
-		time {
-			@include pubdate;
-		}
+	header {
+		@include post-meta;
+		padding-bottom: 0;
+		margin-bottom: $margin;
 	}
 
 	> div {
+		padding-top: 0;
+
 		p:first-child {
 			@include first-p;
 		}

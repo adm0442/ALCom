@@ -1,5 +1,9 @@
 App.modules.Header = {
 	init: function () {
+	//	this.clickableLIs();
+	}, 
+
+	clickableLIs: function () {
 		var lis = document.getElementById('header').querySelectorAll('div.widget_nav_menu li');
 
 		for (var i = 0; i < lis.length; i++) {

@@ -1,3 +1,43 @@
+// Project
+@mixin projects-project {
+	margin-bottom: $margin * 2;
+
+	h2 {
+		position: relative;
+
+		&:before {
+			font-size: 150px;
+
+			position: absolute;
+			left: -70px;
+			top: -15px;
+
+			opacity: .05;
+			text-shadow: 0 0 0 $shadow-color;
+			transform: rotate(-10deg);
+
+			transition: transform .1s ease-out;
+		}
+
+		* {
+			position: relative; // Render on top of icon
+		}
+	}
+
+	&:hover h2:before {
+		color: $heading-color;
+		transform: scale(1.05) rotate(-10deg);
+	}
+
+	ul.tags {
+		position: relative; // On top of icon
+	}
+
+	a.button + a.button {
+		margin-left: $margin;
+	}
+}
+
 // Post related
 @mixin pubdate {
 	@include icon($fa-var-clock-o, before);
@@ -28,6 +68,10 @@
 		}
 	}
 
+	@include post-meta;
+}
+
+@mixin post-meta {
 	ul.tags {
 		display: inline-block;
 		margin-bottom: $margin / 2;

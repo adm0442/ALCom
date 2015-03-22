@@ -3,7 +3,7 @@
 <main>
 
 	<?php sleek_get_module('posts-intro') ?>
-	<?php sleek_get_module('posts') ?>
+	<?php sleek_get_module('projects') ?>
 
 </main>
 

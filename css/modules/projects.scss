@@ -1,0 +1,9 @@
+#projects {
+	@include cols(2);
+
+	article {
+		@include projects-project;
+
+		margin-bottom: $margin * 2;
+	}
+}

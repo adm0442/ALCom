@@ -76,6 +76,9 @@ $button-padding-side: 28px;
 $h1-pos-bp1: 180px;
 $h1-pos-bp3: 240px;
 
+$margin-top-bp1: ($h1-pos-bp1 - $margin * 3);
+$margin-top-bp3: ($h1-pos-bp3 - $margin * 3);
+
 // Header colors
 $header-bg: #001116;
 $header-color: $white-color;

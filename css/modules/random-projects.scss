@@ -4,49 +4,12 @@
 	}
 
 	article {
-		h2 {
-			position: relative;
+		@include projects-project;
 
-			&:before {
-				font-size: 150px;
+		margin-bottom: $margin * 2;
 
-				position: absolute;
-				left: -70px;
-				top: -15px;
-
-				opacity: .05;
-				text-shadow: 0 0 0 $shadow-color;
-				transform: rotate(-10deg);
-
-				transition: transform .1s ease-out;
-			}
-
-			* {
-				position: relative; // Render on top of icon
-			}
-		}
-
-		&:hover h2:before {
-			color: $heading-color;
-			transform: scale(1.05) rotate(-10deg);
-		}
-
-		ul.tags {
-			position: relative; // On top of icon
-		}
-
-		img {
-			border-width: 5px;
-		}
-
-		a.button + a.button {
-			margin-left: $margin;
-		}
-	}
-
-	article + article {
 		@media #{$bp-3} {
-			float: right;
+			margin-bottom: 0;
 		}
 	}
 }
