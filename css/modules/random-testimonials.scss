@@ -11,11 +11,11 @@
 		perspective: 800px;
 
 		&:hover figure:not(.no-img) {
-			transform: rotateY(180deg);
+			transform: rotateX(180deg);
 		}
 
 		figure {
-			@include card-flip(false);
+			@include card-flip(false, X);
 
 			width: 180px;
 			height: 180px;
