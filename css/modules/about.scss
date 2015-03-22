@@ -1,0 +1,7 @@
+#about {
+	img {
+		@include img-right($bp-3);
+		@include framed(true);
+		shape-outside: circle(170px);
+	}
+}

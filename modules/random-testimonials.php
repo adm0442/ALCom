@@ -20,7 +20,7 @@
 	<?php foreach ($rows as $post) : setup_postdata($post) ?>
 		<article>
 
-			<figure>
+			<figure<?php if (!has_post_thumbnail()) : ?> class="no-img"<?php endif ?>>
 				<?php the_post_thumbnail('sleek-small') ?>
 
 				<figcaption>

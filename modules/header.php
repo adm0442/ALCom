@@ -4,14 +4,17 @@
 		'love', 'love', 'love', 'love', 
 		'live for', 'live for', 'live for', 'live for', 
 		'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 
-		'lose sleep over', 'lose sleep over', 'lose sleep over', 'lose sleep over', 'lose sleep over', 'lose sleep over', 'lose sleep over', 
-		'dream about', 'dream about', 'dream about', 'dream about', 'dream about', 'dream about', 'dream about', 
-		'sometimes feel like cuddling with'
+		'dream about', 'dream about', 'dream about', 'dream about', 
+		'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 
+		'sometimes feel like cuddling with', 
+		'get excited thinking about', 'get excited thinking about', 'get excited thinking about', 
+		'start frothing at the mouth at the very thought of', 
+		'completely mess up my circadian rhythm because of', 
 	);
 
 	$things = array(
 		'web development', 'web development', 'web development', 
-		'video games', 
+		'video games', 'video games', 
 		'gadgets', 
 		'open source', 'open source', 'open source', 
 		'ubuntu', 'ubuntu', 'ubuntu'
@@ -28,7 +31,11 @@
 	<?php if (is_front_page()) : ?><h1><?php else : ?><p class="logo"><?php endif ?>
 		<a href="<?php echo home_url('/') ?>">
 			Hi! <strong>I'm Andreas</strong> 
-			<small>...and I <em><?php echo $verbs[array_rand($verbs, 1)] ?></em> <?php echo $things[array_rand($things, 1)] ?></small>
+			<small>
+				...and I 
+				<em><?php echo $verbs[array_rand($verbs, 1)] ?></em> 
+				<?php echo $things[array_rand($things, 1)] ?>
+			</small>
 		</a>
 	<?php if (is_front_page()) : ?></h1><?php else : ?></p><?php endif ?>
 
