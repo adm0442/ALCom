@@ -2,6 +2,6 @@
 	img {
 		@include img-right($bp-3);
 		@include framed(true);
-		shape-outside: circle(170px);
+		shape-outside: circle(170px at 50% calc(50% - 10px)); // Why it doesn't count border??
 	}
 }
