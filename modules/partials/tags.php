@@ -10,13 +10,19 @@
 		'geo-location' => 'globe', 
 		'map' => 'map-marker', 
 		'maps' => 'map-marker', 
+		'images' => 'picture-o', 
+		'image' => 'picture-o', 
+		'zoom' => 'search-plus', 
 
 		'php' => 'terminal', 
 		'php' => 'file-code-o', 
 		'css' => 'css3', 
 		'sass' => 'file-code-o', 
 		'sass-mixin' => 'puzzle-piece', 
-		'html' => 'code'
+		'html' => 'code', 
+		'javascript' => 'file-code-o', 
+		'jquery' => 'file-code-o', 
+		'js' => 'file-code-o', 
 	);
 
 	global $post;
