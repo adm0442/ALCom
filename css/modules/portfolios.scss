@@ -1,0 +1,76 @@
+#portfolios {
+	@media #{$bp-2} and #{$bp-3-max} {
+		@include cols(2);
+	}
+
+	@media #{$bp-3} {
+		@include cols(3);
+	}
+
+	article {
+		@include framed;
+		position: relative;
+		overflow: hidden;
+
+		max-width: 300px;
+		min-height: 360px;
+
+		figure {
+			margin: 0;
+			position: absolute;
+			left: 0;
+			top: 0;
+
+			width: 100%;
+			height: 100%;
+
+			img {
+				transition: opacity .1s ease-out;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+
+			img + img {
+				opacity: 0;
+			}
+		}
+
+		&:hover figure img + img {
+			opacity: 1;
+		}
+
+		> div {
+			background: rgba(255, 255, 255, .4);
+
+			position: absolute;
+			left: 0;
+			bottom: 0;
+
+			width: 100%;
+			box-sizing: border-box;
+			padding: $margin;
+
+		//	color: $white-color;
+			border-top: 1px solid rgba(255, 255, 255, .6);
+
+			transform: translateY(100%);
+			transition: transform .1s ease-out;
+
+			h2 {
+			//	@include hero-title;
+				@include heading-size($h4-size);
+				@include ellipsis;
+			}
+
+			p {
+				margin: 0;
+				line-height: 1.4;
+			}
+		}
+
+		&:hover > div {
+			transform: translateY(0);
+		}
+	}
+}

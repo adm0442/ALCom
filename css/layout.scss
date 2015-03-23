@@ -24,6 +24,10 @@ ul.tags {
 	@include tags;
 }
 
+p.pubdate {
+	@include pubdate;
+}
+
 img.framed {
 	@include framed(false);
 }
