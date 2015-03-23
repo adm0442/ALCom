@@ -2,7 +2,8 @@
 @mixin projects-project {
 	margin-bottom: $margin * 2;
 
-	h2 {
+	> h1:first-child, 
+	> h2:first-child {
 		position: relative;
 
 		&:before {
@@ -24,7 +25,8 @@
 		}
 	}
 
-	&:hover h2:before {
+	&:hover > h1:first-child:before, 
+	&:hover > h2:first-child:before {
 		color: $heading-color;
 		transform: scale(1.05) rotate(-10deg);
 	}

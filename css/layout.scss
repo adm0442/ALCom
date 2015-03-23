@@ -15,7 +15,7 @@ body {
 	}
 }
 
-// A little magic
+// Some general styling
 a {
 	transition: color .05s ease-out;
 }
@@ -30,6 +30,10 @@ img.framed {
 
 img.framed.rounded {
 	@include framed(true);
+}
+
+code {
+	background: #eee;
 }
 
 // Automatically make sections
@@ -52,10 +56,10 @@ main,
 
 // Make room for header
 header + main {
-	padding-top: $h1-pos-bp1 - $margin * 3; // ($margin * 3 = padding for sections)
+	padding-top: $margin-top-bp3;
 
 	@media #{$bp-3} {
-		padding-top: $h1-pos-bp3 - $margin * 3;
+		padding-top: $margin-top-bp3;
 	}
 }
 

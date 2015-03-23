@@ -1,0 +1,36 @@
+#project {
+	@include clearfix;
+
+	article {
+		@include projects-project;
+
+		> h1:first-child:before {
+			font-size: 300px;
+			top: -120px;
+		}
+
+		ul.tags + p {
+			@include first-p;
+		}
+	}
+
+	aside {
+		background: $alt-bg;
+		padding: ($margin * 2) $margin $margin;
+		border: 1px solid $border-color;
+	}
+
+	@media #{$bp-3} {
+		article {
+			box-sizing: border-box;
+			width: 60% - $gutter / 2;
+			float: left;
+		}
+
+		aside {
+			box-sizing: border-box;
+			width: 40% - $gutter / 2;
+			float: right;
+		}
+	}
+}
