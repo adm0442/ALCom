@@ -242,7 +242,10 @@
 					border-left: 25px solid transparent;
 
 					a {
+						display: block;
 						position: static;
+
+						line-height: 55px; // Make clickable area bigger TODO: a should cover entire table cell and still be vertically centered
 
 						&:before, 
 						&:after {
