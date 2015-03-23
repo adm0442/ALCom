@@ -121,6 +121,7 @@
 					color: rgba($white-color, .8);
 					text-decoration: none;
 					text-shadow: none;
+					line-height: 24px;
 
 					// Underline
 					&:before, 
@@ -132,7 +133,7 @@
 
 						position: absolute;
 						left: 50%;
-						bottom: -15px;
+						bottom: -12px;
 
 						width: 0;
 						height: 5px;
@@ -202,8 +203,12 @@
 
 // Menu de la hamburguesa - no, hide the header on scroll in lo res
 @media #{$bp-3-max} {
-	body.has-scrolled.scrolling-down #header {
+	body.has-scrolled.scrolling-down-far #header {
 		transform: translateY(-100%);
+	}
+
+	body.has-scrolled.scrolling-up #header {
+		transform: translateY(0);
 	}
 }
 

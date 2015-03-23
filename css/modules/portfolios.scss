@@ -1,19 +1,36 @@
 #portfolios {
-	@media #{$bp-2} and #{$bp-3-max} {
-		@include cols(2);
+	@media #{$bp-4-max} {
+		text-align: center;
+
+		article {
+			display: inline-block;
+			width: 300px;
+			max-width: 100%;
+			margin: 0 $margin $margin;
+		}
 	}
 
-	@media #{$bp-3} {
+	@media #{$bp-4} {
 		@include cols(3);
 	}
 
 	article {
 		@include framed;
+
 		position: relative;
 		overflow: hidden;
 
-		max-width: 300px;
-		min-height: 360px;
+		height: 360px;
+
+		@media #{$bp-3} {
+			transform: scale(1);
+			transition: transform .1s ease-out;
+
+			&:hover {
+				transform: scale(1.1);
+				z-index: 1;
+			}
+		}
 
 		figure {
 			margin: 0;
@@ -51,16 +68,20 @@
 			box-sizing: border-box;
 			padding: $margin;
 
+			font-size: 80%;
+			text-align: left;
 		//	color: $white-color;
-			border-top: 1px solid rgba(255, 255, 255, .6);
+			border-top: 1px solid rgba(220, 220, 220, .4);
 
 			transform: translateY(100%);
 			transition: transform .1s ease-out;
 
 			h2 {
 			//	@include hero-title;
-				@include heading-size($h4-size);
+				@include heading-size($h5-size);
 				@include ellipsis;
+
+				text-shadow: 1px 1px 1px $shadow-color;
 			}
 
 			p {

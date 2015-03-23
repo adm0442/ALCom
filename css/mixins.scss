@@ -176,6 +176,17 @@
 // Hero (use with @section)
 @mixin hero {
 	background: $dark-blue-bg;
+	background: $dark-blue-bg url(gfx/classy-fabric@2X.png);
+	background-size: 102px 102px;
+
+	background: $dark-blue-bg url(gfx/vertical-cloth@2X.png);
+	background-size: 398px 400px;
+
+	background: $dark-blue-bg url(gfx/stressed-linen@2X.png);
+	background-size: 256px 256px;
+
+	background: $dark-blue-bg url(gfx/noisy-net@2X.png);
+	background-size: 200px 200px;
 
 	overflow: hidden;
 	min-height: 90px;
