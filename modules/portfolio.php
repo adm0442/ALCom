@@ -1,24 +1,9 @@
-<?php
-	global $post;
+<?php global $post ?>
 
-	$rows = get_posts(array(
-		'post_type' => 'portfolio', 
-		'numberposts' => -1, 
-		'orderby' => 'date', 
-		'tax_query' => array(
-			array(
-				'taxonomy' => 'misc', 
-				'field' => 'slug', 
-				'terms' => 'featured'
-			)
-		)
-	));
-?>
+<section id="portfolio">
 
-<section id="featured-portfolio">
-
-	<?php foreach ($rows as $post) : setup_postdata($post) ?>
-		<article>
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		<header>
 
 			<figure>
 				<?php /* <img src="<?php 
@@ -38,15 +23,25 @@
 			<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
 
 			<?php sleek_get_module('partials/tags', array('taxonomy' => 'portfolio_tags')) ?>
-
 			<?php the_excerpt() ?>
 
-			<p>
-				<a href="<?php the_field('site_url') ?>" class="button" target="_blank">Visit the site</a> or 
-				<a href="<?php the_permalink() ?>" class="button secondary">Read more about the project</a>
-			</p>
+			<p><a href="<?php the_field('site_url') ?>" class="button" target="_blank">Visit the site</a></p>
 
-		</article>
-	<?php endforeach; wp_reset_postdata() ?>
+		</header>
+
+		<!-- I hate you div, I hate you beeee -->
+		<div>
+
+			<?php the_content() ?>
+
+		</div>
+	<?php endwhile; else : ?>
+		<?php sleek_get_module('partials/nothing-found') ?>
+	<?php endif ?>
 
 </section>
+
+<nav id="pagination">
+	<?php previous_post_link('<span class="prev">%link</span>', '%title') ?>
+	<?php next_post_link('<span class="next">%link</span>', '%title') ?>
+</nav>

@@ -46,8 +46,8 @@ add_action('init', 'alcom_register_post_types');
 
 function alcom_register_post_types () {
 	$customPostTypes = array(
-		'portfolio' => "Below you'll find a sample of my work", 
-		'projects' => "Here you'll find code I think might be useful to others. It ranges from WordPress plug-ins to JavaScript snippets.", 
+		'portfolio' => "Below you'll find a sample of my work.", 
+		'projects' => "Here you'll find code I think might be useful to others.", 
 		'testimonials' => ''
 	);
 

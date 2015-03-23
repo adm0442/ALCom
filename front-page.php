@@ -4,7 +4,7 @@
 
 	<?php sleek_get_module('featured-portfolio') ?>
 	<?php sleek_get_module('random-testimonials') ?>
-	<?php sleek_get_module('latest-blog') ?>
+	<?php sleek_get_module('latest-post') ?>
 	<?php sleek_get_module('random-projects') ?>
 
 </main>
