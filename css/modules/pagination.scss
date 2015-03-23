@@ -1,3 +1,29 @@
 #pagination {
-	
+	@include clearfix;
+
+	padding-top: $margin;
+	padding-bottom: $margin;
+
+	&:not(:last-child) {
+		@include alt-section;
+	}
+
+	a {
+		color: $gray-color;
+		text-decoration: none;
+
+		&:hover {
+			color: $default-color;
+		}
+	}
+
+	a[rel=prev] {
+		@include icon($fa-var-arrow-left, before);
+		float: left;
+	}
+
+	a[rel=next] {
+		@include icon($fa-var-arrow-right, after);
+		float: right;
+	}
 }

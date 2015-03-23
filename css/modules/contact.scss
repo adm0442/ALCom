@@ -1,5 +1,7 @@
 #contact {
 	background: $alt-bg;
+	border: 1px solid darken($alt-bg, 10%);
+	border-width: 1px 0 0;
 
 	h2 {
 		margin-bottom: $margin;

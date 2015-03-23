@@ -218,6 +218,7 @@
 		top: 0;
 
 		transform: translateX(-50%);
+		opacity: .8;
 
 		@media #{$bp-3} {
 			&.blur {
@@ -226,8 +227,6 @@
 			}
 
 			&:not(.blur) {
-				opacity: .8;
-
 				@if ($blur) {
 					-webkit-filter: blur(30px);
 					filter: blur(30px);

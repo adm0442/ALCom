@@ -102,9 +102,14 @@
 
 			li {
 				display: inline-block;
-				margin: 0 10px 0 0;
 			//	cursor: pointer; // Pretend it's a link (we make it clickable with JS)
 				position: relative;
+
+				margin: 0 5px 0 0;
+
+				@media #{$bp-1} {
+					margin: 0 10px 0 0;
+				}
 
 				@media #{$bp-2} {
 					margin: 0 0 0 20px;
@@ -134,6 +139,10 @@
 
 						transition: width .1s ease-out, left .1s ease-out;
 					}
+				}
+
+				&:last-child {
+					margin-right: 0;
 				}
 
 				// Hover

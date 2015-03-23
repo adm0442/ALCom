@@ -6,6 +6,7 @@ html {
 // Body stops with content so should be default bg
 body {
 	background: $default-bg;
+//	background-image: linear-gradient(90deg, darken($default-bg, 5%) 0%, $default-bg 5%, $default-bg 95%, darken($default-bg, 10%));
 
 	// Weird edge case - a post with "icon" in its name will 
 	// give body a class that contains icon and fontawesome 
@@ -51,10 +52,17 @@ main,
 }
 
 // Striped sections on home page
+@mixin alt-section {
+	background: $alt-bg;
+
+	border: 1px solid darken($alt-bg, 5%);
+	border-width: 1px 0;
+}
+
 #home-page main, 
 #home-page #aside {
 	> *:nth-child(even) {
-		background: $alt-bg;
+		@include alt-section;
 	}
 }
 
