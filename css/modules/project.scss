@@ -18,6 +18,7 @@
 		background: $alt-bg;
 		padding: ($margin * 2) $margin $margin;
 		border: 1px solid $border-color;
+		border-radius: $border-radius;
 	}
 
 	@media #{$bp-3} {

@@ -45,7 +45,12 @@ function alcom_register_sidebars () {
 add_action('init', 'alcom_register_post_types');
 
 function alcom_register_post_types () {
-	$customPostTypes = array('portfolio', 'projects', 'testimonials');
+	$customPostTypes = array(
+		'portfolio' => "Below you'll find a sample of my work", 
+		'projects' => "Here you'll find code I think might be useful to others. It ranges from WordPress plug-ins to JavaScript snippets.", 
+		'testimonials' => ''
+	);
+
 	$allPostTypes = array_merge(array('post', 'page'), $customPostTypes);
 
 	sleek_register_post_types(
