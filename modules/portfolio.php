@@ -20,7 +20,7 @@
 				<figure><img src="<?php $img = get_field('mobile_screenshot'); echo $img['url'] ?>"></figure>
 			<?php endif ?>
 
-			<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+			<h1><?php the_title() ?></h1>
 
 			<?php sleek_get_module('partials/tags', array('taxonomy' => 'portfolio_tags')) ?>
 			<?php the_excerpt() ?>

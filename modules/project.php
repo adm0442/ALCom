@@ -10,7 +10,7 @@
 
 				<h1 class="icon-<?php the_field('icon') ?>">
 					<small><a href="<?php echo get_term_link($category[0]) ?>"><?php echo $category[0]->name ?></a></small> 
-					<a href="<?php the_permalink() ?>"><?php the_title() ?></a>
+					<?php the_title() ?>
 				</h1>
 
 				<?php sleek_get_module('partials/tags', array('taxonomy' => 'project_tags')) ?>

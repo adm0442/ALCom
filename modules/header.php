@@ -3,12 +3,16 @@
 	$verbs = array(
 		'love', 'love', 'love', 'love', 
 		'live for', 'live for', 'live for', 'live for', 
-		'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 
+		'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 
+		'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 'obsess over', 
 		'dream about', 'dream about', 'dream about', 'dream about', 
-		'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 
+		'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 
+		'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 'daydream about', 
+		'sometimes feel like cuddling with', 'sometimes feel like cuddling with', 
 		'sometimes feel like cuddling with', 'sometimes feel like cuddling with', 
 		'get excited thinking about', 'get excited thinking about', 'get excited thinking about', 'get excited thinking about', 
-		'completely mess up my circadian rhythm because of', 
+		'get excited thinking about', 'get excited thinking about', 'get excited thinking about', 'get excited thinking about', 
+		'completely mess up my day/night cycle because of', 
 	);
 
 	$things = array(

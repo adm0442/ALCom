@@ -63,6 +63,7 @@
 	}
 
 	// Project title
+	h1, 
 	h2 {
 		@include hero-title;
 		@include heading-size($h1-size);
@@ -182,22 +183,22 @@
 	background: $dark-blue-bg url(gfx/vertical-cloth@2X.png);
 	background-size: 398px 400px;
 
-	background: $dark-blue-bg url(gfx/stressed-linen@2X.png);
+	background: $dark-blue-bg url(gfx/stressed-linen-o50@2X.png);
 	background-size: 256px 256px;
 
-	background: $dark-blue-bg url(gfx/noisy-net@2X.png);
+	background: $dark-blue-bg url(gfx/noisy-net-o50@2X.png);
 	background-size: 200px 200px;
 
 	overflow: hidden;
-	min-height: 90px;
+	min-height: 150px;
 	margin-top: -$margin-top-bp1;
 	padding-top: $h1-pos-bp1;
-	padding-bottom: 60px;
+	padding-bottom: 0;
 
 	@media #{$bp-3} {
 		margin-top: -$margin-top-bp3;
 		padding-top: $h1-pos-bp3;
-		padding-bottom: 80px;
+		min-height: 210px;
 
 		// Give the next element some extra padding-top
 		& + * {
