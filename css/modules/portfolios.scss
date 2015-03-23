@@ -4,14 +4,19 @@
 
 		article {
 			display: inline-block;
-			width: 300px;
+			width: 240px;
+			height: 280px;
 			max-width: 100%;
-			margin: 0 $margin $margin;
+			margin: 0 ($margin / 2) $margin;
 		}
 	}
 
 	@media #{$bp-4} {
 		@include cols(3);
+
+		article {
+			height: 360px;
+		}
 	}
 
 	article {
@@ -19,8 +24,6 @@
 
 		position: relative;
 		overflow: hidden;
-
-		height: 360px;
 
 		@media #{$bp-3} {
 			transform: scale(1);
