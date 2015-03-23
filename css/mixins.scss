@@ -48,7 +48,7 @@
 
 @mixin posts-post {
 	@include clearfix;
-	margin-bottom: $margin * 4;
+	margin-bottom: $margin * 2;
 
 	h2 {
 		a {

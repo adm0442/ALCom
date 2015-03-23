@@ -25,9 +25,13 @@
 			p.comment-form-author, 
 			p.comment-form-email, 
 			p.comment-form-url {
-				width: 31%;
+				width: 32%;
 				margin-right: 2%;
 				float: left;
+			}
+
+			p.comment-form-url {
+				margin-right: 0;
 			}
 
 			p.comment-form-comment {
