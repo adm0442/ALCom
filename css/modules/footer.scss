@@ -1,4 +1,8 @@
 #footer {
 	@include section($header-bg);
 	color: $white-color;
+
+	a {
+		white-space: nowrap;
+	}
 }
