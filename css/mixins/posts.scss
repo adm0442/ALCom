@@ -1,0 +1,44 @@
+// Post related
+@mixin pubdate {
+	@include icon($fa-var-clock-o, before);
+	font-size: 80%;
+	text-transform: uppercase;
+	color: $gray-color;
+}
+
+@mixin posts-post {
+	@include clearfix;
+
+	h2 {
+		a {
+			img {
+				@include framed(false);
+				@include img-left($bp-3);
+
+				// Make it half width
+				@media #{$bp-3} {
+					width: 50% - $gutter / 2;
+					margin-right: $gutter;
+				}
+			}
+
+			&:hover img {
+				@include framed-hover;
+			}
+		}
+	}
+
+	@include post-meta;
+}
+
+@mixin post-meta {
+	ul.tags {
+		display: inline-block;
+		margin-bottom: $margin / 2;
+		margin-right: $margin / 2;
+	}
+
+	p.pubdate {
+		display: inline-block;
+	}
+}

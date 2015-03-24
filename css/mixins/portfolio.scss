@@ -1,0 +1,87 @@
+@mixin portfolio-head {
+	@include section($dark-blue-bg);
+	
+	color: $white-color;
+
+	position: relative;
+	overflow: hidden;
+
+	padding-top: $h1-pos-bp1 - 100px; // 100px margin-top of h2 (project title)
+
+	@media #{$bp-3} {
+		padding-top: $h1-pos-bp3 - 100px;
+	}
+
+	// Images
+	figure {
+		margin: 0;
+	}
+
+	// First (Desktop) image as background
+	figure:first-child {
+		position: absolute;
+		left: 0;
+		top: 0;
+
+		width: 100%;
+		height: 100%;
+
+		img {
+			@include hero-img(false);
+			background: red;
+			opacity: .8;
+		}
+	}
+
+	// Potential low-res images (tablet/phone)
+	figure + figure {
+		@include device(280px);
+
+		float: right;
+		margin-bottom: -300px;
+		margin-left: $margin * 2;
+
+		// Scroll the img (website screenshot) on hover
+		img {
+			transition: transform 12s linear, top 12s linear;
+			position: relative;
+			top: 0;
+		}
+
+		&:hover img {
+			top: 100%;
+			transform: translateY(-100%);
+		}
+
+		// Don't show the phone on phones :P
+		@media #{$bp-4-max} {
+			display: none;
+		}
+	}
+
+	// Position text etc on top of image
+	* {
+		position: relative;
+	}
+
+	// Project title
+	h1, 
+	h2 {
+		@include hero-title;
+		@include heading-size($h1-size);
+		@include ellipsis;
+
+		margin-top: 100px;
+		margin-bottom: 0;
+	}
+
+	// Tags/technologies used
+	ul {
+
+	}
+
+	// Description
+	ul + p {
+		@include first-p-hero;
+	}
+}

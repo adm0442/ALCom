@@ -1,0 +1,118 @@
+// Hero (use with @section)
+@mixin hero {
+	background: $dark-blue-bg;
+	background: $dark-blue-bg url(gfx/classy-fabric@2X.png);
+	background-size: 102px 102px;
+
+	background: $dark-blue-bg url(gfx/vertical-cloth@2X.png);
+	background-size: 398px 400px;
+
+	background: $dark-blue-bg url(gfx/stressed-linen-o50@2X.png);
+	background-size: 256px 256px;
+
+	background: $dark-blue-bg url(gfx/noisy-net-o50@2X.png);
+	background-size: 200px 200px;
+
+	overflow: hidden;
+	min-height: 150px;
+	margin-top: -$margin-top-bp1;
+	padding-top: $h1-pos-bp1;
+	padding-bottom: 0;
+
+	@media #{$bp-3} {
+		margin-top: -$margin-top-bp3;
+		padding-top: $h1-pos-bp3;
+		padding-bottom: 40px;
+		min-height: 160px;
+	}
+
+	color: $white-color;
+
+	@include hero-shadow;
+}
+
+@mixin first-p-hero {
+	font-size: 120%;
+	font-style: italic;
+	font-weight: lighter;
+	line-height: 1.4;
+	text-shadow: 1px 1px 1px $shadow-color;
+}
+
+@mixin hero-img ($blur: false) {
+	&, 
+	& + canvas {
+		display: block;
+		max-width: none;
+
+		position: absolute;
+		left: 50%;
+		top: 0;
+
+		transform: translateX(-50%);
+		opacity: .6;
+
+		@media #{$bp-3} {
+			// If we're using .blur (canvas blur) - hide the img
+			&.blur {
+				left: -1000000px;
+				top: -1000000px;
+			}
+
+			// If it's not an img.blur but $blur is true - CSS filter blur
+			&:not(.blur) {
+				@if ($blur) {
+					-webkit-filter: blur(30px);
+					filter: blur(30px);
+				}
+			}
+		}
+
+		// Make the img really dark on mobile (blur too cpu heavy)
+		@media #{$bp-3-max} {
+			&:not(.blur) {
+				@if ($blur) {
+					opacity: .08;
+				}
+			}
+		}
+	}
+
+	& + canvas {
+		opacity: .4;
+
+		@media #{$bp-3-max} {
+			display: none;
+		}
+	}
+}
+
+@mixin hero-title {
+	color: $white-color;
+	text-shadow: 1px 1px 1px $shadow-color;
+
+	a {
+		color: $white-color;
+
+		&:hover {
+			color: $link-color-hover;
+		}
+	}
+}
+
+@mixin hero-shadow {
+	&:after {
+		background: linear-gradient(0, rgba($shadow-color, .4), rgba($shadow-color, 0));
+
+		display: block;
+		content: "";
+
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: 99;
+
+		width: 100%;
+		height: 4px;
+	}
+}

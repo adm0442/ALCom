@@ -1,6 +1,6 @@
 @import url("//fonts.googleapis.com/css?family=Open+Sans:300,400,600");
-@import url("//fonts.googleapis.com/css?family=Raleway:300,400,600");
-@import url("//fonts.googleapis.com/css?family=Ubuntu:300,400,600");
+// @import url("//fonts.googleapis.com/css?family=Raleway:300,400,600");
+// @import url("//fonts.googleapis.com/css?family=Ubuntu:300,400,600");
 
 @import "config";
 
@@ -9,7 +9,12 @@
 @import "../../sleek/css/all-general";
 @import "../../sleek/css/font-awesome/all";
 
-@import "mixins";
+@import "mixins/misc";
+@import "mixins/hero";
+@import "mixins/portfolio";
+@import "mixins/posts";
+@import "mixins/projects";
+
 @import "layout";
 
 // Modules
