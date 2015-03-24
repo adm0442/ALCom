@@ -9,7 +9,7 @@
 		@include hero-title;
 	}
 
-	h1 + p {
+	p:first-of-type {
 		@include first-p-hero;
 	}
 
