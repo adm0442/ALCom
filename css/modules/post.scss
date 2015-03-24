@@ -59,5 +59,15 @@
 		h1 {
 			@include hero-title;
 		}
+
+		p.pubdate {
+			color: $white-color;
+		}
+	}
+
+	> div {
+		> p:first-child {
+			@include first-p;
+		}
 	}
 }
