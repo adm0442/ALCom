@@ -1,4 +1,4 @@
-#project {
+/* #project {
 	@include clearfix;
 
 	article {
@@ -32,6 +32,69 @@
 			box-sizing: border-box;
 			width: 40% - $gutter / 2;
 			float: right;
+		}
+	}
+} */
+
+#project {
+	@include unsection;
+
+	header {
+		@include hero;
+		@include projects-project; // Icon styling
+
+		h1 {
+			@include hero-title;
+
+			&:first-child:before {
+				font-size: 400px;
+				top: -180px;
+				left: -200px;
+			}
+		}
+
+		* {
+			position: relative;
+		}
+
+		ul.tags {
+			float: left;
+		}
+
+		ul.tags + p {
+			float: right;
+			margin-top: -10px;
+		}
+	}
+
+	> div {
+		@include section;
+
+		> div {
+			> p:first-of-type {
+				@include first-p;
+			}
+		}
+
+		aside {
+			background: $alt-bg;
+			padding: ($margin * 2) $margin $margin;
+			border: 1px solid $border-color;
+			border-radius: $border-radius;
+		}
+
+		@media #{$bp-3} {
+			> div {
+				box-sizing: border-box;
+				width: 60% - $gutter / 2;
+				float: left;
+			}
+
+			aside {
+				box-sizing: border-box;
+				width: 40% - $gutter / 2;
+				float: right;
+			}
 		}
 	}
 }

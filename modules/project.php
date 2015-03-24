@@ -6,7 +6,7 @@
 		<?php while (have_posts()) : the_post() ?>
 			<?php $category = wp_get_post_terms($post->ID, 'project_categories') ?>
 
-			<article>
+			<header>
 
 				<h1 class="icon-<?php the_field('icon') ?>">
 					<small><a href="<?php echo get_term_link($category[0]) ?>"><?php echo $category[0]->name ?></a></small> 
@@ -15,21 +15,27 @@
 
 				<?php sleek_get_module('partials/tags', array('taxonomy' => 'project_tags')) ?>
 
-				<?php the_content() ?>
-
 				<p><a href="<?php the_field('github_url') ?>" class="button secondary icon-github" target="_blank">GitHub</a></p>
 
-			</article>
+			</header>
 
-			<?php if ($demo = get_field('project_demo')) : ?>
-				<aside>
+			<!--- i.. hät.. udiv -->
+			<div>
 
-					<h2>Demo</h2>
+				<!-- :( -->
+				<div><?php the_content() ?></div>
 
-					<?php echo $demo ?>
+				<?php if ($demo = get_field('project_demo')) : ?>
+					<aside>
 
-				</aside>
-			<?php endif ?>
+						<h2>Demo</h2>
+
+						<?php echo $demo ?>
+
+					</aside>
+				<?php endif ?>
+
+			</div>
 		<?php endwhile ?>
 	<?php else : ?>
 		<?php sleek_get_module('partials/nothing-found') ?>

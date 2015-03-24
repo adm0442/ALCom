@@ -15,7 +15,7 @@
 			text-shadow: 0 0 0 $shadow-color;
 			transform: rotate(-10deg);
 
-			transition: transform .1s ease-out;
+		//	transition: transform .1s ease-out;
 		}
 
 		* {
@@ -23,11 +23,10 @@
 		}
 	}
 
-	&:hover > h1:first-child:before, 
+/*	&:hover > h1:first-child:before, 
 	&:hover > h2:first-child:before {
-		color: $heading-color;
 		transform: scale(1.05) rotate(-10deg);
-	}
+	} */
 
 	ul.tags {
 		position: relative; // On top of icon
