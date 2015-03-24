@@ -23,6 +23,13 @@
 				margin: 0 10px 10px;
 			}
 		}
+
+		// Read more.. about the project
+		a span {
+			@media #{$bp-3-max} {
+				display: none;
+			}
+		}
 	}
 }
 
@@ -55,7 +62,11 @@
 	position: relative;
 	overflow: hidden;
 
-	min-height: 550px;
+	min-height: 600px;
+
+	@media #{$bp-3} {
+		min-height: 550px;
+	}
 
 	// Every item starts above
 	article {

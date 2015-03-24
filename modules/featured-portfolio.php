@@ -43,7 +43,7 @@
 
 			<p>
 				<a href="<?php the_field('site_url') ?>" class="button" target="_blank">Visit the site</a> or 
-				<a href="<?php the_permalink() ?>" class="button secondary">Read more about the project</a>
+				<a href="<?php the_permalink() ?>" class="button secondary">Read more <span>about the project</span></a>
 			</p>
 
 		</article>
