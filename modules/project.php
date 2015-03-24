@@ -28,8 +28,6 @@
 				<?php if ($demo = get_field('project_demo')) : ?>
 					<aside>
 
-						<h2>Demo</h2>
-
 						<?php echo $demo ?>
 
 					</aside>

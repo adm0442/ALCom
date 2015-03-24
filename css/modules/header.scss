@@ -60,6 +60,11 @@
 			strong {
 				font-weight: 300;
 				color: $header-accent-color;
+				transition: color .1s ease-out;
+			}
+
+			&:hover strong {
+				color: $link-color-hover;
 			}
 
 			// Tagline
