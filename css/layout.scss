@@ -37,6 +37,10 @@ img.framed.rounded {
 	@include framed(true);
 }
 
+figure {
+	margin: 0 0 $margin;
+}
+
 code {
 	background: #eee;
 }
