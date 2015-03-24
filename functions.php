@@ -51,7 +51,7 @@ function alcom_register_post_types () {
 		'testimonials' => ''
 	);
 
-	$allPostTypes = array_merge(array('post', 'page'), $customPostTypes);
+	$allPostTypes = array_merge(array('post', 'page', 'portfolio', 'projects', 'testimonials'));
 
 	sleek_register_post_types(
 		# Post types
