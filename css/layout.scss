@@ -78,9 +78,3 @@ header + main {
 		padding-top: $margin-top-bp3;
 	}
 }
-
-// Bigger opening paragraphs
-main > :first-child > h1:first-child + p, 
-main > :first-child > h2:first-child + p {
-	@include first-p;
-}
