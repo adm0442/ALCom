@@ -25,5 +25,9 @@
 			<?php echo $content ?>
 		<?php endif ?>
 
+		<?php if (is_home()) : ?>
+			<?php sleek_get_module('search') ?>
+		<?php endif ?>
+
 	</header>
 <?php endif ?>
