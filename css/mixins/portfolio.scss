@@ -28,7 +28,6 @@
 
 		img {
 			@include hero-img(false);
-			background: red;
 			opacity: .8;
 		}
 	}

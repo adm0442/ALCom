@@ -40,49 +40,38 @@
 }
 
 @mixin hero-img ($blur: false) {
-	&, 
-	& + canvas {
-		display: block;
-		max-width: none;
+	display: block;
+	max-width: none;
 
-		position: absolute;
-		left: 50%;
-		top: 0;
+	position: absolute;
+	left: 50%;
+	top: 0;
 
-		transform: translateX(-50%);
-		opacity: .6;
+	transform: translateX(-50%);
+	opacity: .6;
 
-		@media #{$bp-3} {
-			// If we're using .blur (canvas blur) - hide the img
-			&.blur {
-				left: -1000000px;
-				top: -1000000px;
-			}
-
-			// If it's not an img.blur but $blur is true - CSS filter blur
-			&:not(.blur) {
-				@if ($blur) {
-					-webkit-filter: blur(30px);
-					filter: blur(30px);
-				}
-			}
+	@media #{$bp-3} {
+		// If we're using .blur (canvas blur) - hide the img
+		&.blur {
+			left: -1000000px;
+			top: -1000000px;
 		}
 
-		// Make the img really dark on mobile (blur too cpu heavy)
-		@media #{$bp-3-max} {
-			&:not(.blur) {
-				@if ($blur) {
-					opacity: .08;
-				}
+		// If it's not an img.blur but $blur is true - CSS filter blur
+		&:not(.blur) {
+			@if ($blur) {
+				-webkit-filter: blur(30px);
+				filter: blur(30px);
 			}
 		}
 	}
 
-	& + canvas {
-		opacity: .4;
-
-		@media #{$bp-3-max} {
-			display: none;
+	// Make the img really dark on mobile (blur too cpu heavy)
+	@media #{$bp-3-max} {
+		&:not(.blur) {
+			@if ($blur) {
+				opacity: .08;
+			}
 		}
 	}
 }
