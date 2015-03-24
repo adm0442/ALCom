@@ -1,12 +1,10 @@
 #random-projects {
 	@media #{$bp-3} {
-		@include cols(2);
+		@include cols(2, $gutter);
 	}
 
 	article {
 		@include projects-project;
-
-		margin-bottom: $margin * 2;
 
 		@media #{$bp-3} {
 			margin-bottom: 0;

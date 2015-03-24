@@ -12,7 +12,7 @@
 	}
 
 	@media #{$bp-4} {
-		@include cols(3);
+		@include cols(3, $gutter);
 
 		article {
 			height: 360px;
