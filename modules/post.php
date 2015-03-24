@@ -8,13 +8,13 @@
 			$theCat = $theCat ? $theCat[0] : false;
 		?>
 
-		<?php if (has_post_thumbnail()) : ?>
-			<figure>
-				<?php the_post_thumbnail('sleek-hdw') ?>
-			</figure>
-		<?php endif ?>
-
 		<header>
+
+			<?php if (has_post_thumbnail()) : ?>
+				<figure>
+					<?php the_post_thumbnail('sleek-hdw') ?>
+				</figure>
+			<?php endif ?>
 
 			<h1>
 				<?php if ($theCat) : ?>
@@ -33,6 +33,7 @@
 
 		</header>
 
+		<!-- I hate youuu bee? -->
 		<div>
 			<?php the_content() ?>
 		</div>
