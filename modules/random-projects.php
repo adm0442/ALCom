@@ -4,14 +4,7 @@
 	$rows = get_posts(array(
 		'post_type' => 'projects', 
 		'numberposts' => 2, 
-		'orderby' => 'rand', 
-		'tax_query' => array(
-			array(
-				'taxonomy' => 'misc', 
-				'field' => 'slug', 
-				'terms' => 'featured'
-			)
-		)
+		'orderby' => 'rand'
 	));
 ?>
 
