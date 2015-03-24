@@ -15,7 +15,8 @@
 
 	background-color:	$dark-blue-bg;
 	background-image:	url(gfx/stressed-linen-o50@2X.png), 
-						linear-gradient(180deg, lighten($dark-blue-bg, 20%) 0%, $dark-blue-bg 100%);
+					//	linear-gradient(180deg, lighten($dark-blue-bg, 20%) 0%, $dark-blue-bg 100%);
+						radial-gradient(60vw at 50% -50%, lighten($dark-blue-bg, 30%) 0%, $dark-blue-bg 100%);
 	background-size:	256px 256px, auto;
 	background-repeat:	repeat, no-repeat;
 
