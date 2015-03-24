@@ -1,5 +1,11 @@
 // Hero (use with @section)
 @mixin hero {
+	@include section($dark-blue-bg);
+//	@include section-border-centering;
+
+//	padding-left: 0 !important; // This is set in border-centering and section but for some reason this doesn't override it without !important
+//	padding-right: 0 !important;
+
 /*	background-color: $dark-blue-bg;
 	background-image: url(gfx/classy-fabric@2X.png);
 	background-size: 102px 102px;
@@ -16,15 +22,19 @@
 	background-color:	$dark-blue-bg;
 	background-image:	url(gfx/stressed-linen-o50@2X.png), 
 					//	linear-gradient(180deg, lighten($dark-blue-bg, 20%) 0%, $dark-blue-bg 100%);
-						radial-gradient(60vw at 50% -50%, lighten($dark-blue-bg, 30%) 0%, $dark-blue-bg 100%);
-	background-size:	256px 256px, auto;
+						radial-gradient(600px at 50% -50%, lighten($dark-blue-bg, 30%) 0%, $dark-blue-bg 100%);
+					//	radial-gradient(600px at 50% -50%, red 0%, white 100%);
 	background-repeat:	repeat, no-repeat;
+	background-size:	256px 256px, auto;
+//	background-clip:	border-box; // This works fine for the image but not for the gradient - wtf?
+//	background-size:	256px 256px, 500% auto; // So we have to fake it
+//	background-position:left top, 50% top;
 
 	overflow: hidden;
-	min-height: 150px;
+	min-height: 120px;
 	margin-top: -$margin-top-bp1;
 	padding-top: $h1-pos-bp1;
-	padding-bottom: 0;
+	padding-bottom: 40px;
 
 	@media #{$bp-3} {
 		margin-top: -$margin-top-bp3;
