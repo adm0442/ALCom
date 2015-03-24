@@ -1,0 +1,29 @@
+form.search {
+	p {
+		input[type=search] {
+			width: 220px;
+			transition: width .05s ease-out;
+
+			&:focus {
+				width: 280px;
+			}
+		}
+
+		button {
+			@include icon($fa-var-search, before);
+			@include icon-only;
+
+			// Remove button styling
+			background: transparent;
+			border: 0;
+			box-shadow: none;
+			text-shadow: none;
+
+			// ..
+			padding: 10px;
+			margin-left: -45px;
+
+			color: $button-secondary-color;
+		}
+	}
+}

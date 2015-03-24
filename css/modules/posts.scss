@@ -9,7 +9,7 @@
 		@include hero-title;
 	}
 
-	p:first-of-type {
+	> p:first-of-type {
 		@include first-p-hero;
 	}
 
@@ -33,6 +33,18 @@
 			position: absolute;
 			@include section-right;
 			top: 140px;
+		}
+	}
+}
+
+@media #{$bp-3} {
+	body.search #posts-intro {
+		h1 {
+			padding-right: 320px;
+		}
+
+		form {
+			top: $h1-pos-bp3 + 5px;
 		}
 	}
 }
