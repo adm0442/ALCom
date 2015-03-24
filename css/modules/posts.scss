@@ -16,6 +16,7 @@
 	ul {
 		@media #{$bp-3} {
 			position: absolute;
+			z-index: 1;
 			@include section-right;
 			@include section-bottom;
 

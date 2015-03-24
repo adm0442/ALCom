@@ -35,7 +35,10 @@
 
 		<!-- I hate youuu bee? -->
 		<div>
+
+			<?php sleek_get_module('add-this') ?>
 			<?php the_content() ?>
+
 		</div>
 	<?php endwhile; else : ?>
 		<?php sleek_get_module('partials/nothing-found') ?>

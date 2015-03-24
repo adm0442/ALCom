@@ -66,8 +66,21 @@
 	}
 
 	> div {
+		#add-this {
+			float: right;
+
+			> * {
+				display: block;
+				margin: 0 0 $margin;
+			}
+		}
+
 		> p:first-of-type {
 			@include first-p;
+		}
+
+		> * {
+			max-width: 600px;
 		}
 	}
 }

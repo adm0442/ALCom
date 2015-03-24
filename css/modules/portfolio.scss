@@ -18,5 +18,9 @@
 		p:first-child {
 			@include first-p;
 		}
+
+		> * {
+			max-width: 600px;
+		}
 	}
 }
