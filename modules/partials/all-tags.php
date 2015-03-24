@@ -4,7 +4,7 @@
 
 	$taxType = $taxonomy;
 
-	$theTags = wp_get_post_terms($post->ID, $taxType, array(
+	$theTags = get_terms($taxType, array(
 		
 	));
 ?>

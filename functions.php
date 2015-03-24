@@ -139,3 +139,30 @@ function alcom_register_shortcodes () {
 	# Get Posts short code, see sleek/inc/get-posts.php for details
 	# add_shortcode('get-posts', 'sleek_shortcode_get_posts');
 }
+
+# Tag name to font awesome icon converter
+$tag2ico = array(
+	'design' => 'apple', 
+	'responsive' => 'crop', 
+	'rwd' => 'crop', 
+
+	'wordpress' => 'wordpress', 
+	'wordpress-plugin' => 'wordpress', 
+	'font-awesome' => 'star', 
+	'geo-location' => 'globe', 
+	'map' => 'map-marker', 
+	'maps' => 'map-marker', 
+	'images' => 'picture-o', 
+	'image' => 'picture-o', 
+	'zoom' => 'search-plus', 
+
+	'php' => 'terminal', 
+	'php' => 'file-code-o', 
+	'css' => 'css3', 
+	'sass' => 'file-code-o', 
+	'sass-mixin' => 'puzzle-piece', 
+	'html' => 'code', 
+	'javascript' => 'file-code-o', 
+	'jquery' => 'file-code-o', 
+	'js' => 'file-code-o', 
+);
