@@ -57,13 +57,13 @@
 			}
 
 			// I'm Andreas
-			strong {
+			> strong {
 				font-weight: 300;
 				color: $link-color-hover; // $header-accent-color;
 				transition: color .1s ease-out;
 			}
 
-			&:hover strong {
+			&:hover > strong {
 				color: $link-color-hover;
 			}
 
@@ -82,7 +82,7 @@
 				max-height: 0;
 				transition: max-height .1s ease-out;
 
-				em {
+				strong {
 					font-style: normal;
 					color: $header-accent-color;
 					font-weight: bold;

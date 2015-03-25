@@ -36,7 +36,7 @@
 			Hi! <strong>I'm Andreas</strong> 
 			<small>
 				...and I 
-				<em><?php echo $verbs[array_rand($verbs, 1)] ?></em> 
+				<strong><?php echo $verbs[array_rand($verbs, 1)] ?></strong> 
 				<?php echo $things[array_rand($things, 1)] ?>
 			</small>
 		</a>

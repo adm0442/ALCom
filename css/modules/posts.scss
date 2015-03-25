@@ -11,6 +11,10 @@
 
 	> p:first-of-type {
 		@include first-p-hero;
+
+		@media #{$bp-3} {
+			padding-right: 240px + $margin; // Make room for tags
+		}
 	}
 
 	ul {
