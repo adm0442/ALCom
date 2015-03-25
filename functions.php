@@ -66,7 +66,10 @@ function alcom_register_post_types () {
 			'portfolio_tags' => array('portfolio'), 
 			'project_categories' => array('projects'), 
 			'project_tags' => array('projects')
-		)
+		), 
+
+		# Translation textdomain (for URLs)
+		'alcom'
 	);
 }
 
@@ -97,8 +100,12 @@ add_action('init', 'sleek_cleanup_head');
 # Allow Markdown in excerpts and advanced custom fields
 add_action('init', 'sleek_more_markdown');
 
-# Set up for translation (put your mo/po-files in your-theme/languages/ and uncomment this)
-# add_action('after_setup_theme', 'sleek_setup_lang');
+# Set up for translation (put your mo/po-files in your-theme/lang/ and uncomment this)
+add_action('after_setup_theme', 'alcom_setup_lang');
+
+function alcom_setup_lang () {
+	load_theme_textdomain('alcom', get_stylesheet_directory() . '/lang');
+}
 
 # Allow empty search
 # add_filter('request', 'sleek_allow_empty_search');

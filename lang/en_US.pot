@@ -1,0 +1,21 @@
+# Copyright (C) 2015 Andreas Lagerkvist
+# This file is distributed under the Don't steal :).
+msgid ""
+msgstr ""
+"Project-Id-Version: AndreasLagerkvist.com 1.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/alcom\n"
+"POT-Creation-Date: 2015-03-25 17:52:06+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-03-25 19:29+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"X-Generator: Poedit 1.5.4\n"
+
+msgid "url_portfolio"
+msgstr "portfolio"
+
+msgid "url_projects"
+msgstr "projects"
