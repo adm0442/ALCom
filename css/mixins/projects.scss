@@ -17,19 +17,10 @@
 
 		//	transition: transform .1s ease-out;
 		}
-
-		* {
-			position: relative; // Render on top of icon
-		}
 	}
 
-/*	&:hover > h1:first-child:before, 
-	&:hover > h2:first-child:before {
-		transform: scale(1.05) rotate(-10deg);
-	} */
-
-	ul.tags {
-		position: relative; // On top of icon
+	* {
+		position: relative; // Render on top of icon
 	}
 
 	a.button + a.button {

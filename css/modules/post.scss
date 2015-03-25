@@ -58,6 +58,7 @@
 
 		h1 {
 			@include hero-title;
+			margin: 0;
 		}
 
 		p.pubdate {
@@ -66,19 +67,27 @@
 	}
 
 	> div {
-		#add-this {
-			float: right;
-
-			> * {
-				display: block;
-				margin: 0 0 $margin;
-			}
-		}
-
+		// First p
 		> p:first-of-type {
 			@include first-p;
 		}
 
+		// Right column
+		aside {
+			@media #{$bp-3} {
+				width: 300px;
+				float: right;
+				text-align: right;
+				margin: 0 0 $margin $margin;
+
+				// Right align social-media-buttons
+				#social-media-buttons > *:not(p) {
+					margin: 0 0 $margin $margin !important;
+				}
+			}
+		}
+
+		// Not too wide text
 		> * {
 			max-width: 600px;
 		}

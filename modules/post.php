@@ -28,7 +28,6 @@
 				<?php the_title() ?>
 			</h1>
 
-			<?php sleek_get_module('partials/tags', array('taxonomy' => 'post_tag')) ?>
 			<?php sleek_get_module('partials/post-pubdate') ?>
 
 		</header>
@@ -36,7 +35,11 @@
 		<!-- I hate youuu bee? -->
 		<div>
 
-			<?php sleek_get_module('add-this') ?>
+			<aside>
+				<?php sleek_get_module('social-media-buttons') ?>
+				<?php sleek_get_module('partials/tags', array('taxonomy' => 'post_tag')) ?>
+			</aside>
+
 			<?php the_content() ?>
 
 		</div>
