@@ -4,31 +4,33 @@
 
 	$contactForm
 		->method('post')
-		->action('#contact')
+		->action(curr_page_url() . '#contact')
 
 		->addFields(array(
 			array(
-				'name' => 'name', 
+				'name' => 'contact_name', 
 				'label' => 'Your name', 
 				'required' => true
 			), 
 			array(
-				'name' => 'email', 
+				'name' => 'contact_email', 
 				'type' => 'email', 
 				'label' => 'Email', 
-				'required' => true
+				'required' => true, 
+				'validation' => 'validEmail', 
+				'error' => 'Please enter a valid e-mail address'
 			), 
 			array(
-				'name' => 'company', 
+				'name' => 'contact_company', 
 				'label' => 'Company'
 			), 
 			array(
-				'name' => 'deadline', 
+				'name' => 'contact_deadline', 
 				'type' => 'date', 
 				'label' => 'Deadline'
 			), 
 			array(
-				'name' => 'budget', 
+				'name' => 'contact_budget', 
 				'label' => 'Approximate budget', 
 				'type' => 'range', 
 				'min' => '0', 
@@ -36,18 +38,20 @@
 				'step' => '500', 
 				'value' => '0', 
 				'attributes' => array(
-					'data-value-prefix' => '€'
+					'data-value-prefix' => '€', 
+					'data-min-text' => 'Prefer not to say', 
+					'data-max-text' => 'More than €10 000'
 				)
 			), 
 			array(
-				'name' => 'message', 
+				'name' => 'contact_message', 
 				'type' => 'textarea', 
 				'label' => 'Details about the project', 
 				'placeholder' => 'e.g. Do you currently have a website? Are photos and content available? Or anything else you think might be useful.', 
 				'required' => true
 			), 
 			array(
-				'name' => 'submit', 
+				'name' => 'submit', # Doesn't matter
 				'type' => 'submit', 
 				'value' => "Let's talk"
 			)
@@ -61,15 +65,20 @@
 	if ($contactForm->submit()) {
 		# Validate
 		if ($contactForm->validate()) {
-			var_dump($contactForm->data());
+			$mail = fetch(get_stylesheet_directory() . '/inc/html5form/template.php', array('fields' => $contactForm->data()));
 
-			$done = true;
+			if (wp_mail(get_option('admin_email'), 'From website', $mail, "Content-type: text/html\r\n")) {
+				$done = true;
 
-			# If AJAX call die right now
-			if (XHR) {
-				echo json_encode(array('success' => $contactForm->data()));
+				# If AJAX call die right now
+				if (XHR) {
+					echo json_encode(array('success' => $contactForm->data()));
 
-				die;
+					die;
+				}
+			}
+			else {
+				$errors = true;
 			}
 		}
 		else {
@@ -90,8 +99,12 @@
 	<h2>Hire me! <small>...or just send me an e-mail</small></h2>
 
 	<?php if ($done) : ?>
-		<p><strong>[MESSAGE RECEIVED]</strong></p>
+		<p><strong>Thanks! I'll get back to you as soon as possible.</strong></p>
 	<?php else : ?>
+		<?php if ($errors) : ?>
+			<p><strong>Something went wrong. Please try again.</strong></p>
+		<?php endif ?>
+
 		<?php echo $contactForm->render() ?>
 	<?php endif ?>
 
