@@ -1,4 +1,4 @@
-App.modules.AddThis = {
+App.modules.SocialMediaButtons = {
 	init: function (mod) {
 		var path		= window.location.pathname;
 		var countURL	= window.location.origin + path;
