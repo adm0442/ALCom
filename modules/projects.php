@@ -5,7 +5,8 @@
 	<?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post() ?>
 			<?php $category = wp_get_post_terms($post->ID, 'project_categories') ?>
-			<article>
+			<?php $theTags = wp_get_post_terms($post->ID, 'project_tags') ?>
+			<article class="<?php foreach ($theTags as $theTag) echo $theTag->name . ' ' ?>">
 
 				<h2 class="icon-<?php the_field('icon') ?>">
 					<small><a href="<?php echo get_term_link($category[0]) ?>"><?php echo $category[0]->name ?></a></small> 

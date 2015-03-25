@@ -4,11 +4,8 @@
 
 	<?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post() ?>
-			<?php
-				$theCat = wp_get_post_terms($post->ID, 'category');
-				$theCat = $theCat ? $theCat[0] : false;
-			?>
-			<article id="post-<?php the_ID() ?>">
+			<?php $theTags = wp_get_post_terms($post->ID, 'portfolio_tags') ?>
+			<article class="<?php foreach ($theTags as $theTag) echo $theTag->name . ' ' ?>">
 
 				<figure>
 					<a href="<?php the_permalink() ?>">
