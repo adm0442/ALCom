@@ -4,7 +4,8 @@
 
 	$contactForm
 		->method('post')
-		->action(curr_page_url() . '#contact')
+		->action('#contact')
+		->classes('ajax')
 
 		->addFields(array(
 			array(
@@ -51,6 +52,11 @@
 				'required' => true
 			), 
 			array(
+				'name' => 'sleek_module', 
+				'type' => 'hidden', 
+				'value' => "contact"
+			), 
+			array(
 				'name' => 'submit', # Doesn't matter
 				'type' => 'submit', 
 				'value' => "Let's talk"
@@ -67,18 +73,15 @@
 		if ($contactForm->validate()) {
 			$mail = fetch(get_stylesheet_directory() . '/inc/html5form/template.php', array('fields' => $contactForm->data()));
 
-			if (wp_mail(get_option('admin_email'), 'From website', $mail, "Content-type: text/html\r\n")) {
-				$done = true;
+			wp_mail(get_option('admin_email'), 'From website', $mail, "Content-type: text/html\r\n");
 
-				# If AJAX call die right now
-				if (XHR) {
-					echo json_encode(array('success' => $contactForm->data()));
+			$done = true;
 
-					die;
-				}
-			}
-			else {
-				$errors = true;
+			# If AJAX call die right now
+			if (XHR) {
+				echo json_encode(array('success' => $contactForm->data()));
+
+				die;
 			}
 		}
 		else {

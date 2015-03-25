@@ -3,6 +3,8 @@ class Form {
 	private $name;
 	private $method;
 	private $action;
+	private $id;
+	private $classes;
 
 	public $fields;
 	public $errors;
@@ -23,6 +25,7 @@ class Form {
 	public function __construct ($name) {
 		$this->name				= $name;
 		$this->id				= str_replace('_', '-', $name) . '-form';
+		$this->classes			= false;
 		$this->hasFiles			= false;
 		$this->hasSubmit		= false;
 		$this->wrapEl			= 'p';
@@ -152,7 +155,9 @@ class Form {
 				. ($this->hasFiles ? ' enctype="multipart/form-data"' : '') 
 				. ' id="' 
 				. $this->id 
-				. '">' 
+				. '"' 
+				. ($this->classes ? ' class="' . $this->classes . '"' : '') 
+				. '>' 
 				. $html 
 				. ($this->hasSubmit ? '' : $this->buildSubmitHTML())
 				. '</form>';
@@ -415,6 +420,16 @@ class Form {
 		}
 
 		return $this->action;
+	}
+
+	public function classes ($v = false) {
+		if ($v !== false) {
+			$this->classes = $v;
+
+			return $this;
+		}
+
+		return $this->classes;
 	}
 
 	public function wrapEl ($v = false) {
