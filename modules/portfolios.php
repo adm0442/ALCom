@@ -10,12 +10,11 @@
 				<figure>
 					<a href="<?php the_permalink() ?>">
 						<img src="<?php $img = get_field('desktop_screenshot'); echo $img['sizes']['alcom-medium-tall'] ?>">
-						<img src="<?php $img = get_field('desktop_screenshot_blurry'); echo $img['sizes']['alcom-medium-tall'] ?>">
 					</a>
 				</figure>
 
 				<!-- I hate you beeeee, I hate you beeeeee -->
-				<div>
+				<div style="background-image: url(<?php $img = get_field('desktop_screenshot_blurry'); echo $img['sizes']['alcom-medium-tall'] ?>)">
 
 					<h2>
 						<a href="<?php the_permalink() ?>">

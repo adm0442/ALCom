@@ -1,12 +1,10 @@
 #portfolios {
+	// Columns
 	@media #{$bp-4-max} {
 		text-align: center;
 
 		article {
 			display: inline-block;
-			width: 200px;
-			height: 240px;
-			max-width: 100%;
 			margin: 0 ($margin / 2) $margin;
 		}
 	}
@@ -15,11 +13,11 @@
 		@include cols(3, $gutter);
 
 		article {
-			height: 360px;
 			clear: none !important;
 		}
 	}
 
+	// Each article item
 	article {
 		@include framed;
 
@@ -38,31 +36,18 @@
 
 		figure {
 			margin: 0;
-			position: absolute;
-			left: 0;
-			top: 0;
-
-			width: 100%;
-			height: 100%;
 
 			img {
-				transition: opacity .1s ease-out;
-				position: absolute;
-				left: 0;
-				top: 0;
+				display: block;
+				max-width: 260px;
 			}
-
-			img + img {
-				opacity: 0;
-			}
-		}
-
-		&:hover figure img + img {
-			opacity: 1;
 		}
 
 		> div {
-			background: rgba(255, 255, 255, .4);
+			background-color: rgba(255, 255, 255, .4);
+			background-position: left bottom;
+			background-repeat: no-repeat;
+			background-size: 100% auto;
 
 			position: absolute;
 			left: 0;
@@ -75,10 +60,29 @@
 			font-size: 80%;
 			text-align: left;
 		//	color: $white-color;
-			border-top: 1px solid rgba(220, 220, 220, .4);
 
 			transform: translateY(100%);
 			transition: transform .1s ease-out;
+
+			// Background overlay
+			&:before {
+				background: rgba(255, 255, 255, .4);
+
+				display: block;
+				content: "";
+
+				position: absolute;
+				left: 0;
+				top: 0;
+
+				width: 100%;
+				height: 100%;
+			}
+
+			// Render on top of overlay
+			* {
+				position: relative;
+			}
 
 			h2 {
 			//	@include hero-title;
