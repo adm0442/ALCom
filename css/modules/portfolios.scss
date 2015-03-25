@@ -1,20 +1,12 @@
 #portfolios {
+	@include section-centering(-$margin);
+
 	// Columns
-	@media #{$bp-4-max} {
-		text-align: center;
+	text-align: center;
 
-		article {
-			display: inline-block;
-			margin: 0 ($margin / 2) $margin;
-		}
-	}
-
-	@media #{$bp-4} {
-		@include cols(3, $gutter);
-
-		article {
-			clear: none !important;
-		}
+	article {
+		display: inline-block;
+		margin: 0 $margin $margin;
 	}
 
 	// Each article item
@@ -23,10 +15,20 @@
 
 		position: relative;
 		overflow: hidden;
+		max-width: 260px;
+		max-height: 340px;
+
+		transition: all .1s ease-out;
+
+		&.hidden {
+			max-width: 0;
+			max-height: 0;
+			border: 0;
+			margin: 0;
+		}
 
 		@media #{$bp-3} {
 			transform: scale(1);
-			transition: transform .1s ease-out;
 
 			&:hover {
 				transform: scale(1.1);
@@ -39,7 +41,6 @@
 
 			img {
 				display: block;
-				max-width: 260px;
 			}
 		}
 
