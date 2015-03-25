@@ -2,6 +2,7 @@
 	@include section-centering(-$margin);
 
 	// Columns
+	font-size: 0; // Remove space between inline-block elements
 	text-align: center;
 
 	article {
@@ -15,8 +16,8 @@
 
 		position: relative;
 		overflow: hidden;
-		max-width: 260px;
-		max-height: 340px;
+		max-width: ($max-site-width - $margin * 4) / 3 - 20px; // 20px = border
+		max-height: 360px;
 
 		transition: all .1s ease-out;
 
@@ -58,7 +59,7 @@
 			box-sizing: border-box;
 			padding: $margin;
 
-			font-size: 80%;
+			font-size: $default-size * .8;
 			text-align: left;
 		//	color: $white-color;
 
