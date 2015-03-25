@@ -1,4 +1,7 @@
 <?php
+	$thanksTxt = "Thanks! I'll get back to you as soon as possible.";
+	$errorTxt = "Something went wrong. Please try again.";
+
 	# Create the form
 	$contactForm = new Form('contact');
 
@@ -79,7 +82,7 @@
 
 			# If AJAX call die right now
 			if (XHR) {
-				echo json_encode(array('success' => $contactForm->data()));
+				echo json_encode(array('success' => $contactForm->data(), 'msg' => $thanksTxt));
 
 				die;
 			}
@@ -89,7 +92,7 @@
 
 			# If AJAX call die right now
 			if (XHR) {
-				echo json_encode(array('success' => false, 'errors' => $contactForm->errors()));
+				echo json_encode(array('success' => false, 'errors' => $contactForm->errors(), 'msg' => $errorTxt));
 
 				die;
 			}
@@ -102,10 +105,10 @@
 	<h2>Hire me! <small>...or just send me an e-mail</small></h2>
 
 	<?php if ($done) : ?>
-		<p><strong>Thanks! I'll get back to you as soon as possible.</strong></p>
+		<p><strong><?php echo $thanksTxt ?></strong></p>
 	<?php else : ?>
 		<?php if ($errors) : ?>
-			<p><strong>Something went wrong. Please try again.</strong></p>
+			<p><strong><?php echo $errorTxt ?></strong></p>
 		<?php endif ?>
 
 		<?php echo $contactForm->render() ?>
