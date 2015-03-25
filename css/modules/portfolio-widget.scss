@@ -5,4 +5,12 @@ html.page-portfoliowidgethii039mandreas {
 body.page-template-portfolio-widget {
 	background: #fff;
 	padding: 20px;
+
+	#portfolios {
+		padding: 0;
+
+		article {
+			max-width: 240px;
+		}
+	}
 }
