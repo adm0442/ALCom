@@ -81,6 +81,11 @@
 		transform: translateY(-100%);
 		transition: transform .2s ease-out;
 	//	transition: transform 0 .6s;
+
+		figure + figure {
+			transition: transform .2s .2s ease-out;
+			transform: translateY(100%);
+		}
 	}
 
 	// The active item gets pushed down (TODO: Prevent first item from animating onload + fix last item/first item animation (z-index))
@@ -88,6 +93,7 @@
 	article:first-child, 
 	&.loaded article.active:first-child {
 		transform: translateY(0);
+
 	/*	-webkit-animation-name: fp-ease-out-bounce;
 		-moz-animation-name: fp-ease-out-bounce;
 		animation-name: fp-ease-out-bounce;
@@ -97,10 +103,19 @@
 		animation-duration: .6s;
 
 		transform: translateY(0); */
+
+		// Slide down the phone
+		figure + figure {
+			transform: translateY(0);
+		}
 	}
 
 	&.loaded article:first-child {
 		transform: translateY(-100%);
+
+		figure + figure {
+			transform: translateY(100%);
+		}
 	}
 
 	> a.next {
