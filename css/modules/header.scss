@@ -59,7 +59,7 @@
 			// I'm Andreas
 			strong {
 				font-weight: 300;
-				color: $header-accent-color;
+				color: $link-color-hover; // $header-accent-color;
 				transition: color .1s ease-out;
 			}
 
