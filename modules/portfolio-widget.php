@@ -10,26 +10,26 @@
 <section id="portfolios">
 
 	<?php foreach ($rows as $post) : setup_postdata($post) ?>
-		<article id="post-<?php the_ID() ?>">
+		<article>
 
-			<figure>
-				<a href="<?php the_permalink() ?>">
-					<img src="<?php $img = get_field('desktop_screenshot'); echo $img['sizes']['alcom-medium-tall'] ?>">
-				</a>
-			</figure>
-
-			<!-- I hate you beeeee, I hate you beeeeee -->
-			<div data-blur="<?php $img = get_field('desktop_screenshot_blurry'); echo $img['sizes']['alcom-medium-tall'] ?>">
-
-				<h2>
+				<figure>
 					<a href="<?php the_permalink() ?>">
-						<?php the_title() ?>
+						<img src="<?php $img = get_field('desktop_screenshot'); echo $img['sizes']['alcom-medium-tall'] ?>">
 					</a>
-				</h2>
+				</figure>
 
-				<?php the_excerpt() ?>
+				<!-- I hate you beeeee, I hate you beeeeee -->
+				<div style="background-image: url(<?php $img = get_field('desktop_screenshot_blurry'); echo $img['sizes']['alcom-medium-tall'] ?>)">
 
-			</div>
+					<h2>
+						<a href="<?php the_permalink() ?>">
+							<?php the_title() ?>
+						</a>
+					</h2>
+
+					<?php the_excerpt() ?>
+
+				</div>
 
 		</article>
 	<?php endforeach; wp_reset_postdata() ?>
