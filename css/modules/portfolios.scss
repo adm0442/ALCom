@@ -90,8 +90,6 @@
 			//	@include hero-title;
 				@include heading-size($h5-size);
 				@include ellipsis;
-
-				text-shadow: 1px 1px 1px $shadow-color;
 			}
 
 			p {

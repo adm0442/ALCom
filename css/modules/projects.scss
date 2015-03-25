@@ -1,9 +1,33 @@
 #projects {
 	@media #{$bp-3} {
-		@include cols(2, $gutter);
+		font-size: 0; // Remove space between inline-block
+
+		article {
+			display: inline-block;
+			width: 50% - $gutter / 2;
+			margin-right: $gutter / 2;
+		}
+
+		article:nth-child(even) {
+			margin-right: 0;
+			margin-left: $gutter / 2;
+		}
 	}
 
 	article {
 		@include projects-project;
+
+		max-width: 800px;
+		max-height: 800px;
+		transition: all .2s ease-out;
+
+		font-size: $default-size;
+
+		&.hidden {
+			overflow: hidden;
+			max-width: 0;
+			max-height: 0;
+			margin: 0;
+		}
 	}
 }
