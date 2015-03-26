@@ -1,6 +1,6 @@
 <?php
-add_action('wp_ajax_h5b_import', 'h5b_import');
-add_action('wp_ajax_nopriv_h5b_import', 'h5b_import');
+# add_action('wp_ajax_h5b_import', 'h5b_import');
+# add_action('wp_ajax_nopriv_h5b_import', 'h5b_import');
 
 include_once get_stylesheet_directory() . '/inc/Markdown.php';
 include_once get_stylesheet_directory() . '/inc/NiceString.php';
