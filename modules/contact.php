@@ -9,6 +9,7 @@
 		->method('post')
 		->action('#contact')
 		->classes('ajax')
+		->submitTxt("Let's talk")
 
 		->addFields(array(
 			array(
@@ -54,15 +55,15 @@
 				'placeholder' => 'e.g. Do you currently have a website? Are photos and content available? Or anything else you think might be useful.', 
 				'required' => true
 			), 
+		#	array(
+		#		'name' => 'recaptcha', 
+		#		'type' => 'html', 
+		#		'value' => '<div class="g-recaptcha" data-sitekey="' . RECAPTCHA_SITE_KEY . '"></div>'
+		#	), 
 			array(
 				'name' => 'sleek_module', 
 				'type' => 'hidden', 
 				'value' => "contact"
-			), 
-			array(
-				'name' => 'submit', # Doesn't matter
-				'type' => 'submit', 
-				'value' => "Let's talk"
 			)
 		));
 
@@ -103,6 +104,8 @@
 <section id="contact">
 
 	<h2>Hire me! <small>...or just send me an e-mail</small></h2>
+
+	<?php # <script src='https://www.google.com/recaptcha/api.js'></script> ?>
 
 	<?php if ($done) : ?>
 		<p><strong><?php echo $thanksTxt ?></strong></p>

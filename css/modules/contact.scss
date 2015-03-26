@@ -21,6 +21,20 @@
 			}
 		}
 
+		// Captcha
+		div.g-recaptcha {
+			float: left;
+		}
+
+		// Submit
+		p:last-child {
+			float: right;
+		}
+
+		input[type=submit] {
+			width: auto;
+		}
+
 		@media #{$bp-2} {
 			p {
 				float: left;
@@ -55,17 +69,6 @@
 			p:first-child + p + p + p + p + p {
 				float: none;
 				clear: left;
-			}
-
-			// Submit
-			p:first-child + p + p + p + p + p + p {
-				float: none;
-				clear: left;
-				text-align: right;
-			}
-
-			input[type=submit] {
-				width: auto;
 			}
 		}
 	}

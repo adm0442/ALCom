@@ -1,4 +1,6 @@
 <?php
+define('RECAPTCHA_SITE_KEY', '6Ld0FQQTAAAAADAb-WQKUveGUHFP6IAYjuIWthBv');
+
 include get_stylesheet_directory() . '/inc/html5form/html5form.php';
 
 # Register our CSS / JS

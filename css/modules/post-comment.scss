@@ -21,6 +21,10 @@
 			}
 		}
 
+		p.form-allowed-tags {
+			font-size: 80%;
+		}
+
 		@media #{$bp-3} {
 			p.comment-form-author, 
 			p.comment-form-email, 
@@ -36,10 +40,6 @@
 
 			p.comment-form-comment {
 			
-			}
-
-			p.form-allowed-tags {
-				font-size: 80%;
 			}
 
 			p.form-submit {
