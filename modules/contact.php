@@ -55,11 +55,11 @@
 				'placeholder' => 'e.g. Do you currently have a website? Are photos and content available? Or anything else you think might be useful.', 
 				'required' => true
 			), 
-		#	array(
-		#		'name' => 'captcha', 
-		#		'type' => 'html', 
-		#		'value' => '<div class="captcha"></div>'
-		#	), 
+			array(
+				'name' => 'captcha', 
+				'type' => 'captcha', 
+				'error' => 'Please verify that you are human'
+			), 
 			array(
 				'name' => 'sleek_module', 
 				'type' => 'hidden', 
@@ -115,6 +115,6 @@
 		<?php echo $contactForm->render() ?>
 	<?php endif ?>
 
-	<?php # <script src="https://www.google.com/recaptcha/api.js?onload=ApppluginsCaptchasrender&amp;render=explicit" async defer></script> ?>
+	<script src="https://www.google.com/recaptcha/api.js?onload=ApppluginsCaptchasrender&amp;render=explicit" async defer></script>
 
 </section>
