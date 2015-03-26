@@ -1,8 +1,14 @@
 // Bounce animation
 @mixin header-bounce {
 	0% { transform: translateY(0); animation-timing-function: ease-out; }
-	50% { transform: translateY(-5px); animation-timing-function: ease-out; }
-	100% { transform: translateY(0); animation-timing-function: ease-in; }
+	25% { transform: translateY(-8px); animation-timing-function: ease-out; }
+	50% { transform: translateY(0); animation-timing-function: ease-in; }
+	63% { transform: translateY(-3px); animation-timing-function: ease-out; }
+	76% { transform: translateY(0); animation-timing-function: ease-in; }
+	84% { transform: translateY(-2px); animation-timing-function: ease-out; }
+	91% { transform: translateY(0); animation-timing-function: ease-in; }
+	96% { transform: translateY(-1px); animation-timing-function: ease-out; }
+	100% { transform: translateY(0); }
 }
 
 @-webkit-keyframes header-bounce {
@@ -144,9 +150,9 @@
 				-moz-animation-name: header-bounce;
 				animation-name: header-bounce;
 
-				-webkit-animation-duration: .5s;
-				-moz-animation-duration: .5s;
-				animation-duration: .5s;
+				-webkit-animation-duration: .3s;
+				-moz-animation-duration: .3s;
+				animation-duration: .3s;
 			}
 		}
 	}
