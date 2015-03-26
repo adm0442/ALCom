@@ -1,7 +1,8 @@
 pre.hover-code {
 	position: relative;
 	z-index: 1;
-	max-width: calc(100% - 42px); // HACK: 42px == border/padding
+	min-width: calc(100% - 42px); // HACK: 42px == border/padding
+	max-width: calc(100% - 42px);
 	transition: all .2s ease-out;
 	box-shadow: 0 0 0 $shadow-color;
 	overflow-x: scroll;
