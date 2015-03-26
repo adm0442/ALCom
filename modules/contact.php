@@ -75,7 +75,7 @@
 	if ($contactForm->submit()) {
 		# Validate
 		if ($contactForm->validate()) {
-			$mail = fetch(get_stylesheet_directory() . '/inc/html5form/template.php', array('fields' => $contactForm->data()));
+			$mail = fetch(get_template_directory() . '/inc/html5form/template.php', array('fields' => $contactForm->data()));
 
 			if (!wp_mail(get_option('admin_email'), 'From website', $mail, "Content-type: text/html\r\n")) {
 				$errors = true;
