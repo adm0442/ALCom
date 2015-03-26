@@ -8,7 +8,7 @@
 	$contactForm
 		->method('post')
 		->action('#contact')
-		->classes('ajax')
+		->cssClass('ajax')
 		->submitTxt("Let's talk")
 
 		->addFields(array(
@@ -77,15 +77,25 @@
 		if ($contactForm->validate()) {
 			$mail = fetch(get_stylesheet_directory() . '/inc/html5form/template.php', array('fields' => $contactForm->data()));
 
-			wp_mail(get_option('admin_email'), 'From website', $mail, "Content-type: text/html\r\n");
+			if (!wp_mail(get_option('admin_email'), 'From website', $mail, "Content-type: text/html\r\n")) {
+				$errors = true;
 
-			$done = true;
+				# If AJAX call die right now
+				if (XHR) {
+					echo json_encode(array('success' => false, 'errors' => $contactForm->errors(), 'msg' => 'WP_Mail() failed.'));
 
-			# If AJAX call die right now
-			if (XHR) {
-				echo json_encode(array('success' => $contactForm->data(), 'msg' => $thanksTxt));
+					die;
+				}
+			}
+			else {
+				$done = true;
 
-				die;
+				# If AJAX call die right now
+				if (XHR) {
+					echo json_encode(array('success' => $contactForm->data(), 'msg' => $thanksTxt));
+
+					die;
+				}
 			}
 		}
 		else {
