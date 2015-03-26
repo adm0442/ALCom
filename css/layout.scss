@@ -43,6 +43,12 @@ figure {
 
 code {
 	background: #eee;
+	font-size: $default-size * .8;
+	word-wrap: normal;
+}
+
+pre code {
+	background: transparent;
 }
 
 blockquote {

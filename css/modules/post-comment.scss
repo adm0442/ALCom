@@ -22,7 +22,7 @@
 		}
 
 		p.form-allowed-tags {
-			font-size: 80%;
+			font-size: $default-size * .8;
 		}
 
 		@media #{$bp-3} {

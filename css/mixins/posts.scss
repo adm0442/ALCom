@@ -1,7 +1,7 @@
 // Post related
 @mixin pubdate {
 	@include icon($fa-var-clock-o, before);
-	font-size: 80%;
+	font-size: $default-size * .8;
 	text-transform: uppercase;
 	color: $gray-color;
 }
