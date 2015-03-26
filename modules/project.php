@@ -32,7 +32,7 @@
 
 						<?php echo $demo ?>
 
-						<?php sleek_get_module('social-media-buttons') ?>
+						<?php # sleek_get_module('social-media-buttons') ?>
 
 					</aside>
 				<?php endif ?>
