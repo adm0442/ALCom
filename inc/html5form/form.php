@@ -12,6 +12,7 @@ class Form {
 
 	private $hasFiles;
 	private $hasSubmit;
+	private $hiddenFields;
 
 	private $wrapEl;
 	private $fieldsetEl;
@@ -28,6 +29,7 @@ class Form {
 		$this->classes			= false;
 		$this->hasFiles			= false;
 		$this->hasSubmit		= false;
+		$this->hiddenFields		= array();
 		$this->wrapEl			= 'p';
 		$this->fieldsetEl		= 'fieldset';
 		$this->legendEl			= 'legend';
@@ -159,7 +161,7 @@ class Form {
 				. ($this->classes ? ' class="' . $this->classes . '"' : '') 
 				. '>' 
 				. $html 
-				. ($this->hasSubmit ? '' : $this->buildSubmitHTML())
+				. ($this->hasSubmit ? implode('', $this->hiddenFields) : $this->buildSubmitHTML(implode('', $this->hiddenFields)))
 				. '</form>';
 
 		return $html;
@@ -169,7 +171,7 @@ class Form {
 		$method = $this->method == 'post' ? $_POST : $_GET;
 		$html = '';
 
-		if ($field['type'] != 'hidden') {
+		if ($field['type'] != 'hidden' and $field['type'] != 'html') {
 			$html .= '<' . $this->wrapEl;
 			$html .= $field['class'] ? ' class="' . $field['class'] . '">' : '>';
 		}
@@ -269,6 +271,12 @@ class Form {
 
 				break;
 
+			# Arbitrary HTML
+			case 'html' : 
+				$html .= $field['value'];
+
+				break;
+
 			# Other input types
 			default : 
 				$html .= $label . '<input type="' . $field['type'] . '" name="' . $field['name'] . '"' . $id . $placeholder . $min . $max . $step . $required . $pattern . $readonly . $disabled . $attributes . ' value="' . $field['value'] . '">';
@@ -282,7 +290,7 @@ class Form {
 		# Error?
 		$html .= isset($this->errors[$field['name']]) ? '<strong>' . $this->errors[$field['name']] . '</strong>' : '';
 
-		if ($field['type'] != 'hidden') {
+		if ($field['type'] != 'hidden' and $field['type'] != 'html') {
 			$html .= '</' . $this->wrapEl . '>';
 		}
 
@@ -293,6 +301,13 @@ class Form {
 
 		if ($field['type'] == 'submit') {
 			$this->hasSubmit = true;
+		}
+
+		# Store the hidden fields for later - they will be added to the last wrapper
+		if ($field['type'] == 'hidden') {
+			$this->hiddenFields[] = $html;
+
+			return '';
 		}
 
 		return $html;
@@ -316,8 +331,9 @@ class Form {
 		return $html;
 	}
 
-	private function buildSubmitHTML () {
+	private function buildSubmitHTML ($hf = false) {
 		$html = '<' . $this->wrapEl . ' class="submit">';
+		$html .= $hf ? $hf : '';
 		$html .= '<input type="hidden" name="' . $this->name . '_submit" value="1">';
 		$html .= '<input type="submit" value="' . $this->submitTxt . '">';
 		$html .= '</' . $this->wrapEl . '>';
