@@ -71,6 +71,46 @@ class Form {
 	private function validateField ($f, $v) {
 		$method = $this->method == 'post' ? $_POST : $_GET;
 
+		# Captcha
+		if ($f['type'] == 'captcha') {
+			# Make sure it's filled out
+			if (isset($method['g-recaptcha-response'])) {
+				$url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . 
+						RECAPTCHA_SECRET . 
+						'&response=' . 
+						$method['g-recaptcha-response'] . 
+						'&remoteip=' . 
+						$_SERVER['REMOTE_ADDR'];
+
+				# Verify with google
+				$curl = curl_init();
+
+				curl_setopt($curl, CURLOPT_URL, $url);
+				curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($curl, CURLOPT_TIMEOUT, 15);
+				curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+				curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false); 
+
+				$curlData = curl_exec($curl);
+
+				curl_close($curl);
+
+				# Make sure we received a result
+				if ($curlData) {
+					$json = json_decode($curlData);
+
+					if ($json->success) {
+						return true;
+					}
+				}
+			}
+
+			# Not filled out or other error
+			$this->errors[$f['name']] = $f['error'] ? $f['error'] : $this->errorTxt;
+
+			return false;
+		}
+
 		# If not required - always valid (TODO: untrue! fix)
 		if (!$f['required']) {
 			return true;
@@ -171,7 +211,7 @@ class Form {
 		$method = $this->method == 'post' ? $_POST : $_GET;
 		$html = '';
 
-		if ($field['type'] != 'hidden' and $field['type'] != 'html') {
+		if ($field['type'] != 'hidden' and $field['type'] != 'html' and $field['type'] != 'captcha') {
 			$html .= '<' . $this->wrapEl;
 			$html .= $field['class'] ? ' class="' . $field['class'] . '">' : '>';
 		}
@@ -277,6 +317,15 @@ class Form {
 
 				break;
 
+			case 'captcha' : 
+				$html .= '<div class="captcha-wrap"><div class="captcha"></div>' . 
+						(isset($this->errors[$field['name']]) ? 
+							'<strong class="error">' . $this->errors[$field['name']] . '</strong>' : 
+							''
+						) . '</div>';
+
+				break;
+
 			# Other input types
 			default : 
 				$html .= $label . '<input type="' . $field['type'] . '" name="' . $field['name'] . '"' . $id . $placeholder . $min . $max . $step . $required . $pattern . $readonly . $disabled . $attributes . ' value="' . $field['value'] . '">';
@@ -288,9 +337,9 @@ class Form {
 		$html .= $field['description'] ? '<small>' . $field['description'] . '</small>' : '';
 
 		# Error?
-		$html .= isset($this->errors[$field['name']]) ? '<strong class="error">' . $this->errors[$field['name']] . '</strong>' : '';
+		$html .= (isset($this->errors[$field['name']]) and $field['type'] != 'captcha') ? '<strong class="error">' . $this->errors[$field['name']] . '</strong>' : '';
 
-		if ($field['type'] != 'hidden' and $field['type'] != 'html') {
+		if ($field['type'] != 'hidden' and $field['type'] != 'html' and $field['type'] != 'captcha') {
 			$html .= '</' . $this->wrapEl . '>';
 		}
 
