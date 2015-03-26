@@ -7,8 +7,13 @@ pre.hover-code {
 	overflow-x: scroll;
 
 	&:hover {
-		max-width: 200%;
 		box-shadow: 4px 4px 12px $shadow-color;
 		transform: scale(1.02);
+	}
+}
+
+@media #{$bp-3} {
+	pre.hover-code:hover {
+		max-width: 200%;
 	}
 }
