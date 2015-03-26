@@ -36,26 +36,8 @@
 
 	> div {
 		// First p
-		> p:first-of-type {
+		> div > p:first-of-type {
 			@include first-p;
-		}
-
-		// Right column
-		aside {
-			@media #{$bp-4} {
-				width: $main-nav-width;
-				float: right;
-				margin: 0 0 $margin $margin;
-
-				ul.tags {
-					@include spread-out-tags(6px, 25%, left);
-				}
-			}
-		}
-
-		// Not too wide text
-		> * {
-			max-width: 600px;
 		}
 	}
 }

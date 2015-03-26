@@ -103,3 +103,24 @@ header + main {
 		padding-top: $margin-top-bp3;
 	}
 }
+
+// Two columns
+@media #{$bp-4} {
+	div.two {
+		> div {
+			box-sizing: border-box;
+			width: $max-site-width - $main-nav-width - $margin * 2;
+			float: left;
+		}
+
+		aside {
+			width: $main-nav-width;
+			float: right;
+			margin: 0 0 $margin $margin;
+
+			ul.tags {
+				@include spread-out-tags(6px, 25%, left);
+			}
+		}
+	}
+}

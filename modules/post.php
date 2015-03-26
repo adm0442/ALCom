@@ -33,14 +33,15 @@
 		</header>
 
 		<!-- I hate youuu bee? -->
-		<div>
+		<div class="two">
+
+			<!-- :/ :'( -->
+			<div><?php the_content() ?></div>
 
 			<aside>
 				<?php sleek_get_module('social-media-buttons') ?>
 				<?php sleek_get_module('partials/tags', array('taxonomy' => 'post_tag')) ?>
 			</aside>
-
-			<?php the_content() ?>
 
 		</div>
 	<?php endwhile; else : ?>

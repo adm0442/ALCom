@@ -18,7 +18,7 @@
 			</header>
 
 			<!--- i.. hät.. udiv -->
-			<div>
+			<div class="two">
 
 				<!-- :( -->
 				<div><?php the_content() ?></div>

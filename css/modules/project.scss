@@ -70,23 +70,5 @@
 		aside {
 			font-size: $default-size * .8;
 		}
-
-		@media #{$bp-4} {
-			> div {
-				box-sizing: border-box;
-				width: $max-site-width - $main-nav-width - $margin * 2;
-				float: left;
-			}
-
-			aside {
-				width: $main-nav-width;
-				float: right;
-				margin: 0 0 $margin $margin;
-
-				ul.tags {
-					@include spread-out-tags(6px, 25%, left);
-				}
-			}
-		}
 	}
 }
