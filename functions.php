@@ -24,6 +24,12 @@ function alcom_register_css_js () {
 	wp_enqueue_style('alcom');
 }
 
+add_action('wp_footer', 'alcom_add_recaptcha');
+
+function alcom_add_recaptcha () {
+	echo '<script src="https://www.google.com/recaptcha/api.js?onload=ApppluginsCaptchasrender&amp;render=explicit" async defer></script>z';
+}
+
 # Thumbnails sizes
 add_action('init', 'alcom_post_thumbnails');
 

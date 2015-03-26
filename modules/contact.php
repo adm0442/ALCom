@@ -115,6 +115,4 @@
 		<?php echo $contactForm->render() ?>
 	<?php endif ?>
 
-	<script src="https://www.google.com/recaptcha/api.js?onload=ApppluginsCaptchasrender&amp;render=explicit" async defer></script>
-
 </section>
