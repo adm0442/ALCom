@@ -29,6 +29,10 @@
 	}
 
 	@include post-meta;
+
+	ul.tags {
+		display: inline; // Fix for falling below floated img
+	}
 }
 
 @mixin post-meta {
