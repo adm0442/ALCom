@@ -71,7 +71,7 @@
 			font-size: $default-size * .8;
 		}
 
-		@media #{$bp-3} {
+		@media #{$bp-4} {
 			> div {
 				box-sizing: border-box;
 				width: $max-site-width - $main-nav-width - $margin * 2;
