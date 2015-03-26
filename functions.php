@@ -16,8 +16,8 @@ function alcom_register_css_js () {
 #	wp_enqueue_script('google_maps');
 
 	# Theme JS
-	wp_register_script('alcom_foot', get_stylesheet_directory_uri() . '/js/foot.php', array(), filemtime(get_stylesheet_directory() . '/js/foot.js'), true);
-	wp_enqueue_script('alcom_foot');
+#	wp_register_script('alcom_foot', get_stylesheet_directory_uri() . '/js/foot.php', array(), filemtime(get_stylesheet_directory() . '/js/foot.js'), true);
+#	wp_enqueue_script('alcom_foot');
 
 	# Theme CSS
 	wp_register_style('alcom', get_stylesheet_directory_uri() . '/css/all.css', array(), filemtime(get_stylesheet_directory() . '/css/all.css'));
@@ -28,6 +28,7 @@ add_action('wp_footer', 'alcom_add_recaptcha');
 
 function alcom_add_recaptcha () {
 	echo '<script src="https://www.google.com/recaptcha/api.js?onload=ApppluginsCaptchasrender&amp;render=explicit" async defer></script>z';
+	echo '<script src="' . get_stylesheet_directory_uri() . '/js/foot.php"></script>';
 }
 
 # Thumbnails sizes
