@@ -1,3 +1,22 @@
+// Bounce animation
+@mixin header-bounce {
+	0% { transform: translateY(0); animation-timing-function: ease-out; }
+	50% { transform: translateY(-5px); animation-timing-function: ease-out; }
+	100% { transform: translateY(0); animation-timing-function: ease-in; }
+}
+
+@-webkit-keyframes header-bounce {
+	@include header-bounce;
+}
+
+@-moz-keyframes header-bounce {
+	@include header-bounce;
+}
+
+@keyframes header-bounce {
+	@include header-bounce;
+}
+
 #header {
 	@include section();
 
@@ -49,7 +68,7 @@
 
 		// Neutral link
 		a {
-			font-weight: bold;
+			font-weight: 900;
 			color: $header-color;
 
 			&:hover {
@@ -89,10 +108,45 @@
 				}
 			}
 
+			// Little dot
+			&:after, 
+			&:before {
+				background: $header-bg;
+
+				display: block;
+				content: "";
+
+				width: 9px;
+				height: 9px;
+
+				position: absolute;
+				left: 25px;
+				top: 3px;
+
+				border-radius: 100%;
+			}
+
+			&:after {
+				background: $white-color;
+				width: 7px;
+				height: 7px;
+				left: 27px;
+				top: 3px;
+			//	transform: translateY(0);
+			//	transition: transform .01s ease-out;
+			}
+
 			// Hover
-			&:hover {
-				strong {
-				}
+			&:hover:after {
+				//	transform: translateY(-5px);
+
+				-webkit-animation-name: header-bounce;
+				-moz-animation-name: header-bounce;
+				animation-name: header-bounce;
+
+				-webkit-animation-duration: .5s;
+				-moz-animation-duration: .5s;
+				animation-duration: .5s;
 			}
 		}
 	}
