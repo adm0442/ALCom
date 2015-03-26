@@ -45,6 +45,22 @@ code {
 	background: #eee;
 }
 
+blockquote {
+	> * {
+		padding-left: 15px;
+	}
+
+	> :first-child {
+		position: relative;
+
+		&:before {
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	}
+}
+
 // Automatically make sections
 main, 
 #aside {
