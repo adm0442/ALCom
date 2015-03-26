@@ -56,9 +56,9 @@
 				'required' => true
 			), 
 		#	array(
-		#		'name' => 'recaptcha', 
+		#		'name' => 'captcha', 
 		#		'type' => 'html', 
-		#		'value' => '<div class="g-recaptcha" data-sitekey="' . RECAPTCHA_SITE_KEY . '"></div>'
+		#		'value' => '<div class="captcha"></div>'
 		#	), 
 			array(
 				'name' => 'sleek_module', 
@@ -105,8 +105,6 @@
 
 	<h2>Hire me! <small>...or just send me an e-mail</small></h2>
 
-	<?php # <script src='https://www.google.com/recaptcha/api.js'></script> ?>
-
 	<?php if ($done) : ?>
 		<p><strong><?php echo $thanksTxt ?></strong></p>
 	<?php else : ?>
@@ -116,5 +114,7 @@
 
 		<?php echo $contactForm->render() ?>
 	<?php endif ?>
+
+	<?php # <script src="https://www.google.com/recaptcha/api.js?onload=ApppluginsCaptchasrender&amp;render=explicit" async defer></script> ?>
 
 </section>

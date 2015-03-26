@@ -10,6 +10,16 @@
 	form {
 		@include clearfix;
 
+		// Hiding it
+		max-height: 1200px;
+		transition: max-height .3s ease-out;
+
+		&.success {
+			overflow: hidden;
+			max-height: 0;
+		}
+
+		// Some default styling
 		p {
 			input {
 				width: 100%;
@@ -21,18 +31,9 @@
 			}
 		}
 
-		// Captcha
-		div.g-recaptcha {
-			float: left;
-		}
-
 		// Submit
 		p:last-child {
-			float: right;
-		}
-
-		input[type=submit] {
-			width: auto;
+			text-align: right;
 		}
 
 		@media #{$bp-2} {
@@ -69,6 +70,20 @@
 			p:first-child + p + p + p + p + p {
 				float: none;
 				clear: left;
+			}
+
+			// Captcha
+			div.captcha {
+				float: left;
+			}
+
+			// Submit
+			p:last-child {
+				float: right;
+			}
+
+			input[type=submit] {
+				width: auto;
 			}
 		}
 	}
