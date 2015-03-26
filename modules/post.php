@@ -12,7 +12,7 @@
 
 			<?php if (has_post_thumbnail()) : ?>
 				<figure>
-					<?php the_post_thumbnail('sleek-hdw') ?>
+					<?php the_post_thumbnail('alcom-hdw') ?>
 				</figure>
 			<?php endif ?>
 
