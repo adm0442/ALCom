@@ -25,7 +25,7 @@
 			@include section-bottom;
 			max-width: $main-nav-width + 6px; // 6px because of li margin
 
-			@include spread-out-tags(6px);
+			@include spread-out-tags(6px, 25%, right);
 		}
 	}
 

@@ -43,18 +43,12 @@
 		// Right column
 		aside {
 			@media #{$bp-3} {
-				width: $main-nav-width + 6px;
+				width: $main-nav-width;
 				float: right;
-				text-align: right;
 				margin: 0 0 $margin $margin;
 
-				// Right align social-media-buttons
-				#social-media-buttons > *:not(p) {
-					margin: 0 0 $margin $margin !important;
-				}
-
 				ul.tags {
-					@include spread-out-tags(6px);
+					@include spread-out-tags(6px, 25%, left);
 				}
 			}
 		}

@@ -13,8 +13,6 @@
 					<?php the_title() ?>
 				</h1>
 
-				<?php sleek_get_module('partials/tags', array('taxonomy' => 'project_tags')) ?>
-
 				<p><a href="<?php the_field('github_url') ?>" class="button secondary icon-github" target="_blank">GitHub</a></p>
 
 			</header>
@@ -27,6 +25,11 @@
 
 				<?php if ($demo = get_field('project_demo')) : ?>
 					<aside>
+
+						<?php sleek_get_module('social-media-buttons') ?>
+						<?php sleek_get_module('partials/tags', array('taxonomy' => 'project_tags')) ?>
+
+						<h2>Demo</h2>
 
 						<?php echo $demo ?>
 

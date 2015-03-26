@@ -79,26 +79,24 @@
 		}
 
 		aside {
-			background: $alt-bg;
-			padding: ($margin * 2) $margin $margin;
-
 			font-size: $default-size * .8;
-
-			border: 1px solid $border-color;
-			border-radius: $border-radius;
 		}
 
 		@media #{$bp-3} {
 			> div {
 				box-sizing: border-box;
-				width: 60% - $gutter / 2;
+				width: $max-site-width - $main-nav-width - $margin * 2;
 				float: left;
 			}
 
 			aside {
-				box-sizing: border-box;
-				width: 40% - $gutter / 2;
+				width: $main-nav-width;
 				float: right;
+				margin: 0 0 $margin $margin;
+
+				ul.tags {
+					@include spread-out-tags(6px, 25%, left);
+				}
 			}
 		}
 	}

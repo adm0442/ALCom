@@ -41,15 +41,29 @@
 	}
 }
 
-@mixin spread-out-tags ($m: 10px, $w: 25%) {
+@mixin spread-out-tags ($m: 10px, $w: 25%, $a: left) {
 	@include flexbox;
 	@include flex-wrap(wrap);
 	@include justify-content(space-between);
 
+	@if ($a == left) {
+		margin-right: -$m;
+	}
+	@else {
+		margin-left: -$m;
+	}
+
 	li {
-		margin: 0 0 $m $m;
+		margin-bottom: $m;
 		min-width: $w;
 		@include flex-grow(1);
+
+		@if ($a == left) {
+			margin-rigth: $m;
+		}
+		@else {
+			margin-left: $m;
+		}
 
 		a {
 			display: block;
