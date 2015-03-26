@@ -1,19 +1,19 @@
 App.modules.Header = {
-	init: function () {
-	//	this.clickableLIs();
-	//	this.wrapMenu();
+	init: function (mod) {
+	//	this.clickableLIs(mod);
+	//	this.wrapMenu(mod);
 	}, 
 
-	wrapMenu: function () {
-		var as = document.getElementById('header').querySelectorAll('div.widget_nav_menu a');
+	wrapMenu: function (mod) {
+		var as = mod.querySelectorAll('div.widget_nav_menu a');
 
 		for (var i = 0; i < as.length; i++) {
 			as[i].innerHTML = '<span>' + as[i].innerHTML + '</span>';
 		}
 	}, 
 
-	clickableLIs: function () {
-		var lis = document.getElementById('header').querySelectorAll('div.widget_nav_menu li');
+	clickableLIs: function (mod) {
+		var lis = mod.querySelectorAll('div.widget_nav_menu li');
 
 		for (var i = 0; i < lis.length; i++) {
 			lis[i].addEventListener('click', function () {

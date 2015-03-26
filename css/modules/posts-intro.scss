@@ -13,7 +13,7 @@
 		@include first-p-hero;
 
 		@media #{$bp-3} {
-			padding-right: 300px + $margin; // Make room for tags
+			padding-right: 305px + $margin; // Make room for tags
 		}
 	}
 
@@ -23,7 +23,7 @@
 			z-index: 1;
 			@include section-right;
 			@include section-bottom;
-			max-width: 300px;
+			max-width: 305px;
 
 			@include flexbox;
 			@include flex-wrap(wrap);
