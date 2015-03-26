@@ -41,6 +41,23 @@
 	}
 }
 
+@mixin spread-out-tags ($m: 10px, $w: 25%) {
+	@include flexbox;
+	@include flex-wrap(wrap);
+	@include justify-content(space-between);
+
+	li {
+		margin: 0 0 $m $m;
+		min-width: $w;
+		@include flex-grow(1);
+
+		a {
+			display: block;
+			text-align: center;
+		}
+	}
+}
+
 // Framed
 @mixin framed ($round: false) {
 	@if ($round) {

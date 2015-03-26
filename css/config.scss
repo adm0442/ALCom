@@ -80,6 +80,9 @@ $h1-pos-bp3: 240px;
 $margin-top-bp1: ($h1-pos-bp1 - $margin * 3) - 20px; // -20 / -40 because when there's no hero 140/240px is too much
 $margin-top-bp3: ($h1-pos-bp3 - $margin * 3) - 40px;
 
+// This is true for now
+$main-nav-width: 285px;
+
 // Header colors
 $header-bg: #001116;
 $header-color: $white-color;

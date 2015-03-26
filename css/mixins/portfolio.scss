@@ -34,7 +34,7 @@
 
 	// Potential low-res images (tablet/phone)
 	figure + figure {
-		@include device(280px);
+		@include device($main-nav-width - (10/300 * $main-nav-width * 2)); // Tankenöt...
 
 		float: right;
 		margin-bottom: -300px;

@@ -1,35 +1,3 @@
-/* #post {
-	background: transparent; // Remove bg & padding set by layout to all main > *
-	padding: 0;
-
-	> * {
-		@include section;
-	}
-
-	figure {
-		@include hero;
-		overflow: hidden;
-
-		img {
-			@include hero-img;
-		}
-	}
-
-	header {
-		@include post-meta;
-		padding-bottom: 0;
-		margin-bottom: $margin;
-	}
-
-	> div {
-		padding-top: 0;
-
-		p:first-of-type {
-			@include first-p;
-		}
-	}
-} */
-
 // With header on top of image
 #post {
 	background: transparent; // Remove bg & padding set by layout to all main > *
@@ -75,7 +43,7 @@
 		// Right column
 		aside {
 			@media #{$bp-3} {
-				width: 300px;
+				width: $main-nav-width + 6px;
 				float: right;
 				text-align: right;
 				margin: 0 0 $margin $margin;
@@ -83,6 +51,10 @@
 				// Right align social-media-buttons
 				#social-media-buttons > *:not(p) {
 					margin: 0 0 $margin $margin !important;
+				}
+
+				ul.tags {
+					@include spread-out-tags(6px);
 				}
 			}
 		}

@@ -5,7 +5,7 @@ form.search {
 			transition: width .05s ease-out;
 
 			&:focus {
-				width: 280px;
+				width: $main-nav-width;
 			}
 		}
 
