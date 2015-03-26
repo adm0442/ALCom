@@ -56,17 +56,6 @@
 		* {
 			position: relative;
 		}
-
-		@media #{$bp-3} {
-			ul.tags {
-				float: left;
-			}
-
-			ul.tags + p {
-				float: right;
-				margin-top: -10px;
-			}
-		}
 	}
 
 	> div {
