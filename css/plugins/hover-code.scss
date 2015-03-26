@@ -4,6 +4,7 @@ pre.hover-code {
 	max-width: calc(100% - 42px); // HACK: 42px == border/padding
 	transition: all .2s ease-out;
 	box-shadow: 0 0 0 $shadow-color;
+	overflow-x: scroll;
 
 	&:hover {
 		max-width: 200%;
