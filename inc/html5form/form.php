@@ -288,7 +288,7 @@ class Form {
 		$html .= $field['description'] ? '<small>' . $field['description'] . '</small>' : '';
 
 		# Error?
-		$html .= isset($this->errors[$field['name']]) ? '<strong>' . $this->errors[$field['name']] . '</strong>' : '';
+		$html .= isset($this->errors[$field['name']]) ? '<strong class="error">' . $this->errors[$field['name']] . '</strong>' : '';
 
 		if ($field['type'] != 'hidden' and $field['type'] != 'html') {
 			$html .= '</' . $this->wrapEl . '>';
