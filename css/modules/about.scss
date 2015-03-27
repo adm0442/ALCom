@@ -1,6 +1,6 @@
 #about {
 	img {
-		@include img-right($bp-3);
+		@include align-right($bp-3);
 		@include framed(true);
 		shape-outside: circle(170px at 50% calc(50% - 10px));
 	}

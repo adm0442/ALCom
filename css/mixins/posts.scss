@@ -13,11 +13,11 @@
 		a {
 			img {
 				@include framed(false);
-				@include img-left($bp-3);
+				@include align-left($bp-3);
 
 				// Make it half width
 				@media #{$bp-3} {
-					width: 50% - $gutter / 2;
+					width: calc(50% - #{$gutter / 2});
 					margin-right: $gutter;
 				}
 			}

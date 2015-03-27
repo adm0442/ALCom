@@ -5,7 +5,7 @@
 		article {
 			display: inline-block;
 			vertical-align: top;
-			width: 50% - $gutter / 2;
+			width: calc(50% - #{$gutter / 2});
 			margin-right: $gutter / 2;
 		}
 
