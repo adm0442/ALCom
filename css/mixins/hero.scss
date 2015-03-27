@@ -1,6 +1,6 @@
 // Hero (use with @section)
 @mixin hero ($blur: false) {
-	@include section($dark-blue-bg);
+	background: $dark-blue-bg;
 
 	// Can use border instead
 //	@include section-border-centering;
@@ -92,7 +92,11 @@
 		@include device($main-nav-width, #222, false);
 
 		float: right;
-		margin: -100px 0 -350px $gutter;
+		margin: -100px 0 0 $gutter;
+
+		@media #{$bp-3-max} {
+			display: none;
+		}
 	}
 
 	// Position everything else on top of first img
@@ -128,7 +132,7 @@
 	}
 
 	// Excerpt
-	> p:not(.pubdate) {
+	> p:not(.pubdate):first-of-type {
 		font-size: 120%;
 		font-style: italic;
 		font-weight: lighter;

@@ -70,6 +70,7 @@
 		@include heading($h3-size);
 		font-size: $h3-size !important; // Because @heading adjusts the size based on resolution - we don't want that in this case
 		margin: 0;
+		position: relative; // Position dot
 		transition: font-size .1s ease-out;
 
 		// Neutral link

@@ -7,8 +7,8 @@
 
 	header {
 		@include section(red);
-		@include hero;
 		@include section-inner(top);
+		@include hero;
 	}
 
 	article {
@@ -17,9 +17,9 @@
 		}
 	}
 
-	@media (min-width: $main-nav-width + $margin) {
+	@media #{$bp-3} {
 		article {
-			width: $max-site-width - $main-nav-width - $gutter;
+			width: calc(100% - #{$main-nav-width + $gutter});
 			float: left;
 		}
 
@@ -46,6 +46,15 @@
 			font-size: 400px;
 			top: -180px;
 			left: -200px;
+		}
+	}
+}
+
+// Portfolio
+#portfolio {
+	header {
+		h1 {
+			@include ellipsis;
 		}
 	}
 }
