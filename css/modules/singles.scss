@@ -9,6 +9,10 @@
 		@include section(red);
 		@include section-inner(top);
 		@include hero;
+
+		h1 {
+			max-width: calc(100% - #{$main-nav-width + $gutter});
+		}
 	}
 
 	article {

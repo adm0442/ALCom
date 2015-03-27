@@ -141,6 +141,11 @@
 		text-shadow: 1px 1px 1px $shadow-color;
 	}
 
+	// Pubdate needs some shadow too
+	p.pubdate {
+		text-shadow: -1px -1px 0 rgba($shadow-color, .6);
+	}
+
 	// Shadow
 	&:after {
 		background: linear-gradient(0, rgba($shadow-color, .4), rgba($shadow-color, 0));

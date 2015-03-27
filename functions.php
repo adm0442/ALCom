@@ -1,6 +1,7 @@
 <?php
 define('RECAPTCHA_SITE_KEY', '6Ld0FQQTAAAAADAb-WQKUveGUHFP6IAYjuIWthBv');
 define('RECAPTCHA_SECRET', '6Ld0FQQTAAAAAM11MaTd5VkDla1reAK5GoOaJXMI');
+define('DISQUS_SHORTNAME', 'andreaslagerkvistcom');
 
 include get_template_directory() . '/inc/html5form/html5form.php';
 

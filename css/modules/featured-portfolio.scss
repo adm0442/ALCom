@@ -6,6 +6,7 @@
 		@include hero;
 
 		h2 {
+			@include heading-size($h1-size);
 			@include ellipsis;
 		}
 

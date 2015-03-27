@@ -33,7 +33,7 @@ p.pubdate {
 	text-transform: uppercase;
 
 	a {
-		@include neutral-link;
+		margin-left: 3px;
 	}
 
 	a:first-of-type {
