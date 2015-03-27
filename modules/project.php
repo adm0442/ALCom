@@ -3,12 +3,13 @@
 <section id="project">
 
 	<?php if (have_posts()) : while (have_posts()) : the_post() ?>
-		<?php $category = wp_get_post_terms($post->ID, 'project_categories') ?>
-
 		<header>
 
 			<h1 class="icon-<?php the_field('icon') ?>">
-				<small><a href="<?php echo get_term_link($category[0]) ?>"><?php echo $category[0]->name ?></a></small> 
+				<?php if ($allCats = alcom_get_all_categories($post->ID, 'project_categories')) : ?>
+					<small><?php echo implode(' & ', $allCats) ?></small> 
+				<?php endif ?>
+
 				<?php the_title() ?>
 			</h1>
 

@@ -3,11 +3,6 @@
 <section id="post">
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		<?php
-			$theCat = wp_get_post_terms($post->ID, 'category');
-			$theCat = $theCat ? $theCat[0] : false;
-		?>
-
 		<header>
 
 			<?php if (has_post_thumbnail()) : ?>
@@ -15,12 +10,8 @@
 			<?php endif ?>
 
 			<h1>
-				<?php if ($theCat) : ?>
-					<small>
-						<a href="<?php echo get_term_link($theCat) ?>">
-							<?php echo $theCat->name ?>
-						</a>
-					</small>
+				<?php if ($allCats = alcom_get_all_categories($post->ID, 'post_category')) : ?>
+					<small><?php echo implode(' & ', $allCats) ?></small> 
 				<?php endif ?>
 
 				<?php the_title() ?>

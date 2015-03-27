@@ -11,11 +11,12 @@
 <section id="random-projects">
 
 	<?php foreach ($rows as $post) : setup_postdata($post) ?>
-		<?php $category = wp_get_post_terms($post->ID, 'project_categories') ?>
 		<article>
 
 			<h2 class="icon-<?php the_field('icon') ?>">
-				<small><a href="<?php echo get_term_link($category[0]) ?>"><?php echo $category[0]->name ?></a></small> 
+				<?php if ($allCats = alcom_get_all_categories($post->ID, 'project_categories')) : ?>
+					<small><?php echo implode(' & ', $allCats) ?></small> 
+				<?php endif ?>
 				<a href="<?php the_permalink() ?>"><?php the_title() ?></a>
 			</h2>
 

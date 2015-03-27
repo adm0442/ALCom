@@ -4,12 +4,13 @@
 
 	<?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post() ?>
-			<?php $category = wp_get_post_terms($post->ID, 'project_categories') ?>
 			<?php $theTags = wp_get_post_terms($post->ID, 'project_tags') ?>
 			<article class="<?php foreach ($theTags as $theTag) echo $theTag->name . ' ' ?>">
 
 				<h2 class="icon-<?php the_field('icon') ?>">
-					<small><a href="<?php echo get_term_link($category[0]) ?>"><?php echo $category[0]->name ?></a></small> 
+					<?php if ($allCats = alcom_get_all_categories($post->ID, 'project_categories')) : ?>
+						<small><?php echo implode(' & ', $allCats) ?></small> 
+					<?php endif ?>
 					<a href="<?php the_permalink() ?>"><?php the_title() ?></a>
 				</h2>
 

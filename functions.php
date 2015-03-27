@@ -201,3 +201,14 @@ $tag2ico = array(
 	'jquery' => 'file-code-o', 
 	'js' => 'file-code-o', 
 );
+
+function alcom_get_all_categories ($id, $t = 'post_category') {
+	$cats = wp_get_post_terms($id, $t);
+	$links = array();
+
+	foreach ($cats as $cat) {
+		$links[] = '<a href="' . get_term_link($cat) . '">' . $cat->name . '</a>';
+	}
+
+	return ($cats and count($cats)) ? $links : false;
+}
