@@ -19,7 +19,8 @@
 		</h2>
 
 		<?php sleek_get_module('partials/tags', array('taxonomy' => 'post_tag')) ?>
-		<?php sleek_get_module('partials/post-pubdate') ?>
+
+		<p class="pubdate"><time><?php echo get_the_time(get_option('date_format')) ?></time></p>
 
 		<?php the_excerpt() ?>
 
