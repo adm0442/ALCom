@@ -5,19 +5,10 @@
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<header>
 
-			<figure>
-				<?php /* <img src="<?php 
-					$img = get_field('desktop_screenshot');
-					echo get_template_directory_uri() . 
-							'/inc/simpleimage/si.php?src=' . 
-							$img['sizes']['alcom-hdw'] . 
-							'&amp;blur=150' 
-				?>"> */ ?>
-				<img src="<?php $img = get_field('desktop_screenshot_blurry'); echo $img['sizes']['alcom-hdw'] ?>">
-			</figure>
+			<img src="<?php $img = get_field('desktop_screenshot_blurry'); echo $img['sizes']['alcom-hdw'] ?>">
 
 			<?php if ($mobileScreenshot = get_field('mobile_screenshot')) : ?>
-				<figure><img src="<?php $img = get_field('mobile_screenshot'); echo $img['url'] ?>"></figure>
+				<img src="<?php $img = get_field('mobile_screenshot'); echo $img['sizes']['alcom-hdw'] ?>">
 			<?php endif ?>
 
 			<h1><?php the_title() ?></h1>
@@ -29,12 +20,11 @@
 
 		</header>
 
-		<!-- I hate you div, I hate you beeee -->
-		<div>
+		<article>
 
 			<?php the_content() ?>
 
-		</div>
+		</article>
 	<?php endwhile; else : ?>
 		<?php sleek_get_module('partials/nothing-found') ?>
 	<?php endif ?>

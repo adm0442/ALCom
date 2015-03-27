@@ -1,17 +1,7 @@
 #posts-intro {
 	@include hero;
 
-	img {
-		@include hero-img;
-	}
-
-	h1 {
-		@include hero-title;
-	}
-
 	> p:first-of-type {
-		@include first-p-hero;
-
 		@media #{$bp-3} {
 			padding-right: $main-nav-width + $margin; // Make room for tags
 		}
@@ -30,10 +20,6 @@
 		}
 	}
 
-	* {
-		position: relative; // On top of image
-	}
-
 	form {
 		@media #{$bp-3} {
 			position: absolute;
@@ -46,7 +32,7 @@
 @media #{$bp-3} {
 	body.search #posts-intro {
 		h1 {
-			padding-right: 320px;
+			padding-right: $main-nav-width + $margin;
 		}
 
 		form {

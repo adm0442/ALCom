@@ -11,9 +11,7 @@
 		<header>
 
 			<?php if (has_post_thumbnail()) : ?>
-				<figure>
-					<?php the_post_thumbnail('alcom-hdw') ?>
-				</figure>
+				<?php the_post_thumbnail('alcom-hdw') ?>
 			<?php endif ?>
 
 			<h1>
@@ -32,18 +30,18 @@
 
 		</header>
 
-		<!-- I hate youuu bee? -->
-		<div class="two">
+		<article>
 
-			<!-- :/ :'( -->
-			<div><?php the_content() ?></div>
+			<?php the_content() ?>
 
-			<aside>
-				<?php sleek_get_module('partials/tags', array('taxonomy' => 'post_tag')) ?>
-				<?php # sleek_get_module('social-media-buttons') ?>
-			</aside>
+		</article>
 
-		</div>
+		<aside>
+
+			<?php sleek_get_module('partials/tags', array('taxonomy' => 'post_tag')) ?>
+			<?php # sleek_get_module('social-media-buttons') ?>
+
+		</aside>
 	<?php endwhile; else : ?>
 		<?php sleek_get_module('partials/nothing-found') ?>
 	<?php endif ?>

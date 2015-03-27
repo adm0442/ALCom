@@ -1,0 +1,50 @@
+// All singles
+#post, 
+#project, 
+#portfolio {
+	// Post is already a section
+
+	header {
+		@include section(red);
+		@include hero;
+		@include section-inner(top);
+	}
+
+	article {
+		> p:first-child {
+			@include first-p;
+		}
+	}
+
+	@media (min-width: $main-nav-width + $margin) {
+		article {
+			width: $max-site-width - $main-nav-width - $gutter;
+			float: left;
+		}
+
+		aside {
+			width: $main-nav-width;
+			float: right;
+			font-size: $default-size * .8;
+
+			ul.tags {
+				@include spread-out-tags(6px, 25%);
+				margin-right: -6px;
+			}
+		}
+	}
+}
+
+// Projects
+#project {
+	header {
+		@include projects-project; // Icon styling
+
+		// Bigger icon here
+		h1:before {
+			font-size: 400px;
+			top: -180px;
+			left: -200px;
+		}
+	}
+}

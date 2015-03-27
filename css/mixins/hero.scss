@@ -1,11 +1,14 @@
 // Hero (use with @section)
-@mixin hero {
+@mixin hero ($blur: false) {
 	@include section($dark-blue-bg);
+
+	// Can use border instead
 //	@include section-border-centering;
 
 //	padding-left: 0 !important; // This is set in border-centering and section but for some reason this doesn't override it without !important
 //	padding-right: 0 !important;
 
+	// Different backgrounds
 /*	background-color: $dark-blue-bg;
 	background-image: url(gfx/classy-fabric@2X.png);
 	background-size: 102px 102px;
@@ -30,93 +33,110 @@
 //	background-size:	256px 256px, 500% auto; // So we have to fake it
 //	background-position:left top, 50% top;
 
+	// Nice and white-space:y
+	box-sizing: border-box;
 	overflow: hidden;
-	min-height: 120px;
-	margin-top: -$margin-top-bp1;
+	min-height: 340px;
 	padding-top: $h1-pos-bp1;
 	padding-bottom: 40px;
 
 	@media #{$bp-3} {
-		margin-top: -$margin-top-bp3;
 		padding-top: $h1-pos-bp3;
 		padding-bottom: 60px;
-		min-height: 160px;
+		min-height: 460px;
 	}
 
 	color: $white-color;
 
-	@include hero-shadow;
-}
+	// First img (or potential canvas) in hero to be used as background
+	img:first-child, 
+	canvas {
+		display: block;
+		max-width: none;
 
-@mixin first-p-hero {
-	font-size: 120%;
-	font-style: italic;
-	font-weight: lighter;
-	line-height: 1.4;
-	text-shadow: 1px 1px 1px $shadow-color;
-}
+		position: absolute;
+		left: 50%;
+		top: 0;
 
-@mixin hero-img ($blur: false) {
-	display: block;
-	max-width: none;
+		transform: translateX(-50%);
+		opacity: .8;
 
-	position: absolute;
-	left: 50%;
-	top: 0;
+		@media #{$bp-3} {
+			// If we're using .blur (canvas blur) - hide the img
+			&.blur {
+				left: -1000000px;
+				top: -1000000px;
+			}
 
-	transform: translateX(-50%);
-	opacity: .6;
-
-	@media #{$bp-3} {
-		// If we're using .blur (canvas blur) - hide the img
-		&.blur {
-			left: -1000000px;
-			top: -1000000px;
+			// If it's not an img.blur but $blur is true - CSS filter blur
+			&:not(.blur) {
+				@if ($blur) {
+					-webkit-filter: blur(30px);
+					filter: blur(30px);
+				}
+			}
 		}
 
-		// If it's not an img.blur but $blur is true - CSS filter blur
-		&:not(.blur) {
-			@if ($blur) {
-				-webkit-filter: blur(30px);
-				filter: blur(30px);
+		// Make the img really dark on mobile (blur too cpu heavy)
+		@media #{$bp-3-max} {
+			&:not(.blur) {
+				@if ($blur) {
+					opacity: .08;
+				}
 			}
 		}
 	}
 
-	// Make the img really dark on mobile (blur too cpu heavy)
-	@media #{$bp-3-max} {
-		&:not(.blur) {
-			@if ($blur) {
-				opacity: .08;
+	// Second img is assumed to be a screenshot of a mobile website... :P
+	img + img {
+		@include device($main-nav-width, #222, false);
+
+		float: right;
+		margin: -100px 0 -350px $gutter;
+	}
+
+	// Position everything else on top of first img
+	> * {
+		position: relative;
+	}
+
+	// Heading
+	h1, 
+	h2 {
+		color: $white-color;
+		text-shadow: 1px 1px 1px $shadow-color;
+
+		small {
+			a {
+				color: $gray-color;
 			}
 		}
-	}
-}
 
-@mixin hero-title {
-	color: $white-color;
-	text-shadow: 1px 1px 1px $shadow-color;
-
-	small {
 		a {
-			opacity: .6;
+			color: $white-color;
 
 			&:hover {
-				opacity: 1;
+				color: $link-color-hover;
 			}
 		}
 	}
 
-	a {
-		color: $white-color;
-
-		&:hover {
-			color: $link-color-hover;
-		}
+	// Pull up tags if they're directly after a heading
+	h1 + ul.tags, 
+	h2 + ul.tags {
+		margin-top: -($margin / 2);
 	}
-}
 
-@mixin hero-shadow {
+	// Excerpt
+	> p:not(.pubdate) {
+		font-size: 120%;
+		font-style: italic;
+		font-weight: lighter;
+		line-height: 1.4;
+		text-shadow: 1px 1px 1px $shadow-color;
+	}
+
+	// Shadow
 	&:after {
 		background: linear-gradient(0, rgba($shadow-color, .4), rgba($shadow-color, 0));
 

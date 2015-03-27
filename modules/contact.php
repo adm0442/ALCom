@@ -119,7 +119,7 @@
 		<p><strong><?php echo $thanksTxt ?></strong></p>
 	<?php else : ?>
 		<?php if ($errors) : ?>
-			<p><strong><?php echo $errorTxt ?></strong></p>
+			<p><strong class="error"><?php echo $errorTxt ?></strong></p>
 		<?php endif ?>
 
 		<?php echo $contactForm->render() ?>

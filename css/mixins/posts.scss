@@ -1,11 +1,4 @@
 // Post related
-@mixin pubdate {
-	@include icon($fa-var-clock-o, before);
-	font-size: $default-size * .8;
-	text-transform: uppercase;
-	color: $gray-color;
-}
-
 @mixin posts-post {
 	@include clearfix;
 
@@ -28,14 +21,6 @@
 		}
 	}
 
-	@include post-meta;
-
-	ul.tags {
-		display: inline; // Fix for falling below floated img
-	}
-}
-
-@mixin post-meta {
 	ul.tags {
 		display: inline-block;
 		margin-bottom: $margin / 2;
@@ -44,5 +29,9 @@
 
 	p.pubdate {
 		display: inline-block;
+	}
+
+	ul.tags {
+		display: inline; // Fix for falling below floated img
 	}
 }

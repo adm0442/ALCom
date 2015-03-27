@@ -1,6 +1,8 @@
 // HTML covers everything so should be same color as footer
 html {
 	background: $header-bg;
+	overflow-y: scroll; // Always show scrollbar
+	overflow-x: hidden; // Until they fix 100vw-scrollbar-bug
 }
 
 // Body stops with content so should be default bg
@@ -26,14 +28,24 @@ ul.tags {
 }
 
 p.pubdate {
-	@include pubdate;
+	@include icon($fa-var-clock-o, before);
+	@include small;
+	text-transform: uppercase;
+
+	a:first-of-type {
+		@include icon($fa-var-user);
+	}
+
+	a + a {
+		@include icon($fa-var-archive);
+	}
 }
 
 img.framed {
 	@include framed(false);
 }
 
-img.framed.rounded {
+img.framed.round {
 	@include framed(true);
 }
 
@@ -96,35 +108,5 @@ main,
 #home-page #aside {
 	> *:nth-child(even) {
 		@include alt-section;
-	}
-}
-
-// Make room for header
-header + main {
-	padding-top: $margin-top-bp1;
-
-	@media #{$bp-3} {
-		padding-top: $margin-top-bp3;
-	}
-}
-
-// Two columns
-@media #{$bp-4} {
-	div.two {
-		> div {
-			box-sizing: border-box;
-			width: $max-site-width - $main-nav-width - $margin * 2;
-			float: left;
-		}
-
-		aside {
-			width: $main-nav-width;
-			float: right;
-			margin: 0 0 $margin $margin;
-
-			ul.tags {
-				@include spread-out-tags(6px, 25%, left);
-			}
-		}
 	}
 }

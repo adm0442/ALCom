@@ -1,47 +1,45 @@
 @import url("//fonts.googleapis.com/css?family=Open+Sans:300,700,800");
 
+// Config
 @import "../../sleek/css/default-config";
 @import "config";
 
+// Sleek stuff
 @import "../../sleek/css/all-utils";
 @import "../../sleek/css/all-plugins";
 @import "../../sleek/css/all-general";
 @import "../../sleek/css/font-awesome/all";
 
+// Out mixins
 @import "mixins/misc";
 @import "mixins/hero";
-@import "mixins/portfolio";
 @import "mixins/posts";
 @import "mixins/projects";
 
+// Some general styling for this theme
 @import "layout";
 
 // Modules
 @import "modules/header";
 @import "modules/footer";
-@import "modules/contact";
 @import "modules/warnings";
 @import "modules/search";
 @import "modules/social-media-buttons";
 @import "modules/live-ajax-search-example";
-
 @import "modules/post-comment";
 @import "modules/pagination";
 
+@import "modules/featured-portfolio";
 @import "modules/random-testimonials";
+@import "modules/latest-post";
+@import "modules/random-projects";
 @import "modules/about";
+@import "modules/contact";
 
 @import "modules/posts-intro";
+@import "modules/singles";
 
-@import "modules/post";
 @import "modules/posts";
-@import "modules/latest-post";
-
 @import "modules/projects";
-@import "modules/project";
-@import "modules/random-projects";
-
-@import "modules/portfolio.scss";
 @import "modules/portfolios";
-@import "modules/featured-portfolio";
 @import "modules/portfolio-widget";

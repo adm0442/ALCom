@@ -1,7 +1,7 @@
 // Project
 @mixin projects-project {
-	> h1:first-child, 
-	> h2:first-child {
+	h1, 
+	h2 {
 		position: relative;
 
 		&:before {
