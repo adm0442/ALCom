@@ -32,6 +32,10 @@ p.pubdate {
 	@include small;
 	text-transform: uppercase;
 
+	a {
+		@include neutral-link;
+	}
+
 	a:first-of-type {
 		@include icon($fa-var-user);
 	}
