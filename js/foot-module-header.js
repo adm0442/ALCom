@@ -1,5 +1,29 @@
 App.modules.Header = {
 	init: function (mod) {
+		// Adds "has-scrolled", "scrolling-down" etc to <html> (for styling purposes)
+		ScrollClasses.init();
+
+		// Hijaxes all form.ajax
+		AjaxForms.init('form.ajax');
+
+		// Zooms all img-links 
+		ImageZoom.init(document.body);
+
+		// Some nice utlities for input[type=range]
+		InputRangeUtils.values(); // Display value of input next to label
+		InputRangeUtils.colors(); // Different colors on left/right side
+
+		// Live Ajax Search
+	//	LiveSearch.init(document.querySelector('input[name=s]'), '/?s=', 'after');
+
+		// Smoothly scroll #in-page-links
+		SmoothScrolling.init((window.innerWidth < 800 ? 0 : 50));
+
+		// Theme stuff
+	//	BlurImages.init('img.blur');
+	//	CanvasLogo.init('canvas.al-logo');
+		HoverCode.init();
+
 	//	this.clickableLIs(mod);
 	//	this.wrapMenu(mod);
 	}, 

@@ -1,7 +1,8 @@
-App.plugins.CanvasLogo = {
-	init: function () {
+var CanvasLogo = {
+	init: function (selector) {
+		var selector = selector || 'canvas.al-logo';
 		var color = '#fc3';
-		var canvass = document.querySelectorAll('canvas.al-logo');
+		var canvass = document.querySelectorAll(selector);
 
 		for (var i = 0; i < canvass.length; i++) {
 			(function () {

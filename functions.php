@@ -29,7 +29,6 @@ add_action('wp_footer', 'alcom_add_recaptcha');
 function alcom_add_recaptcha () {
 	echo '<script src="' . get_stylesheet_directory_uri() . '/js/foot.php' . '"></script>';
 	echo '<script src="https://www.google.com/recaptcha/api.js?onload=ApppluginsCaptchasrender&amp;render=explicit" async defer></script>';
-	echo '<script>App.init()</script>';
 	echo '<script src="' . get_template_directory_uri() . '/js/prettify/run_prettify.js' . '"></script>';
 }
 
