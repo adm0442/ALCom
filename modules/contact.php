@@ -116,10 +116,10 @@
 	<h2>Hire me! <small>...or just send me an e-mail</small></h2>
 
 	<?php if ($done) : ?>
-		<p><strong><?php echo $thanksTxt ?></strong></p>
+		<p class="message success"><strong><?php echo $thanksTxt ?></strong></p>
 	<?php else : ?>
 		<?php if ($errors) : ?>
-			<p><strong class="error"><?php echo $errorTxt ?></strong></p>
+			<p class="message error"><strong><?php echo $errorTxt ?></strong></p>
 		<?php endif ?>
 
 		<?php echo $contactForm->render() ?>
