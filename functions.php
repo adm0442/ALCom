@@ -31,6 +31,15 @@ function alcom_add_recaptcha () {
 	echo '<script src="' . get_stylesheet_directory_uri() . '/js/foot.php' . '"></script>';
 	echo '<script src="https://www.google.com/recaptcha/api.js?onload=ApppluginsCaptchasrender&amp;render=explicit" async defer></script>';
 	echo '<script src="' . get_template_directory_uri() . '/js/prettify/run_prettify.js' . '"></script>';
+	echo "<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-1823084-2', 'auto');
+			ga('send', 'pageview');
+			</script>";
 }
 
 # Thumbnails sizes
