@@ -92,7 +92,7 @@
 		@include device($main-nav-width, #222, false);
 
 		float: right;
-		margin: -100px 0 0 $gutter;
+		margin: -100px 0 -350px $gutter;
 
 		@media #{$bp-3-max} {
 			display: none;

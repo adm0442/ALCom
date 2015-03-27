@@ -77,7 +77,8 @@
 	//	transition: transform 0 .6s;
 
 		img + img {
-			transition: transform .1s .2s ease-out;
+			margin-bottom: 0;
+			transition: transform .2s .2s ease-out;
 			transform: translateY(100%);
 		}
 	}
