@@ -3,7 +3,7 @@
 <main>
 
 	<?php sleek_get_module('project') ?>
-	<?php comments_template('/modules/comments.php') ?>
+	<?php sleek_get_module('disqus') ?>
 
 </main>
 
