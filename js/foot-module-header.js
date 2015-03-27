@@ -22,7 +22,7 @@ App.modules.Header = {
 		// Theme stuff
 	//	BlurImages.init('img.blur');
 	//	CanvasLogo.init('canvas.al-logo');
-		HoverCode.init();
+		HoverExpand.init();
 
 	//	this.clickableLIs(mod);
 	//	this.wrapMenu(mod);
