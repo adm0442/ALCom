@@ -1,7 +1,6 @@
 App.modules.FeaturedPortfolio = {
-	init: function () {
-		// Grab wrapper and all items
-		var mod = document.getElementById('featured-portfolio');
+	init: function (mod) {
+		// Grab all items
 		var items = mod.getElementsByTagName('article');
 		var i = 0;
 		var num = items.length;
