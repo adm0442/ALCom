@@ -33,11 +33,13 @@
 			width: $main-nav-width;
 			float: right;
 			font-size: $default-size * .8;
+		}
+	}
 
-			ul.tags {
-				@include spread-out-tags(6px, 25%);
-				margin-right: -6px;
-			}
+	aside {
+		ul.tags {
+			@include spread-out-tags(6px, 25%);
+			margin-right: -6px;
 		}
 	}
 }

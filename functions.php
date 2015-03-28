@@ -25,12 +25,20 @@ function alcom_register_css_js () {
 	wp_enqueue_style('alcom');
 }
 
+# Have to include JS here to get async/defer and correct order of scripts...
 add_action('wp_footer', 'alcom_add_recaptcha');
 
 function alcom_add_recaptcha () {
+	# Our JS
 	echo '<script src="' . get_stylesheet_directory_uri() . '/js/foot.php' . '"></script>';
+
+	# ReCaptcha
 	echo '<script src="https://www.google.com/recaptcha/api.js?onload=ApppluginsCaptchasrender&amp;render=explicit" async defer></script>';
+
+	# Prettify
 	echo '<script src="' . get_template_directory_uri() . '/js/prettify/run_prettify.js' . '"></script>';
+
+	# Google Analytics
 	echo "<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
