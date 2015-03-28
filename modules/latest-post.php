@@ -12,11 +12,7 @@
 	<?php foreach ($rows as $post) : setup_postdata($post) ?>
 		<h2>
 			<a href="<?php the_permalink() ?>">
-				<?php if (has_post_thumbnail()) : ?>
-					<?php the_post_thumbnail('alcom-medium') ?>
-				<?php else : ?>
-					<img src="http://lorempixel.com/460/300/abstract">
-				<?php endif ?>
+				<?php the_post_thumbnail('alcom-medium') ?>
 				<small>From the Blog</small> 
 				<?php the_title() ?>
 			</a>

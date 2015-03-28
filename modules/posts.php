@@ -11,9 +11,11 @@
 			<article id="post-<?php the_ID() ?>">
 
 				<h2>
-					<a href="<?php the_permalink() ?>">
-						<?php the_post_thumbnail('alcom-medium') ?>
-					</a>
+					<?php if (has_post_thumbnail()) : ?>
+						<a href="<?php the_permalink() ?>">
+							<?php the_post_thumbnail('alcom-medium') ?>
+						</a>
+					<?php endif ?>
 
 					<?php if ($theCat) : ?>
 						<small>
