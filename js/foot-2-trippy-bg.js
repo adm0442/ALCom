@@ -12,8 +12,9 @@ var TrippyBG = {
 		canvas.height = dim.height;
 
 		// Start drawing waves at this height
-		var offset = dim.height / 2 + 120;
 		var waveHeight = dim.height / 20;
+		var offset = dim.height - waveHeight * 2;
+		var direction = -1;
 
 		// Start drawing
 		var ctx = canvas.getContext('2d');
@@ -21,6 +22,15 @@ var TrippyBG = {
 		ctx.lineWidth = 1;
 
 		var drawWaves = function (t) {
+			offset += .1 * direction;
+
+			if (offset < (0 + waveHeight)) {
+				direction = 1;
+			}
+			else if (offset > (dim.height - waveHeight)) {
+				direction = -1;
+			}
+
 			ctx.clearRect(0, 0, dim.width, dim.height);
 			ctx.moveTo(0, dim.height / 2 + offset);
 
