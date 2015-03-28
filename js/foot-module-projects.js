@@ -1,8 +1,11 @@
 App.modules.Projects = {
 	init: function (mod) {
-		if (document.getElementById('posts-intro')) {
+		var intro = document.getElementById('posts-intro');
+		var list = intro.getElementsByTagName('ul');
+
+		if (list.length) {
 			LiveFilter.init(
-				document.getElementById('posts-intro').getElementsByTagName('ul')[0].getElementsByTagName('a'), 
+				list[0].getElementsByTagName('a'), 
 				mod.getElementsByTagName('article')
 			);
 		}
