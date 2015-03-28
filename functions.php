@@ -136,9 +136,6 @@ function alcom_setup_lang () {
 	load_theme_textdomain('alcom', get_stylesheet_directory() . '/lang');
 }
 
-# Allow empty search
-# add_filter('request', 'sleek_allow_empty_search');
-
 # Upgrade Browser warning for old versions of IE etc
 # add_action('wp_head', 'sleek_register_browser_update_js');
 
@@ -147,9 +144,6 @@ function alcom_setup_lang () {
 
 # Remove HOME from Yoast Breadcrumbs
 # add_filter('wpseo_breadcrumb_links', 'sleek_remove_home_from_breadcrumb');
-
-# Exclude AddThis widgets from anything other than posts
-# add_filter('addthis_post_exclude', 'sleek_addthis_post_exclude');
 
 # Give pages excerpts
 # add_action('init', 'sleek_add_excerpts_to_pages');
