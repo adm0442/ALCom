@@ -3,7 +3,7 @@
 
 	> p:first-of-type {
 		@media #{$bp-3} {
-			padding-right: $main-nav-width + $margin; // Make room for tags
+			padding-right: $main-nav-width + $gutter; // Make room for tags
 		}
 	}
 
