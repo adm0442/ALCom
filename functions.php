@@ -168,6 +168,9 @@ function alcom_register_shortcodes () {
 
 	# Get Posts short code, see sleek/inc/get-posts.php for details
 	# add_shortcode('get-posts', 'sleek_shortcode_get_posts');
+
+	# MarkdownFile
+	# add_shortcode('markdown-file', 'sleek_shortcode_markdown_file');
 }
 
 # Tag name to font awesome icon converter
