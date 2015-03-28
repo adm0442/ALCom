@@ -6,12 +6,14 @@
 	// Post is already a section
 
 	header {
-		@include section(red);
+		@include section();
 		@include section-inner(top);
 		@include hero;
 
-		h1 {
-			max-width: calc(100% - #{$main-nav-width + $gutter});
+		@media #{$bp-3} {
+			h1 {
+				max-width: calc(100% - #{$main-nav-width});
+			}
 		}
 	}
 
