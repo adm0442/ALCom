@@ -24,10 +24,24 @@ App.modules.Header = {
 	//	CanvasLogo.init('canvas.al-logo');
 		HoverExpand.init();
 
+		this.trippyBG();
+
 	//	this.clickableLIs(mod);
 	//	this.wrapMenu(mod);
 	}, 
 
+	trippyBG: function () {
+		var appendTo =	document.querySelector('#post header') ||
+						document.querySelector('#project header') ||
+						document.querySelector('#four-o-four header') ||
+						document.querySelector('#posts-intro');
+
+		if (appendTo && window.innerWidth > 800 && !appendTo.getElementsByTagName('img').length) {
+			TrippyBG.init(appendTo);
+		}
+	}, 
+
+	// Not in use, attempts at making the whole menu item clickable ... :/
 	wrapMenu: function (mod) {
 		var as = mod.querySelectorAll('div.widget_nav_menu a');
 
