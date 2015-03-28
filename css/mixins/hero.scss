@@ -39,11 +39,10 @@
 	overflow: hidden;
 	min-height: 340px;
 	padding-top: $h1-pos-bp1;
-	padding-bottom: 40px;
+	padding-bottom: 60px;
 
 	@media #{$bp-3} {
 		padding-top: $h1-pos-bp3;
-		padding-bottom: 60px;
 		min-height: 460px;
 	}
 
