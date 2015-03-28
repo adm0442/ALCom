@@ -30,7 +30,7 @@
 }
 
 @media #{$bp-3} {
-	body.search #posts-intro {
+	html.search #posts-intro {
 		h1 {
 			padding-right: $main-nav-width + $margin;
 		}

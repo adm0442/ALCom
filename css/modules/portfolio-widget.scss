@@ -1,20 +1,21 @@
-html.page-portfoliowidgethii039mandreas {
+html.page-template-portfolio-widget {
 	background: #fff;
-}
+	overflow: auto;
 
-body.page-template-portfolio-widget {
-	background: #fff;
+	body {
+		background: #fff;
 
-	#portfolios {
-		padding: 0;
-		text-align: left;
+		#portfolios {
+			padding: 0;
+			text-align: left;
 
-		article {
-			max-width: 240px;
-			margin-left: 0;
+			article {
+				max-width: 240px;
+				margin-left: 0;
 
-			&:hover {
-				transform: none;
+				&:hover {
+					transform: none;
+				}
 			}
 		}
 	}
