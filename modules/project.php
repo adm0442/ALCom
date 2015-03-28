@@ -21,6 +21,8 @@
 
 			<?php the_content() ?>
 
+			<p><a href="<?php the_field('github_url') ?>" class="button secondary icon-github" target="_blank">Download on GitHub</a></p>
+
 		</article>
 
 		<aside>
