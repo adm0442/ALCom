@@ -1,25 +1,41 @@
 var TrippyBG = {
+	canvas: false, 
+	ctx: false, 
+	dim: false, 
+
 	init: function (mod) {
 		// Create the canvas
-		var canvas = document.createElement('canvas');
+		this.canvas = document.createElement('canvas');
 
-		mod.insertBefore(canvas, mod.childNodes[0]);
+		mod.insertBefore(this.canvas, mod.childNodes[0]);
 
-		var dim = canvas.getBoundingClientRect();
+		this.dim = this.canvas.getBoundingClientRect();
+		this.ctx = this.canvas.getContext('2d');
 
 		// Set its width to its rendered width
-		canvas.width = dim.width;
-		canvas.height = dim.height;
+		this.canvas.width = this.dim.width;
+		this.canvas.height = this.dim.height;
+
+		// Do some waves
+		this.waves();
+
+	//	this.physics();
+	}, 
+
+	physics: function () {
+		
+	}, 
+
+	waves: function () {
+		var self = this;
 
 		// Start drawing waves at this height
-		var waveHeight = dim.height / 20;
-		var offset = dim.height - waveHeight * 2;
+		var waveHeight = self.dim.height / 20;
+		var offset = self.dim.height - waveHeight * 2;
 		var direction = -1;
 
 		// Start drawing
-		var ctx = canvas.getContext('2d');
-
-		ctx.lineWidth = 1;
+		self.ctx.lineWidth = 1;
 
 		var drawWaves = function (t) {
 			offset += .1 * direction;
@@ -27,30 +43,30 @@ var TrippyBG = {
 			if (offset < (0 + waveHeight)) {
 				direction = 1;
 			}
-			else if (offset > (dim.height - waveHeight)) {
+			else if (offset > (self.dim.height - waveHeight)) {
 				direction = -1;
 			}
 
-			ctx.clearRect(0, 0, dim.width, dim.height);
-			ctx.moveTo(0, dim.height / 2 + offset);
+			self.ctx.clearRect(0, 0, self.dim.width, self.dim.height);
+			self.ctx.moveTo(0, self.dim.height / 2 + offset);
 
-			for (var x = 0; x < dim.width; x++) {
+			for (var x = 0; x < self.dim.width; x++) {
 				var yPos = waveHeight * (Math.sin((t + x) * Math.PI / 180) * ((Math.sin(((x * 1.5)) * Math.PI / 180) + 1) / 1.5));
 					yPos += offset;
 
-				ctx.beginPath();
-				ctx.moveTo(x, yPos);
-				ctx.strokeStyle = 'rgba(0, 70, 90, 1)';
-				ctx.lineTo(x, yPos + ctx.lineWidth);
-				ctx.closePath();
-				ctx.stroke();
+				self.ctx.beginPath();
+				self.ctx.moveTo(x, yPos);
+				self.ctx.strokeStyle = 'rgba(0, 70, 90, 1)';
+				self.ctx.lineTo(x, yPos + self.ctx.lineWidth);
+				self.ctx.closePath();
+				self.ctx.stroke();
 
-				ctx.beginPath();
-				ctx.moveTo(x, yPos + ctx.lineWidth);
-				ctx.strokeStyle = 'rgba(0, 35, 45, .4)';
-				ctx.lineTo(x, dim.height);
-				ctx.closePath();
-				ctx.stroke();
+				self.ctx.beginPath();
+				self.ctx.moveTo(x, yPos + self.ctx.lineWidth);
+				self.ctx.strokeStyle = 'rgba(0, 35, 45, .4)';
+				self.ctx.lineTo(x, self.dim.height);
+				self.ctx.closePath();
+				self.ctx.stroke();
 			}
 		};
 
