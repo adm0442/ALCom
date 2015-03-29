@@ -7,7 +7,21 @@ var TrippyBG = {
 		// Create the canvas
 		this.canvas = document.createElement('canvas');
 
-		mod.insertBefore(this.canvas, mod.childNodes[0]);
+		// Add to requested element
+		// If the element has a direct child img - add the canvas AFTER the img
+		var inserted = false;
+
+		for (var i = 0; i < mod.children.length; i++) {
+			if (mod.children[i].tagName.toUpperCase() == 'IMG') {
+				mod.insertBefore(this.canvas, mod.children[i].nextSibling);
+				inserted = true;
+				break;
+			}
+		}
+
+		if (!inserted) {
+			mod.insertBefore(this.canvas, mod.childNodes[0]);
+		}
 
 		this.dim = this.canvas.getBoundingClientRect();
 		this.ctx = this.canvas.getContext('2d');

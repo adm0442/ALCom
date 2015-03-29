@@ -38,7 +38,7 @@ App.modules.Header = {
 						document.querySelector('#four-o-four header') ||
 						document.querySelector('#posts-intro');
 
-		if (appendTo && window.innerWidth > 800 && !appendTo.getElementsByTagName('img').length) {
+		if (appendTo && window.innerWidth > 800) {
 			TrippyBG.init(appendTo);
 		}
 	}, 
