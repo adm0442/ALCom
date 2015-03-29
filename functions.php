@@ -13,14 +13,18 @@ function alcom_register_css_js () {
 	wp_deregister_script('jquery');
 
 	# Theme CSS
-	if (is_front_page()) {
-		wp_register_style('alcom', get_stylesheet_directory_uri() . '/css/initial-home.' . filemtime(get_stylesheet_directory() . '/css/initial-home.css') . '.css', array(), null);
-	}
-	else {
+	if (!is_front_page()) {
 		wp_register_style('alcom', get_stylesheet_directory_uri() . '/css/all.' . filemtime(get_stylesheet_directory() . '/css/all.css') . '.css', array(), null);
+		wp_enqueue_style('alcom');
 	}
+}
 
-	wp_enqueue_style('alcom');
+add_action('wp_head', 'alcom_add_css');
+
+function alcom_add_css () {
+	if (is_front_page()) {
+		echo '<style>' . file_get_contents(get_stylesheet_directory() . '/css/initial-home.css') . '</style>';
+	}
 }
 
 # Have to include JS here to get async/defer and correct order of scripts...
