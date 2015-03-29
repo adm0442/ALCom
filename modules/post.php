@@ -2,7 +2,7 @@
 
 <section id="post">
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	<?php while (have_posts()) : the_post(); ?>
 		<header>
 
 			<?php if (has_post_thumbnail()) : ?>
@@ -33,9 +33,7 @@
 			<?php # sleek_get_module('social-media-buttons') ?>
 
 		</aside>
-	<?php endwhile; else : ?>
-		<?php sleek_get_module('partials/nothing-found') ?>
-	<?php endif ?>
+	<?php endwhile ?>
 
 </section>
 

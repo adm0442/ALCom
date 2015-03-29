@@ -2,7 +2,7 @@
 
 <section id="portfolio">
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	<?php while (have_posts()) : the_post(); ?>
 		<header>
 
 			<img src="<?php $img = get_field('desktop_screenshot_blurry'); echo $img['sizes']['alcom-hdw'] ?>">
@@ -25,9 +25,7 @@
 			<?php the_content() ?>
 
 		</article>
-	<?php endwhile; else : ?>
-		<?php sleek_get_module('partials/nothing-found') ?>
-	<?php endif ?>
+	<?php endwhile ?>
 
 </section>
 
