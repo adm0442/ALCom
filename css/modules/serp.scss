@@ -1,0 +1,51 @@
+#serp {
+	// Posts
+	article.post {
+		@include posts-post;
+	}
+
+	// Projects
+	article.project {
+		@include projects-project;
+	}
+
+	// Portfolios
+	article.portfolio {
+		@include portfolios-portfolio;
+	}
+
+	// Testimonials
+	article.testimonial {
+		@include testimonials-testimonial;
+	}
+
+	// Grid
+	article {
+		margin-bottom: $margin * 4 !important;
+	}
+
+	@media #{$bp-3} {
+		article.project {
+			@include col(2, $gutter);
+		}
+	}
+
+	@media #{$bp-2} and #{$bp-3-max} {
+		article.portfolio {
+			@include col(2, $gutter);
+		}
+	}
+
+	@media #{$bp-3} {
+		article.portfolio {
+			@include col(3, $gutter);
+		}
+	}
+
+	article.testimonial, 
+	article.post, 
+	article.portfolio + article.project, 
+	article.project + article.portfolio {
+		clear: both;
+	}
+}

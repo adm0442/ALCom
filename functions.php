@@ -144,7 +144,7 @@ function alcom_set_posts_per_page ($query) {
 	}
 
 	if (!is_admin() and $query == $wp_the_query and is_search()) {
-	#	$query->set('post_type', array('post', 'projects', 'portfolio') );
+		$query->set('post_type', array('post', 'projects', 'portfolio', 'testimonials'));
 		$query->set('posts_per_page', 30);
 	}
 
