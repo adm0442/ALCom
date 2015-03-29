@@ -19,10 +19,17 @@ App.modules.Header = {
 		// Smoothly scroll #in-page-links
 		SmoothScrolling.init((window.innerWidth < 800 ? 0 : 50));
 
+		// Expand codeblocks on hover
+		HoverExpand.init();
+
+		// Add loaded class to body for some styling
+		document.addEventListener('DOMContentLoaded', function () {
+			document.body.classList.add('loaded');
+		});
+
 		// Theme stuff
 	//	BlurImages.init('img.blur');
 	//	CanvasLogo.init('canvas.al-logo');
-		HoverExpand.init();
 
 		this.trippyBG();
 

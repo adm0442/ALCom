@@ -7,8 +7,8 @@
 		}
 	}
 
-	ul {
-		@media #{$bp-3} {
+	@media #{$bp-3} {
+		ul {
 			margin: 0;
 			position: absolute;
 			z-index: 1;
@@ -38,5 +38,21 @@
 		form {
 			top: $h1-pos-bp3 + 5px;
 		}
+	}
+}
+
+// Slide in the tags
+#posts-intro ul li {
+	opacity: 0;
+	transform: translateX(30px);
+	transition: all .08s ease-out;
+
+	@include increment-transition(li, .05, 40);
+}
+
+body.loaded {
+	#posts-intro ul li {
+		opacity: 1;
+		transform: translateX(0);
 	}
 }
