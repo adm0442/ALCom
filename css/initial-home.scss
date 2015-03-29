@@ -1,0 +1,36 @@
+@import "open-sans";
+
+// Config
+@import "../../sleek/css/default-config";
+@import "config";
+
+// Sleek stuff
+@import "../../sleek/css/font-awesome/font";
+@import "../../sleek/css/font-awesome/fa-variables";
+@import "../../sleek/css/font-awesome/icon-mixins";
+
+@import "../../sleek/css/utils/flex";
+@import "../../sleek/css/utils/misc";
+@import "../../sleek/css/utils/align-element";
+@import "../../sleek/css/utils/arrow";
+@import "../../sleek/css/utils/button";
+@import "../../sleek/css/utils/card-flip";
+@import "../../sleek/css/utils/device";
+@import "../../sleek/css/utils/section";
+@import "../../sleek/css/utils/speech-bubble";
+@import "../../sleek/css/utils/typography";
+
+@import "../../sleek/css/general/normalize";
+@import "../../sleek/css/general/general";
+
+// Out mixins
+@import "mixins/misc";
+@import "mixins/hero";
+
+// Some general styling for this theme
+@import "layout";
+
+// Modules
+@import "modules/header";
+@import "modules/featured-portfolio";
+@import "modules/random-testimonials";

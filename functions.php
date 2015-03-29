@@ -12,18 +12,14 @@ function alcom_register_css_js () {
 	# No need for jQuery 2015 :D
 	wp_deregister_script('jquery');
 
-	# Theme JS
-#	if (WP_DEBUG) {
-#		wp_register_script('alcom_foot', get_stylesheet_directory_uri() . '/js/foot.php', array(), null, true);
-#	}
-#	else {
-#		wp_register_script('alcom_foot', get_stylesheet_directory_uri() . '/js/foot.' . filemtime(get_stylesheet_directory() . '/js/foot.js') . '.js', array(), null, true);
-#	}
-
-#	wp_enqueue_script('alcom_foot');
-
 	# Theme CSS
-	wp_register_style('alcom', get_stylesheet_directory_uri() . '/css/all.' . filemtime(get_stylesheet_directory() . '/css/all.css') . '.css', array(), null);
+	if (is_front_page()) {
+		wp_register_style('alcom', get_stylesheet_directory_uri() . '/css/initial-home.' . filemtime(get_stylesheet_directory() . '/css/initial-home.css') . '.css', array(), null);
+	}
+	else {
+		wp_register_style('alcom', get_stylesheet_directory_uri() . '/css/all.' . filemtime(get_stylesheet_directory() . '/css/all.css') . '.css', array(), null);
+	}
+
 	wp_enqueue_style('alcom');
 }
 
@@ -31,6 +27,21 @@ function alcom_register_css_js () {
 add_action('wp_footer', 'alcom_add_recaptcha');
 
 function alcom_add_recaptcha () {
+	# If on home page - include rest of CSS
+	if (is_front_page()) {
+		echo "<script>
+			var cb = function() {
+				var l = document.createElement('link'); l.rel = 'stylesheet';
+				l.href = STYLSHEET_DIRECTORY + '/css/all.css';
+				var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+			};
+
+			var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+			if (raf) raf(cb);
+			else window.addEventListener('load', cb);
+		</script>";
+	}
+
 	# Our JS
 	if (WP_DEBUG) {
 		echo '<script src="' . get_stylesheet_directory_uri() . '/js/foot.php' . '"></script>';
@@ -47,14 +58,14 @@ function alcom_add_recaptcha () {
 
 	# Google Analytics
 	echo "<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-			ga('create', 'UA-1823084-2', 'auto');
-			ga('send', 'pageview');
-			</script>";
+		ga('create', 'UA-1823084-2', 'auto');
+		ga('send', 'pageview');
+	</script>";
 }
 
 # Thumbnails sizes
