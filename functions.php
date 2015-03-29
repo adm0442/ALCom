@@ -55,7 +55,7 @@ function alcom_add_recaptcha () {
 	}
 
 	# ReCaptcha
-	echo '<script src="https://www.google.com/recaptcha/api.js?onload=ApppluginsCaptchasrender&amp;render=explicit" async defer></script>';
+	echo '<script src="https://www.google.com/recaptcha/api.js?onload=RenderCaptchas&amp;render=explicit" async defer></script>';
 
 	# Prettify
 	echo '<script src="' . get_template_directory_uri() . '/js/prettify/run_prettify.js' . '"></script>';

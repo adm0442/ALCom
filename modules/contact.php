@@ -55,11 +55,11 @@
 				'placeholder' => 'e.g. Do you currently have a website? Are photos and content available? Or anything else you think might be useful.', 
 				'required' => true
 			), 
-		#	array(
-		#		'name' => 'captcha', 
-		#		'type' => 'captcha', 
-		#		'error' => 'Please verify that you are human'
-		#	), 
+			array(
+				'name' => 'captcha', 
+				'type' => 'captcha', 
+				'error' => 'Please verify that you are human'
+			), 
 			array(
 				'name' => 'sleek_module', 
 				'type' => 'hidden', 
