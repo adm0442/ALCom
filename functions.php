@@ -13,14 +13,16 @@ function alcom_register_css_js () {
 	wp_deregister_script('jquery');
 
 	# Theme JS
-#	wp_register_script('alcom_foot', get_styleheet_directory_uri() . '/js/foot.php', array(), null, true);
-#	wp_register_script('alcom_foot', get_styleheet_directory_uri() . '/js/foot.' . filemtime(get_stylesheet_directory() . '/js/head.js') . '.js', array(), null, true);
+#	if (WP_DEBUG) {
+#		wp_register_script('alcom_foot', get_stylesheet_directory_uri() . '/js/foot.php', array(), null, true);
+#	}
+#	else {
+#		wp_register_script('alcom_foot', get_stylesheet_directory_uri() . '/js/foot.' . filemtime(get_stylesheet_directory() . '/js/foot.js') . '.js', array(), null, true);
+#	}
+
 #	wp_enqueue_script('alcom_foot');
 
 	# Theme CSS
-#	wp_register_style('alcom', get_stylesheet_directory_uri() . '/css/all.css', array(), filemtime(get_stylesheet_directory() . '/css/all.css'));
-#	wp_enqueue_style('alcom');
-
 	wp_register_style('alcom', get_stylesheet_directory_uri() . '/css/all.' . filemtime(get_stylesheet_directory() . '/css/all.css') . '.css', array(), null);
 	wp_enqueue_style('alcom');
 }
@@ -30,7 +32,12 @@ add_action('wp_footer', 'alcom_add_recaptcha');
 
 function alcom_add_recaptcha () {
 	# Our JS
-	echo '<script src="' . get_stylesheet_directory_uri() . '/js/foot.php' . '"></script>';
+	if (WP_DEBUG) {
+		echo '<script src="' . get_stylesheet_directory_uri() . '/js/foot.php' . '"></script>';
+	}
+	else {
+		echo '<script src="' . get_stylesheet_directory_uri() . '/js/foot.' . filemtime(get_stylesheet_directory() . '/js/foot.js') . '.js' . '"></script>';
+	}
 
 	# ReCaptcha
 	echo '<script src="https://www.google.com/recaptcha/api.js?onload=ApppluginsCaptchasrender&amp;render=explicit" async defer></script>';
