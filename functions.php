@@ -25,6 +25,13 @@ function alcom_add_css () {
 	if (is_front_page()) {
 		echo '<style>' . file_get_contents(get_stylesheet_directory() . '/css/initial-home.css') . '</style>';
 	}
+
+	# Add loaded class to body for some styling
+	echo "<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			document.body.classList.add('loaded');
+		});
+	</script>";
 }
 
 # Have to include JS here to get async/defer and correct order of scripts...

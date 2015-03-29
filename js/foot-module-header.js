@@ -22,11 +22,6 @@ App.modules.Header = {
 		// Expand codeblocks on hover
 		HoverExpand.init();
 
-		// Add loaded class to body for some styling
-		document.addEventListener('DOMContentLoaded', function () {
-			document.body.classList.add('loaded');
-		});
-
 		// Theme stuff
 	//	BlurImages.init('img.blur');
 	//	CanvasLogo.init('canvas.al-logo');

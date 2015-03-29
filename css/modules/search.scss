@@ -1,4 +1,13 @@
 form.search {
+	opacity: 0;
+	transform: translateX(40px);
+	transition: all .1s .6s ease-out;
+
+	body.loaded & {
+		opacity: 1;
+		transform: translateX(0);
+	}
+
 	p {
 		input[type=search] {
 			display: block;
