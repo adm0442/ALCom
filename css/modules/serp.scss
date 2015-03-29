@@ -21,6 +21,7 @@
 
 	// Grid
 	article {
+		margin-top: $margin * 4 !important;
 		margin-bottom: $margin * 4 !important;
 	}
 
@@ -28,17 +29,80 @@
 		article.project {
 			@include col(2, $gutter);
 		}
+
+		// Pain... (TODO: Turn this into a mixin! (@include clear-cols(3, $gutter))
+		article.project, 
+		article.project + article.project + article.project, 
+		article.project + article.project + article.project + article.project + article.project, 
+		article.project + article.project + article.project + article.project + article.project + article.project + article.project, 
+		article.project + article.project + article.project + article.project + article.project + article.project + article.project + article.project + article.project {
+			margin-right: $gutter !important;
+			clear: both !important;
+		}
+
+		article.project + article.project, 
+		article.project + article.project + article.project + article.project, 
+		article.project + article.project + article.project + article.project + article.project + article.project, 
+		article.project + article.project + article.project + article.project + article.project + article.project + article.project + article.project, 
+		article.project + article.project + article.project + article.project + article.project + article.project + article.project + article.project + article.project + article.project {
+			margin-right: 0 !important;
+			clear: none !important;
+		}
 	}
 
 	@media #{$bp-2} and #{$bp-3-max} {
 		article.portfolio {
-			@include col(2, $gutter);
+			@include col(2, $margin * 2);
+			margin-bottom: $margin * 2 !important;
+			margin-top: 0 !important;
+		}
+
+		// Pain...
+		article.portfolio, 
+		article.portfolio + article.portfolio + article.portfolio, 
+		article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio, 
+		article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio, 
+		article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio {
+			margin-right: $margin * 2 !important;
+			clear: both !important;
+		}
+
+		article.portfolio + article.portfolio, 
+		article.portfolio + article.portfolio + article.portfolio + article.portfolio, 
+		article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio, 
+		article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio, 
+		article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio {
+			margin-right: 0 !important;
+			clear: none !important;
 		}
 	}
 
 	@media #{$bp-3} {
 		article.portfolio {
-			@include col(3, $gutter);
+			@include col(3, $margin * 2);
+			margin-bottom: $margin * 2 !important;
+			margin-top: 0 !important;
+		}
+
+		article.portfolio, 
+		article.portfolio + article.portfolio + article.portfolio + article.portfolio, 
+		article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio {
+			margin-right: $margin * 2 !important;
+			clear: both !important;
+		}
+
+		article.portfolio + article.portfolio, 
+		article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio, 
+		article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio {
+			margin-right: $margin * 2 !important;
+			clear: none !important;
+		}
+
+		article.portfolio + article.portfolio + article.portfolio, 
+		article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio, 
+		article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio + article.portfolio {
+			margin-right: 0 !important;
+			clear: none !important;
 		}
 	}
 
