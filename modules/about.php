@@ -3,7 +3,7 @@
 <section id="about">
 
 	<?php foreach ($users as $usr) : ?>
-		<img src="<?php echo sleek_get_avatar_url(get_avatar($usr->ID, 340)) ?>" width="340" height="340">
+		<img src="<?php echo sleek_get_avatar_url(get_avatar($usr->ID, 320)) ?>" width="320" height="320">
 
 		<h2>About me</h2>
 

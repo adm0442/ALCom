@@ -2,6 +2,7 @@
 	img {
 		@include align-right($bp-3);
 		@include framed(true);
+		box-sizing: content-box;
 		shape-outside: circle(170px at 50% calc(50% - 10px));
 	}
 }

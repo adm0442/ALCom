@@ -21,7 +21,7 @@
 		<article>
 
 			<figure<?php if (!has_post_thumbnail()) : ?> class="no-img"<?php endif ?>>
-				<?php the_post_thumbnail('sleek-small') ?>
+				<?php the_post_thumbnail('alcom-small') ?>
 
 				<figcaption>
 					<cite><?php the_title() ?></cite> 

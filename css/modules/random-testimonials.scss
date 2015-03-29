@@ -32,7 +32,7 @@
 			img {
 				@include framed(true);
 				display: block;
-				width: 100%;
+				box-sizing: content-box;
 			}
 
 			figcaption {

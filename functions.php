@@ -54,9 +54,9 @@ function alcom_add_recaptcha () {
 add_action('init', 'alcom_post_thumbnails');
 
 function alcom_post_thumbnails () {
-	add_image_size('alcom-small', 200, 200, true);
+	add_image_size('alcom-small', 160, 160, true);
 	add_image_size('alcom-device', 265, 550, array('center', 'top'));
-	add_image_size('alcom-medium', 460, 300, true);
+	add_image_size('alcom-medium', 430, 280, true);
 	add_image_size('alcom-medium-tall', 460, 600, array('center', 'top'));
 	add_image_size('alcom-hdw', 1920, 800, array('center', 'top'));
 }

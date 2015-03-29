@@ -10,7 +10,8 @@
 
 				// Make it half width
 				@media #{$bp-3} {
-					width: calc(50% - #{$gutter / 2});
+					box-sizing: content-box;
+					width: calc(50% - #{$gutter / 2 - 20px}); // 20px = @framed's border width
 					margin-right: $gutter;
 				}
 			}
