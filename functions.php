@@ -132,6 +132,20 @@ function alcom_register_post_types () {
 	);
 }
 
+# Exclude certain post types from search}
+add_filter('pre_get_posts', 'alcom_exclude_pt');
+
+function alcom_exclude_pt ($query) {
+	global $wp_the_query;
+
+	if (!is_admin() and $query === $wp_the_query and is_search()) {
+		$query->set('post_type', array('post', 'projects', 'portfolio') );
+	}
+
+	return $query;
+}
+
+
 # Show different numbers of posts on different post types (http://wordpress.stackexchange.com/questions/30757/change-posts-per-page-count)
 add_action('pre_get_posts', 'alcom_set_posts_per_page');
 
