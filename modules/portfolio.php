@@ -8,7 +8,7 @@
 			<img src="<?php $img = get_field('desktop_screenshot_blurry'); echo $img['sizes']['alcom-hdw'] ?>">
 
 			<?php if ($mobileScreenshot = get_field('mobile_screenshot')) : ?>
-				<img src="<?php $img = get_field('mobile_screenshot'); echo $img['sizes']['alcom-hdw'] ?>">
+				<img src="<?php $img = get_field('mobile_screenshot'); echo $img['sizes']['alcom-device'] ?>">
 			<?php endif ?>
 
 			<h1><?php the_title() ?></h1>
