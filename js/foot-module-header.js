@@ -33,11 +33,21 @@ App.modules.Header = {
 	}, 
 
 	trippyBG: function () {
+		// Add heros here
 		var appendTo =	document.querySelector('#post header') ||
 						document.querySelector('#project header') ||
 						document.querySelector('#four-o-four header') ||
 						document.querySelector('#posts-intro');
 
+		// Don't run waves on heros with images
+		for (var i = 0; i < appendTo.children.length; i++) {
+			if (appendTo.children[i].tagName.toUpperCase() == 'IMG') {
+				appendTo = false;
+				break;
+			}
+		}
+
+		// Don't run in lo res
 		if (appendTo && window.innerWidth > 800) {
 			TrippyBG.init(appendTo);
 		}
