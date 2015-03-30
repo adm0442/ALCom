@@ -2,6 +2,7 @@
 define('RECAPTCHA_SITE_KEY', '6Ld0FQQTAAAAADAb-WQKUveGUHFP6IAYjuIWthBv');
 define('RECAPTCHA_SECRET', '6Ld0FQQTAAAAAM11MaTd5VkDla1reAK5GoOaJXMI');
 define('DISQUS_SHORTNAME', 'andreaslagerkvistcom');
+define('GOOGLE_ANALYTICS', 'UA-1823084-2');
 
 include get_template_directory() . '/inc/html5form/html5form.php';
 
@@ -61,22 +62,8 @@ function alcom_add_recaptcha () {
 		echo '<script src="' . get_stylesheet_directory_uri() . '/js/foot.' . filemtime(get_stylesheet_directory() . '/js/foot.js') . '.js' . '"></script>';
 	}
 
-	# ReCaptcha
-	echo '<script src="https://www.google.com/recaptcha/api.js?onload=RenderCaptchas&amp;render=explicit" async defer></script>';
-
 	# Prettify
 	echo '<script src="' . get_template_directory_uri() . '/js/prettify/run_prettify.js' . '"></script>';
-
-	# Google Analytics
-	echo "<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		ga('create', 'UA-1823084-2', 'auto');
-		ga('send', 'pageview');
-	</script>";
 }
 
 # Thumbnails sizes
