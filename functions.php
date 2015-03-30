@@ -239,7 +239,7 @@ $tag2ico = array(
 
 	'wordpress' => 'wordpress', 
 	'wordpress-plugin' => 'wordpress', 
-	'font-awesome' => 'star', 
+	'font-awesome' => 'flag', 
 	'geo-location' => 'globe', 
 	'map' => 'map-marker', 
 	'maps' => 'map-marker', 
@@ -262,6 +262,7 @@ $tag2ico = array(
 	'captcha' => 'check', 
 	'icons' => 'heart', 
 	'validation' => 'check-square', 
+	'html5boilerplate' => 'html5', 
 
 	'php' => 'terminal', 
 	'php' => 'file-code-o', 
