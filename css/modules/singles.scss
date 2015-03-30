@@ -49,15 +49,20 @@
 	header {
 		@include projects-project; // Icon styling
 
-		// Bigger icon here
-		h1:before {
-			font-size: 400px;
-			top: -180px;
-			left: -200px;
+		h1 {
+			float: left;
+
+			// Bigger icon here
+			&:before {
+				font-size: 400px;
+				top: -180px;
+				left: -200px;
+			}
 		}
 
 		p {
-			margin-bottom: 0;
+			float: right;
+			margin: 45px 0 0;
 		}
 	}
 }
