@@ -39,17 +39,19 @@ App.modules.Header = {
 						document.querySelector('#four-o-four header') ||
 						document.querySelector('#posts-intro');
 
-		// Don't run waves on heros with images
-		for (var i = 0; i < appendTo.children.length; i++) {
-			if (appendTo.children[i].tagName.toUpperCase() == 'IMG') {
-				appendTo = false;
-				break;
+		if (appendTo) {
+			// Don't run waves on heros with images
+			for (var i = 0; i < appendTo.children.length; i++) {
+				if (appendTo.children[i].tagName.toUpperCase() == 'IMG') {
+					appendTo = false;
+					break;
+				}
 			}
-		}
 
-		// Don't run in lo res
-		if (appendTo && window.innerWidth > 800) {
-			TrippyBG.init(appendTo);
+			// Don't run in lo res
+			if (appendTo && window.innerWidth > 800) {
+				TrippyBG.init(appendTo);
+			}
 		}
 	}, 
 

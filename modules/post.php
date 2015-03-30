@@ -5,9 +5,7 @@
 	<?php while (have_posts()) : the_post(); ?>
 		<header>
 
-			<?php if (has_post_thumbnail()) : ?>
-				<?php the_post_thumbnail('alcom-hdw') ?>
-			<?php endif ?>
+			<?php # the_post_thumbnail('alcom-hdw') ?>
 
 			<h1>
 				<?php if ($allCats = alcom_get_all_categories($post->ID, 'post_category')) : ?>
