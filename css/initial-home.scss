@@ -23,9 +23,10 @@
 @import "../../sleek/css/general/normalize";
 @import "../../sleek/css/general/general";
 
-// Out mixins
+// Our mixins
 @import "mixins/misc";
 @import "mixins/hero";
+@import "mixins/testimonials";
 
 // Some general styling for this theme
 @import "layout";
