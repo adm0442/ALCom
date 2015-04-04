@@ -36,9 +36,9 @@ function alcom_add_css () {
 }
 
 # Have to include JS here to get async/defer and correct order of scripts...
-add_action('wp_footer', 'alcom_add_recaptcha');
+add_action('wp_footer', 'alcom_add_js');
 
-function alcom_add_recaptcha () {
+function alcom_add_js () {
 	# If on home page - include rest of CSS
 	if (is_front_page()) {
 		echo "<script>
@@ -56,7 +56,7 @@ function alcom_add_recaptcha () {
 
 	# Our JS
 	if (WP_DEBUG) {
-		echo '<script src="' . get_stylesheet_directory_uri() . '/js/foot.php' . '"></script>';
+		echo '<script src="' . get_stylesheet_directory_uri() . '/js/foot.php?v=' . filemtime(get_stylesheet_directory() . '/js/foot.js') . '"></script>';
 	}
 	else {
 		echo '<script src="' . get_stylesheet_directory_uri() . '/js/foot.' . filemtime(get_stylesheet_directory() . '/js/foot.js') . '.js' . '"></script>';
