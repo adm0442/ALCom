@@ -34,7 +34,7 @@
 			<?php endif ?>
 
 			<?php sleek_get_module('partials/tags', array('taxonomy' => 'project_tags')) ?>
-			<?php # sleek_get_module('social-media-buttons') ?>
+			<?php sleek_get_module('social-media-buttons') ?>
 
 		</aside>
 	<?php endwhile ?>

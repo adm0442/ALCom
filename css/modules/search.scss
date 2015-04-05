@@ -9,6 +9,8 @@ form.search {
 	}
 
 	p {
+		@include clearfix;
+
 		input[type=search] {
 			display: block;
 			float: left;

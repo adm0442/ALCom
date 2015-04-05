@@ -169,11 +169,11 @@ var TrippyBG = {
 		objects.push(createBox((canvasW / pxPerM) / 2 + (Math.random() * 4 - 2), -10, Math.random() * maxW + 0.5, Math.random() * maxH + 0.5, Math.random() * 20 - 10));
 
 		setInterval(function () {
-			if (Math.round(Math.random())) {
-				objects.push(createBox((canvasW / pxPerM) / 2 + (Math.random() * 4 - 2), -5, Math.random() * maxW + 0.5, Math.random() * maxH + 0.5, Math.random() * 20 - 10));
+			if (Math.round(Math.random() * 2) == 2) {
+				objects.push(createBall((canvasW / pxPerM) / 2 + (Math.random() * 4 - 2), -5, Math.random() * maxW + 0.5, Math.random() * 20 - 10));
 			}
 			else {
-				objects.push(createBall((canvasW / pxPerM) / 2 + (Math.random() * 4 - 2), -5, Math.random() * maxW + 0.5, Math.random() * 20 - 10));
+				objects.push(createBox((canvasW / pxPerM) / 2 + (Math.random() * 4 - 2), -5, Math.random() * maxW + 0.5, Math.random() * maxH + 0.5, Math.random() * 20 - 10));
 			}
 		}, 5000);
 

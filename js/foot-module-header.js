@@ -26,6 +26,18 @@ App.modules.Header = {
 	//	BlurImages.init('img.blur');
 	//	CanvasLogo.init('canvas.al-logo');
 
+		// Sticky sidebar
+		var html = document.documentElement;
+
+		if (html.classList.contains('single-post') || html.classList.contains('single-projects')) {
+			var aside = document.querySelector('main aside');
+			var offset = document.getElementById('header').offsetHeight + 20;
+			var stopBefore = document.getElementById('pagination') || document.getElementById('disqus') || false;
+
+			Sticky.init(aside, offset, stopBefore);
+		}
+
+		// Canvas backgrounds in header
 		this.trippyBG();
 
 	//	this.clickableLIs(mod);

@@ -37,6 +37,8 @@
 	}
 
 	aside {
+		margin: 0;
+
 		ul.tags {
 			@include spread-out-tags(6px, 25%);
 			margin-right: -6px;
