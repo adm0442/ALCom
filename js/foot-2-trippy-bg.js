@@ -161,11 +161,17 @@ var TrippyBG = {
 			var balls = [];
 
 			setInterval(function () {
-				var newBall = createBall(-5, Math.random() * (groundLevel / 2) + (groundLevel / 2), 1, 0, b2Body.b2_dynamicBody);
+				var newBallX = Math.round(Math.random()) ? -5 : (canvasW / pxPerM) + 5;
+				var newBall = createBall(newBallX, Math.random() * (groundLevel / 2) + (groundLevel / 2), 1, 0, b2Body.b2_dynamicBody);
 
 				balls.push(newBall);
 
-				newBall.body.ApplyImpulse(new b2Vec2(3000, 0), newBall.body.GetWorldCenter());
+				if (newBallX > 0) {
+					newBall.body.ApplyImpulse(new b2Vec2(-3000, 0), newBall.body.GetWorldCenter());
+				}
+				else {
+					newBall.body.ApplyImpulse(new b2Vec2(3000, 0), newBall.body.GetWorldCenter());
+				}
 			}, 5000);
 		}
 		// Create boxes every 5 seconds
