@@ -29,7 +29,7 @@
 
 			<?php sleek_get_module('partials/tags', array('taxonomy' => 'post_tag')) ?>
 			<?php sleek_get_module('search') ?>
-			<?php sleek_get_module('social-media-buttons') ?>
+			<?php # sleek_get_module('social-media-buttons') ?>
 
 		</aside>
 	<?php endwhile ?>
