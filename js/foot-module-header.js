@@ -29,7 +29,7 @@ App.modules.Header = {
 		// Sticky sidebar
 		var html = document.documentElement;
 
-		if (html.classList.contains('single-post') || html.classList.contains('single-projects')) {
+		if (window.innerWidth > 800 && html.classList.contains('single-post') || html.classList.contains('single-projects')) {
 			var aside = document.querySelector('main aside');
 			var offset = document.getElementById('header').offsetHeight + 20;
 			var stopBefore = document.getElementById('pagination') || document.getElementById('disqus') || false;
