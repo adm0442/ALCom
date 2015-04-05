@@ -44,7 +44,7 @@ function alcom_add_js () {
 		echo "<script>
 			var cb = function() {
 				var l = document.createElement('link'); l.rel = 'stylesheet';
-				l.href = STYLSHEET_DIRECTORY + '/css/all.css';
+				l.href = STYLESHEET_DIRECTORY + '/css/all.css';
 				var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
 			};
 
