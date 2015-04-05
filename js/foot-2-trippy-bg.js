@@ -63,7 +63,7 @@ var TrippyBG = {
 		var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
 
 		// Config
-		var gravity = 30;
+		var gravity = 25;
 		var pxPerM = 30;
 		var canvasW = this.dim.width;
 		var canvasH = this.dim.height;
@@ -143,7 +143,7 @@ var TrippyBG = {
 
 			for (var row = 0; row < baseNum; row++) {
 				for (var col = 0; col < (baseNum - row); col++) {
-					var x = (col * size + size) + (row * (size / 2)) + offsetX;
+					var x = (col * size) + (row * (size / 2)) + offsetX;
 					var y = -((row * size) - offsetY);
 
 					boxes.push(createBox(x, y, size / 2, size / 2, 0, b2Body.b2_dynamicBody));
@@ -155,15 +155,17 @@ var TrippyBG = {
 
 		// Bowling
 		if (Math.round(Math.random())) {
-			var boxes = buildPyramid(10, 1, ((canvasW / pxPerM) / 2) - 5, groundLevel - 1);
+			var baseNum = 10;
+			var boxSize = 1;
+			var boxes = buildPyramid(baseNum, boxSize, ((canvasW / pxPerM) / 2 + (boxSize / 2) - (boxSize * baseNum / 2)), groundLevel - 1);
 			var balls = [];
 
 			setInterval(function () {
-				var newBall = createBall(-5, Math.random() * groundLevel - 1, 1, 0, b2Body.b2_dynamicBody);
+				var newBall = createBall(-5, Math.random() * (groundLevel / 2) + (groundLevel / 2), 1, 0, b2Body.b2_dynamicBody);
 
 				balls.push(newBall);
 
-				newBall.body.ApplyImpulse(new b2Vec2(1000, 0), newBall.body.GetWorldCenter());
+				newBall.body.ApplyImpulse(new b2Vec2(3000, 0), newBall.body.GetWorldCenter());
 			}, 5000);
 		}
 		// Create boxes every 5 seconds
