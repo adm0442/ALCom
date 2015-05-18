@@ -8,7 +8,7 @@
 			<?php # the_post_thumbnail('alcom-hdw') ?>
 
 			<h1>
-				<?php if ($allCats = alcom_get_all_categories($post->ID, 'post_category')) : ?>
+				<?php if ($allCats = alcom_get_all_categories($post->ID, 'category')) : ?>
 					<small><?php echo implode(' & ', $allCats) ?></small> 
 				<?php endif ?>
 

@@ -263,7 +263,7 @@ $tag2ico = array(
 	'js' => 'file-code-o', 
 );
 
-function alcom_get_all_categories ($id, $t = 'post_category') {
+function alcom_get_all_categories ($id, $t = 'post_tag') {
 	$cats = wp_get_post_terms($id, $t);
 	$links = array();
 
