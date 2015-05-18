@@ -31,7 +31,7 @@ var TrippyBG = {
 		this.canvas.height = this.dim.height;
 
 		// Waves or physics
-		if (Math.round(Math.random())) {
+		if (false && Math.round(Math.random())) {
 			this.waves();
 		}
 		else {
