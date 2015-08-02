@@ -27,7 +27,7 @@ App.modules.Header = {
 	//	CanvasLogo.init('canvas.al-logo');
 
 		// Sticky sidebar
-		var html = document.documentElement;
+	/*	var html = document.documentElement;
 
 		if (window.innerWidth > 800 && html.classList.contains('single-post') || html.classList.contains('single-projects')) {
 			var aside = document.querySelector('main aside');
@@ -35,7 +35,7 @@ App.modules.Header = {
 			var stopBefore = document.getElementById('pagination') || document.getElementById('disqus') || false;
 
 			Sticky.init(aside, offset, stopBefore);
-		}
+		} */
 
 		// Canvas backgrounds in header
 		this.trippyBG();
