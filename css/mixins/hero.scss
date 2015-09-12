@@ -56,11 +56,14 @@
 		max-width: none;
 
 		position: absolute;
-		left: 50%;
+		left: 0;
 		top: 0;
 
-		transform: translateX(-50%);
 		opacity: .8;
+
+		@media #{$bp-hd} {
+			width: 100%;
+		}
 
 		@media #{$bp-3} {
 			// If we're using .blur (canvas blur) - hide the img
