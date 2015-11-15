@@ -8,6 +8,8 @@
 		h2 {
 			@include heading-size($h1-size);
 			@include ellipsis;
+			line-height: 1.4; // Prevent cuttin 'g'
+			margin-bottom: -.2rem;
 		}
 
 		// CTA
@@ -85,8 +87,8 @@
 	}
 
 	// The active item gets pushed down (TODO: Prevent first item from animating onload + fix last item/first item animation (z-index))
-	article.active, 
-	article:first-child, 
+	article.active,
+	article:first-child,
 	&.loaded article.active:first-child {
 		transform: translateY(0);
 
