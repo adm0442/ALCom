@@ -6,8 +6,6 @@
 
 		img {
 			@include device(225px, #222, false);
-
-			display: none;
 		}
 
 		.button {

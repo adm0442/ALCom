@@ -21,7 +21,7 @@
 		<article style="background-image: url(<?php $img = get_field('desktop_screenshot_blurry'); echo $img['sizes']['sleek-hd'] ?>)">
 
 			<?php if ($mobileScreenshot = get_field('mobile_screenshot')) : ?>
-				<img src="<?php $img = get_field('mobile_screenshot'); echo $img['sizes']['sleek-device'] ?>" width="265" height="550">
+				<img src="<?php echo $mobileScreenshot['sizes']['sleek-device'] ?>" width="265" height="550">
 			<?php endif ?>
 
 			<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
