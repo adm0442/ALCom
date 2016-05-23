@@ -2,7 +2,7 @@
 	global $post;
 
 	$rows = get_posts(array(
-		'post_type' => 'post', 
+		'post_type' => 'post',
 		'numberposts' => 1
 	));
 ?>
@@ -13,12 +13,12 @@
 		<h2>
 			<a href="<?php the_permalink() ?>">
 				<?php the_post_thumbnail('alcom-medium') ?>
-				<small>From the Blog</small> 
+				<small>From the Blog</small>
 				<?php the_title() ?>
 			</a>
 		</h2>
 
-		<?php sleek_get_module('partials/tags', array('taxonomy' => 'post_tag')) ?>
+		<?php sleek_get_template_part('modules/partials/tags', array('taxonomy' => 'post_tag')) ?>
 
 		<p class="pubdate"><time><?php echo get_the_time(get_option('date_format')) ?></time></p>
 
