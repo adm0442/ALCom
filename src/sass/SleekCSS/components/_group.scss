@@ -1,0 +1,19 @@
+.group {
+    margin-bottom: $margin-default;
+
+    &--large {
+        margin-bottom: $margin-default;
+
+        @media #{$bp-medium} {
+            margin-bottom: $margin-large;
+        }
+    }
+
+    &--x-large {
+        margin-bottom: $margin-default;
+
+        @media #{$bp-medium} {
+            margin-bottom: $margin-x-large;
+        }
+    }
+}

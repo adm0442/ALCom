@@ -2,14 +2,14 @@
 
 <main>
 
-	<?php sleek_get_module('post') ?>
-	<?php sleek_get_module('disqus') ?>
+	<?php get_template_part('modules/post') ?>
+	<?php get_template_part('modules/disqus') ?>
 
 </main>
 
 <aside id="aside">
 
-	<?php sleek_get_module('contact') ?>
+	<?php get_template_part('modules/contact') ?>
 
 </aside>
 

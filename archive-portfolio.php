@@ -2,14 +2,14 @@
 
 <main>
 
-	<?php sleek_get_module('posts-intro') ?>
-	<?php sleek_get_module('portfolios') ?>
+	<?php get_template_part('modules/posts-intro') ?>
+	<?php get_template_part('modules/portfolios') ?>
 
 </main>
 
 <aside id="aside">
 
-	<?php sleek_get_module('contact') ?>
+	<?php get_template_part('modules/contact') ?>
 
 </aside>
 

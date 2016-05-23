@@ -1,0 +1,17 @@
+@mixin link-border ($color) {
+	position: relative;
+	display: inline-block;
+	text-decoration: none;
+
+	&:after {
+		display: block;
+		content: "";
+		border-top: 1px solid $color;
+		width: 0;
+		transition: width .1s ease-out;
+	}
+
+	&:hover:after {
+		width: 100%;
+	}
+}

@@ -1,0 +1,16 @@
+/***
+    title: Container
+    section: Layout
+    description: Centers an element on the screen at a width of $site-width-max and a max width of $site-width.
+    example:
+        <div class="container">
+            <h1>I'm centered</h1>
+            <p>In the middle of the page</p>
+        </div>
+***/
+.container {
+	width: $site-width-max;
+	max-width: $site-width;
+	margin-left: auto;
+	margin-right: auto;
+}

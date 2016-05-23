@@ -1,0 +1,163 @@
+/***
+    title: Icon
+    section: Icons
+    description: Use to add icons to elements. Icons added to empty elements will have zero spacing around them whereas icons added to elements with content will have some spacing. Add icons to the icons.json file (using fontello.com) and Gulp takes care of the rest.
+    example:
+        <p>
+            <a href="#" class="icon-facebook">Facebook</a>
+            <a href="#" class="icon-twitter">Twitter</a>
+            <a href="#" class="icon-facebook icon--round" title="Facebook"></a>
+            <a href="#" class="icon-twitter icon--round" title="Twitter"></a>
+            <button class="icon-search">Find</button>
+            <a href="#" class="icon-right icon--after">Icon after text</a>
+        </p>
+
+        <ul class="cols cols--2">
+            <li class="icon-facebook icon--above">Facebook</li>
+            <li class="icon-twitter icon--above">Twitter</li>
+        </ul>
+***/
+/**
+ * Some icon tweaks and margins
+ */
+[class^="icon-"],
+[class*="icon-"] {
+	&:before,
+	&:after {
+		text-decoration: none;
+	}
+
+	// Separate icons and text
+	&:before {
+		margin: 0 .5em 0 0;
+	}
+
+	// Other way for icons after text
+	&.icon--after:after {
+		margin: 0 0 0 .5em;
+	}
+
+	// No margin around empty icons
+	&:empty:after,
+	&:empty:before {
+		margin: 0;
+	}
+}
+
+/**
+ * Spinner
+ */
+@keyframes spin {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.icon-spinner:before,
+.icon-spinner.icon--after:after {
+	animation: spin 1.5s infinite linear;
+}
+
+/**
+ * Round icon
+ * TODO: icon--round should be exactly like buttons (with :hover/:active --ghost and different colors)
+ */
+@mixin icon-round {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:before,
+	&.icon--after:after {
+		background: $icon-round-color;
+
+		width: 2.2em;
+		height: 2.2em;
+
+		line-height: 2.2em;
+		text-align: center;
+		color: $color-white;
+		text-shadow: none;
+
+		border-radius: 50%;
+		transition: border-radius .05s ease-out;
+	}
+}
+
+.icon--round {
+	@include icon-round;
+
+	&--ghost:before,
+	&--ghost.icon--after:after {
+		background: transparent;
+		color: $icon-round-color;
+		border: 1px solid $icon-round-color;
+	}
+}
+
+/* a.icon--round:hover,
+a:hover .icon--round {
+	&:before,
+	&.icon--after:after {
+		border-radius: .2rem;
+	}
+} */
+
+/**
+ * Icon Above
+ */
+.icon--above {
+	display: inline-block;
+	text-align: center;
+
+	&:before {
+		display: block;
+		margin: 0 auto;
+		font-size: 2em;
+	}
+}
+
+.icon--after.icon--below {
+	display: inline-block;
+	text-align: center;
+
+	&:after {
+		display: block;
+		margin: 0 auto;
+		font-size: 2em;
+	}
+}
+
+/**
+ * Icon colors
+ */
+@each $color in $icon-colors {
+ 	.icon--#{nth($color, 1)} {
+		&:before {
+			color: nth($color, 2);
+		}
+	}
+
+ 	.icon--after.icon--#{nth($color, 1)} {
+		&:after {
+			color: nth($color, 2);
+		}
+	}
+
+ 	.icon--round--#{nth($color, 1)} {
+		&:before {
+			background-color: nth($color, 2);
+		}
+
+		&.icon--round--ghost {
+			background-color: transparent;
+			color: nth($color, 2);
+			border-color: nth($color, 2);
+		}
+	}
+}

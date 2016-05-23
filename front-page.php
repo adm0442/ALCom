@@ -2,17 +2,17 @@
 
 <main>
 
-	<?php sleek_get_module('featured-portfolio') ?>
-	<?php sleek_get_module('random-testimonials') ?>
-	<?php sleek_get_module('latest-post') ?>
-	<?php sleek_get_module('random-projects') ?>
+	<?php get_template_part('modules/featured-portfolio') ?>
+	<?php get_template_part('modules/random-testimonials') ?>
+	<?php get_template_part('modules/latest-post') ?>
+	<?php get_template_part('modules/random-projects') ?>
 
 </main>
 
 <aside id="aside">
 
-	<?php sleek_get_module('about') ?>
-	<?php sleek_get_module('contact') ?>
+	<?php get_template_part('modules/about') ?>
+	<?php get_template_part('modules/contact') ?>
 
 </aside>
 

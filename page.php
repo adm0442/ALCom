@@ -2,15 +2,15 @@
 
 <main>
 
-	<?php sleek_get_module('post-content') ?>
-	<?php sleek_get_module('sub-nav') ?>
-	<?php sleek_get_module('disqus') ?>
+	<?php get_template_part('modules/post-content') ?>
+	<?php get_template_part('modules/sub-nav') ?>
+	<?php get_template_part('modules/disqus') ?>
 
 </main>
 
 <aside id="aside">
 
-	<?php sleek_get_module('contact') ?>
+	<?php get_template_part('modules/contact') ?>
 
 </aside>
 

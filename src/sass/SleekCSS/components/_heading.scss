@@ -1,0 +1,75 @@
+/***
+    title: Headings
+    section: Typography
+    description: Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size.
+    example:
+        <h1 class="heading--4">I'm a H1 but look like a H4</h1>
+        <h3>I'm a normal H3</h3>
+        <p class="heading--1">I'm not a heading at all!</p>
+***/
+@mixin heading ($size: $font-size-h1) {
+	display: block;
+	margin: 0 0 $margin-default;
+	font-weight: $font-weight-heading;
+	font-size: $size;
+	line-height: $line-height-heading;
+	font-family: $font-family-heading;
+	color: $color-heading;
+	letter-spacing: $letter-spacing-heading;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading--1,
+.heading--2,
+.heading--3,
+.heading--4,
+.heading--5,
+.heading--6 {
+	@include heading;
+}
+
+h2,
+.heading--2 {
+	font-size: $font-size-h2;
+}
+
+h3,
+.heading--3 {
+	font-size: $font-size-h3;
+}
+
+h4,
+.heading--4 {
+	font-size: $font-size-h4;
+}
+
+h5,
+.heading--5 {
+	font-size: $font-size-h5;
+}
+
+h6,
+.heading--6 {
+	font-size: $font-size-h6;
+}
+
+// Slightly smaller H1/H2 in low res
+@media #{$bp-medium-max} {
+	h1,
+	.heading--1 {
+		font-size: $font-size-h1 * .7;
+	}
+	h2,
+	.heading--2 {
+		font-size: $font-size-h2 * .7;
+	}
+	h3,
+	.heading--3 {
+		font-size: $font-size-h3 * .7;
+	}
+}

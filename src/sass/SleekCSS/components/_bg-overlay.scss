@@ -1,0 +1,67 @@
+@mixin bg-overlay ($color: $color-overlay, $hover: false) {
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	display: block;
+	position: relative;
+	overflow: hidden;
+
+	// Overlay
+	&:before {
+		background: $color;
+		display: block;
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+
+		// IE fix for when used inside table-cell elements
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			min-height: 500%;
+		}
+	}
+
+	// Render content on top of overlay
+	> * {
+		position: relative;
+	}
+
+	// Hover effect
+	@if ($hover) {
+		background-size: 100% auto;
+		transition: background-size .2s ease-out;
+
+		&:before {
+			transition: background-color .2s ease-out;
+		}
+
+		&:hover {
+			background-size: 110% auto;
+
+			&:before {
+				background: rgba($color, .9);
+			}
+		}
+	}
+}
+
+.bg-overlay {
+	@include bg-overlay($color-overlay, false);
+
+	&--hover {
+		@include bg-overlay($color-overlay, true);
+	}
+}
+
+@each $color in $bg-colors {
+	.bg-overlay--#{nth($color, 1)} {
+		@include bg-overlay(rgba(nth($color, 2), .7), false);
+
+		&.bg-overlay--hover {
+			@include bg-overlay(rgba(nth($color, 2), .7), true);
+		}
+	}
+}

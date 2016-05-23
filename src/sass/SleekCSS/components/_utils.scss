@@ -1,0 +1,25 @@
+.pull-right {
+	float: right;
+}
+
+img.pull-right {
+	margin-left: $margin-default;
+	margin-bottom: $margin-default;
+}
+
+.pull-left {
+	float: left;
+}
+
+img.pull-left {
+	margin-right: $margin-default;
+	margin-bottom: $margin-default;
+}
+
+.clear {
+	clear: both;
+}
+
+.clearfix {
+	@include clearfix;
+}

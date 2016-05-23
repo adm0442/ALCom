@@ -2,13 +2,13 @@
 
 <main>
 
-	<?php sleek_get_module('portfolio') ?>
+	<?php get_template_part('modules/portfolio') ?>
 
 </main>
 
 <aside id="aside">
 
-	<?php sleek_get_module('contact') ?>
+	<?php get_template_part('modules/contact') ?>
 
 </aside>
 

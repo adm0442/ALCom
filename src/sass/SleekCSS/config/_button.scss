@@ -1,0 +1,26 @@
+$button-padding-horizontal: 2.4rem !default;
+$button-padding-vertical: .8rem !default;
+$button-empty-padding-horizontal: 2rem !default;
+
+$button-transition: false !default;
+
+$button-border-width: 2px !default;
+$button-border-style: solid !default;
+$button-border-color: false !default; // This makes non ghost buttons have no border
+$button-border-radius: 2rem !default;
+
+$button-color: #06f !default;
+$button-gradient: 0 !default;
+$button-shadow: false !default;
+
+$button-text-shadow: false !default;
+$button-text-color: #fff !default;
+$button-line-height: 1.2 !default;
+$button-font-size: 1rem !default;
+$button-font-weight: bold !default;
+$button-text-transform: none !default;
+
+$button-colors: (
+	"blue": #06f,
+	"red": #600
+) !default;

@@ -1,9 +1,0 @@
-#about {
-	img {
-		@include align-right($bp-3);
-		@include framed(true);
-		box-sizing: content-box;
-		max-width: calc(100% - 20px);
-		shape-outside: circle(170px at 50% calc(50% - 10px));
-	}
-}

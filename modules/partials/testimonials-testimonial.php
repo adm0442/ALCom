@@ -3,13 +3,13 @@
 <article<?php echo isset($class) ? ' class="' . $class . '"' : '' ?>>
 
 	<figure<?php if (!has_post_thumbnail()) : ?> class="no-img"<?php endif ?>>
-		<?php the_post_thumbnail('alcom-small') ?>
+		<?php the_post_thumbnail('sleek-small') ?>
 
 		<figcaption>
-			<cite><?php the_title() ?></cite> 
+			<cite><?php the_title() ?></cite>
 			<small>
 				<?php
-					# WP you're such a pain sometimes... (yes I'm aware of get_the_excerpt but it's not exactly the same as the_excerpt)
+					# WP you're such a pain sometimes... (yes I'm aware of get_the_excerpt() but it's not exactly the same as the_excerpt)
 					ob_start();
 					the_excerpt();
 					$output = ob_get_contents();

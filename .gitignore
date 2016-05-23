@@ -1,2 +1,2 @@
-.sass-cache/
-db.sql
+dist/
+node_modules/

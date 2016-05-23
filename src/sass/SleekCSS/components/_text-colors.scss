@@ -1,0 +1,60 @@
+/***
+    title: Text Colors
+    section: Colors
+    description: Use to give an element's text a different color.
+    example:
+        <div class="bg--blue color--white">
+            <h2>I have white</h2>
+            <p>Text text text text text text text text text text text text text</p>
+        </div>
+***/
+@each $color in $text-colors {
+	// Colors added directly to elements
+	.color--#{nth($color, 1)},
+	h1.color--#{nth($color, 1)},
+	h2.color--#{nth($color, 1)},
+	h3.color--#{nth($color, 1)},
+	h4.color--#{nth($color, 1)},
+	h5.color--#{nth($color, 1)},
+	h6.color--#{nth($color, 1)},
+	.heading--1.color--#{nth($color, 1)},
+	.heading--2.color--#{nth($color, 1)},
+	.heading--3.color--#{nth($color, 1)},
+	.heading--4.color--#{nth($color, 1)},
+	.heading--5.color--#{nth($color, 1)},
+	.heading--6.color--#{nth($color, 1)},
+	a.color--#{nth($color, 1)},
+	.link.color--#{nth($color, 1)} {
+		color: #{nth($color, 2)};
+	}
+
+	// Make sure links still look like links on hover(?)
+	a.color--#{nth($color, 1)}:hover,
+	.link.color--#{nth($color, 1)}:hover {
+		color: $color-link-hover;
+		text-decoration: none;
+	}
+
+	// Colors added to parent element
+	.color--#{nth($color, 1)} {
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		.heading--1,
+		.heading--2,
+		.heading--3,
+		.heading--4,
+		.heading--5,
+		.heading--6,
+		a:not(.button),
+		.link,
+		a:not(.button):hover,
+		.link:hover {
+			color: #{nth($color, 2)};
+			text-decoration: none;
+		}
+	}
+}

@@ -1,4 +1,4 @@
 <?php # Template Name: Portfolio Widget ?>
-<?php sleek_get_module('head') ?>
-<?php sleek_get_module('portfolio-widget') ?>
-<?php sleek_get_module('foot') ?>
+<?php get_template_part('modules/head') ?>
+<?php get_template_part('modules/portfolio-widget') ?>
+<?php get_template_part('modules/foot') ?>

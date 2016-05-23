@@ -1,0 +1,18 @@
+@mixin semi-underline ($color: $color-text, $size: 2px, $margin: .5rem) {
+	display: inline-block; // Shrinkwrap
+
+	&:after {
+		background-color: $color;
+
+		display: block;
+		content: "";
+
+		width: 50%;
+		height: $size;
+		margin-top: $margin;
+
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}

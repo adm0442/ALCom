@@ -1,0 +1,38 @@
+/***
+    title: Text
+    section: Typography
+    description: Various helper classes for working with text.
+    example:
+        <p class="text--center">This text is centered and <strong class="text--upper">upper case</strong></p>
+***/
+@mixin text {
+	margin: 0;
+	font-size: $font-size-default;
+	line-height: $line-height-default;
+	font-family: $font-family-default;
+	color: $color-text;
+	word-wrap: break-word;
+	font-weight: $font-weight-default;
+}
+
+.text {
+	@include text;
+}
+
+.text--upper {
+	text-transform: uppercase;
+}
+
+.text--center {
+	text-align: center;
+}
+
+@mixin ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.text--ellipsis {
+	@include ellipsis;
+}
