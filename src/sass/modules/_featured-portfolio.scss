@@ -1,5 +1,19 @@
 #featured-portfolio {
-	img {
-		display: none;
+	padding: 0; // De-section
+
+	article {
+		@include hero;
+
+		img {
+			@include device(225px, #222, false);
+
+			display: none;
+		}
+
+		.button {
+			span {
+				@include a11y-hide;
+			}
+		}
 	}
 }

@@ -1,0 +1,94 @@
+#header {
+	@include section;
+
+	// Less padding
+	padding-top: $padding-default;
+	padding-bottom: $padding-small;
+
+	// Background color, shadow
+	background: linear-gradient(180deg, rgba($color-darkblue, .8) 50%, rgba($color-darkblue, .85) 50%, rgba($color-darkblue, .9));
+	box-shadow: 0 .2rem .6rem $color-shadow;
+
+	// Some nice text
+	text-shadow: -1px -1px 1px rgba(60, 60, 60, .4);
+
+	// Fixed header
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 99;
+	width: 100%;
+
+	// We'll adjust its size later
+	transition: padding-top .1s ease-out, padding-bottom .1s ease-out, transform .2s ease-out, height .1s ease-out;
+
+	// Logo
+	h1,
+	p.logo {
+		@include heading($font-size-h3);
+		font-size: $font-size-h3 !important; // Because @heading adjusts the size based on resolution - we don't want that in this case
+		margin: 0;
+		position: relative; // Position dot
+		transition: font-size .1s ease-out;
+
+		// Neutral link
+		a {
+			font-weight: 900;
+			color: $color-white;
+
+			// "I'm Andreas"
+			> strong {
+				font-weight: 300;
+				color: $color-link;
+				transition: color .1s ease-out;
+			}
+
+			&:hover > strong {
+				color: $color-link-hover;
+			}
+
+			// "...and I..."
+			small {
+				display: block;
+
+				font-size: $font-size-default * .8;
+				line-height: 1.4;
+				letter-spacing: 0;
+				color: $color-white;
+				font-weight: 300;
+
+				// Hide tagline for now
+				overflow: hidden;
+				max-height: 0;
+				transition: max-height .1s ease-out;
+
+				strong {
+					font-style: normal;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+
+	// Menu
+	div.widget_nav_menu {
+		ul {
+			@include clearfix;
+
+			margin: 0 0 0 (-$padding-small);
+			list-style: none;
+
+			li {
+				float: left;
+
+				a {
+					display: block;
+					padding: $padding-small;
+					color: rgba($color-white, .8);
+					text-transform: uppercase;
+					font-size: $font-size-default * .8;
+				}
+			}
+		}
+	}
+}

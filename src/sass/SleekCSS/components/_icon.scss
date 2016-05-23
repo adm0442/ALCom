@@ -29,12 +29,12 @@
 
 	// Separate icons and text
 	&:before {
-		margin: 0 .5em 0 0;
+		margin: 0 .4em 0 0;
 	}
 
 	// Other way for icons after text
 	&.icon--after:after {
-		margin: 0 0 0 .5em;
+		margin: 0 0 0 .4em;
 	}
 
 	// No margin around empty icons

@@ -20,7 +20,7 @@
 
 		<?php sleek_get_template_part('modules/partials/tags', array('taxonomy' => 'post_tag')) ?>
 
-		<p class="pubdate"><time><?php echo get_the_time(get_option('date_format')) ?></time></p>
+		<p class="pubdate"><time class="icon-clock"><?php echo get_the_time(get_option('date_format')) ?></time></p>
 
 		<?php the_excerpt() ?>
 

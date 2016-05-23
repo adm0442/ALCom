@@ -18,9 +18,7 @@
 <section id="featured-portfolio">
 
 	<?php foreach ($rows as $post) : setup_postdata($post) ?>
-		<article>
-
-			<img src="<?php $img = get_field('desktop_screenshot_blurry'); echo $img['sizes']['sleek-hd'] ?>" width="1920" height="800">
+		<article style="background-image: url(<?php $img = get_field('desktop_screenshot_blurry'); echo $img['sizes']['sleek-hd'] ?>)">
 
 			<?php if ($mobileScreenshot = get_field('mobile_screenshot')) : ?>
 				<img src="<?php $img = get_field('mobile_screenshot'); echo $img['sizes']['sleek-device'] ?>" width="265" height="550">
