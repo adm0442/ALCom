@@ -4,6 +4,7 @@
 	$theCat = wp_get_post_terms($post->ID, 'category');
 	$theCat = $theCat ? $theCat[0] : false;
 ?>
+
 <article<?php echo isset($class) ? ' class="' . $class . '"' : '' ?>>
 
 	<h2>
