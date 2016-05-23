@@ -55,6 +55,9 @@ $tag2ico = array(
 	'js' => 'file-code-o',
 );
 
+# HTML5Form
+include get_template_directory() . '/inc/html5form/html5form.php';
+
 /**
  * Some config (TODO: Move to Theme Options)
  */
@@ -128,8 +131,8 @@ function alcom_register_css_js () {
 	wp_enqueue_script('alcom');
 
 	# Google Webfonts
-	# wp_register_style('alcom_font_lato', 'https://fonts.googleapis.com/css?family=Lato:300,900');
-	# wp_enqueue_style('alcom_font_lato');
+	wp_register_style('alcom_font', 'https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400,700,800');
+	wp_enqueue_style('alcom_font');
 
 	# Theme CSS
 	wp_register_style('alcom', get_stylesheet_directory_uri() . '/dist/all.css?v=' . filemtime(get_stylesheet_directory() . '/dist/all.css'), array(), null);

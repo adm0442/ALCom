@@ -68,6 +68,15 @@ pre {
 small,
 .text--small {
 	font-size: $font-size-small;
+	color: $color-gray;
+
+	a {
+		color: $color-gray;
+
+		&:hover {
+			color: $color-link-hover;
+		}
+	}
 }
 
 .text--large {

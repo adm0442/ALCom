@@ -2,7 +2,6 @@
  * Bg colors
  */
 $bg-colors: (
-	"transparent": transparent,
 	"white": #fff
 );
 
@@ -35,11 +34,11 @@ $button-border-style: solid;
 $button-border-color: false; // This makes non ghost buttons have no border
 $button-border-radius: 2rem;
 
-$button-color: #06f;
+$button-color: #ffa700;
 $button-gradient: 0;
-$button-shadow: false;
+$button-shadow: true;
 
-$button-text-shadow: false;
+$button-text-shadow: true;
 $button-text-color: #fff;
 $button-line-height: 1.2;
 $button-font-size: 1rem;
@@ -47,8 +46,8 @@ $button-font-weight: bold;
 $button-text-transform: none;
 
 $button-colors: (
-	"blue": #06f,
-	"red": #600
+	"secondary": #234,
+	"disabled": #555
 );
 
 /**
@@ -56,9 +55,9 @@ $button-colors: (
  */
 $color-body-bg: #fff;
 $color-border: rgba(100, 100, 100, .5);
-$color-shadow: rgba(0, 0, 0, .2);
+$color-shadow: rgba(0, 0, 0, .25);
 $color-overlay: rgba(0, 0, 0, .5);
-$color-gray: gray;
+$color-gray: #aaa;
 $color-darkgray: darkgray;
 $color-white: #fff;
 
@@ -126,42 +125,41 @@ $top-bottom-slant: polygon(0 #{$section-slant}, 100% 0, 100% calc(100% - #{$sect
  * Text colors
  */
 $text-colors: (
-	"transparent": transparent,
 	"white": #fff
 );
 
 /**
  * Typography
  */
-$font-family-default: Helvetica, sans-serif;
+$font-family-default: "Open Sans", sans-serif;
 $font-family-heading: $font-family-default;
 
 $font-weight-default: normal;
-$font-weight-heading: bold;
+$font-weight-heading: lighter;
 
 $font-size-default: 1rem;
-$font-size-small: .8rem;
-$font-size-large: 1.3rem;
-$font-size-x-large: 2.2rem;
+$font-size-small: 80%;
+$font-size-large: 120%;
+$font-size-x-large: 200%;
 
 $line-height-default: 1.6;
 $line-height-heading: 1.2;
 
 $letter-spacing-default: 0;
-$letter-spacing-heading: 0;
+$letter-spacing-heading: -2px;
 
-$font-size-h1: 2.4rem;
-$font-size-h2: 2rem;
-$font-size-h3: 1.6rem;
-$font-size-h4: 1.4rem;
-$font-size-h5: 1.2rem;
-$font-size-h6: 1.1rem;
+$font-size-h1: 3.2rem;
+$font-size-h2: 2.8rem;
+$font-size-h3: 2.2rem;
+$font-size-h4: 1.8rem;
+$font-size-h5: 1.6rem;
+$font-size-h6: 1.4rem;
 
-$color-text: #333;
-$color-heading: #444;
+$color-text: #444;
+$color-heading: #333;
 
-$color-link: #06f;
-$color-link-hover: #09f;
+$color-link: #ffa700;
+$color-link-hover: lighten(#ffa700, 10%);
 $color-link-visited: #609;
 
 $text-decoration-link: none;

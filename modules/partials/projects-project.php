@@ -19,7 +19,7 @@
 
 	<p>
 		<a href="<?php the_permalink() ?>" class="button">Read more</a>
-		<a href="<?php the_field('github_url') ?>" class="button secondary icon-github" target="_blank">GitHub</a>
+		<a href="<?php the_field('github_url') ?>" class="button button--secondary icon-github" target="_blank">GitHub</a>
 	</p>
 
 </article>
