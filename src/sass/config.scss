@@ -57,9 +57,11 @@ $color-body-bg: #fff;
 $color-border: rgba(100, 100, 100, .5);
 $color-shadow: rgba(0, 0, 0, .25);
 $color-overlay: rgba(0, 0, 0, .5);
+$color-lightgray: #f9f9f9;
 $color-gray: #aaa;
 $color-darkgray: darkgray;
-$color-white: #fff;
+$color-white: #fefefe;
+$color-darkblue: #001116;
 
 /**
  * Cols
@@ -114,8 +116,8 @@ $padding-default: 1rem;
 
 $gutter-default: 1rem;
 
-$section-padding: 2rem;
-$section-slant: 3rem;
+$section-padding: 4rem;
+$section-slant: 4rem;
 
 $top-slant: polygon(0 #{$section-slant}, 100% 0, 100% 100%, 0 100%);
 $bottom-slant: polygon(0 0, 100% 0, 100% calc(100% - #{$section-slant}), 0 100%);

@@ -1,0 +1,49 @@
+// HTML covers everything so should be same color as footer
+html {
+	background: $color-darkblue;
+	overflow-y: scroll; // Always show scrollbar
+	overflow-x: hidden; // Until they fix 100vw-scrollbar-bug
+}
+
+// Body stops with content so should be default bg
+body {
+	background: $color-body-bg;
+//	background-image: linear-gradient(90deg, darken($color-body-bg, 5%) 0%, $color-body-bg 5%, $color-body-bg 95%, darken($color-body-bg, 10%));
+
+	// Weird edge case - a post with "icon" in its name will
+	// give body a class that contains icon and fontawesome
+	// will thusly give body an icon :P Hide it.
+	&:before {
+		display: none !important;
+	}
+}
+
+// Some general styling
+a {
+	transition: color .1s ease-out, opacity .1s ease-out;
+}
+
+// Automatically make sections
+main,
+#aside {
+	margin: 0;
+
+	> * {
+		@include section;
+	}
+}
+
+// Striped sections on home page
+@mixin section-alt {
+	background: $color-lightgray;
+
+	border: 1px solid darken($color-lightgray, 5%);
+	border-width: 1px 0;
+}
+
+#home-page main,
+#home-page #aside {
+	> *:nth-child(even) {
+		@include section-alt;
+	}
+}

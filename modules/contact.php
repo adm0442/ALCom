@@ -13,56 +13,56 @@
 
 		->addFields(array(
 			array(
-				'name' => 'contact_name', 
-				'label' => 'Your name', 
+				'name' => 'contact_name',
+				'label' => 'Your name',
 				'required' => true
-			), 
+			),
 			array(
-				'name' => 'contact_email', 
-				'type' => 'email', 
-				'label' => 'Email', 
-				'required' => true, 
-				'validation' => 'validEmail', 
+				'name' => 'contact_email',
+				'type' => 'email',
+				'label' => 'Email',
+				'required' => true,
+				'validation' => 'validEmail',
 				'error' => 'Please enter a valid e-mail address'
-			), 
+			),
 			array(
-				'name' => 'contact_company', 
+				'name' => 'contact_company',
 				'label' => 'Company'
-			), 
+			),
 			array(
-				'name' => 'contact_deadline', 
-				'type' => 'date', 
+				'name' => 'contact_deadline',
+				'type' => 'date',
 				'label' => 'Deadline'
-			), 
+			),
 			array(
-				'name' => 'contact_budget', 
-				'label' => 'Approximate budget', 
-				'type' => 'range', 
-				'min' => '0', 
-				'max' => '10000', 
-				'step' => '500', 
-				'value' => '0', 
+				'name' => 'contact_budget',
+				'label' => 'Approximate budget',
+				'type' => 'range',
+				'min' => '0',
+				'max' => '10000',
+				'step' => '500',
+				'value' => '0',
 				'attributes' => array(
-					'data-value-prefix' => '€', 
-					'data-min-text' => 'Prefer not to say', 
+					'data-value-prefix' => '€',
+					'data-min-text' => 'Prefer not to say',
 					'data-max-text' => 'More than €10 000'
 				)
-			), 
+			),
 			array(
-				'name' => 'contact_message', 
-				'type' => 'textarea', 
-				'label' => 'Details about the project', 
-				'placeholder' => 'e.g. Do you currently have a website? Are photos and content available? Or anything else you think might be useful.', 
+				'name' => 'contact_message',
+				'type' => 'textarea',
+				'label' => 'Details about the project',
+				'placeholder' => 'e.g. Do you currently have a website? Are photos and content available? Or anything else you think might be useful.',
 				'required' => true
-			), 
+			),
 			array(
-				'name' => 'captcha', 
-				'type' => 'captcha', 
+				'name' => 'captcha',
+				'type' => 'captcha',
 				'error' => 'Please verify that you are human'
-			), 
+			),
 			array(
-				'name' => 'sleek_module', 
-				'type' => 'hidden', 
+				'name' => 'sleek_module',
+				'type' => 'hidden',
 				'value' => "contact"
 			)
 		));
@@ -75,7 +75,7 @@
 	if ($contactForm->submit()) {
 		# Validate
 		if ($contactForm->validate()) {
-			$mail = fetch(get_template_directory() . '/inc/html5form/template.php', array('fields' => $contactForm->data()));
+			$mail = sleek_fetch(get_template_directory() . '/inc/html5form/template.php', array('fields' => $contactForm->data()));
 
 			if (!wp_mail(get_option('admin_email'), 'From website', $mail, "Content-type: text/html\r\n")) {
 				$errors = true;

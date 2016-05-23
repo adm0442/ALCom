@@ -1,0 +1,14 @@
+#footer {
+	@include section;
+
+	background-color: $color-darkblue;
+	color: $color-white;
+
+	a {
+		white-space: nowrap;
+	}
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
