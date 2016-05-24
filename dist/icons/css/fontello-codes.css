@@ -30,9 +30,14 @@
 .icon-file-code:before { content: '\e81c'; } /* '' */
 .icon-code:before { content: '\e81d'; } /* '' */
 .icon-search:before { content: '\e81e'; } /* '' */
-.icon-calc:before { content: '\e81f'; } /* '' */
+.icon-calculator:before { content: '\e81f'; } /* '' */
 .icon-youtube:before { content: '\e820'; } /* '' */
 .icon-clock:before { content: '\e821'; } /* '' */
 .icon-github:before { content: '\e822'; } /* '' */
 .icon-stack-overflow:before { content: '\e823'; } /* '' */
 .icon-google-plus:before { content: '\e824'; } /* '' */
+.icon-arrow-down:before { content: '\e825'; } /* '' */
+.icon-arrow-left:before { content: '\e826'; } /* '' */
+.icon-arrow-right:before { content: '\e827'; } /* '' */
+.icon-arrow-up:before { content: '\e828'; } /* '' */
+.icon-spinner:before { content: '\e829'; } /* '' */

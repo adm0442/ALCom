@@ -11,8 +11,8 @@ $bg-colors: (
 $bp-small: '(min-width: 400px)';
 $bp-small-max: '(max-width: 399px)';
 
-$bp-medium: '(min-width: 760px)';
-$bp-medium-max: '(max-width: 759px)';
+$bp-medium: '(min-width: 800px)';
+$bp-medium-max: '(max-width: 799px)';
 
 $bp-large: '(min-width: 1020px)';
 $bp-large-max: '(max-width: 1019px)';
@@ -23,7 +23,7 @@ $bp-x-large-max: '(max-width: 1599px)';
 /**
  * Button
  */
-$button-padding-horizontal: 2.4rem;
+$button-padding-horizontal: 2.2rem;
 $button-padding-vertical: .8rem;
 $button-empty-padding-horizontal: 2rem;
 
@@ -101,7 +101,7 @@ $form-border-radius: .2rem;
 $icon-round-color: #369;
 
 $icon-colors: (
-	"blue": #0000ff
+	"white": $color-white
 );
 
 /**
@@ -112,12 +112,15 @@ $site-width-max: 90%;
 
 $margin-small: .5rem;
 $margin-default: 1rem;
+$margin-large: 2rem;
+$margin-x-large: 6rem;
 
 $padding-small: .5rem;
 $padding-default: 1rem;
-$padding-x-large: 12rem;
+$padding-large: 2rem;
+$padding-x-large: 6rem;
 
-$gutter-default: 1rem;
+$gutter-default: 2rem;
 
 $section-padding: 4rem;
 $section-slant: 4rem;

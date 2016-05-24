@@ -2,21 +2,26 @@
 	@include section;
 	@include bg-overlay(rgba(0, 0, 0, .2));
 
-	padding-top: $padding-x-large;
+	// Loads of padding top to make room for header
+	padding-top: 5rem;
+	padding-bottom: 4rem;
 
+	@media #{$bp-medium} {
+		padding-top: 10rem;
+	}
+
+	// Background gradient and image styling
 	background-image: radial-gradient(500px at 50% -50%, lighten($color-x-darkblue, 20%) 0%, $color-x-darkblue 100%);
 	background-color: $color-x-darkblue;
 	background-repeat: no-repeat;
 	background-position: 50% top;
 	background-size: cover;
 
-	@media #{$bp-medium-max} {
-		height: 100vh;
-	}
-
+	// White, shadowy text
 	color: $color-white;
 	text-shadow: 1px 1px 1px $color-shadow;
 
+	// Headings
 	h1,
 	h2,
 	h3,
@@ -35,6 +40,18 @@
 		color: $color-white;
 	}
 
+	// Mobile phone image
+	img.mobile-screenshot {
+		@include device(285px, #222, false);
+		float: right;
+		margin: 0 0 -350px $gutter-default;
+
+		@media #{$bp-medium-max} {
+			display: none;
+		}
+	}
+
+	// Separate buttons
 	.button {
 		margin-bottom: $margin-default;
 		vertical-align: baseline;

@@ -4,14 +4,91 @@
 	article {
 		@include hero;
 
-		img {
-			@include device(225px, #222, false);
+		// Push down heading
+		h2 {
+			margin-top: $margin-x-large;
+		}
+
+		// First paragraph
+		ul.tags + p {
+			@include first-p;
+		}
+
+		// Button container
+		p:last-child {
+			margin-left: -$margin-small;
 		}
 
 		.button {
+			margin: 0 $margin-small $margin-default;
+
+			// Hide "more about the project" in low res
 			span {
-				@include a11y-hide;
+				@media #{$bp-medium-max} {
+					@include a11y-hide;
+				}
 			}
 		}
+	}
+}
+
+// "Slideshow" code
+#featured-portfolio {
+	position: relative;
+	overflow: hidden;
+
+	min-height: 100vh;
+
+	@media #{$bp-medium} {
+		min-height: 600px;
+	}
+
+	// Every item starts above
+	article {
+		position: absolute;
+		left: 0;
+		top: 0;
+
+		width: 100%;
+		height: 100%;
+
+		transform: translateY(-100%);
+		transition: transform .2s ease-in;
+	//	transition: transform 0 .6s;
+
+		img.mobile-screenshot {
+			margin-bottom: 0;
+			transition: transform .2s .2s ease-out;
+			transform: translateY(100%);
+		}
+	}
+
+	// The active item gets pushed down
+	article.active,
+	article:first-child,
+	&.loaded article.active:first-child {
+		transform: translateY(0);
+
+		// Slide down the phone
+		img.mobile-screenshot {
+			transform: translateY(0);
+		}
+	}
+
+	&.loaded article:first-child {
+		transform: translateY(-100%);
+
+		img.mobile-screenshot {
+			transform: translateY(100%);
+		}
+	}
+
+	// Next button
+	a.next {
+		position: absolute;
+		left: 50%;
+		bottom: $margin-default;
+		transform: translateX(-50%);
+		z-index: 99;
 	}
 }

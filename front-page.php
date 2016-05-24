@@ -3,7 +3,7 @@
 <main>
 
 	<?php get_template_part('modules/featured-portfolio') ?>
-	<?php get_template_part('modules/random-testimonials') ?>
+	<?php get_template_part('modules/random-testimonial') ?>
 	<?php get_template_part('modules/latest-post') ?>
 	<?php get_template_part('modules/random-projects') ?>
 

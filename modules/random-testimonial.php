@@ -15,7 +15,7 @@
 	));
 ?>
 
-<section id="random-testimonials">
+<section id="random-testimonial">
 
 	<?php foreach ($rows as $post) : setup_postdata($post) ?>
 		<?php get_template_part('modules/partials/testimonials-testimonial') ?>

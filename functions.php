@@ -42,6 +42,8 @@ $tag2ico = array(
 	'icons' => 'heart',
 	'validation' => 'check',
 	'html5boilerplate' => 'html5',
+	'ajax' => 'spinner',
+	'captcha' => 'puzzle',
 
 	'php' => 'terminal',
 	'php' => 'file-code',
