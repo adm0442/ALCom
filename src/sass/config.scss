@@ -139,7 +139,7 @@ $text-colors: (
 /**
  * Typography
  */
-$font-family-default: "Open Sans", sans-serif;
+$font-family-default: Lato, "Open Sans", sans-serif;
 $font-family-heading: $font-family-default;
 
 $font-weight-default: normal;
@@ -154,7 +154,7 @@ $line-height-default: 1.6;
 $line-height-heading: 1.2;
 
 $letter-spacing-default: 0;
-$letter-spacing-heading: -2px;
+$letter-spacing-heading: -1px;
 
 $font-size-h1: 3.2rem;
 $font-size-h2: 2.8rem;

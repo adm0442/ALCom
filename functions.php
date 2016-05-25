@@ -136,6 +136,9 @@ function alcom_register_css_js () {
 	wp_register_style('alcom_font', 'https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400,700,800');
 	wp_enqueue_style('alcom_font');
 
+	wp_register_style('alcom_font_lato', 'https://fonts.googleapis.com/css?family=Lato:400,300,900');
+	wp_enqueue_style('alcom_font_lato');
+
 	# Theme CSS
 	wp_register_style('alcom', get_stylesheet_directory_uri() . '/dist/all.css?v=' . filemtime(get_stylesheet_directory() . '/dist/all.css'), array(), null);
 	wp_enqueue_style('alcom');

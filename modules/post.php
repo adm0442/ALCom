@@ -29,14 +29,11 @@
 
 			<?php sleek_get_template_part('modules/partials/tags', array('taxonomy' => 'post_tag')) ?>
 			<?php get_template_part('modules/search') ?>
-			<?php # get_template_part('modules/social-media-buttons') ?>
+			<?php get_template_part('modules/social-media-buttons') ?>
 
 		</aside>
 	<?php endwhile ?>
 
 </section>
 
-<nav id="pagination">
-	<?php previous_post_link('%link', '%title') ?>
-	<?php next_post_link('%link', '%title') ?>
-</nav>
+<?php get_template_part('modules/post-pagination') ?>

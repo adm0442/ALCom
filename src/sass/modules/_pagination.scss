@@ -1,0 +1,29 @@
+#pagination {
+	@include section;
+	@include clearfix;
+
+	padding-top: $margin-default;
+	padding-bottom: $margin-default;
+
+	&:not(:last-child) {
+		@include section-alt;
+	}
+
+	a[rel=prev] {
+		&:before {
+			content: "\00AB ";
+			margin-right: $margin-small;
+		}
+
+		float: left;
+	}
+
+	a[rel=next] {
+		float: right;
+
+		&:after {
+			content: " \00BB";
+			margin-left: $margin-small;
+		}
+	}
+}
