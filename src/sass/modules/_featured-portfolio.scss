@@ -1,34 +1,8 @@
 #featured-portfolio {
-	padding: 0; // De-section
+	padding: 0 !important; // De-section
 
 	article {
-		@include hero;
-
-		// Push down heading
-		h2 {
-			margin-top: 5rem;
-		}
-
-		// First paragraph
-		ul.tags + p {
-			@include first-p;
-		}
-
-		// Button container
-		p:last-child {
-			margin-left: -$margin-small;
-		}
-
-		.button {
-			margin: 0 $margin-small $margin-default;
-
-			// Hide "more about the project" in low res
-			span {
-				@media #{$bp-medium-max} {
-					@include a11y-hide;
-				}
-			}
-		}
+		@extend .portfolio-hero;
 	}
 }
 
@@ -40,7 +14,7 @@
 	min-height: 100vh;
 
 	@media #{$bp-medium} {
-		min-height: 600px;
+		min-height: 576px;
 	}
 
 	// Every item starts above

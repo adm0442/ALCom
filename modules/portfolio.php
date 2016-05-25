@@ -3,12 +3,10 @@
 <section id="portfolio">
 
 	<?php while (have_posts()) : the_post(); ?>
-		<header>
-
-			<img src="<?php $img = get_field('desktop_screenshot_blurry'); echo $img['sizes']['sleek-hd'] ?>">
+		<header style="background-image: url(<?php $img = get_field('desktop_screenshot_blurry'); echo $img['sizes']['sleek-hd'] ?>)">
 
 			<?php if ($mobileScreenshot = get_field('mobile_screenshot')) : ?>
-				<img src="<?php $img = get_field('mobile_screenshot'); echo $img['sizes']['sleek-device'] ?>">
+				<img src="<?php $img = get_field('mobile_screenshot'); echo $img['sizes']['sleek-device'] ?>" class="mobile-screenshot">
 			<?php endif ?>
 
 			<h1><?php the_title() ?></h1>

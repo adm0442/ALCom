@@ -27,7 +27,6 @@
 			<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
 
 			<?php sleek_get_template_part('modules/partials/tags', array('taxonomy' => 'portfolio_tags')) ?>
-
 			<?php the_excerpt() ?>
 
 			<p>

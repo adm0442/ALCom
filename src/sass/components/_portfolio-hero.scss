@@ -1,0 +1,25 @@
+.portfolio-hero {
+	@include hero;
+
+	// Push down heading
+	h1,
+	h2 {
+		margin-top: 5rem;
+	}
+
+	// Button container
+	p:last-child {
+		margin-left: -$margin-small;
+	}
+
+	.button {
+		margin: 0 $margin-small $margin-default;
+
+		// Hide "more about the project" in low res
+		span {
+			@media #{$bp-medium-max} {
+				@include a11y-hide;
+			}
+		}
+	}
+}

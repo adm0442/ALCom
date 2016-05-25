@@ -1,0 +1,13 @@
+#portfolio {
+	header {
+		@extend .portfolio-hero;
+	}
+
+	article {
+		@include section;
+
+		> p:first-child {
+			font-weight: bold;
+		}
+	}
+}

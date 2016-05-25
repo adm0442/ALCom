@@ -27,7 +27,10 @@ a {
 main,
 #aside {
 	margin: 0;
+}
 
+#home-page main,
+#aside {
 	> * {
 		@include section;
 	}

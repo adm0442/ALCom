@@ -40,6 +40,18 @@
 		color: $color-white;
 	}
 
+	// "First" heading
+	> img:first-child + h1,
+	> img:first-child + h2,
+	> h1:first-child,
+	> h2:first-child {
+		font-size: $font-size-h2;
+
+		@media #{$bp-medium} {
+			font-size: $font-size-h1;
+		}
+	}
+
 	// Mobile phone image
 	img.mobile-screenshot {
 		@include device(285px, #222, false);
