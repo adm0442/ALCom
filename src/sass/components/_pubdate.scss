@@ -1,4 +1,6 @@
 .pubdate {
+	@extend small;
+
 	text-transform: uppercase;
 
 	> :not(:first-child) {
