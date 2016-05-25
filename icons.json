@@ -103,12 +103,6 @@
       "src": "fontawesome"
     },
     {
-      "uid": "f805bb95d40c7ef2bc51b3d50d4f2e5c",
-      "css": "th-list",
-      "code": 59408,
-      "src": "fontawesome"
-    },
-    {
       "uid": "fa10777b2d88cc64cd6e4f26ef0e5264",
       "css": "terminal",
       "code": 59409,
@@ -257,6 +251,12 @@
       "css": "spinner",
       "code": 59433,
       "src": "fontelico"
+    },
+    {
+      "uid": "c819c6225685bae2eed1b8da13e629fa",
+      "css": "list",
+      "code": 59434,
+      "src": "fontawesome"
     }
   ]
 }
