@@ -1,0 +1,6 @@
+#about {
+	img {
+		@include float-right($bp-medium);
+		@include framed(true);
+	}
+}

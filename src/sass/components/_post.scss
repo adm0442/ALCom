@@ -9,9 +9,7 @@
 
 				// Make it half width
 				@media #{$bp-medium} {
-					box-sizing: content-box;
-					width: calc(50% - #{$gutter-default / 2 - .5rem}); // 20px = @framed's border width
-					max-width: calc(100% - .5rem);
+					width: calc(50% - #{$gutter-default / 2});
 					margin-right: $gutter-default;
 				}
 			}
@@ -22,17 +20,8 @@
 		}
 	}
 
-	ul.tags {
+	.tags,
+	.pubdate {
 		display: inline-block;
-		margin-bottom: $margin-small;
-		margin-right: $margin-small;
-	}
-
-	p.pubdate {
-		display: inline-block;
-	}
-
-	ul.tags {
-		display: inline; // Fix for falling below floated img
 	}
 }

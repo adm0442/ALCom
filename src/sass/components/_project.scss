@@ -1,0 +1,28 @@
+.project {
+	h1,
+	h2 {
+		position: relative;
+
+		&:before {
+			font-size: 10rem;
+
+			position: absolute;
+			left: -5rem;
+			top: -1rem;
+
+			opacity: .05;
+			text-shadow: 0 0 0 $color-shadow;
+			transform: rotate(-10deg);
+
+		//	transition: transform .1s ease-out;
+		}
+	}
+
+	* {
+		position: relative; // Render on top of icon
+	}
+
+	a.button + a.button {
+		margin-left: $margin-default;
+	}
+}

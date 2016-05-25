@@ -1,0 +1,17 @@
+#random-projects {
+		@media #{$bp-medium} {
+			@include cols(2, $gutter-default);
+		}
+
+		article {
+			@extend .project;
+
+			@media #{$bp-medium} {
+				margin-bottom: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+}
