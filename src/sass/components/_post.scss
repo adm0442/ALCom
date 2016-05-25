@@ -1,0 +1,38 @@
+.post {
+	@include clearfix;
+
+	h2 {
+		a {
+			img {
+				@include framed(false);
+				@include float-left($bp-medium);
+
+				// Make it half width
+				@media #{$bp-medium} {
+					box-sizing: content-box;
+					width: calc(50% - #{$gutter-default / 2 - .5rem}); // 20px = @framed's border width
+					max-width: calc(100% - .5rem);
+					margin-right: $gutter-default;
+				}
+			}
+
+			&:hover img {
+				@include framed-hover;
+			}
+		}
+	}
+
+	ul.tags {
+		display: inline-block;
+		margin-bottom: $margin-small;
+		margin-right: $margin-small;
+	}
+
+	p.pubdate {
+		display: inline-block;
+	}
+
+	ul.tags {
+		display: inline; // Fix for falling below floated img
+	}
+}
