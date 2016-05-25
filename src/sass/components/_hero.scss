@@ -36,6 +36,7 @@
 	.heading--6 {
 		margin: 0;
 		color: $color-white;
+		max-width: 40rem;
 	}
 
 	// "First" heading
@@ -48,6 +49,11 @@
 
 		@media #{$bp-medium} {
 			font-size: $font-size-h1;
+		}
+
+		// Pull up its height
+		small {
+			margin-top: -($font-size-h1 * $line-height-heading * .6);
 		}
 	}
 

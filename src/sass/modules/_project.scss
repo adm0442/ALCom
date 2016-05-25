@@ -1,0 +1,20 @@
+#project {
+	@extend .two-col-layout;
+
+	header {
+		@extend .project;
+
+		h1 {
+			float: left;
+
+			&:before {
+				top: -3rem;
+			}
+		}
+
+		h1 + p {
+			float: right;
+			margin-top: 5rem;
+		}
+	}
+}

@@ -25,7 +25,9 @@
 
 		</article>
 
-		<aside>
+		<aside class="sticky">
+
+			<?php sleek_get_template_part('modules/partials/tags', array('taxonomy' => 'project_tags')) ?>
 
 			<?php if ($demo = get_field('project_demo')) : ?>
 				<h2>Demo</h2>
@@ -33,8 +35,7 @@
 				<?php echo $demo ?>
 			<?php endif ?>
 
-			<?php sleek_get_template_part('modules/partials/tags', array('taxonomy' => 'project_tags')) ?>
-			<?php # get_template_part('modules/social-media-buttons') ?>
+			<?php get_template_part('modules/social-media-buttons') ?>
 
 		</aside>
 	<?php endwhile ?>
