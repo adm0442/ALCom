@@ -57,7 +57,7 @@
 		float: right;
 		margin: 0 0 -350px $gutter-default;
 
-		@media #{$bp-medium-max} {
+		@media #{$bp-large-max} {
 			display: none;
 		}
 	}

@@ -23,6 +23,12 @@
 			<?php the_content() ?>
 
 		</article>
+
+		<aside class="sticky--bp-medium">
+
+			<?php get_template_part('modules/social-media-buttons') ?>
+
+		</aside>
 	<?php endwhile ?>
 
 </section>

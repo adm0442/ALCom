@@ -2,9 +2,6 @@
 	@include section;
 	@include clearfix;
 
-	padding-top: $margin-default;
-	padding-bottom: $margin-default;
-
 	&:not(:last-child) {
 		@include section-alt;
 	}

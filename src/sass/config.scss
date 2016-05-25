@@ -55,7 +55,7 @@ $button-colors: (
  */
 $color-lightgray: #f9f9f9;
 $color-gray: #aaa;
-$color-darkgray: darkgray;
+$color-darkgray: #444;
 $color-white: #fefefe;
 $color-darkblue: #001116;
 $color-x-darkblue: #00080c;
@@ -99,7 +99,7 @@ $form-border-radius: .2rem;
 /**
  * Icons
  */
-$icon-round-color: #369;
+$icon-round-color: $color-darkgray;
 
 $icon-colors: (
 	"white": $color-white

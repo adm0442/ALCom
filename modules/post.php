@@ -25,10 +25,10 @@
 
 		</article>
 
-		<aside>
+		<aside class="sticky--bp-medium">
 
 			<?php sleek_get_template_part('modules/partials/tags', array('taxonomy' => 'post_tag')) ?>
-			<?php get_template_part('modules/search') ?>
+			<p><?php the_post_thumbnail('sleek-medium-tall', array('class' => 'framed')) ?></p>
 			<?php get_template_part('modules/social-media-buttons') ?>
 
 		</aside>

@@ -17,3 +17,7 @@
 	transform: rotate(-.4deg) scale(1.01);
 	box-shadow: 4px 4px 12px $color-shadow;
 }
+
+img.framed {
+	@include framed;
+}

@@ -1,0 +1,23 @@
+#social-media-buttons {
+	text-align: center;
+
+	ul {
+		@extend .list--inline;
+
+		> * {
+			margin: 0 $margin-small $margin-small;
+		}
+	}
+
+	a {
+		@include icon-round;
+
+		color: $color-text;
+		font-size: 0;
+
+		&:before {
+			font-size: $font-size-default * 2;
+			margin: 0;
+		}
+	}
+}
