@@ -1,0 +1,13 @@
+.standard-layout {
+	header {
+		@include hero;
+	}
+
+	article {
+		@include section;
+
+		> p:first-child {
+			font-weight: bold;
+		}
+	}
+}

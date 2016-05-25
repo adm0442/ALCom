@@ -34,9 +34,7 @@
 	.heading--4,
 	.heading--5,
 	.heading--6 {
-		@include ellipsis;
 		margin: 0;
-		line-height: 1.6;
 		color: $color-white;
 	}
 
@@ -45,6 +43,7 @@
 	> img:first-child + h2,
 	> h1:first-child,
 	> h2:first-child {
+		margin-top: 5rem;
 		font-size: $font-size-h2;
 
 		@media #{$bp-medium} {

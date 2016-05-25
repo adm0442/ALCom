@@ -1,10 +1,9 @@
 .portfolio-hero {
 	@include hero;
 
-	// Push down heading
 	h1,
 	h2 {
-		margin-top: 5rem;
+		@include ellipsis;
 	}
 
 	// Button container
