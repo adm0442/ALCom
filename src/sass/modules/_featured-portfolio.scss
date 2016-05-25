@@ -6,7 +6,7 @@
 
 		// Push down heading
 		h2 {
-			margin-top: $margin-x-large;
+			margin-top: 5rem;
 		}
 
 		// First paragraph
@@ -87,7 +87,7 @@
 	a.next {
 		position: absolute;
 		left: 50%;
-		bottom: $margin-default;
+		bottom: $section-padding / 2;
 		transform: translateX(-50%);
 		z-index: 99;
 	}
