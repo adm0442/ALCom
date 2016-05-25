@@ -24,6 +24,18 @@ body {
 }
 
 /**
+ * Wrapping elements
+ */
+main,
+aside,
+section,
+article,
+header,
+footer {
+	margin: 0 0 $margin-default;
+}
+
+/**
  * Paragraphs, lists, quotes etc
  */
 p {
@@ -36,20 +48,56 @@ ol {
 	padding: 0;
 }
 
-blockquote,
-q {
-	font-size: $font-size-large;
-	margin: 0;
+
+dl {
+	margin: 0 0 $margin-default;
+
+	dt {
+		font-weight: bold;
+	}
+
+	dd {
+		margin: 0 0 0 $margin-default;
+	}
+}
+
+// Quotes
+q,
+blockquote {
+	quotes: "“" "”" "‘" "’";
+}
+
+q:before {
+	content: open-quote;
+}
+
+q:after {
+	content: close-quote;
 }
 
 blockquote {
-	> :first-child:before,
-	> :last-child:after {
-		content: open-quote;
-		line-height: 1;
+	margin: 0 0 $margin-default;
+
+	font-family: Georgia, serif;
+	font-style: italic;
+	font-weight: lighter;
+	color: $color-gray;
+	font-size: 120%;
+
+	@media #{$bp-medium} {
+		font-size: 140%;
 	}
 
-	> :last-child:after {
+	& > :last-child {
+		margin-bottom: 0;
+	}
+
+	& > :first-child:before,
+	& > :last-child:after {
+		content: open-quote;
+	}
+
+	& > :last-child:after {
 		content: close-quote;
 	}
 }
@@ -84,26 +132,88 @@ small,
 }
 
 /**
- * Images, iframes etc
+ * Images
  */
 img,
 svg {
 	max-width: 100%;
+	width: auto;
 	height: auto;
+	box-sizing: border-box;
 }
 
+/**
+ * Iframes
+ */
 iframe {
+	width: 100%;
+	height: 300px;
+	border: 0;
+	resize: y;
 
+	// Fix for iOS responsive bug
+	width: 1px;
+	min-width: 100%;
+	*width: 100%;
 }
 
+/**
+ * HR
+ */
 hr {
+	background: transparent;
 	margin: $margin-default 0;
-	padding: 0;
-	height: 0;
+	outline: 0;
 	border: 0;
 	border-top: 1px solid $color-border;
 
 	@media #{$bp-medium} {
-		margin: ($margin-default * 2) 0;
+		margin: $margin-large 0;
 	}
+}
+
+/**
+ * PRE & Code
+ */
+pre {
+	background: $color-lightgray;
+
+	margin: 0 0 $margin-default;
+	padding: $padding-default;
+
+	max-height: 20rem;
+	resize: y;
+	overflow: auto;
+
+	border: 1px solid $color-border;
+}
+
+code {
+	word-wrap: break-word;
+}
+
+pre code {
+	word-wrap: normal;
+}
+
+// Tables
+table {
+	margin: 0 0 $margin-default;
+	border-spacing: 0;
+
+	th,
+	td {
+		padding: ($margin-small);
+		border: 1px solid $color-border;
+		text-align: left;
+		vertical-align: top;
+	}
+
+	tr:nth-child(even) td {
+		background: $color-lightgray;
+	}
+}
+
+abbr {
+	cursor: help;
 }

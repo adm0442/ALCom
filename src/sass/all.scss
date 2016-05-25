@@ -14,8 +14,7 @@
 @import "general";
 @import "layout";
 
-// Our components
+// Our stuff
+@import "mixins/*";
 @import "components/*";
-
-// Our modules
 @import "modules/*";

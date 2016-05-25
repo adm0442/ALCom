@@ -1,0 +1,80 @@
+.testimonial {
+	@media #{$bp-medium} {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	margin: 0;
+
+	perspective: 800;
+
+	&:hover figure:not(.no-img) {
+		transform: rotateY(180deg);
+	}
+
+	figure {
+		@include card-flip(false, Y);
+
+		width: 180px;
+		height: 180px;
+		margin: 0 auto $margin-default;
+
+		text-align: center;
+
+		@media #{$bp-medium} {
+			flex-shrink: 0;
+			margin: 0 $margin-default 0 0;
+		}
+
+		img {
+			@include framed(true);
+			display: block;
+			box-sizing: content-box;
+		}
+
+		figcaption {
+			@include framed(true);
+
+			background: $color-lightgray;
+
+			box-sizing: border-box;
+			height: 100%;
+			padding: 60px 5px 0;
+
+			cite {
+				@include ellipsis;
+				display: block;
+				font-style: normal;
+				line-height: 1.6;
+			}
+
+			small {
+				display: block;
+				line-height: 1.4;
+			}
+		}
+	}
+
+	blockquote {
+		background: $color-white;
+
+		display: block;
+		margin: 0;
+		padding: $padding-default;
+
+		border: 1px solid $color-border;
+		border-radius: 1rem;
+
+		@media #{$bp-medium-max} {
+			@include arrow(top, 20px, $color-white, 1px, $color-border);
+
+			margin-top: 22px + 16px; // 20px = arrow width, 16px = 1rem
+		}
+		@media #{$bp-medium} {
+			@include arrow(left, 20px, $color-white, 1px, $color-border);
+
+			margin-left: 22px + 16px; // 20px = arrow width, 16px = 1rem
+		}
+	}
+}

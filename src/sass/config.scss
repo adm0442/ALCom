@@ -53,16 +53,17 @@ $button-colors: (
 /**
  * Colors
  */
-$color-body-bg: #fff;
-$color-border: rgba(100, 100, 100, .5);
-$color-shadow: rgba(0, 0, 0, .25);
-$color-overlay: rgba(0, 0, 0, .5);
 $color-lightgray: #f9f9f9;
 $color-gray: #aaa;
 $color-darkgray: darkgray;
 $color-white: #fefefe;
 $color-darkblue: #001116;
 $color-x-darkblue: #00080c;
+
+$color-body-bg: #fff;
+$color-border: darken($color-lightgray, 5%);
+$color-shadow: rgba(0, 0, 0, .25);
+$color-overlay: rgba(0, 0, 0, .5);
 
 /**
  * Cols
@@ -115,7 +116,7 @@ $margin-default: 1rem;
 $margin-large: 2rem;
 
 $padding-small: .5rem;
-$padding-default: 1rem;
+$padding-default: 1.5rem;
 $padding-large: 2rem;
 $padding-x-large: 6rem;
 

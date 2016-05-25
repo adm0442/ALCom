@@ -1,0 +1,19 @@
+@mixin framed ($round: false) {
+	@if ($round) {
+		border-radius: 50%;
+	}
+
+	transition: transform .2s ease-out, box-shadow .2s ease-out;
+
+	border: 10px solid $color-white;
+	box-shadow: 2px 2px 8px $color-shadow;
+
+	a:hover & {
+		@include framed-hover;
+	}
+}
+
+@mixin framed-hover {
+	transform: rotate(-.4deg) scale(1.01);
+	box-shadow: 4px 4px 12px $color-shadow;
+}

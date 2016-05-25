@@ -37,7 +37,7 @@ main,
 @mixin section-alt {
 	background: $color-lightgray;
 
-	border: 1px solid darken($color-lightgray, 5%);
+	border: 1px solid $color-border;
 	border-width: 1px 0;
 }
 
