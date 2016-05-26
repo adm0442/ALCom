@@ -1,0 +1,7 @@
+#serp {
+	@include section;
+
+	article {
+		margin-bottom: $margin-x-large;
+	}
+}

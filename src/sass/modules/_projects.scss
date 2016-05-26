@@ -1,5 +1,6 @@
 #projects {
 	@include section;
+	@include inline-grid(2, $bp-medium);
 
 	article {
 		@extend .project;

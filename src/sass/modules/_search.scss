@@ -1,6 +1,7 @@
 form.search {
 	p {
 		position: relative;
+		display: inline-block; // Shrinkwrap
 	}
 
 	input {
