@@ -1,0 +1,9 @@
+#posts {
+	@include section;
+
+	article {
+		@extend .post;
+
+		margin-bottom: $margin-large;
+	}
+}

@@ -1,5 +1,28 @@
 form.search {
+	p {
+		position: relative;
+	}
+
 	input {
-		
+		width: 100%;
+	}
+
+	// Annoyingly complex selector because these buttons are usually styled with less padding
+	button:empty:not([value]) {
+		// Remove button styling
+		background: transparent;
+		margin: 0;
+		padding: 0;
+		border: 0;
+		box-shadow: none;
+
+		// Position
+		position: absolute;
+		right: $padding-default;
+		top: 50%;
+		transform: translateY(-50%);
+
+		// Hello
+		color: $color-text;
 	}
 }
