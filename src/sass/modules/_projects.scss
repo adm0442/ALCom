@@ -1,0 +1,9 @@
+#projects {
+	@include section;
+
+	article {
+		@extend .project;
+
+		margin-bottom: $margin-large;
+	}
+}

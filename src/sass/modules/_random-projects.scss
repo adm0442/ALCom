@@ -6,6 +6,8 @@
 		article {
 			@extend .project;
 
+			margin-bottom: $margin-large;
+
 			@media #{$bp-medium} {
 				margin-bottom: 0;
 			}

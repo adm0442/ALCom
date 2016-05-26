@@ -100,8 +100,8 @@ add_action('init', 'alcom_register_post_types_and_taxonomies');
 
 function alcom_register_post_types_and_taxonomies () {
 	$customPostTypes = array(
-		'portfolio' => "Below you'll find a sample of my work.",
-		'projects' => "Here you'll find code I think might be useful to others.",
+		'portfolio' => "Some recently launched sites.",
+		'projects' => "Code I think might be useful to others.",
 		'testimonials' => ''
 	);
 

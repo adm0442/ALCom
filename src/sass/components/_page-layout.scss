@@ -1,0 +1,54 @@
+.layout {
+	// Standard Hero/Section layout
+	&--standard {
+		header {
+			@include hero;
+		}
+
+		article {
+			@include section;
+
+			> p:first-child {
+				font-weight: bold;
+			}
+		}
+	}
+
+	// Two column layout
+	&--two-col {
+		@include section;
+
+		header {
+			@include hero;
+			@include section-inner(top);
+
+			padding-top: 5rem;
+
+			@media #{$bp-medium} {
+				padding-top: 10rem;
+			}
+		}
+
+		article {
+			> p:first-child {
+				font-weight: bold;
+			}
+
+			margin-bottom: $margin-large;
+		}
+
+		@media #{$bp-medium} {
+			article {
+				width: calc(70% - #{$gutter-default});
+				float: left;
+			}
+
+			aside {
+				width: 30%;
+				float: right;
+				position: sticky;
+				top: 120px; // roughly header height
+			}
+		}
+	}
+}
