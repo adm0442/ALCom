@@ -28,6 +28,10 @@
 
 	.tags,
 	.pubdate {
-		display: inline-block;
+		display: inline;
+	}
+
+	.pubdate + * {
+		margin-top: $margin-default;
 	}
 }
