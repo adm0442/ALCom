@@ -24,7 +24,7 @@
 
 	// Logo
 	h1,
-	p.logo {
+	.logo {
 		@include heading($font-size-h3);
 		font-size: $font-size-h3 !important; // Because @heading adjusts the size based on resolution - we don't want that in this case
 		margin: 0;
@@ -63,8 +63,7 @@
 				transition: max-height .1s ease-out;
 
 				strong {
-					font-style: normal;
-					font-weight: bold;
+					font-weight: 600;
 				}
 			}
 		}
@@ -90,6 +89,87 @@
 
 					&:hover {
 						color: $color-white;
+					}
+				}
+
+				&.active,
+				&.active-parent {
+					a {
+						color: $color-white;
+					}
+				}
+			}
+		}
+	}
+
+	// High res
+	@media #{$bp-medium} {
+		padding-top: 0;
+		padding-bottom: 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		h1,
+		.logo {
+			flex-grow: 1;
+
+			a {
+				small {
+					max-height: $font-size-default * $line-height-default;
+
+					html.has-scrolled & {
+						max-height: 0;
+					}
+				}
+			}
+		}
+
+		div.widget_nav_menu {
+			align-self: flex-end;
+			flex-grow: 1;
+
+			ul {
+				float: right;
+				margin: 0;
+
+				li {
+					a {
+						position: relative;
+						padding: $padding-large .8rem;
+						transition: background .1s ease-out, padding .1s ease-out;
+
+						html.has-scrolled & {
+							padding: 1rem .8rem;
+						}
+
+						&:after {
+							background: rgba($color-white, .8);
+							display: block;
+							content: "";
+
+							position: absolute;
+							left: 50%;
+							bottom: 0;
+							transform: translateX(-50%);
+
+							width: 0;
+							height: 4px;
+
+							transition: width .1s ease-out;
+						}
+					}
+
+					&:hover,
+					&.active,
+					&.active-parent {
+						background: rgba(0, 0, 0, .4);
+						box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .4);
+
+						a:after {
+							width: 100%;
+						}
 					}
 				}
 			}

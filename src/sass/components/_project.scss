@@ -22,7 +22,12 @@
 		position: relative; // Render on top of icon
 	}
 
-	a.button + a.button {
-		margin-left: $margin-default;
+	a.button {
+		margin-right: $margin-default;
+		margin-bottom: $margin-default;
+
+		&:last-child {
+			margin-right: 0;
+		}
 	}
 }
