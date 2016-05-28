@@ -21,6 +21,20 @@
 	color: $color-white;
 	text-shadow: 1px 1px 1px $color-shadow;
 
+	> canvas {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: .3;
+		margin: 0;
+	}
+
+	> * {
+		position: relative;
+	}
+
 	// Headings
 	h1,
 	h2,
@@ -42,6 +56,8 @@
 	// "First" heading
 	> img:first-child + h1,
 	> img:first-child + h2,
+	> canvas:first-child + h1,
+	> canvas:first-child + h2,
 	> h1:first-child,
 	> h2:first-child {
 		margin-top: 5rem;

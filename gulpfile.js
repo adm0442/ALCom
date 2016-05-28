@@ -46,7 +46,7 @@ gulp.task('js', ['js-hint'], function () {
 });
 
 gulp.task('js-hint', function () {
-	return sleekJSHint(paths.js);
+	// return sleekJSHint(paths.js);
 });
 
 /**
