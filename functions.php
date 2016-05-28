@@ -132,6 +132,9 @@ function alcom_register_css_js () {
 	wp_register_script('alcom', get_stylesheet_directory_uri() . '/dist/all.js?v=' . filemtime(get_stylesheet_directory() . '/dist/all.js'), array('jquery'), null, true);
 	wp_enqueue_script('alcom');
 
+	wp_register_script('alcom_prettify', 'https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js', null, null, true);
+	wp_enqueue_script('alcom_prettify');
+
 	# Google Webfonts
 	/* wp_register_style('alcom_font', 'https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400,700,800');
 	wp_enqueue_style('alcom_font');
