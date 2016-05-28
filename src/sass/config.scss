@@ -42,7 +42,7 @@ $button-text-shadow: true;
 $button-text-color: #fff;
 $button-line-height: 1.2;
 $button-font-size: 1rem;
-$button-font-weight: bold;
+$button-font-weight: 600;
 $button-text-transform: none;
 
 $button-colors: (
@@ -140,7 +140,7 @@ $text-colors: (
 /**
  * Typography
  */
-$font-family-default: Lato, "Open Sans", sans-serif;
+$font-family-default: "Titillium Web", Lato, "Open Sans", sans-serif;
 $font-family-heading: $font-family-default;
 
 $font-weight-default: normal;

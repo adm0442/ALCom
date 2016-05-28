@@ -133,11 +133,14 @@ function alcom_register_css_js () {
 	wp_enqueue_script('alcom');
 
 	# Google Webfonts
-	wp_register_style('alcom_font', 'https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400,700,800');
+	/* wp_register_style('alcom_font', 'https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400,700,800');
 	wp_enqueue_style('alcom_font');
 
 	wp_register_style('alcom_font_lato', 'https://fonts.googleapis.com/css?family=Lato:400,300,900');
-	wp_enqueue_style('alcom_font_lato');
+	wp_enqueue_style('alcom_font_lato'); */
+
+	wp_register_style('alcom_font_titillium', 'https://fonts.googleapis.com/css?family=Titillium+Web:200,400,600,900');
+	wp_enqueue_style('alcom_font_titillium');
 
 	# Theme CSS
 	wp_register_style('alcom', get_stylesheet_directory_uri() . '/dist/all.css?v=' . filemtime(get_stylesheet_directory() . '/dist/all.css'), array(), null);
@@ -230,6 +233,9 @@ add_action('wp_head', 'sleek_add_favicon');
 
 # Cleanup HEAD
 add_action('init', 'sleek_cleanup_head');
+
+# Disable WP Embed
+add_action('init', 'sleek_disable_wp_embed', 999);
 
 # Move jQuery to bottom of page + include from CDN
 add_action('wp_enqueue_scripts', 'sleek_enqueue_jquery_cdn_in_footer');
