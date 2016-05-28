@@ -102,15 +102,6 @@ blockquote {
 	}
 }
 
-pre {
-	background: #fafafa;
-	color: #111;
-	padding: 1rem;
-	max-height: 300px;
-	overflow: auto;
-	font-size: $font-size-small;
-}
-
 /**
  * Inline elements
  */
@@ -191,6 +182,7 @@ pre {
 
 code {
 	word-wrap: break-word;
+	font-size: $font-size-small;
 }
 
 pre code {

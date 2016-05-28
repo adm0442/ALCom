@@ -3,7 +3,7 @@
 
 	var $ = require('jquery');
 
-	$('pre code').each(function () {
+	$('code').each(function () {
 		var code = $(this);
 
 		code.addClass('prettyprint');
