@@ -1,12 +1,23 @@
 #portfolios {
-	@include section;
-	@include section-centering($site-width, -$padding-default);
 	@include inline-grid(3, $bp-medium);
+	@include section;
+
+	text-align: center;
+
+	@media #{$bp-medium} {
+		@include section-centering($site-width, -$padding-default);
+	}
 
 	article {
 		@extend .portfolio;
 
-		margin: 0 20px $margin-large;
+		display: block;
+		margin: 0 auto $margin-large;
+
+		@media #{$bp-medium} {
+			display: inline-block;
+			margin: 0 20px $margin-large;
+		}
 
 		&.hidden {
 			max-width: 0;

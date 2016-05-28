@@ -2,7 +2,27 @@
 	padding: 0 !important; // De-section
 
 	article {
-		@extend .portfolio-hero;
+		@include hero;
+
+		h2 {
+			@include ellipsis;
+		}
+
+		// Button container
+		p:last-child {
+			margin-left: -$margin-small;
+		}
+
+		.button {
+			margin: 0 $margin-small $margin-default;
+
+			// Hide "more about the project" in low res
+			span {
+				@media #{$bp-medium-max} {
+					@include a11y-hide;
+				}
+			}
+		}
 	}
 }
 

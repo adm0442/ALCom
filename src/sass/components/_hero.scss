@@ -69,7 +69,7 @@
 
 		// Pull up its height
 		small {
-			margin-top: -($font-size-h1 * $line-height-heading * .6);
+			// margin-top: -($font-size-h1 * .6 * $line-height-heading);
 		}
 	}
 
@@ -86,7 +86,15 @@
 
 	// Separate buttons
 	.button {
-		margin-bottom: $margin-default;
 		vertical-align: baseline;
+
+		&:not(:only-child) {
+			margin-bottom: $margin-default;
+		}
+	}
+
+	// Remove margin
+	> :last-child {
+		margin-bottom: 0;
 	}
 }

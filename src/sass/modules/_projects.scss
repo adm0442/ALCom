@@ -1,7 +1,10 @@
 #projects {
-	@include section;
-	@include section-centering($site-width, -$padding-default);
 	@include inline-grid(2, $bp-medium);
+	@include section;
+
+	@media #{$bp-medium} {
+		@include section-centering($site-width, -$padding-default);
+	}
 
 	article {
 		@extend .project;
@@ -9,10 +12,12 @@
 		max-width: 800px;
 		max-height: 800px;
 
-		padding: 0 $padding-default;
 		margin-bottom: $margin-large;
-
 		transition: all .2s ease-out;
+
+		@media #{$bp-medium} {
+			padding: 0 $padding-default;
+		}
 
 		&.hidden {
 			max-width: 0;

@@ -5,7 +5,9 @@
 		@extend .project;
 
 		h1 {
-			float: left;
+			@media #{$bp-medium} {
+				float: left;
+			}
 
 			&:before {
 				top: -3rem;
@@ -13,8 +15,12 @@
 		}
 
 		h1 + p {
-			float: right;
-			margin-top: 5rem;
+			margin-top: $margin-default;
+
+			@media #{$bp-medium} {
+				float: right;
+				margin-top: 7rem;
+			}
 		}
 	}
 }

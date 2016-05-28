@@ -22,6 +22,7 @@
 			@include hero;
 			@include section-inner(top);
 
+			// Have to replicate hero's styling here because of section-inner
 			padding-top: 5rem;
 
 			@media #{$bp-medium} {

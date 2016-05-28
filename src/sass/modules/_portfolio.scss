@@ -1,3 +1,9 @@
 #portfolio {
 	@extend .layout--two-col;
+
+	header {
+		h1 {
+			@include ellipsis;
+		}
+	}
 }
