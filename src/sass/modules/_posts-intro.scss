@@ -1,7 +1,12 @@
 #posts-intro {
 	@include hero;
 
+	> * {
+		margin-right: 32%;
+	}
+
 	ul.tags {
+		margin: 0;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;

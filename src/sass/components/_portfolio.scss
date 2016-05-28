@@ -1,0 +1,77 @@
+.portfolio {
+	@include framed;
+
+	position: relative;
+	overflow: hidden;
+
+	max-width: ($site-width - 20px * 4) / 3;
+	max-height: 360px;
+
+	transform: scale(1);
+	transition: all .2s ease-out;
+
+	&:hover {
+		transform: scale(1.05) rotate(1deg);
+		z-index: 1;
+	}
+
+	img {
+		display: block;
+	}
+
+	> div {
+		background-color: rgba(255, 255, 255, .4);
+		background-position: left bottom;
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+
+		position: absolute;
+		left: 0;
+		bottom: 0;
+
+		width: 100%;
+		box-sizing: border-box;
+		padding: $padding-default;
+
+		font-size: $font-size-small;
+		text-align: left;
+	//	color: $white-color;
+
+		transform: translateY(100%);
+		transition: transform .1s ease-out;
+
+		// Background overlay
+		&:before {
+			background: rgba(255, 255, 255, .4);
+
+			display: block;
+			content: "";
+
+			position: absolute;
+			left: 0;
+			top: 0;
+
+			width: 100%;
+			height: 100%;
+		}
+
+		// Render on top of overlay
+		* {
+			position: relative;
+		}
+
+		h2 {
+			@include ellipsis;
+			font-size: $font-size-h3;
+		}
+
+		p {
+			margin: 0;
+			line-height: 1.4;
+		}
+	}
+
+	&:hover > div {
+		transform: translateY(0);
+	}
+}

@@ -1,11 +1,17 @@
 form.search {
 	p {
+		@include clearfix;
 		position: relative;
-		display: inline-block; // Shrinkwrap
 	}
 
 	input {
-		width: 100%;
+		float: left;
+		width: 300px;
+		transition: width .1s ease-out;
+
+		&:focus {
+			width: 400px;
+		}
 	}
 
 	// Annoyingly complex selector because these buttons are usually styled with less padding
@@ -18,10 +24,10 @@ form.search {
 		box-shadow: none;
 
 		// Position
-		position: absolute;
-		right: $padding-default;
-		top: 50%;
-		transform: translateY(-50%);
+		float: left;
+		margin-left: -2rem;
+		margin-top: $form-padding-vertical;
+		line-height: $line-height-default;
 
 		// Hello
 		color: $color-text;

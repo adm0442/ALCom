@@ -57,59 +57,10 @@
 		});
 	};
 
-	$('#posts-intro').find('ul.tags a').liveFilter('#projects article');
-
-	/* var LiveFilter = {
-		init: function (tags, items) {
-			var self = this;
-			var onclick = function (e) {
-				e.preventDefault();
-				this.classList.toggle('active');
-				self.update(tags, items);
-			};
-
-			for (var i = 0; i < tags.length; i++) {
-				tags[i].addEventListener('click', onclick);
-			}
-		},
-
-		update: function (tags, items) {
-			var selectedTags = [];
-			var i;
-
-			for (i = 0; i < tags.length; i++) {
-				if (tags[i].classList.contains('active')) {
-					selectedTags.push(tags[i].innerHTML);
-				}
-			}
-
-			for (i = 0; i < items.length; i++) {
-				var hidden = false;
-
-				for (var j = 0; j < selectedTags.length; j++) {
-					if (!items[i].classList.contains(selectedTags[j].trim())) {
-						hidden = true;
-					}
-				}
-
-				if (hidden) {
-					items[i].classList.add('hidden');
-				}
-				else {
-					items[i].classList.remove('hidden');
-				}
-			}
-		}
-	};
-
-	// Run on projects
-	var list = document.getElementById('posts-intro').getElementsByTagName('ul');
-	var projects = document.getElementById('projects');
-
-	if (list && projects) {
-		LiveFilter.init(
-			list[0].getElementsByTagName('a'),
-			projects.getElementsByTagName('article')
-		);
-	} */
+	if ($('#projects').length) {
+		$('#posts-intro').find('ul.tags a').liveFilter('#projects article');
+	}
+	else if ($('#portfolios').length) {
+		$('#posts-intro').find('ul.tags a').liveFilter('#portfolios article');
+	}
 })();
