@@ -2,5 +2,9 @@
 	img {
 		@include float-right($bp-medium);
 		@include framed(true);
+
+		@media #{$bp-medium-max} {
+			margin: 0 auto $margin-default;
+		}
 	}
 }

@@ -1,10 +1,25 @@
 #projects {
 	@include section;
+	@include section-centering($site-width, -$padding-default);
 	@include inline-grid(2, $bp-medium);
 
 	article {
 		@extend .project;
 
+		max-width: 800px;
+		max-height: 800px;
+
+		padding: 0 $padding-default;
 		margin-bottom: $margin-large;
+
+		transition: all .2s ease-out;
+
+		&.hidden {
+			max-width: 0;
+			max-height: 0;
+			padding: 0;
+			margin: 0;
+			overflow: hidden;
+		}
 	}
 }

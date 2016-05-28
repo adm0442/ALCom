@@ -175,4 +175,11 @@
 			}
 		}
 	}
+
+	// Low res
+	@media #{$bp-medium-max} {
+		position: absolute;
+
+		@include fixed-after-far-scroll(false, false);
+	}
 }
