@@ -30,12 +30,7 @@
 #featured-portfolio {
 	position: relative;
 	overflow: hidden;
-
-	min-height: 100vh;
-
-	@media #{$bp-medium} {
-		min-height: 576px;
-	}
+	min-height: 576px;
 
 	// Every item starts above
 	article {
