@@ -238,7 +238,7 @@ add_action('wp_head', 'sleek_add_favicon');
 add_action('init', 'sleek_cleanup_head');
 
 # Disable WP Embed
-add_action('init', 'sleek_disable_wp_embed', 999);
+add_action('wp_enqueue_scripts', 'sleek_disable_wp_embed');
 
 # Move jQuery to bottom of page + include from CDN
 add_action('wp_enqueue_scripts', 'sleek_enqueue_jquery_cdn_in_footer');
