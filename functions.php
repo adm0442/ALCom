@@ -1,7 +1,7 @@
 <?php
 function alcom_get_all_categories ($id, $t = 'post_tag') {
 	$cats = wp_get_post_terms($id, $t);
-	$links = array();
+	$links = [];
 
 	foreach ($cats as $cat) {
 		$links[] = '<a href="' . get_term_link($cat) . '">' . $cat->name . '</a>';
@@ -11,7 +11,7 @@ function alcom_get_all_categories ($id, $t = 'post_tag') {
 }
 
 # Tag name to font awesome icon converter
-$tag2ico = array(
+$tag2ico = [
 	'design' => 'apple',
 	'responsive' => 'crop',
 	'rwd' => 'crop',
@@ -55,7 +55,7 @@ $tag2ico = array(
 	'java' => 'file-code',
 	'jquery' => 'file-code',
 	'js' => 'file-code',
-);
+];
 
 # HTML5Form
 include get_template_directory() . '/inc/html5form/html5form.php';
@@ -71,65 +71,59 @@ define('GOOGLE_ANALYTICS', 'UA-1823084-2');
 /**
  * Register thumbnail sizes
  */
-add_action('after_setup_theme', 'alcom_post_thumbnails');
-
-function alcom_post_thumbnails () {
+add_action('after_setup_theme', function () {
 	add_image_size('sleek-small', 160, 160, true);
-	add_image_size('sleek-device', 265, 550, array('center', 'top'));
+	add_image_size('sleek-device', 265, 550, ['center', 'top']);
 	add_image_size('sleek-medium', 430, 280, true);
-	add_image_size('sleek-medium-tall', 460, 600, array('center', 'top'));
-	add_image_size('sleek-hd', 1920, 800, array('center', 'top'));
-}
+	add_image_size('sleek-medium-tall', 460, 600, ['center', 'top']);
+	add_image_size('sleek-hd', 1920, 800, ['center', 'top']);
+});
 
 /**
  * Register sidebars
  */
-add_action('init', 'alcom_register_sidebars');
-
-function alcom_register_sidebars () {
-	sleek_register_sidebars(array(
-		'header'	=> __('Header', 'alcom'),
-		'footer'	=> __('Footer', 'alcom')
-	));
-}
+add_action('init', function () {
+	sleek_register_sidebars([
+		'header' => __('Header', 'alcom'),
+		'footer' => __('Footer', 'alcom')
+	]);
+});
 
 /**
  * Register custom post types and taxonomies
  */
-add_action('init', 'alcom_register_post_types_and_taxonomies');
+$customPostTypes = array(
+	'portfolio' => ['description' => 'Some recently launched sites.'],
+	'projects' => ['description' => 'Code I think might be useful to others.'],
+	'testimonials' => ['description' => 'What others have said.']
+);
 
-function alcom_register_post_types_and_taxonomies () {
-	$customPostTypes = array(
-		'portfolio' => "Some recently launched sites.",
-		'projects' => "Code I think might be useful to others.",
-		'testimonials' => ''
-	);
+$allPostTypes = array('post', 'page', 'portfolio', 'projects', 'testimonials');
 
-	$allPostTypes = array_merge(array('post', 'page', 'portfolio', 'projects', 'testimonials'));
-
+add_action('init', function () use ($customPostTypes, $allPostTypes) {
 	sleek_register_post_types($customPostTypes, 'alcom');
 
-	sleek_register_taxonomies(array(
+	sleek_register_taxonomies([
 		# Misc category - used for things like "featured"
 		'misc' => $allPostTypes,
 
 		# Post type specific tags
-		'portfolio_tags' => array('portfolio'),
-		'project_categories' => array('projects'),
-		'project_tags' => array('projects')
-	), 'alcom');
-}
+		'portfolio_tags' => ['portfolio'],
+		'project_categories' => ['projects'],
+		'project_tags' => ['projects']
+	], 'alcom');
+});
+
+/* add_action('admin_menu', function () use ($customPostTypes) {
+	sleek_register_post_type_meta_data($customPostTypes, 'nexus');
+}); */
 
 /**
  * Register CSS and JS
- *
- * TODO: Move to Sleek? (at least all.css/all.js?)
  */
-add_action('wp_enqueue_scripts', 'alcom_register_css_js');
-
-function alcom_register_css_js () {
+add_action('wp_enqueue_scripts', function () {
 	# Theme JS
-	wp_register_script('alcom', get_stylesheet_directory_uri() . '/dist/all.js?v=' . filemtime(get_stylesheet_directory() . '/dist/all.js'), array('jquery'), null, true);
+	wp_register_script('alcom', get_stylesheet_directory_uri() . '/dist/all.js?v=' . filemtime(get_stylesheet_directory() . '/dist/all.js'), ['jquery'], null, true);
 	wp_enqueue_script('alcom');
 
 	wp_register_script('alcom_prettify', 'https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js', null, null, true);
@@ -146,18 +140,16 @@ function alcom_register_css_js () {
 	wp_enqueue_style('alcom_font_titillium');
 
 	# Theme CSS
-	wp_register_style('alcom', get_stylesheet_directory_uri() . '/dist/all.css?v=' . filemtime(get_stylesheet_directory() . '/dist/all.css'), array(), null);
+	wp_register_style('alcom', get_stylesheet_directory_uri() . '/dist/all.css?v=' . filemtime(get_stylesheet_directory() . '/dist/all.css'), [], null);
 	wp_enqueue_style('alcom');
-}
+});
 
 /**
  * Add optional shortcodes provided by SleekWP
  *
  * TODO: Move to individual plugins
  */
-add_action('init', 'alcom_register_shortcodes');
-
-function alcom_register_shortcodes () {
+add_action('init', function () {
 	# Include - include any module through [include mod=random-testimonial] (TODO: Change to get_template_part (but still allow arguments?))
 	add_shortcode('include', 'sleek_shortcode_include_module');
 
@@ -166,27 +158,23 @@ function alcom_register_shortcodes () {
 
 	# Hubspot form
 	# add_shortcode('hubspot-form', 'sleek_hubspot_form');
-}
+});
 
 /**
  * Add more fields to users
  */
-add_filter('user_contactmethods', 'alcom_add_user_fields');
-
-function alcom_add_user_fields () {
+add_filter('user_contactmethods', function () {
 	$fields['googleplus'] = __('Google+', 'sleek');
 	$fields['stackoverflow'] = __('StackOverflow', 'sleek');
 	$fields['github'] = __('GitHub', 'sleek');
 
 	return $fields;
-}
+});
 
 /**
  * Show different numbers of posts on different post types (http://wordpress.stackexchange.com/questions/30757/change-posts-per-page-count)
  */
-add_action('pre_get_posts', 'alcom_set_posts_per_page');
-
-function alcom_set_posts_per_page ($query) {
+add_action('pre_get_posts', function ($query) {
 	global $wp_the_query;
 
 	if (!is_admin() and $query === $wp_the_query and (is_post_type_archive('portfolio') or is_post_type_archive('projects'))) {
@@ -194,30 +182,26 @@ function alcom_set_posts_per_page ($query) {
 	}
 
 	if (!is_admin() and $query == $wp_the_query and is_search()) {
-		$query->set('post_type', array('post', 'projects', 'portfolio', 'testimonials'));
+		$query->set('post_type', ['post', 'projects', 'portfolio', 'testimonials']);
 		$query->set('posts_per_page', 30);
 	}
 
 	return $query;
-}
+});
 
 /**
  * Excerpt length
  */
-add_filter('excerpt_length', 'alcom_excerpt_length');
-
-function alcom_excerpt_length ($length) {
+add_filter('excerpt_length', function ($length) {
 	return 25;
-}
+});
 
 /**
- * Set up for translation (put your mo/po-files in your-theme/lang/)
+ * Set up for translation (put your mo/po-files in your-theme/languages/)
  */
-add_action('after_setup_theme', 'alcom_setup_lang');
-
-function alcom_setup_lang () {
-	load_child_theme_textdomain('alcom', get_stylesheet_directory() . '/lang');
-}
+add_action('after_setup_theme', function () {
+	load_child_theme_textdomain('alcom', get_stylesheet_directory() . '/languages');
+});
 
 /**
  * These are optional actions to improve how WP normally does things
