@@ -59,7 +59,7 @@ gulp.task('js-hint', function () {
  */
 var sleekStyleguide = require(__dirname + '/../sleek/gulp/styleguide.js');
 
-gulp.task('styleguide', function () {
+gulp.task('styleguide', ['sass'], function () {
 	return sleekStyleguide(paths.sass + 'all.scss', paths.dest);
 });
 
