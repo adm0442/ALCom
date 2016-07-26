@@ -26,6 +26,10 @@ gulp.task('sass-only', function () {
  */
 var sleekIcons = require(__dirname + '/../sleek/gulp/icons.js');
 
+gulp.task('generate-icon-vars', ['rewrite-icon-css'], function () {
+	return sleekIcons.generateIconVars(paths.icons, paths.sass);
+});
+
 gulp.task('rewrite-icon-css', ['download-icons'], function () {
 	return sleekIcons.rewriteCSS(paths.icons, paths.sass);
 });
@@ -34,7 +38,7 @@ gulp.task('download-icons', function () {
 	return sleekIcons.download('icons.json', paths.icons);
 });
 
-gulp.task('icons', ['rewrite-icon-css']);
+gulp.task('icons', ['generate-icon-vars']);
 
 /**
  * JS
