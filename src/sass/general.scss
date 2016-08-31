@@ -20,7 +20,9 @@ body {
 	font-family: $font-family-default;
 	color: $color-text;
 	word-wrap: break-word;
+	hyphens: auto;
 	font-weight: $font-weight-default;
+	-webkit-font-smoothing: antialiased;
 }
 
 /**
