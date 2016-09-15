@@ -1,5 +1,5 @@
 <?php
-	$tmp		= sleek_get_posts_intro();
+	$tmp		= sleek_get_archive_data();
 	$title		= $tmp['title'];
 	$content	= $tmp['content'];
 ?>
