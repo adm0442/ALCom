@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Styleguide</title><style><@charset "UTF-8";
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SleekCSS Styleguide</title><style><@charset "UTF-8";
 /**
  * Bg colors
  */
@@ -31,8 +31,8 @@
  */
 @font-face {
   font-family: 'fontello';
-  src: url("icons/font/fontello.eot?58764487");
-  src: url("icons/font/fontello.eot?58764487#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?58764487") format("woff2"), url("icons/font/fontello.woff?58764487") format("woff"), url("icons/font/fontello.ttf?58764487") format("truetype"), url("icons/font/fontello.svg?58764487#fontello") format("svg");
+  src: url("icons/font/fontello.eot?24166938");
+  src: url("icons/font/fontello.eot?24166938#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?24166938") format("woff2"), url("icons/font/fontello.woff?24166938") format("woff"), url("icons/font/fontello.ttf?24166938") format("truetype"), url("icons/font/fontello.svg?24166938#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -42,7 +42,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('icons/font/fontello.svg?58764487#fontello') format('svg');
+    src: url('icons/font/fontello.svg?24166938#fontello') format('svg');
   }
 }
 */
@@ -934,7 +934,7 @@ dl.key-val dd:after {
 /***
     title: Background Colors
     section: Colors
-    description: Use to apply a background color to an element. Add your colors to the $bg-colors array in config/_bg-colors.scss.
+    description: Use to apply a background color to an element. Add your colors to the $bg-colors array in config/bg-colors.scss.
     example:
         <div class="bg--white">I have a white background color</div>
 ***/
@@ -944,9 +944,9 @@ dl.key-val dd:after {
 /***
     title: Background Overlay
     section: Layout
-    description: Use together with a background image to create a dark tint on top of the image. You can optionally use bg-overlay--hover if you want a hover effect.
+    description: Use together with a background image to create a dark tint on top of the image. You can optionally use bg-overlay--hover if you want a hover effect. Every defined $bg-color is also available as a bg-overlay--color. You can also use @include bg-overlay($color, $hoverEffect = false).
     example:
-        <header class="bg-overlay--hover color--white" style="background-image:url(http://lorempixel.com/1200/600/nature)">
+        <header class="card bg-overlay--hover color--white" style="background-image:url(http://lorempixel.com/1200/600/nature)">
             <h2>I'm a box</h2>
             <p>With some content</p>
         </header>
@@ -1054,14 +1054,15 @@ dl.key-val dd:after {
 /***
     title: Button
     section: Buttons
-    description: Use to create buttons. Buttons come in various sizes and colors. Add more colors and customize your buttons in config/_button.scss.
+    description: Use to create buttons. Buttons come in various sizes and colors. Add more colors and customize your buttons in config/button.scss. You can also use @include button;
     example:
         <p><a href="#" class="button">I'm a normal button</a></p>
-        <p><button>Button elements automatically look like buttons</button></p>
+        <p><button class="button--ghost">Button elements automatically look like buttons</button></p>
         <p><input type="submit" value="Submit inputs too!"></p>
         <p><button class="button--wide">Full width!</button></p>
-        <p><a href="#" class="button">Continue</a> <a href="#" class="button button--gray">Cancel</a></p>
+        <p><a href="#" class="button">Continue</a> <a href="#" class="button button--gray button--ghost">Cancel</a></p>
         <p><a href="#" class="button button--small">Small button</a></p>
+        <p><a href="#" class="button button--large">Large button</a></p>
 ***/
 .button,
 input[type=submit],
@@ -1076,13 +1077,13 @@ button {
   line-height: 1.2;
   color: #fff;
   font-weight: 600;
-  font-style: normal;
+  font-style: 600;
   text-transform: none;
   text-decoration: none;
   text-align: center;
   border-radius: 2rem;
-  -webkit-transition: all .1s ease-out;
-  transition: all .1s ease-out;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
   text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25);
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25); }
   .button:hover,
@@ -1130,7 +1131,7 @@ button {
   .button--secondary.button--ghost {
     background-color: transparent;
     color: #234;
-    border-color: #234; }
+    border: 2px solid #234; }
     .button--secondary.button--ghost:hover {
       background-color: #234;
       color: #fff; }
@@ -1145,7 +1146,7 @@ button {
   .button--disabled.button--ghost {
     background-color: transparent;
     color: #555;
-    border-color: #555; }
+    border: 2px solid #555; }
     .button--disabled.button--ghost:hover {
       background-color: #555;
       color: #fff; }
@@ -1162,15 +1163,30 @@ button {
   width: 100%; }
 
 /***
+    title: Card
+    section: Layout
+    description: A simple box/card. Can be used with the bg-classes.
+    example:
+        <div class="card bg--white">I'm a shadowed card</div>
+***/
+.card {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+
+/***
     title: Cols
     section: Grid
-    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config/_cols.scss.
+    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}.
     example:
-        <ul class="cols cols--2 cols--4--bp-medium">
-            <li>I'm two columns</li>
-            <li>In low resolution</li>
-            <li>But four columns</li>
-            <li>In high resolution</li>
+        <ul class="cols cols--2--bp-medium cols--3--bp-large">
+            <li><img src="http://placehold.it/320x240" class="img--wide"> I'm two columns</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> In low resolution</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> But three columns</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> In high</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> Resolutions</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> Cool?</li>
         </ul>
 ***/
 /**
@@ -1193,15 +1209,19 @@ button {
 .cols {
   clear: both;
   margin-left: 0;
+  padding-left: 0;
   list-style: none; }
   .cols:after {
     content: "";
     display: table;
     clear: both; }
+  .cols > * {
+    margin-bottom: 2rem; }
 
 .cols--2 {
   clear: both;
   margin-left: 0;
+  padding-left: 0;
   list-style: none; }
   .cols--2:after {
     content: "";
@@ -1232,6 +1252,7 @@ button {
 .cols--3 {
   clear: both;
   margin-left: 0;
+  padding-left: 0;
   list-style: none; }
   .cols--3:after {
     content: "";
@@ -1262,6 +1283,7 @@ button {
 .cols--4 {
   clear: both;
   margin-left: 0;
+  padding-left: 0;
   list-style: none; }
   .cols--4:after {
     content: "";
@@ -1293,6 +1315,7 @@ button {
   .cols--2--bp-small {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--2--bp-small:after {
       content: "";
@@ -1326,6 +1349,7 @@ button {
   .cols--3--bp-small {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--3--bp-small:after {
       content: "";
@@ -1359,6 +1383,7 @@ button {
   .cols--4--bp-small {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--4--bp-small:after {
       content: "";
@@ -1392,6 +1417,7 @@ button {
   .cols--2--bp-medium {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--2--bp-medium:after {
       content: "";
@@ -1425,6 +1451,7 @@ button {
   .cols--3--bp-medium {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--3--bp-medium:after {
       content: "";
@@ -1458,6 +1485,7 @@ button {
   .cols--4--bp-medium {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--4--bp-medium:after {
       content: "";
@@ -1491,6 +1519,7 @@ button {
   .cols--2--bp-large {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--2--bp-large:after {
       content: "";
@@ -1524,6 +1553,7 @@ button {
   .cols--3--bp-large {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--3--bp-large:after {
       content: "";
@@ -1557,6 +1587,7 @@ button {
   .cols--4--bp-large {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--4--bp-large:after {
       content: "";
@@ -1590,6 +1621,7 @@ button {
   .cols--2--bp-x-large {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--2--bp-x-large:after {
       content: "";
@@ -1623,6 +1655,7 @@ button {
   .cols--3--bp-x-large {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--3--bp-x-large:after {
       content: "";
@@ -1656,6 +1689,7 @@ button {
   .cols--4--bp-x-large {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--4--bp-x-large:after {
       content: "";
@@ -1688,7 +1722,7 @@ button {
 /***
     title: Container
     section: Layout
-    description: Centers an element on the screen at a width of $site-width. Containers should be direct decendants of body and doesn't work nested like this.
+    description: Centers an element on the screen at a width of $site-width. Containers should be direct decendants of body/main (any full width element actually) and don't work properly when nested like this. You can also use @include container;
     example:
         <div class="container bg--white">
             <h1>I'm centered</h1>
@@ -1703,6 +1737,28 @@ button {
       max-width: 1000px;
       margin-left: auto;
       margin-right: auto; } }
+
+.pull-right {
+  float: right; }
+
+img.pull-right {
+  margin-left: 1rem;
+  margin-bottom: 1rem; }
+
+.pull-left {
+  float: left; }
+
+img.pull-left {
+  margin-right: 1rem;
+  margin-bottom: 1rem; }
+
+.clear {
+  clear: both; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
 
 /***
     title: Forms
@@ -1720,6 +1776,21 @@ button {
                 <label>
                     Email<br>
                     <input type="email" name="email" placeholder="eg. john.doe@example.com">
+                </label>
+            </p>
+            <p>
+                <label>
+                    Sex<br>
+                    <select name="sex">
+                        <option value="f">Female</option>
+                        <option value="m">Male</option>
+                    </select>
+                </label>
+            </p>
+            <p>
+                <label>
+                    Age<br>
+                    <input type="range" name="age" min="1" max="150">
                 </label>
             </p>
             <p>
@@ -1764,12 +1835,13 @@ input[type=text], input[type=password], input[type=search], input[type=email], i
   box-sizing: border-box;
   max-width: 100%;
   margin: 0;
-  padding: 0.8rem 1em;
+  padding: 0.8rem 1rem;
   font-size: 1rem;
   color: #333;
-  line-height: 1.2\9;
-  -moz-appearance: none;
+  line-height: 1.2;
   -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border: 1px solid #ececec;
   border-radius: 0.2rem;
   width: 100%; }
@@ -1781,11 +1853,11 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
 
 input[type=radio],
 input[type=checkbox] {
-  margin-right: .4rem; }
+  margin: 0 0 0.4em; }
   [dir=rtl] input[type=radio], [dir=rtl]
   input[type=checkbox] {
     margin-right: 0;
-    margin-left: .4rem; }
+    margin-left: 0.4em; }
 
 textarea {
   resize: y;
@@ -1811,12 +1883,12 @@ select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background: #fff url("assets/select-arrow.svg") no-repeat calc(100% - .5rem) 50%;
+  background: #fff url("assets/svg/select-arrow.svg") no-repeat calc(100% - .5rem) 50%;
   background-size: 0.5rem auto;
   box-sizing: border-box;
   max-width: 100%;
-  padding: 0.4rem 2.4rem 0.4rem 0.4rem;
-  border: 0;
+  padding: 0.8rem 3rem 0.8rem 1rem;
+  border: 1px solid #ececec;
   border-radius: 0.2rem; }
 
 input[type=range] {
@@ -1939,6 +2011,16 @@ input[type=range] {
     input[type=range]::-ms-thumb:focus {
       outline: 0; }
 
+/***
+    title: Group
+    section: Layout
+    description: Use this class to add margin-bottom to an element.
+    example:
+        <div class="card bg--white group--x-large">
+            <h2>I have margin</h2>
+            <p>More than usual</p>
+        </div>
+***/
 .group {
   margin-bottom: 1rem; }
   .group--large {
@@ -1953,7 +2035,7 @@ input[type=range] {
 /***
     title: Headings
     section: Typography
-    description: Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size.
+    description: Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size. You can also use @include header;
     example:
         <h1 class="heading--4">I'm a H1 but look like a H4</h1>
         <h3>I'm a normal H3</h3>
@@ -2194,10 +2276,15 @@ a:hover .icon--round {
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%); }
 
+.img--wide {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem; }
+
 /***
     title: Inline Grid
     section: Grid
-    description: Uses inline-block to create a grid. Useful if you dynamically toggle elemens in the grid and need them to adapt to new positions. Note that there can't be any whitespace between elements in the HTML source code and for some reason doesn't work in the styleguide.
+    description: Uses inline-block to create a grid. Useful if you dynamically toggle elemens in the grid and need them to adapt to new positions. Note that @inline-grid sets the child element's font-size back to $font-size-default.
     example:
         <ul class="inline-grid inline-grid--2--bp-medium"><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li></ul>
 ***/
@@ -2374,6 +2461,67 @@ a,
   .list--plain--margin > * {
     margin-bottom: 0.5rem; }
 
+.pane__overlay {
+  background: transparent;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 100;
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: background .2s 0s ease-out, -webkit-transform 0s .2s linear;
+  transition: background .2s 0s ease-out, -webkit-transform 0s .2s linear;
+  transition: background .2s 0s ease-out, transform 0s .2s linear;
+  transition: background .2s 0s ease-out, transform 0s .2s linear, -webkit-transform 0s .2s linear; }
+  .pane__overlay.open {
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+    z-index: 101;
+    -webkit-transition: background .2s ease-out, -webkit-transform 0s linear;
+    transition: background .2s ease-out, -webkit-transform 0s linear;
+    transition: transform 0s linear, background .2s ease-out;
+    transition: transform 0s linear, background .2s ease-out, -webkit-transform 0s linear; }
+
+.pane {
+  background: #fefefe;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 100;
+  width: 80%;
+  max-width: 30rem;
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform .2s .2s ease-out;
+  transition: -webkit-transform .2s .2s ease-out;
+  transition: transform .2s .2s ease-out;
+  transition: transform .2s .2s ease-out, -webkit-transform .2s .2s ease-out; }
+  .pane--right {
+    left: auto;
+    right: 0;
+    -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+            transform: translateX(100%); }
+    .pane--right .pane__toggle {
+      left: auto;
+      right: 100%; }
+  .pane.open {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+    z-index: 101; }
+  .pane__toggle {
+    position: absolute;
+    left: 100%;
+    top: 1.5rem; }
+
 .popup {
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -2539,7 +2687,7 @@ a,
 /***
     title: Section
     section: Layout
-    description: Creates a full width section with centered content (based on $site-width). Sections should be direct decendants of body and doesn't work nested like in the styleguide (that's why it looks broken here).
+    description: Creates a full width section with centered content (based on $site-width). Sections should be direct decendants of body/main (any full width element actually) and don't work properly nested like in the styleguide (that's why it looks broken here).
     example:
         <div class="section bg--white">
             <h2>I'm a section</h2>
@@ -2717,10 +2865,56 @@ a,
         -ms-transform: translateY(50%) translateX(1.5rem);
             transform: translateY(50%) translateX(1.5rem); }
 
+/* .table-grid {
+	@include table-grid;
+}
+
+.table-grid--bp-medium {
+	@include table-grid($gutter-default, false, $bp-medium);
+} */
+/***
+    title: Text
+    section: Typography
+    description: Various helper classes for working with text.
+    example:
+        <p class="text--center">This text is centered and <strong class="text--upper">upper case</strong></p>
+***/
+.text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Titillium Web", Lato, "Open Sans", sans-serif;
+  color: #555;
+  word-wrap: break-word;
+  font-weight: normal; }
+
+.text--upper {
+  text-transform: uppercase; }
+
+.text--center {
+  text-align: center; }
+
+.text--left {
+  text-align: left; }
+
+.text--right {
+  text-align: right; }
+
+.text--small {
+  font-size: 80%; }
+
+.text--large {
+  font-size: 120%; }
+
+.text--ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
 /***
     title: Text Colors
     section: Colors
-    description: Use to give an element's text a different color.
+    description: Use to give an element's text a different color. This class affects everything, including headings and links.
     example:
         <div class="bg--blue color--white">
             <h2>I have white</h2>
@@ -2751,66 +2945,14 @@ a.color--white:hover,
 
 .color--white h1, .color--white h2, .color--white h3, .color--white h4, .color--white h5, .color--white h6, .color--white .heading--1, .color--white .heading--2, .color--white .heading--3, .color--white .heading--4, .color--white .heading--5, .color--white .heading--6,
 .color--white a:not(.button),
-.color--white .link,
-.color--white a:not(.button):hover,
-.color--white .link:hover {
+.color--white .link {
   color: #fff;
   text-decoration: none; }
 
-/***
-    title: Text
-    section: Typography
-    description: Various helper classes for working with text.
-    example:
-        <p class="text--center">This text is centered and <strong class="text--upper">upper case</strong></p>
-***/
-.text {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.6;
-  font-family: "Titillium Web", Lato, "Open Sans", sans-serif;
-  color: #555;
-  word-wrap: break-word;
-  font-weight: normal; }
-
-.text--upper {
-  text-transform: uppercase; }
-
-.text--center {
-  text-align: center; }
-
-.text--left {
-  text-align: left; }
-
-.text--right {
-  text-align: right; }
-
-.text--ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; }
-
-.pull-right {
-  float: right; }
-
-img.pull-right {
-  margin-left: 1rem;
-  margin-bottom: 1rem; }
-
-.pull-left {
-  float: left; }
-
-img.pull-left {
-  margin-right: 1rem;
-  margin-bottom: 1rem; }
-
-.clear {
-  clear: both; }
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both; }
+.color--white a:not(.button):hover,
+.color--white .link:hover {
+  color: #ffb933;
+  text-decoration: none; }
 
 .alignleft,
 .alignright,
@@ -2857,6 +2999,79 @@ div.gallery {
       div.gallery dl.gallery-item dt a img {
         display: block;
         border: 0 !important; }
+
+/**
+ * Border box
+ */
+* {
+  box-sizing: border-box; }
+
+/**
+ * General styling
+ */
+html {
+  background: #fff;
+  font-size: 100%; }
+
+body {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Titillium Web", Lato, "Open Sans", sans-serif;
+  color: #555;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased; }
+
+/**
+ * Paragraphs, lists, quotes etc
+ */
+p {
+  margin: 0 0 1rem; }
+
+ul,
+ol {
+  margin: 0 0 1rem 2rem;
+  padding: 0; }
+
+blockquote,
+q {
+  font-size: 120%;
+  margin: 0; }
+
+pre {
+  background: #fafafa;
+  color: #111;
+  padding: 1rem;
+  max-height: 300px;
+  overflow: auto; }
+
+/**
+ * Inline elements
+ */
+small, .pubdate {
+  font-size: 80%; }
+
+/**
+ * Images, iframes etc
+ */
+img,
+svg {
+  max-width: 100%;
+  height: auto; }
+
+hr {
+  clear: both;
+  margin: 1rem 0;
+  padding: 0;
+  height: 0;
+  border: 0;
+  border-top: 1px solid #ececec; }
+  @media (min-width: 800px) {
+    hr {
+      margin: 2rem 0; } }
 
 /**
  * Border box
@@ -4264,6 +4479,12 @@ ul.tags {
     transition: font-size .1s ease-out; }
     #header h1 a,
     #header .logo a {
+      color: #333; }
+      #header h1 a:hover,
+      #header .logo a:hover {
+        color: #ffb933; }
+    #header h1 a,
+    #header .logo a {
       font-weight: 900;
       color: #fefefe; }
       #header h1 a > strong,
@@ -4762,6 +4983,7 @@ ul.tags {
   #random-projects {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     #random-projects:after {
       content: "";
@@ -4911,8 +5133,8 @@ form.search button:empty:not([value]) {
  */
 @font-face {
   font-family: 'fontello';
-  src: url("icons/font/fontello.eot?58764487");
-  src: url("icons/font/fontello.eot?58764487#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?58764487") format("woff2"), url("icons/font/fontello.woff?58764487") format("woff"), url("icons/font/fontello.ttf?58764487") format("truetype"), url("icons/font/fontello.svg?58764487#fontello") format("svg");
+  src: url("icons/font/fontello.eot?24166938");
+  src: url("icons/font/fontello.eot?24166938#iefix") format("embedded-opentype"), url("icons/font/fontello.woff2?24166938") format("woff2"), url("icons/font/fontello.woff?24166938") format("woff"), url("icons/font/fontello.ttf?24166938") format("truetype"), url("icons/font/fontello.svg?24166938#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -4922,7 +5144,7 @@ form.search button:empty:not([value]) {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('icons/font/fontello.svg?58764487#fontello') format('svg');
+    src: url('icons/font/fontello.svg?24166938#fontello') format('svg');
   }
 }
 */
@@ -5814,7 +6036,7 @@ dl.key-val dd:after {
 /***
     title: Background Colors
     section: Colors
-    description: Use to apply a background color to an element. Add your colors to the $bg-colors array in config/_bg-colors.scss.
+    description: Use to apply a background color to an element. Add your colors to the $bg-colors array in config/bg-colors.scss.
     example:
         <div class="bg--white">I have a white background color</div>
 ***/
@@ -5824,9 +6046,9 @@ dl.key-val dd:after {
 /***
     title: Background Overlay
     section: Layout
-    description: Use together with a background image to create a dark tint on top of the image. You can optionally use bg-overlay--hover if you want a hover effect.
+    description: Use together with a background image to create a dark tint on top of the image. You can optionally use bg-overlay--hover if you want a hover effect. Every defined $bg-color is also available as a bg-overlay--color. You can also use @include bg-overlay($color, $hoverEffect = false).
     example:
-        <header class="bg-overlay--hover color--white" style="background-image:url(http://lorempixel.com/1200/600/nature)">
+        <header class="card bg-overlay--hover color--white" style="background-image:url(http://lorempixel.com/1200/600/nature)">
             <h2>I'm a box</h2>
             <p>With some content</p>
         </header>
@@ -5934,14 +6156,15 @@ dl.key-val dd:after {
 /***
     title: Button
     section: Buttons
-    description: Use to create buttons. Buttons come in various sizes and colors. Add more colors and customize your buttons in config/_button.scss.
+    description: Use to create buttons. Buttons come in various sizes and colors. Add more colors and customize your buttons in config/button.scss. You can also use @include button;
     example:
         <p><a href="#" class="button">I'm a normal button</a></p>
-        <p><button>Button elements automatically look like buttons</button></p>
+        <p><button class="button--ghost">Button elements automatically look like buttons</button></p>
         <p><input type="submit" value="Submit inputs too!"></p>
         <p><button class="button--wide">Full width!</button></p>
-        <p><a href="#" class="button">Continue</a> <a href="#" class="button button--gray">Cancel</a></p>
+        <p><a href="#" class="button">Continue</a> <a href="#" class="button button--gray button--ghost">Cancel</a></p>
         <p><a href="#" class="button button--small">Small button</a></p>
+        <p><a href="#" class="button button--large">Large button</a></p>
 ***/
 .button,
 input[type=submit],
@@ -5956,13 +6179,13 @@ button {
   line-height: 1.2;
   color: #fff;
   font-weight: 600;
-  font-style: normal;
+  font-style: 600;
   text-transform: none;
   text-decoration: none;
   text-align: center;
   border-radius: 2rem;
-  -webkit-transition: all .1s ease-out;
-  transition: all .1s ease-out;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
   text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.25);
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25); }
   .button:hover,
@@ -6010,7 +6233,7 @@ button {
   .button--secondary.button--ghost {
     background-color: transparent;
     color: #234;
-    border-color: #234; }
+    border: 2px solid #234; }
     .button--secondary.button--ghost:hover {
       background-color: #234;
       color: #fff; }
@@ -6025,7 +6248,7 @@ button {
   .button--disabled.button--ghost {
     background-color: transparent;
     color: #555;
-    border-color: #555; }
+    border: 2px solid #555; }
     .button--disabled.button--ghost:hover {
       background-color: #555;
       color: #fff; }
@@ -6042,15 +6265,30 @@ button {
   width: 100%; }
 
 /***
+    title: Card
+    section: Layout
+    description: A simple box/card. Can be used with the bg-classes.
+    example:
+        <div class="card bg--white">I'm a shadowed card</div>
+***/
+.card {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+
+/***
     title: Cols
     section: Grid
-    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config/_cols.scss.
+    description: Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}.
     example:
-        <ul class="cols cols--2 cols--4--bp-medium">
-            <li>I'm two columns</li>
-            <li>In low resolution</li>
-            <li>But four columns</li>
-            <li>In high resolution</li>
+        <ul class="cols cols--2--bp-medium cols--3--bp-large">
+            <li><img src="http://placehold.it/320x240" class="img--wide"> I'm two columns</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> In low resolution</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> But three columns</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> In high</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> Resolutions</li>
+            <li><img src="http://placehold.it/320x240" class="img--wide"> Cool?</li>
         </ul>
 ***/
 /**
@@ -6073,15 +6311,19 @@ button {
 .cols {
   clear: both;
   margin-left: 0;
+  padding-left: 0;
   list-style: none; }
   .cols:after {
     content: "";
     display: table;
     clear: both; }
+  .cols > * {
+    margin-bottom: 2rem; }
 
 .cols--2 {
   clear: both;
   margin-left: 0;
+  padding-left: 0;
   list-style: none; }
   .cols--2:after {
     content: "";
@@ -6112,6 +6354,7 @@ button {
 .cols--3 {
   clear: both;
   margin-left: 0;
+  padding-left: 0;
   list-style: none; }
   .cols--3:after {
     content: "";
@@ -6142,6 +6385,7 @@ button {
 .cols--4 {
   clear: both;
   margin-left: 0;
+  padding-left: 0;
   list-style: none; }
   .cols--4:after {
     content: "";
@@ -6173,6 +6417,7 @@ button {
   .cols--2--bp-small {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--2--bp-small:after {
       content: "";
@@ -6206,6 +6451,7 @@ button {
   .cols--3--bp-small {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--3--bp-small:after {
       content: "";
@@ -6239,6 +6485,7 @@ button {
   .cols--4--bp-small {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--4--bp-small:after {
       content: "";
@@ -6272,6 +6519,7 @@ button {
   .cols--2--bp-medium {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--2--bp-medium:after {
       content: "";
@@ -6305,6 +6553,7 @@ button {
   .cols--3--bp-medium {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--3--bp-medium:after {
       content: "";
@@ -6338,6 +6587,7 @@ button {
   .cols--4--bp-medium {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--4--bp-medium:after {
       content: "";
@@ -6371,6 +6621,7 @@ button {
   .cols--2--bp-large {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--2--bp-large:after {
       content: "";
@@ -6404,6 +6655,7 @@ button {
   .cols--3--bp-large {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--3--bp-large:after {
       content: "";
@@ -6437,6 +6689,7 @@ button {
   .cols--4--bp-large {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--4--bp-large:after {
       content: "";
@@ -6470,6 +6723,7 @@ button {
   .cols--2--bp-x-large {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--2--bp-x-large:after {
       content: "";
@@ -6503,6 +6757,7 @@ button {
   .cols--3--bp-x-large {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--3--bp-x-large:after {
       content: "";
@@ -6536,6 +6791,7 @@ button {
   .cols--4--bp-x-large {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     .cols--4--bp-x-large:after {
       content: "";
@@ -6568,7 +6824,7 @@ button {
 /***
     title: Container
     section: Layout
-    description: Centers an element on the screen at a width of $site-width. Containers should be direct decendants of body and doesn't work nested like this.
+    description: Centers an element on the screen at a width of $site-width. Containers should be direct decendants of body/main (any full width element actually) and don't work properly when nested like this. You can also use @include container;
     example:
         <div class="container bg--white">
             <h1>I'm centered</h1>
@@ -6583,6 +6839,28 @@ button {
       max-width: 1000px;
       margin-left: auto;
       margin-right: auto; } }
+
+.pull-right {
+  float: right; }
+
+img.pull-right {
+  margin-left: 1rem;
+  margin-bottom: 1rem; }
+
+.pull-left {
+  float: left; }
+
+img.pull-left {
+  margin-right: 1rem;
+  margin-bottom: 1rem; }
+
+.clear {
+  clear: both; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
 
 /***
     title: Forms
@@ -6600,6 +6878,21 @@ button {
                 <label>
                     Email<br>
                     <input type="email" name="email" placeholder="eg. john.doe@example.com">
+                </label>
+            </p>
+            <p>
+                <label>
+                    Sex<br>
+                    <select name="sex">
+                        <option value="f">Female</option>
+                        <option value="m">Male</option>
+                    </select>
+                </label>
+            </p>
+            <p>
+                <label>
+                    Age<br>
+                    <input type="range" name="age" min="1" max="150">
                 </label>
             </p>
             <p>
@@ -6644,12 +6937,13 @@ input[type=text], input[type=password], input[type=search], input[type=email], i
   box-sizing: border-box;
   max-width: 100%;
   margin: 0;
-  padding: 0.8rem 1em;
+  padding: 0.8rem 1rem;
   font-size: 1rem;
   color: #333;
-  line-height: 1.2\9;
-  -moz-appearance: none;
+  line-height: 1.2;
   -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border: 1px solid #ececec;
   border-radius: 0.2rem;
   width: 100%; }
@@ -6661,11 +6955,11 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
 
 input[type=radio],
 input[type=checkbox] {
-  margin-right: .4rem; }
+  margin: 0 0 0.4em; }
   [dir=rtl] input[type=radio], [dir=rtl]
   input[type=checkbox] {
     margin-right: 0;
-    margin-left: .4rem; }
+    margin-left: 0.4em; }
 
 textarea {
   resize: y;
@@ -6691,12 +6985,12 @@ select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background: #fff url("assets/select-arrow.svg") no-repeat calc(100% - .5rem) 50%;
+  background: #fff url("assets/svg/select-arrow.svg") no-repeat calc(100% - .5rem) 50%;
   background-size: 0.5rem auto;
   box-sizing: border-box;
   max-width: 100%;
-  padding: 0.4rem 2.4rem 0.4rem 0.4rem;
-  border: 0;
+  padding: 0.8rem 3rem 0.8rem 1rem;
+  border: 1px solid #ececec;
   border-radius: 0.2rem; }
 
 input[type=range] {
@@ -6819,6 +7113,16 @@ input[type=range] {
     input[type=range]::-ms-thumb:focus {
       outline: 0; }
 
+/***
+    title: Group
+    section: Layout
+    description: Use this class to add margin-bottom to an element.
+    example:
+        <div class="card bg--white group--x-large">
+            <h2>I have margin</h2>
+            <p>More than usual</p>
+        </div>
+***/
 .group {
   margin-bottom: 1rem; }
   .group--large {
@@ -6833,7 +7137,7 @@ input[type=range] {
 /***
     title: Headings
     section: Typography
-    description: Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size.
+    description: Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size. You can also use @include header;
     example:
         <h1 class="heading--4">I'm a H1 but look like a H4</h1>
         <h3>I'm a normal H3</h3>
@@ -7074,10 +7378,15 @@ a:hover .icon--round {
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%); }
 
+.img--wide {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem; }
+
 /***
     title: Inline Grid
     section: Grid
-    description: Uses inline-block to create a grid. Useful if you dynamically toggle elemens in the grid and need them to adapt to new positions. Note that there can't be any whitespace between elements in the HTML source code and for some reason doesn't work in the styleguide.
+    description: Uses inline-block to create a grid. Useful if you dynamically toggle elemens in the grid and need them to adapt to new positions. Note that @inline-grid sets the child element's font-size back to $font-size-default.
     example:
         <ul class="inline-grid inline-grid--2--bp-medium"><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li><li>Two column grid</li></ul>
 ***/
@@ -7254,6 +7563,67 @@ a,
   .list--plain--margin > * {
     margin-bottom: 0.5rem; }
 
+.pane__overlay {
+  background: transparent;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 100;
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: background .2s 0s ease-out, -webkit-transform 0s .2s linear;
+  transition: background .2s 0s ease-out, -webkit-transform 0s .2s linear;
+  transition: background .2s 0s ease-out, transform 0s .2s linear;
+  transition: background .2s 0s ease-out, transform 0s .2s linear, -webkit-transform 0s .2s linear; }
+  .pane__overlay.open {
+    background: rgba(0, 0, 0, 0.5);
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+    z-index: 101;
+    -webkit-transition: background .2s ease-out, -webkit-transform 0s linear;
+    transition: background .2s ease-out, -webkit-transform 0s linear;
+    transition: transform 0s linear, background .2s ease-out;
+    transition: transform 0s linear, background .2s ease-out, -webkit-transform 0s linear; }
+
+.pane {
+  background: #fefefe;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 100;
+  width: 80%;
+  max-width: 30rem;
+  -webkit-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform .2s .2s ease-out;
+  transition: -webkit-transform .2s .2s ease-out;
+  transition: transform .2s .2s ease-out;
+  transition: transform .2s .2s ease-out, -webkit-transform .2s .2s ease-out; }
+  .pane--right {
+    left: auto;
+    right: 0;
+    -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+            transform: translateX(100%); }
+    .pane--right .pane__toggle {
+      left: auto;
+      right: 100%; }
+  .pane.open {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+    z-index: 101; }
+  .pane__toggle {
+    position: absolute;
+    left: 100%;
+    top: 1.5rem; }
+
 .popup {
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -7419,7 +7789,7 @@ a,
 /***
     title: Section
     section: Layout
-    description: Creates a full width section with centered content (based on $site-width). Sections should be direct decendants of body and doesn't work nested like in the styleguide (that's why it looks broken here).
+    description: Creates a full width section with centered content (based on $site-width). Sections should be direct decendants of body/main (any full width element actually) and don't work properly nested like in the styleguide (that's why it looks broken here).
     example:
         <div class="section bg--white">
             <h2>I'm a section</h2>
@@ -7597,10 +7967,56 @@ a,
         -ms-transform: translateY(50%) translateX(1.5rem);
             transform: translateY(50%) translateX(1.5rem); }
 
+/* .table-grid {
+	@include table-grid;
+}
+
+.table-grid--bp-medium {
+	@include table-grid($gutter-default, false, $bp-medium);
+} */
+/***
+    title: Text
+    section: Typography
+    description: Various helper classes for working with text.
+    example:
+        <p class="text--center">This text is centered and <strong class="text--upper">upper case</strong></p>
+***/
+.text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Titillium Web", Lato, "Open Sans", sans-serif;
+  color: #555;
+  word-wrap: break-word;
+  font-weight: normal; }
+
+.text--upper {
+  text-transform: uppercase; }
+
+.text--center {
+  text-align: center; }
+
+.text--left {
+  text-align: left; }
+
+.text--right {
+  text-align: right; }
+
+.text--small {
+  font-size: 80%; }
+
+.text--large {
+  font-size: 120%; }
+
+.text--ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+
 /***
     title: Text Colors
     section: Colors
-    description: Use to give an element's text a different color.
+    description: Use to give an element's text a different color. This class affects everything, including headings and links.
     example:
         <div class="bg--blue color--white">
             <h2>I have white</h2>
@@ -7631,66 +8047,14 @@ a.color--white:hover,
 
 .color--white h1, .color--white h2, .color--white h3, .color--white h4, .color--white h5, .color--white h6, .color--white .heading--1, .color--white .heading--2, .color--white .heading--3, .color--white .heading--4, .color--white .heading--5, .color--white .heading--6,
 .color--white a:not(.button),
-.color--white .link,
-.color--white a:not(.button):hover,
-.color--white .link:hover {
+.color--white .link {
   color: #fff;
   text-decoration: none; }
 
-/***
-    title: Text
-    section: Typography
-    description: Various helper classes for working with text.
-    example:
-        <p class="text--center">This text is centered and <strong class="text--upper">upper case</strong></p>
-***/
-.text {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.6;
-  font-family: "Titillium Web", Lato, "Open Sans", sans-serif;
-  color: #555;
-  word-wrap: break-word;
-  font-weight: normal; }
-
-.text--upper {
-  text-transform: uppercase; }
-
-.text--center {
-  text-align: center; }
-
-.text--left {
-  text-align: left; }
-
-.text--right {
-  text-align: right; }
-
-.text--ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; }
-
-.pull-right {
-  float: right; }
-
-img.pull-right {
-  margin-left: 1rem;
-  margin-bottom: 1rem; }
-
-.pull-left {
-  float: left; }
-
-img.pull-left {
-  margin-right: 1rem;
-  margin-bottom: 1rem; }
-
-.clear {
-  clear: both; }
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both; }
+.color--white a:not(.button):hover,
+.color--white .link:hover {
+  color: #ffb933;
+  text-decoration: none; }
 
 .alignleft,
 .alignright,
@@ -7737,6 +8101,79 @@ div.gallery {
       div.gallery dl.gallery-item dt a img {
         display: block;
         border: 0 !important; }
+
+/**
+ * Border box
+ */
+* {
+  box-sizing: border-box; }
+
+/**
+ * General styling
+ */
+html {
+  background: #fff;
+  font-size: 100%; }
+
+body {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Titillium Web", Lato, "Open Sans", sans-serif;
+  color: #555;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased; }
+
+/**
+ * Paragraphs, lists, quotes etc
+ */
+p {
+  margin: 0 0 1rem; }
+
+ul,
+ol {
+  margin: 0 0 1rem 2rem;
+  padding: 0; }
+
+blockquote,
+q {
+  font-size: 120%;
+  margin: 0; }
+
+pre {
+  background: #fafafa;
+  color: #111;
+  padding: 1rem;
+  max-height: 300px;
+  overflow: auto; }
+
+/**
+ * Inline elements
+ */
+small, .pubdate {
+  font-size: 80%; }
+
+/**
+ * Images, iframes etc
+ */
+img,
+svg {
+  max-width: 100%;
+  height: auto; }
+
+hr {
+  clear: both;
+  margin: 1rem 0;
+  padding: 0;
+  height: 0;
+  border: 0;
+  border-top: 1px solid #ececec; }
+  @media (min-width: 800px) {
+    hr {
+      margin: 2rem 0; } }
 
 /**
  * Border box
@@ -9144,6 +9581,12 @@ ul.tags {
     transition: font-size .1s ease-out; }
     #header h1 a,
     #header .logo a {
+      color: #333; }
+      #header h1 a:hover,
+      #header .logo a:hover {
+        color: #ffb933; }
+    #header h1 a,
+    #header .logo a {
       font-weight: 900;
       color: #fefefe; }
       #header h1 a > strong,
@@ -9642,6 +10085,7 @@ ul.tags {
   #random-projects {
     clear: both;
     margin-left: 0;
+    padding-left: 0;
     list-style: none; }
     #random-projects:after {
       content: "";
@@ -9758,94 +10202,127 @@ form.search button:empty:not([value]) {
     #social-media-buttons a:before {
       font-size: 2rem;
       margin: 0; }
-></style><style>html {
-    background: #f4f4f4;
+></style><style>body {
+	padding: 0;
+	margin: 0;
 }
 
-.styleguide {
-    width: 95%;
-    max-width: 960px;
-    margin: 12rem auto 5rem;
+/* Header */
+body > header {
+	padding: 2rem;
+	border-bottom: 1px solid rgba(100, 100, 100, .4);
 }
 
-/* Navigation */
-.styleguide__nav {
-    background: #e4e4e4;
+	body > header p {
+		margin: 0;
+	}
 
-    width: 100%;
-
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 99;
-
-    text-align: center;
-
-    border-bottom: 1px solid #ccc;
+/* Nav */
+body > nav {
 }
 
-.styleguide__nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+	body > nav ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+		body > nav ul li {
+			display: block;
+			border-bottom: 1px solid rgba(100, 100, 100, .4);
+		}
+
+			body > nav ul li a {
+				display: block;
+				padding: 1rem 2rem;
+				color: inherit;
+			}
+
+/* Each section */
+main section {
 }
 
-.styleguide__nav ul li {
-    display: inline-block;
+	/* Section header */
+	main section > header {
+		background: rgba(50, 50, 50, .2);
+		padding: 2rem;
+		border-bottom: 1px solid rgba(100, 100, 100, .4);
+	}
+
+		main section > header h2 {
+			margin: 0;
+		}
+
+	/* Each component */
+	main section article {
+		padding: 2rem;
+		border-bottom: 1px solid rgba(100, 100, 100, .4);
+	}
+
+		/* Example and code */
+		main section article > div {
+
+		}
+
+			main section article div.example-container div.example {
+				background-image: linear-gradient(45deg, #f4f4f4 25%, transparent 25%, transparent 75%, #f4f4f4 75%, #f4f4f4), linear-gradient(45deg, #f4f4f4 25%, transparent 25%, transparent 75%, #f4f4f4 75%, #f4f4f4);
+			    background-size: 20px 20px;
+			    background-position: 0 0, 10px 10px;
+
+			    margin: 0 0 1.5rem;
+			    padding: 1rem;
+			    border: 1px solid rgba(100, 100, 100, .4);
+
+			    position: relative;
+			    overflow: hidden;
+			}
+
+@media (min-width: 1000px) {
+	main section article {
+		overflow: hidden;
+	}
+
+		main section article header {
+
+		}
+
+		main section article > div {
+			width: calc(50% - 1rem);
+			float: left;
+		}
+
+		main section article > div + div {
+			float: right;
+		}
 }
 
-.styleguide__nav ul li a {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-    padding: .5rem;
+@media (min-width: 1200px) {
+	body:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	body > nav {
+		width: 20rem;
+		float: left;
+		position: sticky;
+		top: 0;
+	}
+
+	main {
+		width: calc(100% - 20rem);
+		float: right;
+		border-left: 1px solid rgba(100, 100, 100, .4);
+	}
 }
 
-.styleguide__nav ul li a:hover {
-    background: #f4f4f4;
-}
-
-/* Each Section */
-.styleguide__section {
-    background: #fff;
-    margin: 3rem 0;
-    padding: 1.5rem;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, .2);
-}
-
-/* Each Element in every section */
-.styleguide__element {
-    padding-bottom: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid #ccc;
-}
-
-.styleguide__element:last-child {
-    padding-bottom: 0;
-    margin-bottom: 0;
-    border-bottom: 0;
-}
-
-/* Example */
-.styleguide__example {
-    background-image: linear-gradient(45deg, #f4f4f4 25%, transparent 25%, transparent 75%, #f4f4f4 75%, #f4f4f4), linear-gradient(45deg, #f4f4f4 25%, transparent 25%, transparent 75%, #f4f4f4 75%, #f4f4f4);
-    background-size: 20px 20px;
-    background-position: 0 0, 10px 10px;
+/* Syntax Highlight */
+pre {
+	background: #393939;
 
     margin: 0 0 1.5rem;
-    padding: 1rem;
-    border: 1px solid #ccc;
-
-    position: relative;
-    overflow: hidden;
-}
-
-/* Example Code */
-.styleguide__example-code {
-    background: #393939;
-
-    margin: 0 0 1.5rem;
-    max-height: 18rem;
+    max-height: 30rem;
     overflow: auto;
 
     padding: 1rem;
@@ -9853,7 +10330,6 @@ form.search button:empty:not([value]) {
     font-size: .8rem;
 }
 
-/* Syntax Highlight */
 .hljs-tag {
     color: #ddc982;
 }
@@ -9869,29 +10345,12 @@ form.search button:empty:not([value]) {
 .hljs-value {
     color: #a9c978;
 }
-
-/* Some high res fixes */
-@media (min-width: 750px) {
-    .styleguide {
-        margin-top: 5rem;
-    }
-
-    .styleguide__nav {
-        position: fixed;
-    }
-}
-
-@media (max-width: 749px) {
-    /* Hide fixed component in low res because it covers the entire styleguide :P */
-    .fixed {
-        display: none;
-    }
-}</style></head><body class="styleguide"><nav class="styleguide__nav"><ul><li><a href="#Buttons">Buttons</a></li><li><a href="#Colors">Colors</a></li><li><a href="#Forms">Forms</a></li><li><a href="#Grid">Grid</a></li><li><a href="#Icons">Icons</a></li><li><a href="#Images">Images</a></li><li><a href="#Layout">Layout</a></li><li><a href="#Links">Links</a></li><li><a href="#Lists">Lists</a></li><li><a href="#Typography">Typography</a></li></ul></nav><Styleguide></Styleguide><section id="Buttons" class="styleguide__section"><h2>Buttons</h2><article class="styleguide__element"><h3>Button</h3><p><p>Use to create buttons. Buttons come in various sizes and colors. Add more colors and customize your buttons in config/_button.scss.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+</style></head><body><header><h1>Styleguide</h1><p>Examples of all CSS components and configuration.</p></header><nav><ul><li><a href="#buttons">Buttons</a></li><li><a href="#colors">Colors</a></li><li><a href="#forms">Forms</a></li><li><a href="#grid">Grid</a></li><li><a href="#icons">Icons</a></li><li><a href="#images">Images</a></li><li><a href="#layout">Layout</a></li><li><a href="#links">Links</a></li><li><a href="#lists">Lists</a></li><li><a href="#typography">Typography</a></li></ul></nav><main><section id="buttons"><header><h2>Buttons</h2></header><article><header><h3>Button</h3><p><p>Use to create buttons. Buttons come in various sizes and colors. Add more colors and customize your buttons in config/button.scss. You can also use @include button;</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span>&gt;</span>I'm a normal button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">button</span>&gt;</span>Button elements automatically look like buttons<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button--ghost"</span>&gt;</span>Button elements automatically look like buttons<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Submit inputs too!"</span>&gt;</span>
@@ -9901,18 +10360,21 @@ form.search button:empty:not([value]) {
 <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button"</span>&gt;</span>Continue<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button--gray"</span>&gt;</span>Cancel<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button--gray button--ghost"</span>&gt;</span>Cancel<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button--small"</span>&gt;</span>Small button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></article></section><section id="Colors" class="styleguide__section"><h2>Colors</h2><article class="styleguide__element"><h3>Background Colors</h3><p><p>Use to apply a background color to an element. Add your colors to the $bg-colors array in config/_bg-colors.scss.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bg--white"</span>&gt;</span>I have a white background color<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Text Colors</h3><p><p>Use to give an element&#39;s text a different color.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bg--blue color--white"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"button button--large"</span>&gt;</span>Large button<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></div></article></section><section id="colors"><header><h2>Colors</h2></header><article><header><h3>Background Colors</h3><p><p>Use to apply a background color to an element. Add your colors to the $bg-colors array in config/bg-colors.scss.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bg--white"</span>&gt;</span>I have a white background color<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div></article><article><header><h3>Text Colors</h3><p><p>Use to give an element&#39;s text a different color. This class affects everything, including headings and links.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bg--blue color--white"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I have white<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Text text text text text text text text text text text text
         text<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></article></section><section id="Forms" class="styleguide__section"><h2>Forms</h2><article class="styleguide__element"><h3>Forms</h3><p><p>Form styling.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">"post"</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">""</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div></article></section><section id="forms"><header><h2>Forms</h2></header><article><header><h3>Forms</h3><p><p>Form styling.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">"post"</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">""</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span> Name
             <span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
@@ -9924,6 +10386,20 @@ form.search button:empty:not([value]) {
             <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"email"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"email"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"eg. john.doe@example.com"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span> Sex
+            <span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"sex"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"f"</span>&gt;</span>Female<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"m"</span>&gt;</span>Male<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span> Age
+            <span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"range"</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"age"</span> <span class="hljs-attribute">min</span>=<span class="hljs-value">"1"</span> <span class="hljs-attribute">max</span>=<span class="hljs-value">"150"</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span> Message
             <span class="hljs-tag">&lt;<span class="hljs-title">br</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-title">textarea</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"message"</span> <span class="hljs-attribute">rows</span>=<span class="hljs-value">"3"</span> <span class="hljs-attribute">cols</span>=<span class="hljs-value">"60"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Write your message here"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">textarea</span>&gt;</span>
@@ -9932,20 +10408,28 @@ form.search button:empty:not([value]) {
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Go"</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></code></pre></article></section><section id="Grid" class="styleguide__section"><h2>Grid</h2><article class="styleguide__element"><h3>Cols</h3><p><p>Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config/_cols.scss.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cols cols--2 cols--4--bp-medium"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>I'm two columns<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>In low resolution<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>But four columns<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>In high resolution<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Inline Grid</h3><p><p>Uses inline-block to create a grid. Useful if you dynamically toggle elemens in the grid and need them to adapt to new positions. Note that there can&#39;t be any whitespace between elements in the HTML source code and for some reason doesn&#39;t work in the styleguide.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"inline-grid inline-grid--2--bp-medium"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></code></pre></div></article></section><section id="grid"><header><h2>Grid</h2></header><article><header><h3>Cols</h3><p><p>Use to align elements in rows and columns. Perfect for use on ul/li setups or indeed any parent/child markup. Use bp--modifiers to set number of columns in different widths. Customize gutter and breakpoints in config file. You can also use ul {@include cols(3)}.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cols cols--2--bp-medium cols--3--bp-large"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> I'm two columns<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> In low resolution<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> But three columns<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> In high<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> Resolutions<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/320x240"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--wide"</span>&gt;</span> Cool?<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></div></article><article><header><h3>Inline Grid</h3><p><p>Uses inline-block to create a grid. Useful if you dynamically toggle elemens in the grid and need them to adapt to new positions. Note that @inline-grid sets the child element&#39;s font-size back to $font-size-default.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"inline-grid inline-grid--2--bp-medium"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Two column grid<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Two column grid<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Two column grid<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Two column grid<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Primary/Secondary</h3><p><p>Super basic primary/secondary content columns when you really don&#39;t need an entire grid system.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></div></article><article><header><h3>Primary/Secondary</h3><p><p>Super basic primary/secondary content columns when you really don&#39;t need an entire grid system.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"primary-content"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Primary content here<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
@@ -9960,8 +10444,8 @@ form.search button:empty:not([value]) {
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"primary-content"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Primary content here<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></article></section><section id="Icons" class="styleguide__section"><h2>Icons</h2><article class="styleguide__element"><h3>Icon</h3><p><p>Use to add icons to elements. Icons added to empty elements will have zero spacing around them whereas icons added to elements with content will have some spacing. Add icons to the icons.json file (using fontello.com) and Gulp takes care of the rest.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div></article></section><section id="icons"><header><h2>Icons</h2></header><article><header><h3>Icon</h3><p><p>Use to add icons to elements. Icons added to empty elements will have zero spacing around them whereas icons added to elements with content will have some spacing. Add icons to the icons.json file (using fontello.com) and Gulp takes care of the rest.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-facebook"</span>&gt;</span>Facebook<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-twitter"</span>&gt;</span>Twitter<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-facebook icon--round"</span>
@@ -9973,26 +10457,31 @@ form.search button:empty:not([value]) {
 <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"cols cols--2"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-facebook icon--above"</span>&gt;</span>Facebook<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"icon-twitter icon--above"</span>&gt;</span>Twitter<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></article></section><section id="Images" class="styleguide__section"><h2>Images</h2><article class="styleguide__element"><h3>Images</h3><p><p>Various helper classes for styling images.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/100x100"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--round"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/100x100"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--rounded"</span>&gt;</span></code></pre></article></section><section id="Layout" class="styleguide__section"><h2>Layout</h2><article class="styleguide__element"><h3>Background Overlay</h3><p><p>Use together with a background image to create a dark tint on top of the image. You can optionally use bg-overlay--hover if you want a hover effect.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">header</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"bg-overlay--hover color--white"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"background-image:url(http://lorempixel.com/1200/600/nature)"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></div></article></section><section id="images"><header><h2>Images</h2></header><article><header><h3>Images</h3><p><p>Various helper classes for styling images.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/100x100"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--round"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://placehold.it/100x100"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"img--rounded"</span>&gt;</span></code></pre></div></article></section><section id="layout"><header><h2>Layout</h2></header><article><header><h3>Background Overlay</h3><p><p>Use together with a background image to create a dark tint on top of the image. You can optionally use bg-overlay--hover if you want a hover effect. Every defined $bg-color is also available as a bg-overlay--color. You can also use @include bg-overlay($color, $hoverEffect = false).</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">header</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card bg-overlay--hover color--white"</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"background-image:url(http://lorempixel.com/1200/600/nature)"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I'm a box<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>With some content<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Container</h3><p><p>Centers an element on the screen at a width of $site-width. Containers should be direct decendants of body and doesn&#39;t work nested like this.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container bg--white"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span></code></pre></div></article><article><header><h3>Card</h3><p><p>A simple box/card. Can be used with the bg-classes.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card bg--white"</span>&gt;</span>I'm a shadowed card<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div></article><article><header><h3>Container</h3><p><p>Centers an element on the screen at a width of $site-width. Containers should be direct decendants of body/main (any full width element actually) and don&#39;t work properly when nested like this. You can also use @include container;</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container bg--white"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>I'm centered<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>In the middle of the page<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Section</h3><p><p>Creates a full width section with centered content (based on $site-width). Sections should be direct decendants of body and doesn&#39;t work nested like in the styleguide (that&#39;s why it looks broken here).</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"section bg--white"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div></article><article><header><h3>Group</h3><p><p>Use this class to add margin-bottom to an element.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"card bg--white group--x-large"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I have margin<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>More than usual<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div></article><article><header><h3>Section</h3><p><p>Creates a full width section with centered content (based on $site-width). Sections should be direct decendants of body/main (any full width element actually) and don&#39;t work properly nested like in the styleguide (that&#39;s why it looks broken here).</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"section bg--white"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>I'm a section<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>With some content<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></article></section><section id="Links" class="styleguide__section"><h2>Links</h2><article class="styleguide__element"><h3>Link</h3><p><p>Link styling. You can use the link class to make anything look like a link.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Normal link<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre></div></article></section><section id="links"><header><h2>Links</h2></header><article><header><h3>Link</h3><p><p>Link styling. You can use the link class to make anything look like a link.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span>&gt;</span>Normal link<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link"</span>&gt;</span>Not a link at all<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link--neutral"</span>&gt;</span>Link that looks like text<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link--underline"</span>&gt;</span>Link with underline<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></code></pre></article></section><section id="Lists" class="styleguide__section"><h2>Lists</h2><article class="styleguide__element"><h3>List</h3><p><p>Various classes you can use on lists, or list like markup.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Pipe separated<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"link--underline"</span>&gt;</span>Link with underline<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></code></pre></div></article></section><section id="lists"><header><h2>Lists</h2></header><article><header><h3>List</h3><p><p>Various classes you can use on lists, or list like markup.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Pipe separated<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">ul</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"list--pipe-separated"</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Pipes<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Separate<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
@@ -10004,26 +10493,26 @@ form.search button:empty:not([value]) {
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Inline list<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Inline list<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Inline list<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></article></section><section id="Typography" class="styleguide__section"><h2>Typography</h2><article class="styleguide__element"><h3>Headings</h3><p><p>Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"heading--4"</span>&gt;</span>I'm a H1 but look like a H4<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre></div></article></section><section id="typography"><header><h2>Typography</h2></header><article><header><h3>Headings</h3><p><p>Use to create headings. H1-H6 automatically get the correct styling, however you can use the heading--X classes to make non-headings look like headings, and headings of one size appear to have a different size. You can also use @include header;</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">h1</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"heading--4"</span>&gt;</span>I'm a H1 but look like a H4<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>I'm a normal H3<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"heading--1"</span>&gt;</span>I'm not a heading at all!<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></article><article class="styleguide__element"><h3>Text</h3><p><p>Various helper classes for working with text.</p>
-</p><h4>Example</h4><div class="styleguide__example"></div><h4>Example Code</h4><pre class="styleguide__example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text--center"</span>&gt;</span>This text is centered and
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"heading--1"</span>&gt;</span>I'm not a heading at all!<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></div></article><article><header><h3>Text</h3><p><p>Various helper classes for working with text.</p>
+</p></header><div class="example-container"><h4>Example</h4><div class="example"></div></div><div class="example-code-container"><h4>Example Code</h4><pre class="example-code"><code><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text--center"</span>&gt;</span>This text is centered and
     <span class="hljs-tag">&lt;<span class="hljs-title">strong</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"text--upper"</span>&gt;</span>upper case<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></article></section><script>// Insert all example code into the page so we can actually see the examples
+<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre></div></article></section></main><script>// Insert all example code into the page so we can actually see the examples
 //window.addEventListener('load', function () {
-    var elements = document.querySelectorAll('.styleguide__element');
+	var elements = document.querySelectorAll('section article');
 
-    for (var i = 0; i < elements.length; i++) {
-        (function () {
-            var element = elements[i];
-            var exampleCode = element.querySelector('.styleguide__example-code');
-            var example = element.querySelector('.styleguide__example');
+	for (var i = 0; i < elements.length; i++) {
+		(function () {
+			var element = elements[i];
+			var exampleCode = element.querySelector('.example-code');
+			var example = element.querySelector('.example');
 
-            if (exampleCode) {
-                example.innerHTML = exampleCode.textContent;
-            }
-        })();
-    }
+			if (exampleCode) {
+				example.innerHTML = exampleCode.textContent;
+			}
+		})();
+	}
 //});
-</script><script src="https://code.jquery.com/jquery-1.12.2.js"></script><script src="all.js"></script></body></html>
+</script></body></html>

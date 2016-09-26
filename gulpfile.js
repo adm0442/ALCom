@@ -5,7 +5,8 @@ var paths = {
 	js: 'src/js/',
 	dest: 'dist/',
 	icons: 'dist/icons/',
-	lang: 'languages/'
+	lang: 'languages/',
+	assets: 'src/assets/'
 };
 
 /**
@@ -13,7 +14,7 @@ var paths = {
  */
 var sleekSASS = require(__dirname + '/../sleek/gulp/sass.js');
 
-gulp.task('sass', ['icons'], function () {
+gulp.task('sass', ['icons', 'svg'], function () {
 	return sleekSASS(paths.sass + 'all.scss', paths.dest);
 });
 
@@ -46,7 +47,7 @@ gulp.task('icons', ['generate-icon-vars']);
 var sleekJS = require(__dirname + '/../sleek/gulp/js.js');
 var sleekJSHint = require(__dirname + '/../sleek/gulp/jshint.js');
 
-gulp.task('js', function () {
+gulp.task('js', function () { // ['js-hint'], 
 	return sleekJS(paths.js, paths.dest);
 });
 
@@ -74,13 +75,39 @@ gulp.task('gettext', function () {
 });
 
 /**
+ * Copy Assets
+ */
+gulp.task('assets', function () {
+	return gulp.src([paths.assets + '**/*', '!' + paths.assets + '**/*.svg']).pipe(gulp.dest(paths.dest + 'assets'));
+});
+
+/**
+ * Merge and min SVGs
+ */
+var sleekSvg = require(__dirname + '/../sleek/gulp/svg.js');
+
+gulp.task('svgmin', function () {
+	return sleekSvg.min(paths.assets + '**/*.svg', paths.dest + 'assets');
+});
+
+gulp.task('svgstore', ['svgmin'], function () {
+	return sleekSvg.store(paths.assets + '**/*.svg', paths.dest + 'assets');
+});
+
+gulp.task('svg', ['svgstore'], function () {
+	return sleekSvg.css(paths.dest + '**/*.svg', paths.sass + 'svg.scss');
+});
+
+/**
  * Watch and default
  */
-gulp.task('default', ['sass', 'js', 'gettext', 'styleguide']);
+gulp.task('default', ['sass', 'js', 'gettext', 'assets', 'styleguide']);
 
 gulp.task('watch', function () {
 	gulp.watch(paths.sass + '**/*.scss', ['sass-only']);
 	gulp.watch(paths.js + '**/*.js', ['js']);
 	gulp.watch('icons.json', ['sass']);
 	gulp.watch(paths.lang + '**/*.po', ['gettext']);
+	gulp.watch(paths.assets + '**/*', ['assets']);
+	gulp.watch(paths.assets + '**/*.svg', ['sass']);
 });
