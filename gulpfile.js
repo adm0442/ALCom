@@ -47,7 +47,7 @@ gulp.task('icons', ['generate-icon-vars']);
 var sleekJS = require(__dirname + '/../sleek/gulp/js.js');
 var sleekJSHint = require(__dirname + '/../sleek/gulp/jshint.js');
 
-gulp.task('js', function () { // ['js-hint'], 
+gulp.task('js', function () { // ['js-hint'],
 	return sleekJS(paths.js, paths.dest);
 });
 
